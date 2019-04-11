@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>关于python的matplotlib库下实现按键后切换show图片 | JamesHoi的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近在用pytorch做mnist库的手写识别，由于平时编程有点“强迫症”，想按一下Enter就显示对应的手写图片和识别出来的数字，而网上找到的matplotlib教程都最多只能暂停指定的秒数，不能等待键盘输入，从而做不到想要的效果 尝试了半个晚上，终于成功了，参考了https://blog.csdn.net/xiaodongxiexie/article/details/78195860 废">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于python的matplotlib库下实现按键后切换show图片">
+<meta property="og:url" content="http://mangoz.top/2019/04/10/matplotlib-show/index.html">
+<meta property="og:site_name" content="JamesHoi的博客">
+<meta property="og:description" content="最近在用pytorch做mnist库的手写识别，由于平时编程有点“强迫症”，想按一下Enter就显示对应的手写图片和识别出来的数字，而网上找到的matplotlib教程都最多只能暂停指定的秒数，不能等待键盘输入，从而做不到想要的效果 尝试了半个晚上，终于成功了，参考了https://blog.csdn.net/xiaodongxiexie/article/details/78195860 废">
+<meta property="og:locale" content="中文">
+<meta property="og:image" content="https://img-blog.csdn.net/20180811020732107?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM4NjM1MTkw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2019-04-10T14:58:10.320Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于python的matplotlib库下实现按键后切换show图片">
+<meta name="twitter:description" content="最近在用pytorch做mnist库的手写识别，由于平时编程有点“强迫症”，想按一下Enter就显示对应的手写图片和识别出来的数字，而网上找到的matplotlib教程都最多只能暂停指定的秒数，不能等待键盘输入，从而做不到想要的效果 尝试了半个晚上，终于成功了，参考了https://blog.csdn.net/xiaodongxiexie/article/details/78195860 废">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180811020732107?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM4NjM1MTkw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+  
+    <link rel="alternate" href="/jamesblog/atom.xml" title="JamesHoi的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/jamesblog/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/jamesblog/" id="logo">JamesHoi的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/jamesblog/">Home</a>
+        
+          <a class="main-nav-link" href="/jamesblog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/jamesblog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://mangoz.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-matplotlib-show" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/jamesblog/2019/04/10/matplotlib-show/" class="article-date">
+  <time datetime="2019-04-10T14:57:09.000Z" itemprop="datePublished">2019-04-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于python的matplotlib库下实现按键后切换show图片
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>   最近在用pytorch做mnist库的手写识别，由于平时编程有点“强迫症”，想按一下Enter就显示对应的手写图片和识别出来的数字，而网上找到的matplotlib教程都最多只能暂停指定的秒数，不能等待键盘输入，从而做不到想要的效果</p>
+<p>尝试了半个晚上，终于成功了，参考了<a href="https://blog.csdn.net/xiaodongxiexie/article/details/78195860" target="_blank" rel="noopener">https://blog.csdn.net/xiaodongxiexie/article/details/78195860</a></p>
+<p>废话不多说，先上代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Python 3.6.5 </span></span><br><span class="line"><span class="comment">#Skimage Library</span></span><br><span class="line"><span class="keyword">from</span> skimage <span class="keyword">import</span> io</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">num = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    <span class="keyword">while</span>(num&lt;<span class="number">60000</span>):</span><br><span class="line">        img=io.imread(<span class="string">'data/test/'</span>+str(num)+<span class="string">'.png'</span>)</span><br><span class="line">        io.imshow(img)</span><br><span class="line">        plt.ion()</span><br><span class="line">        plt.pause(<span class="number">0.01</span>)</span><br><span class="line">        input(<span class="string">"Press Enter to Continue"</span>)<span class="comment">#之后改成识别输出</span></span><br><span class="line">        num+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    show()</span><br></pre></td></tr></table></figure></p>
+<p>经过尝试，假如用plt.show的话会卡住这时一定要开另一个线程用plt.close关掉…<br>假如用plt.ion不会卡住，但一定要用plt.pause让窗口保留，然后用input等待键盘输入后才开始下一个循环</p>
+<p>运行结果<br> <img src="https://img-blog.csdn.net/20180811020732107?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM4NjM1MTkw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="60%"></p>
+<p>原文网址: <a href="https://blog.csdn.net/baidu_38635190/article/details/81572362" target="_blank" rel="noopener">https://blog.csdn.net/baidu_38635190/article/details/81572362</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mangoz.top/2019/04/10/matplotlib-show/" data-id="cjucq13kf00009lv21d01fkhp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/jamesblog/2019/04/10/pane-fixer/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">真正的完美解决centos7.5的图形界面中文乱码的方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/jamesblog/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/jamesblog/2019/04/10/matplotlib-show/">关于python的matplotlib库下实现按键后切换show图片</a>
+          </li>
+        
+          <li>
+            <a href="/jamesblog/2019/04/10/pane-fixer/">真正的完美解决centos7.5的图形界面中文乱码的方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 James Hoi<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/jamesblog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/jamesblog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/jamesblog/fancybox/jquery.fancybox.css">
+  <script src="/jamesblog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/jamesblog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
