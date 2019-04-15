@@ -8,6 +8,7 @@
   <title>关于python的matplotlib库下实现按键后切换show图片 | JamesHoi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最近在用pytorch做mnist库的手写识别，由于平时编程有点“强迫症”，想按一下Enter就显示对应的手写图片和识别出来的数字，而网上找到的matplotlib教程都最多只能暂停指定的秒数，不能等待键盘输入，从而做不到想要的效果 尝试了半个晚上，终于成功了，参考了https://blog.csdn.net/xiaodongxiexie/article/details/78195860 废">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于python的matplotlib库下实现按键后切换show图片">
 <meta property="og:url" content="http://mangoz.top/2019/04/10/matplotlib-show/index.html">
@@ -15,13 +16,11 @@
 <meta property="og:description" content="最近在用pytorch做mnist库的手写识别，由于平时编程有点“强迫症”，想按一下Enter就显示对应的手写图片和识别出来的数字，而网上找到的matplotlib教程都最多只能暂停指定的秒数，不能等待键盘输入，从而做不到想要的效果 尝试了半个晚上，终于成功了，参考了https://blog.csdn.net/xiaodongxiexie/article/details/78195860 废">
 <meta property="og:locale" content="中文">
 <meta property="og:image" content="https://img-blog.csdn.net/20180811020732107?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM4NjM1MTkw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2019-04-11T15:01:11.320Z">
+<meta property="og:updated_time" content="2019-04-15T12:02:30.877Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于python的matplotlib库下实现按键后切换show图片">
 <meta name="twitter:description" content="最近在用pytorch做mnist库的手写识别，由于平时编程有点“强迫症”，想按一下Enter就显示对应的手写图片和识别出来的数字，而网上找到的matplotlib教程都最多只能暂停指定的秒数，不能等待键盘输入，从而做不到想要的效果 尝试了半个晚上，终于成功了，参考了https://blog.csdn.net/xiaodongxiexie/article/details/78195860 废">
 <meta name="twitter:image" content="https://img-blog.csdn.net/20180811020732107?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM4NjM1MTkw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-  
-    <link rel="alternate" href="/jamesblog/atom.xml" title="JamesHoi的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -52,10 +51,14 @@
         
           <a class="main-nav-link" href="/jamesblog/archives">Archives</a>
         
+          <a class="main-nav-link" href="/jamesblog/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/jamesblog/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/jamesblog/about">About</a>
+        
       </nav>
       <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/jamesblog/atom.xml" title="RSS Feed"></a>
         
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
@@ -72,6 +75,10 @@
   <time datetime="2019-04-10T14:57:00.000Z" itemprop="datePublished">2019-04-10</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/jamesblog/categories/编程/">编程</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -98,9 +105,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://mangoz.top/2019/04/10/matplotlib-show/" data-id="cjuib2pqr0001d1v2j4d5aifg" class="article-share-link">Share</a>
+      <a data-url="http://mangoz.top/2019/04/10/matplotlib-show/" data-id="cjuib41pc0002d9v2n1zndms3" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/jamesblog/tags/Python/">Python</a></li></ul>
+
     </footer>
   </div>
   
@@ -123,12 +132,33 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/jamesblog/categories/编程/">编程</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/jamesblog/tags/Centos/">Centos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/jamesblog/tags/Python/">Python</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/jamesblog/tags/Centos/" style="font-size: 10px;">Centos</a> <a href="/jamesblog/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -177,6 +207,12 @@
     <a href="/jamesblog/" class="mobile-nav-link">Home</a>
   
     <a href="/jamesblog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/jamesblog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/jamesblog/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/jamesblog/about" class="mobile-nav-link">About</a>
   
 </nav>
     
