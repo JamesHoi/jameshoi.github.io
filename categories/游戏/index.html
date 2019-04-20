@@ -5,20 +5,15 @@
   
 
   
-  <title>真正的完美解决centos7.5的图形界面中文乱码的方法 | JamesHoi的博客</title>
+  <title>Category: 游戏 | JamesHoi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="网上看了很多很多的办法，就是搞不定乱码的情况。本文目的是希望后人能够迅速解决这个问题，此方法在Centos 7.5亲测有效。 一键解决：https://github.com/JamesHoi/pane-fixer-centos （下面的都可以忽略了） 参考  https://www.linuxidc.com/Linux/2013-01/77362.htm , 安装语言包yum -y install">
-<meta name="keywords" content="Centos">
-<meta property="og:type" content="article">
-<meta property="og:title" content="真正的完美解决centos7.5的图形界面中文乱码的方法">
-<meta property="og:url" content="http://mangoz.top/2019/04/10/pane-fixer/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="JamesHoi的博客">
+<meta property="og:url" content="http://mangoz.top/categories/游戏/index.html">
 <meta property="og:site_name" content="JamesHoi的博客">
-<meta property="og:description" content="网上看了很多很多的办法，就是搞不定乱码的情况。本文目的是希望后人能够迅速解决这个问题，此方法在Centos 7.5亲测有效。 一键解决：https://github.com/JamesHoi/pane-fixer-centos （下面的都可以忽略了） 参考  https://www.linuxidc.com/Linux/2013-01/77362.htm , 安装语言包yum -y install">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2019-04-15T12:02:56.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="真正的完美解决centos7.5的图形界面中文乱码的方法">
-<meta name="twitter:description" content="网上看了很多很多的办法，就是搞不定乱码的情况。本文目的是希望后人能够迅速解决这个问题，此方法在Centos 7.5亲测有效。 一键解决：https://github.com/JamesHoi/pane-fixer-centos （下面的都可以忽略了） 参考  https://www.linuxidc.com/Linux/2013-01/77362.htm , 安装语言包yum -y install">
+<meta name="twitter:title" content="JamesHoi的博客">
   
   
     <link rel="icon" href="/favicon.png">
@@ -61,67 +56,40 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-pane-fixer" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/jamesblog/2019/04/10/pane-fixer/" class="article-date">
-  <time datetime="2019-04-10T14:50:00.000Z" itemprop="datePublished">2019-04-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/jamesblog/categories/编程/">编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      真正的完美解决centos7.5的图形界面中文乱码的方法
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/jamesblog/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/jamesblog/2019/04/20/PS4/" class="archive-article-date">
+  <time datetime="2019-04-20T11:17:00.000Z" itemprop="datePublished">Apr 20</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/jamesblog/2019/04/20/PS4/">PS4破解游戏资源</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>网上看了很多很多的办法，就是搞不定乱码的情况。本文目的是希望后人能够迅速解决这个问题，此方法在Centos 7.5亲测有效。</p>
-<p>一键解决：<a href="https://github.com/JamesHoi/pane-fixer-centos" target="_blank" rel="noopener">https://github.com/JamesHoi/pane-fixer-centos</a> （下面的都可以忽略了）</p>
-<p>参考  <a href="https://www.linuxidc.com/Linux/2013-01/77362.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2013-01/77362.htm</a> , 安装语言包<br><code>yum -y install fonts-chinese</code><br><code>yum -y install fonts-ISO8859-2</code><br>但是却显示错误<code>No package fonts-chinese available.</code>，找不到安装包</p>
-<p>经过一番寻找，找到了相应需要的<code>fonts-chinese-3.02-12.el5.noarch.rpm</code>和<code>fonts-ISO8859-2-75dpi-1.0-17.1.noarch.rpm</code>（请<a href="https://github.com/JamesHoi/pane-fixer-centos" target="_blank" rel="noopener">前往</a>下载），显示错误缺乏依赖包<code>chkfontpath</code><br>查询<a href="https://altlinux.pkgs.org/sisyphus/classic-x86_64/chkfontpath-2.0.3-alt1.x86_64.rpm.html" target="_blank" rel="noopener">chkfontpath官网</a>，<a href="http://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/x86_64/RPMS.classic//chkfontpath-2.0.3-alt1.x86_64.rpm" target="_blank" rel="noopener">下载</a><code>wget http://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/x86_64/RPMS.classic//chkfontpath-2.0.3-alt1.x86_64.rpm</code></p>
-<p>最后安装<br><code>yum install chkfontpath-2.0.3-alt1.x86_64.rpm</code><br><code>yum install fonts-ISO8859-2-75dpi-1.0-17.1.noarch.rpm</code><br><code>yum install fonts-chinese-3.02-12.el5.noarch.rpm</code></p>
-<p>原文网址: <a href="https://blog.csdn.net/baidu_38635190/article/details/88922732" target="_blank" rel="noopener">https://blog.csdn.net/baidu_38635190/article/details/88922732</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://mangoz.top/2019/04/10/pane-fixer/" data-id="cjuphmjsu0009n0v2bl2i55se" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/jamesblog/tags/Centos/">Centos</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/jamesblog/2019/04/10/matplotlib-show/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          关于python的matplotlib库下实现按键后切换show图片
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
+
 
 </section>
         
