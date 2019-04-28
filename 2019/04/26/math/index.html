@@ -15,7 +15,7 @@
 <meta property="og:description" content="這篇文章主要其實是為了測試hexo-math $T(n) = \Theta(n)$">
 <meta property="og:locale" content="中文">
 <meta property="og:image" content="http://mangoz.top/jamesblog/images/shadowsocksr-csharp.png">
-<meta property="og:updated_time" content="2019-04-28T05:50:07.193Z">
+<meta property="og:updated_time" content="2019-04-28T10:14:25.556Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="數學筆記">
 <meta name="twitter:description" content="這篇文章主要其實是為了測試hexo-math $T(n) = \Theta(n)$">
@@ -91,7 +91,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://mangoz.top/jamesblog/2019/04/26/math/" data-id="cjv0iq1yc0005i8v286bb1ysd" class="article-share-link">Share</a>
+      <a data-url="http://mangoz.top/jamesblog/2019/04/26/math/" data-id="cjv0s5ha50001cwv22xtse37u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,23 +239,23 @@
 
 
 
-  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  </div>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="custom_mathjax_source">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 </body>
 </html>
