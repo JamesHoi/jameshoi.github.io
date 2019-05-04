@@ -7,17 +7,17 @@
   
   <title>数学笔记 | JamesHoi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="均值 \begin{equation*} p = \sum_{n=1}^Na_n \end{equation*}方差概率上的定义：统计上的定义：   标准差概率上的定义：统计上的定义：   协方差概率上的定义：统计上的定义：   资料来源CSDN参考链接1 - 方差与协方差参考链接2 - 统计学理论基础 方差 &amp;amp; 协方差 &amp;amp; 标准差   关于Mathjex网上找了很多hexo-ma">
+  <meta name="description" content="统计学均值\bar{x}=\frac{\sum_{n=1}^Nx_n}{N}期望 离散型 {E(X)=\sum_{k=1}^\infty {x_k}{p_k}} 连续型  E(X)=\int_{-\infty}^\infty xf(x)dx  方差 离散型 {D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}} 连续型   {D(X)=\int_{-\infty}^">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学笔记">
 <meta property="og:url" content="http://mangoz.top/jamesblog/2019/04/26/math/index.html">
 <meta property="og:site_name" content="JamesHoi的博客">
-<meta property="og:description" content="均值 \begin{equation*} p = \sum_{n=1}^Na_n \end{equation*}方差概率上的定义：统计上的定义：   标准差概率上的定义：统计上的定义：   协方差概率上的定义：统计上的定义：   资料来源CSDN参考链接1 - 方差与协方差参考链接2 - 统计学理论基础 方差 &amp;amp; 协方差 &amp;amp; 标准差   关于Mathjex网上找了很多hexo-ma">
+<meta property="og:description" content="统计学均值\bar{x}=\frac{\sum_{n=1}^Nx_n}{N}期望 离散型 {E(X)=\sum_{k=1}^\infty {x_k}{p_k}} 连续型  E(X)=\int_{-\infty}^\infty xf(x)dx  方差 离散型 {D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}} 连续型   {D(X)=\int_{-\infty}^">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2019-05-04T14:24:37.443Z">
+<meta property="og:updated_time" content="2019-05-04T18:02:59.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数学笔记">
-<meta name="twitter:description" content="均值 \begin{equation*} p = \sum_{n=1}^Na_n \end{equation*}方差概率上的定义：统计上的定义：   标准差概率上的定义：统计上的定义：   协方差概率上的定义：统计上的定义：   资料来源CSDN参考链接1 - 方差与协方差参考链接2 - 统计学理论基础 方差 &amp;amp; 协方差 &amp;amp; 标准差   关于Mathjex网上找了很多hexo-ma">
+<meta name="twitter:description" content="统计学均值\bar{x}=\frac{\sum_{n=1}^Nx_n}{N}期望 离散型 {E(X)=\sum_{k=1}^\infty {x_k}{p_k}} 连续型  E(X)=\int_{-\infty}^\infty xf(x)dx  方差 离散型 {D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}} 连续型   {D(X)=\int_{-\infty}^">
   
   
     <link rel="icon" href="/jamesblog/images/favicon.ico">
@@ -88,23 +88,31 @@
         
         <div id="toc" class="toc-article">
             <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#均值"><span class="toc-text">均值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方差"><span class="toc-text">方差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标准差"><span class="toc-text">标准差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协方差"><span class="toc-text">协方差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#资料来源"><span class="toc-text">资料来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于Mathjex"><span class="toc-text">关于Mathjex</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#统计学"><span class="toc-text">统计学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#均值"><span class="toc-text">均值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#期望"><span class="toc-text">期望</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方差"><span class="toc-text">方差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标准差"><span class="toc-text">标准差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协方差"><span class="toc-text">协方差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关系数"><span class="toc-text">相关系数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#资料来源"><span class="toc-text">资料来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于Mathjex"><span class="toc-text">关于Mathjex</span></a></li></ol>
         </div>
                 
 
-        <h3 id="均值"><a href="#均值" class="headerlink" title="均值"></a>均值</h3><script type="math/tex; mode=display">
-\begin{equation*}
-p = \sum_{n=1}^Na_n
-\end{equation*}</script><h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><p>概率上的定义：<br>统计上的定义：  </p>
-<h3 id="标准差"><a href="#标准差" class="headerlink" title="标准差"></a>标准差</h3><p>概率上的定义：<br>统计上的定义：  </p>
-<h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><p>概率上的定义：<br>统计上的定义：  </p>
-<h3 id="资料来源"><a href="#资料来源" class="headerlink" title="资料来源"></a>资料来源</h3><p>CSDN<br><a href="https://blog.csdn.net/qq_25051779/article/details/51914534" target="_blank" rel="noopener">参考链接1 - 方差与协方差</a><br><a href="https://blog.csdn.net/sinat_25873421/article/details/80469530" target="_blank" rel="noopener">参考链接2 - 统计学理论基础 方差 &amp; 协方差 &amp; 标准差</a>  </p>
-<h3 id="关于Mathjex"><a href="#关于Mathjex" class="headerlink" title="关于Mathjex"></a>关于Mathjex</h3><p>网上找了很多<a href="https://github.com/hexojs/hexo-math" target="_blank" rel="noopener">hexo-math</a>的资料，但是屡试失败，最后用<a href="https://www.jianshu.com/p/68e6f82d88b7" target="_blank" rel="noopener">hexo-renderer-kramed</a>引擎代替</p>
+        <h2 id="统计学"><a href="#统计学" class="headerlink" title="统计学"></a>统计学</h2><h3 id="均值"><a href="#均值" class="headerlink" title="均值"></a>均值</h3><script type="math/tex; mode=display">\bar{x}=\frac{\sum_{n=1}^Nx_n}{N}</script><h3 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h3><ol>
+<li><p>离散型</p>
+<script type="math/tex; mode=display">{E(X)=\sum_{k=1}^\infty {x_k}{p_k}}</script></li>
+<li><p>连续型 </p>
+<script type="math/tex; mode=display">E(X)=\int_{-\infty}^\infty xf(x)dx</script></li>
+</ol>
+<h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><ol>
+<li><p>离散型</p>
+<script type="math/tex; mode=display">{D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}}</script></li>
+<li><p>连续型  </p>
+<script type="math/tex; mode=display">{D(X)=\int_{-\infty}^\infty[x-E(X)]^2f(x)dx}</script></li>
+</ol>
+<h3 id="标准差"><a href="#标准差" class="headerlink" title="标准差"></a>标准差</h3><p>\sqrt</p>
+<h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><script type="math/tex; mode=display">{Cov(X,Y)=E\{[X-E(X)][Y-E(Y)]\}}\\=E[XY]-E[X]E[Y]</script><h3 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h3><script type="math/tex; mode=display">{\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}}</script><h2 id="资料来源"><a href="#资料来源" class="headerlink" title="资料来源"></a>资料来源</h2><p>百度百科<br><a href="https://baike.baidu.com/item/%E6%96%B9%E5%B7%AE/3108412?fr=aladdin" target="_blank" rel="noopener">参考链接1 - 方差</a><br><a href="https://baike.baidu.com/item/%E6%A0%87%E5%87%86%E5%B7%AE/1415772?fr=aladdin" target="_blank" rel="noopener">参考链接2 - 标准差</a><br><a href="https://baike.baidu.com/item/%E5%B9%B3%E5%9D%87%E6%95%B0/11031224?fromtitle=%E5%9D%87%E5%80%BC&amp;fromid=5922988" target="_blank" rel="noopener">参考链接3 - 平均数</a></p>
+<p>CSDN<br><a href="https://blog.csdn.net/qq_25051779/article/details/51914534" target="_blank" rel="noopener">参考链接1 - 方差与协方差</a><br><a href="https://blog.csdn.net/sinat_25873421/article/details/80469530" target="_blank" rel="noopener">参考链接2 - 统计学理论基础 方差 &amp; 协方差 &amp; 标准差</a>  </p>
+<h2 id="关于Mathjex"><a href="#关于Mathjex" class="headerlink" title="关于Mathjex"></a>关于Mathjex</h2><p>网上找了很多<a href="https://github.com/hexojs/hexo-math" target="_blank" rel="noopener">hexo-math</a>的资料，但是屡试失败，最后用<a href="https://www.jianshu.com/p/68e6f82d88b7" target="_blank" rel="noopener">hexo-renderer-kramed</a>引擎代替</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://mangoz.top/jamesblog/2019/04/26/math/" data-id="cjv9s5fqy0005u2v25kb7d1xh" class="article-share-link">Share</a>
+      <a data-url="http://mangoz.top/jamesblog/2019/04/26/math/" data-id="cjv9tldn70005djv2ym9e82bu" class="article-share-link">Share</a>
       
       
     </footer>
