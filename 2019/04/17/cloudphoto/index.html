@@ -7,12 +7,12 @@
   
   <title>Hexo-admin添加云图片 | JamesHoi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在用hexo-admin后台写markdown的时候正想要加图片的时候，发现操作十分麻烦，需要用SFTP软件上传到指定位置，经过一轮的资料搜索，找到了几个方法。1.hexo-admin-ehc2.hexo-admin-qiniu  但最后发现，ehc搞不定，qiniu需要实名注册。（其实是hexo-admin可以的，详见方法三）依照这个思路，找到了另外两个解决方法：1.使用cloudinary保存">
+  <meta name="description" content="背景在用hexo-admin后台写markdown的时候正想要加图片的时候，发现操作十分麻烦，需要用SFTP软件上传到指定位置，经过一轮的资料搜索，找到了几个方法。1.hexo-admin-ehc2.hexo-admin-qiniu  但最后发现，ehc搞不定，qiniu需要实名注册。（其实是hexo-admin可以的，详见方法三）依照这个思路，找到了另外两个解决方法：1.使用cloudinary">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo-admin添加云图片">
 <meta property="og:url" content="http://mangoz.top/jamesblog/2019/04/17/cloudphoto/index.html">
 <meta property="og:site_name" content="JamesHoi的博客">
-<meta property="og:description" content="在用hexo-admin后台写markdown的时候正想要加图片的时候，发现操作十分麻烦，需要用SFTP软件上传到指定位置，经过一轮的资料搜索，找到了几个方法。1.hexo-admin-ehc2.hexo-admin-qiniu  但最后发现，ehc搞不定，qiniu需要实名注册。（其实是hexo-admin可以的，详见方法三）依照这个思路，找到了另外两个解决方法：1.使用cloudinary保存">
+<meta property="og:description" content="背景在用hexo-admin后台写markdown的时候正想要加图片的时候，发现操作十分麻烦，需要用SFTP软件上传到指定位置，经过一轮的资料搜索，找到了几个方法。1.hexo-admin-ehc2.hexo-admin-qiniu  但最后发现，ehc搞不定，qiniu需要实名注册。（其实是hexo-admin可以的，详见方法三）依照这个思路，找到了另外两个解决方法：1.使用cloudinary">
 <meta property="og:locale" content="中文">
 <meta property="og:image" content="https://res.cloudinary.com/jameshoi/image/upload/v1555762874/hexo_james/cloudphoto/cloudinary1_srtv4b.png">
 <meta property="og:image" content="https://res.cloudinary.com/jameshoi/image/upload/v1555763250/hexo_james/cloudphoto/cloudinary3_br1ur4.png">
@@ -23,10 +23,10 @@
 <meta property="og:image" content="https://res.cloudinary.com/jameshoi/image/upload/v1555774984/hexo_james/cloudphoto/github_juiui6.png">
 <meta property="og:image" content="https://res.cloudinary.com/jameshoi/image/upload/v1555779125/hexo_james/cloudphoto/hexo-admin-smaller_yvyfvw.png">
 <meta property="og:image" content="https://res.cloudinary.com/jameshoi/image/upload/v1555779376/hexo_james/cloudphoto/hexo-admin-setting_jsa5du.png">
-<meta property="og:updated_time" content="2019-05-01T10:24:46.845Z">
+<meta property="og:updated_time" content="2019-05-04T16:28:37.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-admin添加云图片">
-<meta name="twitter:description" content="在用hexo-admin后台写markdown的时候正想要加图片的时候，发现操作十分麻烦，需要用SFTP软件上传到指定位置，经过一轮的资料搜索，找到了几个方法。1.hexo-admin-ehc2.hexo-admin-qiniu  但最后发现，ehc搞不定，qiniu需要实名注册。（其实是hexo-admin可以的，详见方法三）依照这个思路，找到了另外两个解决方法：1.使用cloudinary保存">
+<meta name="twitter:description" content="背景在用hexo-admin后台写markdown的时候正想要加图片的时候，发现操作十分麻烦，需要用SFTP软件上传到指定位置，经过一轮的资料搜索，找到了几个方法。1.hexo-admin-ehc2.hexo-admin-qiniu  但最后发现，ehc搞不定，qiniu需要实名注册。（其实是hexo-admin可以的，详见方法三）依照这个思路，找到了另外两个解决方法：1.使用cloudinary">
 <meta name="twitter:image" content="https://res.cloudinary.com/jameshoi/image/upload/v1555762874/hexo_james/cloudphoto/cloudinary1_srtv4b.png">
   
   
@@ -93,13 +93,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <!-- 文章目录 -->
+        
+        <div id="toc" class="toc-article">
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法一-使用cloudinary保存图片"><span class="toc-text">方法一.使用cloudinary保存图片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#效果"><span class="toc-text">效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法二-建立github项目用来保存图片"><span class="toc-text">方法二.建立github项目用来保存图片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码-1"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法三-直接复制图片到hexo-admin"><span class="toc-text">方法三.直接复制图片到hexo-admin</span></a></li></ol>
+        </div>
                 
 
-        <p>在用hexo-admin后台写markdown的时候正想要加图片的时候，发现操作十分麻烦，需要用SFTP软件上传到指定位置，经过一轮的资料搜索，找到了几个方法。<br>1.<a href="https://github.com/lwz7512/hexo-admin-ehc" target="_blank" rel="noopener">hexo-admin-ehc</a><br>2.<a href="https://github.com/xbotao/hexo-admin-qiniu" target="_blank" rel="noopener">hexo-admin-qiniu</a> </p>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在用hexo-admin后台写markdown的时候正想要加图片的时候，发现操作十分麻烦，需要用SFTP软件上传到指定位置，经过一轮的资料搜索，找到了几个方法。<br>1.<a href="https://github.com/lwz7512/hexo-admin-ehc" target="_blank" rel="noopener">hexo-admin-ehc</a><br>2.<a href="https://github.com/xbotao/hexo-admin-qiniu" target="_blank" rel="noopener">hexo-admin-qiniu</a> </p>
 <p>但最后发现，ehc搞不定，qiniu需要实名注册。（其实是hexo-admin可以的，详见<a href="#solution3">方法三</a>）<br>依照这个思路，找到了另外两个解决方法：<br>1.使用<a href="https://cloudinary.com" target="_blank" rel="noopener">cloudinary</a>保存图片<br>2.建立<a href="http://www.github.com" target="_blank" rel="noopener">github</a>项目用来保存图片<br>接下来本文会详细介绍这两个方法  </p>
-<p>[快速跳转]<br><a href="#solution1">方法一</a><br><a href="#solution2">方法二</a><br><a href="#solution3">方法三（推荐）</a>  </p>
 <p>[2019-4-20更新]<br>发现了一个新的更快的方法，可直接跳到<a href="#solution3">方法三查看</a></p>
-<p><span id="solution1"></span></p>
 <h2 id="方法一-使用cloudinary保存图片"><a href="#方法一-使用cloudinary保存图片" class="headerlink" title="方法一.使用cloudinary保存图片"></a>方法一.使用cloudinary保存图片</h2><ol>
 <li><p>进入<a href="https://cloudinary.com" target="_blank" rel="noopener">cloudinary</a>，点右上角注册<br><img src="https://res.cloudinary.com/jameshoi/image/upload/v1555762874/hexo_james/cloudphoto/cloudinary1_srtv4b.png"></p>
 </li>
@@ -107,17 +110,17 @@
 </li>
 <li><p>建立hexo文件夹<br>点击左上角这个图标<br><img src="https://res.cloudinary.com/jameshoi/image/upload/v1555764342/hexo_james/cloudphoto/cloudinary4_pqhn2a.png" width="75%"><br>点击新增文件夹，命名为hexo （实际上可以跳过这一步，不过有文件夹好管理一些）<br><img src="https://res.cloudinary.com/jameshoi/image/upload/v1555765356/hexo_james/cloudphoto/cloudinary5_ermi0p.png"><br>然后拖拉图片上传<br>图片上传后，点击图片的左上角复制链接<br><img src="https://res.cloudinary.com/jameshoi/image/upload/v1555765834/hexo_james/cloudphoto/cloudinary6_x3d1hz.bmp"></p>
 <h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="https://res.cloudinary.com/jameshoi/image/upload/v1555509325/hexo_james/icon.jpg " width="25%" height="25%"></p>
-<h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;(这里添上刚才复制的网址)https://res.cloudinary.com/jameshoi/image/upload/v1555509325/hexo_james/icon.jpg&quot; width=&quot;25%&quot; height=&quot;25%&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;(这里添上刚才复制的网址)https://res.cloudinary.com/jameshoi/image/upload/v1555509325/hexo_james/icon.jpg&quot; width=&quot;25%&quot; height=&quot;25%&quot; /&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><br><br><span id="solution2"></span></p>
+<p><br></p>
 <h2 id="方法二-建立github项目用来保存图片"><a href="#方法二-建立github项目用来保存图片" class="headerlink" title="方法二.建立github项目用来保存图片"></a>方法二.建立github项目用来保存图片</h2><p>既然cloudinary这类都可以，那github当然也不例外  </p>
 <ol>
 <li>建立github项目<br>用浏览器打开github项目,点击需要用的图片（怎么用github请自行百度）<br><img src="https://res.cloudinary.com/jameshoi/image/upload/v1555774984/hexo_james/cloudphoto/github_juiui6.png" alt></li>
-<li>获取图片地址<br>图片地址格式：<a href="https://raw.githubusercontent.com/用户名/项目名称/你的分支(默认master)/图片路径/图片名称" target="_blank" rel="noopener">https://raw.githubusercontent.com/用户名/项目名称/你的分支(默认master)/图片路径/图片名称</a><br>所以我的图片地址是：<a href="https://raw.githubusercontent.com/JamesHoi/hexo/master/icon.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/JamesHoi/hexo/master/icon.jpg</a>  <h3 id="代码如下-1"><a href="#代码如下-1" class="headerlink" title="代码如下"></a>代码如下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;(这里输入你的图片地址)https://raw.githubusercontent.com/JamesHoi/hexo/master/icon.jpg&quot; width=&quot;25%&quot; height=&quot;25%&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<li>获取图片地址<br>图片地址格式：<a href="https://raw.githubusercontent.com/用户名/项目名称/你的分支(默认master)/图片路径/图片名称" target="_blank" rel="noopener">https://raw.githubusercontent.com/用户名/项目名称/你的分支(默认master)/图片路径/图片名称</a><br>所以我的图片地址是：<a href="https://raw.githubusercontent.com/JamesHoi/hexo/master/icon.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/JamesHoi/hexo/master/icon.jpg</a>  <h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;(这里输入你的图片地址)https://raw.githubusercontent.com/JamesHoi/hexo/master/icon.jpg&quot; width=&quot;25%&quot; height=&quot;25%&quot;/&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><br><br><span id="solution3"></span></p>
+<p><br></p>
 <h2 id="方法三-直接复制图片到hexo-admin"><a href="#方法三-直接复制图片到hexo-admin" class="headerlink" title="方法三.直接复制图片到hexo-admin"></a>方法三.直接复制图片到hexo-admin</h2><p>我发现原来我搞了这么多其实hexo-admin还是可以添加图片的，只是没有按钮  </p>
 <ol>
 <li>右键复制电脑中的图片</li>
@@ -127,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://mangoz.top/jamesblog/2019/04/17/cloudphoto/" data-id="cjv9onu390001f5v2mscl3pck" class="article-share-link">Share</a>
+      <a data-url="http://mangoz.top/jamesblog/2019/04/17/cloudphoto/" data-id="cjv9pf7jy0002jtv2dhv4llyq" class="article-share-link">Share</a>
       
       
     </footer>
