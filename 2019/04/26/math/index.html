@@ -5,22 +5,22 @@
   
 
   
-  <title>數學筆記 | JamesHoi的博客</title>
+  <title>数学笔记 | JamesHoi的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概率上的定义方差标准差https://blog.csdn.net/qq_25051779/article/details/51914534 统计学上的定义方差标准差https://blog.csdn.net/sinat_25873421/article/details/80469530   \sqrt{3}\approx1.732050808\ldots\sqrt{4}=2\sqrt{9}=3 \">
+  <meta name="description" content="均值 \begin{equation*} p = \sum_{n=1}^Na_n \end{equation*}方差概率上的定义：统计上的定义：   标准差概率上的定义：统计上的定义：   协方差概率上的定义：统计上的定义：   资料来源CSDN参考链接1 - 方差与协方差参考链接2 - 统计学理论基础 方差 &amp;amp; 协方差 &amp;amp; 标准差   关于Mathjex网上找了很多hexo-ma">
 <meta property="og:type" content="article">
-<meta property="og:title" content="數學筆記">
+<meta property="og:title" content="数学笔记">
 <meta property="og:url" content="http://mangoz.top/jamesblog/2019/04/26/math/index.html">
 <meta property="og:site_name" content="JamesHoi的博客">
-<meta property="og:description" content="概率上的定义方差标准差https://blog.csdn.net/qq_25051779/article/details/51914534 统计学上的定义方差标准差https://blog.csdn.net/sinat_25873421/article/details/80469530   \sqrt{3}\approx1.732050808\ldots\sqrt{4}=2\sqrt{9}=3 \">
+<meta property="og:description" content="均值 \begin{equation*} p = \sum_{n=1}^Na_n \end{equation*}方差概率上的定义：统计上的定义：   标准差概率上的定义：统计上的定义：   协方差概率上的定义：统计上的定义：   资料来源CSDN参考链接1 - 方差与协方差参考链接2 - 统计学理论基础 方差 &amp;amp; 协方差 &amp;amp; 标准差   关于Mathjex网上找了很多hexo-ma">
 <meta property="og:locale" content="中文">
-<meta property="og:updated_time" content="2019-05-02T17:09:39.505Z">
+<meta property="og:updated_time" content="2019-05-04T14:24:37.443Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="數學筆記">
-<meta name="twitter:description" content="概率上的定义方差标准差https://blog.csdn.net/qq_25051779/article/details/51914534 统计学上的定义方差标准差https://blog.csdn.net/sinat_25873421/article/details/80469530   \sqrt{3}\approx1.732050808\ldots\sqrt{4}=2\sqrt{9}=3 \">
+<meta name="twitter:title" content="数学笔记">
+<meta name="twitter:description" content="均值 \begin{equation*} p = \sum_{n=1}^Na_n \end{equation*}方差概率上的定义：统计上的定义：   标准差概率上的定义：统计上的定义：   协方差概率上的定义：统计上的定义：   资料来源CSDN参考链接1 - 方差与协方差参考链接2 - 统计学理论基础 方差 &amp;amp; 协方差 &amp;amp; 标准差   关于Mathjex网上找了很多hexo-ma">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/jamesblog/images/favicon.ico">
   
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
@@ -74,7 +74,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      數學筆記
+      数学笔记
     </h1>
   
 
@@ -82,19 +82,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="概率上的定义"><a href="#概率上的定义" class="headerlink" title="概率上的定义"></a>概率上的定义</h2><p>方差标准差<br><a href="https://blog.csdn.net/qq_25051779/article/details/51914534" target="_blank" rel="noopener">https://blog.csdn.net/qq_25051779/article/details/51914534</a></p>
-<h2 id="统计学上的定义"><a href="#统计学上的定义" class="headerlink" title="统计学上的定义"></a>统计学上的定义</h2><p>方差标准差<br><a href="https://blog.csdn.net/sinat_25873421/article/details/80469530" target="_blank" rel="noopener">https://blog.csdn.net/sinat_25873421/article/details/80469530</a>  </p>
-<script type="math/tex; mode=display">\sqrt{3}\approx1.732050808\ldots</script><script type="math/tex; mode=display">\sqrt{4}=2</script><script type="math/tex; mode=display">\sqrt{9}=3</script><script type="math/tex; mode=display">
-\left|\begin{array}{cccc} 
-    1 &    6    & 9 \\ 
-    7 &    90   & f(x)\\ 
-    9 & \psi(x) & g(x) 
-\end{array}\right|</script><p>网上找了很多<a href="https://github.com/hexojs/hexo-math" target="_blank" rel="noopener">hexo-math</a>的资料，但是无论怎么搞都搞不定，最后用<a href="https://www.jianshu.com/p/68e6f82d88b7" target="_blank" rel="noopener">hexo-renderer-kramed</a>引擎代替</p>
+        <!-- 文章目录 -->
+        
+        <div id="toc" class="toc-article">
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#均值"><span class="toc-text">均值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方差"><span class="toc-text">方差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标准差"><span class="toc-text">标准差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协方差"><span class="toc-text">协方差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#资料来源"><span class="toc-text">资料来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于Mathjex"><span class="toc-text">关于Mathjex</span></a></li></ol>
+        </div>
+                
+
+        <h3 id="均值"><a href="#均值" class="headerlink" title="均值"></a>均值</h3><script type="math/tex; mode=display">
+\begin{equation*}
+p = \sum_{n=1}^Na_n
+\end{equation*}</script><h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><p>概率上的定义：<br>统计上的定义：  </p>
+<h3 id="标准差"><a href="#标准差" class="headerlink" title="标准差"></a>标准差</h3><p>概率上的定义：<br>统计上的定义：  </p>
+<h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><p>概率上的定义：<br>统计上的定义：  </p>
+<h3 id="资料来源"><a href="#资料来源" class="headerlink" title="资料来源"></a>资料来源</h3><p>CSDN<br><a href="https://blog.csdn.net/qq_25051779/article/details/51914534" target="_blank" rel="noopener">参考链接1 - 方差与协方差</a><br><a href="https://blog.csdn.net/sinat_25873421/article/details/80469530" target="_blank" rel="noopener">参考链接2 - 统计学理论基础 方差 &amp; 协方差 &amp; 标准差</a>  </p>
+<h3 id="关于Mathjex"><a href="#关于Mathjex" class="headerlink" title="关于Mathjex"></a>关于Mathjex</h3><p>网上找了很多<a href="https://github.com/hexojs/hexo-math" target="_blank" rel="noopener">hexo-math</a>的资料，但是屡试失败，最后用<a href="https://www.jianshu.com/p/68e6f82d88b7" target="_blank" rel="noopener">hexo-renderer-kramed</a>引擎代替</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://mangoz.top/jamesblog/2019/04/26/math/" data-id="cjv6wmv7e0006ndv2y39c0a46" class="article-share-link">Share</a>
+      <a data-url="http://mangoz.top/jamesblog/2019/04/26/math/" data-id="cjv6wof0r0006ckv2ly2jqf4c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -114,6 +122,7 @@
   
 </article>
 
+
 </section>
         
           <aside id="sidebar">
@@ -122,7 +131,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">关于我</h3>
     <div class="widget">
-    <img src="/jamesblog/images/icon.jpg" width="215px" height="216px">
+    <img src="/jamesblog/images/icon.jpg" width="75%" height="75%">
         <ul class="entry">
             
             <li class="link"><a href="http://www.github.com/JamesHoi">Github</a></li>
@@ -160,31 +169,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/jamesblog/tags/Centos/" style="font-size: 10px;">Centos</a> <a href="/jamesblog/tags/PS4/" style="font-size: 10px;">PS4</a> <a href="/jamesblog/tags/Python/" style="font-size: 10px;">Python</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/jamesblog/archives/2019/04/">April 2019</a><span class="archive-list-count">6</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/jamesblog/2019/04/26/math/">數學筆記</a>
+            <a href="/jamesblog/2019/04/26/math/">数学笔记</a>
           </li>
         
           <li>
