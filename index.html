@@ -98,19 +98,20 @@
 </ol>
 <h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><ol>
 <li><p>离散型</p>
-<script type="math/tex; mode=display">{D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}}</script></li>
+<script type="math/tex; mode=display">{D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}}</script><p><center>或</center></p>
+<script type="math/tex; mode=display">s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1}</script></li>
 <li><p>连续型  </p>
-<script type="math/tex; mode=display">{D(X)=\int_{-\infty}^\infty[x-E(X)]^2f(x)dx}</script></li>
+<script type="math/tex; mode=display">{D(X)=\int_{-\infty}^\infty[x-E(X)]^2f(x)dx}</script><p><script type="math/tex">f(x)</script>为连续性随机变量X的概率密度函数</p>
+</li>
 </ol>
-<h3 id="标准差"><a href="#标准差" class="headerlink" title="标准差"></a>标准差</h3><p>\sqrt</p>
-<h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><script type="math/tex; mode=display">{Cov(X,Y)=E\{[X-E(X)][Y-E(Y)]\}}\\=E[XY]-E[X]E[Y]</script><h3 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h3><script type="math/tex; mode=display">{\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}}</script><h2 id="资料来源"><a href="#资料来源" class="headerlink" title="资料来源"></a>资料来源</h2><p>百度百科<br><a href="https://baike.baidu.com/item/%E6%96%B9%E5%B7%AE/3108412?fr=aladdin" target="_blank" rel="noopener">参考链接1 - 方差</a><br><a href="https://baike.baidu.com/item/%E6%A0%87%E5%87%86%E5%B7%AE/1415772?fr=aladdin" target="_blank" rel="noopener">参考链接2 - 标准差</a><br><a href="https://baike.baidu.com/item/%E5%B9%B3%E5%9D%87%E6%95%B0/11031224?fromtitle=%E5%9D%87%E5%80%BC&amp;fromid=5922988" target="_blank" rel="noopener">参考链接3 - 平均数</a></p>
-<p>CSDN<br><a href="https://blog.csdn.net/qq_25051779/article/details/51914534" target="_blank" rel="noopener">参考链接1 - 方差与协方差</a><br><a href="https://blog.csdn.net/sinat_25873421/article/details/80469530" target="_blank" rel="noopener">参考链接2 - 统计学理论基础 方差 &amp; 协方差 &amp; 标准差</a>  </p>
+<h3 id="标准差"><a href="#标准差" class="headerlink" title="标准差"></a>标准差</h3><script type="math/tex; mode=display">s=\sqrt{\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1}}</script><h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><script type="math/tex; mode=display">{Cov(X,Y)=E\{[X-E(X)][Y-E(Y)]\}}\\=E[XY]-E[X]E[Y]</script><h3 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h3><script type="math/tex; mode=display">{\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}}</script><h2 id="资料来源"><a href="#资料来源" class="headerlink" title="资料来源"></a>资料来源</h2><p>百度百科<br><a href="https://baike.baidu.com/item/%E6%96%B9%E5%B7%AE/3108412?fr=aladdin" target="_blank" rel="noopener">方差</a><br><a href="https://baike.baidu.com/item/%E6%A0%87%E5%87%86%E5%B7%AE/1415772?fr=aladdin" target="_blank" rel="noopener">标准差</a><br><a href="https://baike.baidu.com/item/%E5%B9%B3%E5%9D%87%E6%95%B0/11031224?fromtitle=%E5%9D%87%E5%80%BC&amp;fromid=5922988" target="_blank" rel="noopener">平均数</a><br><a href="https://baike.baidu.com/item/%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B/5362790?fromtitle=%E6%9C%9F%E6%9C%9B&amp;fromid=10318906&amp;fr=aladdin" target="_blank" rel="noopener">数学期望</a></p>
+<p>CSDN<br><a href="https://blog.csdn.net/qq_25051779/article/details/51914534" target="_blank" rel="noopener">方差与协方差</a><br><a href="https://blog.csdn.net/sinat_25873421/article/details/80469530" target="_blank" rel="noopener">统计学理论基础 方差 &amp; 协方差 &amp; 标准差</a>  </p>
 <h2 id="关于Mathjex"><a href="#关于Mathjex" class="headerlink" title="关于Mathjex"></a>关于Mathjex</h2><p>网上找了很多<a href="https://github.com/hexojs/hexo-math" target="_blank" rel="noopener">hexo-math</a>的资料，但是屡试失败，最后用<a href="https://www.jianshu.com/p/68e6f82d88b7" target="_blank" rel="noopener">hexo-renderer-kramed</a>引擎代替</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://mangoz.top/jamesblog/2019/04/26/math/" data-id="cjv9tldn70005djv2ym9e82bu" class="article-share-link">Share</a>
+      <a data-url="http://mangoz.top/jamesblog/2019/04/26/math/" data-id="cjv9tzmk3000569v2r9iyfjei" class="article-share-link">Share</a>
       
       
     </footer>
@@ -161,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://mangoz.top/jamesblog/2019/04/20/PS4/" data-id="cjv9tldmn0000djv23ztl4ws2" class="article-share-link">Share</a>
+      <a data-url="http://mangoz.top/jamesblog/2019/04/20/PS4/" data-id="cjv9tzmjj000069v2rzhqbji0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/jamesblog/tags/PS4/">PS4</a></li></ul>
@@ -224,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://mangoz.top/jamesblog/2019/04/19/sstap/" data-id="cjv9tldnd000bdjv2q4oplbyr" class="article-share-link">Share</a>
+      <a data-url="http://mangoz.top/jamesblog/2019/04/19/sstap/" data-id="cjv9tzmkh000b69v242bwfy1u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -295,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://mangoz.top/jamesblog/2019/04/17/cloudphoto/" data-id="cjv9tldmw0002djv2030q0h5z" class="article-share-link">Share</a>
+      <a data-url="http://mangoz.top/jamesblog/2019/04/17/cloudphoto/" data-id="cjv9tzmjv000269v2cmkzpntw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -345,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://mangoz.top/jamesblog/2019/04/10/matplotlib-show/" data-id="cjv9tldna0006djv2k5ez9gdd" class="article-share-link">Share</a>
+      <a data-url="http://mangoz.top/jamesblog/2019/04/10/matplotlib-show/" data-id="cjv9tzmke000669v2d30jtrcf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/jamesblog/tags/Python/">Python</a></li></ul>
@@ -397,7 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://mangoz.top/jamesblog/2019/04/10/pane-fixer/" data-id="cjv9tldnb0007djv2l8mlo80p" class="article-share-link">Share</a>
+      <a data-url="http://mangoz.top/jamesblog/2019/04/10/pane-fixer/" data-id="cjv9tzmkf000769v2g3lumq6f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/jamesblog/tags/Centos/">Centos</a></li></ul>
