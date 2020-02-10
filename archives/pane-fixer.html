@@ -14,21 +14,25 @@
     
     
     
-    <title>JamesHoi的博客</title>
+    <title>真正的完美解决centos7.5的图形界面中文乱码的方法 | JamesHoi的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content>
-    <meta property="og:type" content="website">
-<meta property="og:title" content="JamesHoi的博客">
-<meta property="og:url" content="http://jameshoi.github.io/archives/index.html">
+    <meta name="keywords" content="Centos">
+    <meta name="description" content="网上看了很多很多的办法，就是搞不定乱码的情况。本文目的是希望后人能够迅速解决这个问题，此方法在Centos 7.5亲测有效。 一键解决：https://github.com/JamesHoi/pane-fixer-centos （下面的都可以忽略了） 参考  https://www.linuxidc.com/Linux/2013-01/77362.htm , 安装语言包yum -y install">
+<meta name="keywords" content="Centos">
+<meta property="og:type" content="website">
+<meta property="og:title" content="真正的完美解决centos7.5的图形界面中文乱码的方法">
+<meta property="og:url" content="http://jameshoi.github.io/archives/pane-fixer.html">
 <meta property="og:site_name" content="JamesHoi的博客">
+<meta property="og:description" content="网上看了很多很多的办法，就是搞不定乱码的情况。本文目的是希望后人能够迅速解决这个问题，此方法在Centos 7.5亲测有效。 一键解决：https://github.com/JamesHoi/pane-fixer-centos （下面的都可以忽略了） 参考  https://www.linuxidc.com/Linux/2013-01/77362.htm , 安装语言包yum -y install">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-10T15:45:30.216Z">
+<meta property="og:updated_time" content="2020-02-10T15:46:54.772Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JamesHoi的博客">
+<meta name="twitter:title" content="真正的完美解决centos7.5的图形界面中文乱码的方法">
+<meta name="twitter:description" content="网上看了很多很多的办法，就是搞不定乱码的情况。本文目的是希望后人能够迅速解决这个问题，此方法在Centos 7.5亲测有效。 一键解决：https://github.com/JamesHoi/pane-fixer-centos （下面的都可以忽略了） 参考  https://www.linuxidc.com/Linux/2013-01/77362.htm , 安装语言包yum -y install">
     
     <link rel="shortcut icon" href="/jamesblog/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
@@ -42,7 +46,7 @@
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
 
-    <aside id="menu">
+    <aside id="menu" class="hide">
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -114,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis"></div>
+        <div class="flex-col header-title ellipsis">真正的完美解决centos7.5的图形界面中文乱码的方法</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -136,7 +140,7 @@
 <header class="content-header page-header">
 
     <div class="container fade-scale">
-        <h1 class="title"></h1>
+        <h1 class="title">真正的完美解决centos7.5的图形界面中文乱码的方法</h1>
         <h5 class="subtitle">
             
         </h5>
@@ -151,7 +155,13 @@
 <div class="container body-wrap">
     <article class="page-article fade" itemprop="blogPage">
         <div class="post-content page-content" id="page-content" itemprop="pageContent">
-            
+            <p>网上看了很多很多的办法，就是搞不定乱码的情况。本文目的是希望后人能够迅速解决这个问题，此方法在Centos 7.5亲测有效。</p>
+<p>一键解决：<a href="https://github.com/JamesHoi/pane-fixer-centos" target="_blank" rel="noopener">https://github.com/JamesHoi/pane-fixer-centos</a> （下面的都可以忽略了）</p>
+<p>参考  <a href="https://www.linuxidc.com/Linux/2013-01/77362.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2013-01/77362.htm</a> , 安装语言包<br><code>yum -y install fonts-chinese</code><br><code>yum -y install fonts-ISO8859-2</code><br>但是却显示错误<code>No package fonts-chinese available.</code>，找不到安装包</p>
+<p>经过一番寻找，找到了相应需要的<code>fonts-chinese-3.02-12.el5.noarch.rpm</code>和<code>fonts-ISO8859-2-75dpi-1.0-17.1.noarch.rpm</code>（请<a href="https://github.com/JamesHoi/pane-fixer-centos" target="_blank" rel="noopener">前往</a>下载），显示错误缺乏依赖包<code>chkfontpath</code><br>查询<a href="https://altlinux.pkgs.org/sisyphus/classic-x86_64/chkfontpath-2.0.3-alt1.x86_64.rpm.html" target="_blank" rel="noopener">chkfontpath官网</a>，<a href="http://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/x86_64/RPMS.classic//chkfontpath-2.0.3-alt1.x86_64.rpm" target="_blank" rel="noopener">下载</a><code>wget http://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/x86_64/RPMS.classic//chkfontpath-2.0.3-alt1.x86_64.rpm</code></p>
+<p>最后安装<br><code>yum install chkfontpath-2.0.3-alt1.x86_64.rpm</code><br><code>yum install fonts-ISO8859-2-75dpi-1.0-17.1.noarch.rpm</code><br><code>yum install fonts-chinese-3.02-12.el5.noarch.rpm</code></p>
+<p>原文网址: <a href="https://blog.csdn.net/baidu_38635190/article/details/88922732" target="_blank" rel="noopener">https://blog.csdn.net/baidu_38635190/article/details/88922732</a></p>
+
         </div>
 
         
@@ -170,7 +180,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jameshoi.github.io/archives/&title=JamesHoi的博客&pic=http://jameshoi.github.io/img/icon.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jameshoi.github.io/archives/pane-fixer.html&title=《真正的完美解决centos7.5的图形界面中文乱码的方法》 — JamesHoi的博客&pic=http://jameshoi.github.io/img/icon.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -180,22 +190,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jameshoi.github.io/archives/&title=JamesHoi的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jameshoi.github.io/archives/pane-fixer.html&title=《真正的完美解决centos7.5的图形界面中文乱码的方法》 — JamesHoi的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jameshoi.github.io/archives/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jameshoi.github.io/archives/pane-fixer.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=JamesHoi的博客&url=http://jameshoi.github.io/archives/&via=http://jameshoi.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《真正的完美解决centos7.5的图形界面中文乱码的方法》 — JamesHoi的博客&url=http://jameshoi.github.io/archives/pane-fixer.html&via=http://jameshoi.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jameshoi.github.io/archives/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jameshoi.github.io/archives/pane-fixer.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -218,6 +228,25 @@
 
 
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </article>
     
@@ -261,7 +290,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jameshoi.github.io/archives/&title=JamesHoi的博客&pic=http://jameshoi.github.io/img/icon.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jameshoi.github.io/archives/pane-fixer.html&title=《真正的完美解决centos7.5的图形界面中文乱码的方法》 — JamesHoi的博客&pic=http://jameshoi.github.io/img/icon.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -271,22 +300,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jameshoi.github.io/archives/&title=JamesHoi的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jameshoi.github.io/archives/pane-fixer.html&title=《真正的完美解决centos7.5的图形界面中文乱码的方法》 — JamesHoi的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jameshoi.github.io/archives/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jameshoi.github.io/archives/pane-fixer.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=JamesHoi的博客&url=http://jameshoi.github.io/archives/&via=http://jameshoi.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《真正的完美解决centos7.5的图形界面中文乱码的方法》 — JamesHoi的博客&url=http://jameshoi.github.io/archives/pane-fixer.html&via=http://jameshoi.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jameshoi.github.io/archives/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jameshoi.github.io/archives/pane-fixer.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -297,7 +326,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://jameshoi.github.io/archives/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://jameshoi.github.io/archives/pane-fixer.html" alt="微信分享二维码">
 </div>
 
 
