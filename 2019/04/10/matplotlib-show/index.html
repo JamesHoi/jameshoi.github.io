@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>关于python的matplotlib库下实现按键后切换show图片 | JamesHoi的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Python">
+    <meta name="description" content="最近在用pytorch做mnist库的手写识别，由于平时编程有点“强迫症”，想按一下Enter就显示对应的手写图片和识别出来的数字，而网上找到的matplotlib教程都最多只能暂停指定的秒数，不能等待键盘输入，从而做不到想要的效果 尝试了半个晚上，终于成功了，参考了https://blog.csdn.net/xiaodongxiexie/article/details/78195860 废">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于python的matplotlib库下实现按键后切换show图片">
+<meta property="og:url" content="http://jameshoi.github.io/2019/04/10/matplotlib-show/index.html">
+<meta property="og:site_name" content="JamesHoi的博客">
+<meta property="og:description" content="最近在用pytorch做mnist库的手写识别，由于平时编程有点“强迫症”，想按一下Enter就显示对应的手写图片和识别出来的数字，而网上找到的matplotlib教程都最多只能暂停指定的秒数，不能等待键盘输入，从而做不到想要的效果 尝试了半个晚上，终于成功了，参考了https://blog.csdn.net/xiaodongxiexie/article/details/78195860 废">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img-blog.csdn.net/20180811020732107?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM4NjM1MTkw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2020-02-10T16:04:26.993Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于python的matplotlib库下实现按键后切换show图片">
+<meta name="twitter:description" content="最近在用pytorch做mnist库的手写识别，由于平时编程有点“强迫症”，想按一下Enter就显示对应的手写图片和识别出来的数字，而网上找到的matplotlib教程都最多只能暂停指定的秒数，不能等待键盘输入，从而做不到想要的效果 尝试了半个晚上，终于成功了，参考了https://blog.csdn.net/xiaodongxiexie/article/details/78195860 废">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180811020732107?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM4NjM1MTkw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+    
+    <link rel="shortcut icon" href="/jamesblog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/jamesblog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/jamesblog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/jamesblog/img/icon.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">James Hoi</h5>
+          <a href="mailto:jameshoi@foxmail.com" title="jameshoi@foxmail.com" class="mail">jameshoi@foxmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/jamesblog/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/jamesblog/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/jamesblog/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/jamesblog/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/JamesHoi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/baidu_38635190" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                Csdn博客
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">关于python的matplotlib库下实现按键后切换show图片</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">关于python的matplotlib库下实现按键后切换show图片</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-10T14:57:00.000Z" itemprop="datePublished" class="page-time">
+  2019-04-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/jamesblog/categories/编程/">编程</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-matplotlib-show" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">关于python的matplotlib库下实现按键后切换show图片</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-10 22:57:00" datetime="2019-04-10T14:57:00.000Z" itemprop="datePublished">2019-04-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/jamesblog/categories/编程/">编程</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>   最近在用pytorch做mnist库的手写识别，由于平时编程有点“强迫症”，想按一下Enter就显示对应的手写图片和识别出来的数字，而网上找到的matplotlib教程都最多只能暂停指定的秒数，不能等待键盘输入，从而做不到想要的效果</p>
+<p>尝试了半个晚上，终于成功了，参考了<a href="https://blog.csdn.net/xiaodongxiexie/article/details/78195860" target="_blank" rel="noopener">https://blog.csdn.net/xiaodongxiexie/article/details/78195860</a></p>
+<p>废话不多说，先上代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Python 3.6.5 </span></span><br><span class="line"><span class="comment">#Skimage Library</span></span><br><span class="line"><span class="keyword">from</span> skimage <span class="keyword">import</span> io</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">num = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    <span class="keyword">while</span>(num&lt;<span class="number">60000</span>):</span><br><span class="line">        img=io.imread(<span class="string">'data/test/'</span>+str(num)+<span class="string">'.png'</span>)</span><br><span class="line">        io.imshow(img)</span><br><span class="line">        plt.ion()</span><br><span class="line">        plt.pause(<span class="number">0.01</span>)</span><br><span class="line">        input(<span class="string">"Press Enter to Continue"</span>)<span class="comment">#之后改成识别输出</span></span><br><span class="line">        num+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    show()</span><br></pre></td></tr></table></figure></p>
+<p>经过尝试，假如用plt.show的话会卡住这时一定要开另一个线程用plt.close关掉…<br>假如用plt.ion不会卡住，但一定要用plt.pause让窗口保留，然后用input等待键盘输入后才开始下一个循环</p>
+<p>运行结果<br> <img src="https://img-blog.csdn.net/20180811020732107?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM4NjM1MTkw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="60%"></p>
+<p>原文网址: <a href="https://blog.csdn.net/baidu_38635190/article/details/81572362" target="_blank" rel="noopener">https://blog.csdn.net/baidu_38635190/article/details/81572362</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-02-10T16:04:26.993Z" itemprop="dateUpdated">2020-02-11 00:04:26</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/jamesblog/2019/04/10/matplotlib-show/" target="_blank" rel="external">http://jameshoi.github.io/2019/04/10/matplotlib-show/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://jameshoi.github.io">
+            <img src="/jamesblog/img/icon.jpg" alt="James Hoi">
+            James Hoi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/jamesblog/tags/Python/">Python</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jameshoi.github.io/2019/04/10/matplotlib-show/&title=《关于python的matplotlib库下实现按键后切换show图片》 — JamesHoi的博客&pic=http://jameshoi.github.io/img/icon.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jameshoi.github.io/2019/04/10/matplotlib-show/&title=《关于python的matplotlib库下实现按键后切换show图片》 — JamesHoi的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jameshoi.github.io/2019/04/10/matplotlib-show/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《关于python的matplotlib库下实现按键后切换show图片》 — JamesHoi的博客&url=http://jameshoi.github.io/2019/04/10/matplotlib-show/&via=http://jameshoi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jameshoi.github.io/2019/04/10/matplotlib-show/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/jamesblog/2019/04/17/cloudphoto/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hexo-admin添加云图片</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/jamesblog/2019/04/10/pane-fixer/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">真正的完美解决centos7.5的图形界面中文乱码的方法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>James Hoi &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jameshoi.github.io/2019/04/10/matplotlib-show/&title=《关于python的matplotlib库下实现按键后切换show图片》 — JamesHoi的博客&pic=http://jameshoi.github.io/img/icon.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jameshoi.github.io/2019/04/10/matplotlib-show/&title=《关于python的matplotlib库下实现按键后切换show图片》 — JamesHoi的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jameshoi.github.io/2019/04/10/matplotlib-show/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《关于python的matplotlib库下实现按键后切换show图片》 — JamesHoi的博客&url=http://jameshoi.github.io/2019/04/10/matplotlib-show/&via=http://jameshoi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jameshoi.github.io/2019/04/10/matplotlib-show/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://jameshoi.github.io/2019/04/10/matplotlib-show/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/jamesblog/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
