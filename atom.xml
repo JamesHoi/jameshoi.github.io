@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>James Hoi&#39;s Blog</title>
+  
+  
+  <link href="https://jameshoi.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://jameshoi.github.io/"/>
+  <updated>2020-10-06T14:26:56.688Z</updated>
+  <id>https://jameshoi.github.io/</id>
+  
+  <author>
+    <name>James Hoi</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Js逆向 - 某网课平台的逆向插件</title>
+    <link href="https://jameshoi.github.io/2020/10/06/js-reverse/"/>
+    <id>https://jameshoi.github.io/2020/10/06/js-reverse/</id>
+    <published>2020-10-05T16:00:00.000Z</published>
+    <updated>2020-10-06T14:26:56.688Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>网课</p><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>reres</p><h1 id="开始分析"><a href="#开始分析" class="headerlink" title="开始分析"></a>开始分析</h1><p>分析过程</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;网课&lt;/p&gt;
+&lt;h1 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="逆向" scheme="https://jameshoi.github.io/categories/%E9%80%86%E5%90%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>网易公开课下载器，支持多线程，可分别下载视频及字幕</title>
+    <link href="https://jameshoi.github.io/2020/03/22/open163-downloader/"/>
+    <id>https://jameshoi.github.io/2020/03/22/open163-downloader/</id>
+    <published>2020-03-21T16:00:00.000Z</published>
+    <updated>2020-10-06T13:50:07.982Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p> 网上一直都找不到网易公开课的下载工具。哎，那不如自己写一个。<br> 我这个工具只能提取易公开课的视频，不能提取网易云课堂</p><ol><li>实现了多线程功能</li><li>实现了提取字幕功能</li><li>实现了选择画质功能</li><li>实现了下载已合成字幕视频功能</li><li>添加了分集下载功能</li></ol><h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><h2 id="提取网站内容"><a href="#提取网站内容" class="headerlink" title="提取网站内容"></a>提取网站内容</h2><p>在浏览器内的开发者工具的Console内输入<code>__NUXT__.state.movie.moiveList</code>可获取影片列表<br><img src="https://s1.ax1x.com/2020/03/22/8I0xGF.png" alt="img"></p><p>index:视频列表索引<br><code>__NUXT__.state.movie.moiveList</code>视频列表<br><code>__NUXT__.state.movie.moiveList[index].title</code>视频名称<br><code>__NUXT__.state.movie.moiveList[index].mp4SdUrl</code>标清视频链接<br><code>__NUXT__.state.movie.moiveList[index].mp4HdUrl</code>高清视频链接<br><code>__NUXT__.state.movie.moiveList[index].mp4ShdUrl</code>超清视频链接<br><code>__NUXT__.state.movie.moiveList[index].mp4ShareUrl</code>手机观看视频链接（包含字幕）</p><p><code>__NUXT__.state.movie.moiveList[index].subList</code>字幕列表<br><code>__NUXT__.state.movie.moiveList[index].subList[inx].subName</code>字幕语言<br><code>__NUXT__.state.movie.moiveList[index].subList[inx].subUrl</code>字幕链接</p><p>然后用Python的Selenium模块通过运行js脚本提取<br><code>data = driver.execute_script(&quot;return &lt;__NUXT__命令&gt;&quot;)</code></p><h2 id="下载模块"><a href="#下载模块" class="headerlink" title="下载模块"></a>下载模块</h2><p>用requests模块可以实现<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">downloadFile</span>(<span class="params">url,path, name</span>):</span></span><br><span class="line">    r = requests.get(url, stream=<span class="literal">True</span>,verify=<span class="literal">False</span>)</span><br><span class="line">    length = float(r.headers[<span class="string">&#x27;content-length&#x27;</span>])</span><br><span class="line">    f = open(path+name, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    count_tmp = <span class="number">0</span></span><br><span class="line">    time1 = time.time()</span><br><span class="line">    <span class="keyword">for</span> chunk <span class="keyword">in</span> r.iter_content(chunk_size=<span class="number">512</span>):</span><br><span class="line">        <span class="keyword">if</span> chunk:</span><br><span class="line">            f.write(chunk)</span><br><span class="line">            count += len(chunk)</span><br><span class="line">            <span class="keyword">if</span> time.time() - time1 &gt; <span class="number">2</span>:</span><br><span class="line">                p = count / length * <span class="number">100</span></span><br><span class="line">                speed = (count - count_tmp) / <span class="number">1024</span> / <span class="number">1024</span> / <span class="number">2</span></span><br><span class="line">                count_tmp = count</span><br><span class="line">                print(name + <span class="string">&#x27;: &#x27;</span> + formatFloat(p) + <span class="string">&#x27;%&#x27;</span> + <span class="string">&#x27; Speed: &#x27;</span> + formatFloat(speed) + <span class="string">&#x27;M/S&#x27;</span>)</span><br><span class="line">                time1 = time.time()</span><br><span class="line">    f.close()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">formatFloat</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#123;:.2f&#125;&#x27;</span>.format(num)</span><br></pre></td></tr></table></figure><br><a href="https://www.cnblogs.com/sea-stream/p/11082356.html">参考链接</a></p><h1 id="软件使用教程"><a href="#软件使用教程" class="headerlink" title="软件使用教程"></a>软件使用教程</h1><p><img src="https://s1.ax1x.com/2020/03/22/8I1cB4.png" alt=""><br>可通过以下几种方式下载</p><h2 id="方法一-通过新版课程链接进行下载"><a href="#方法一-通过新版课程链接进行下载" class="headerlink" title="方法一.通过新版课程链接进行下载"></a>方法一.通过新版课程链接进行下载</h2><p><img src="https://s1.ax1x.com/2020/03/22/8InIc4.png" alt=""><br><a href="http://open.163.com/newview/movie/courseintro?newurl=%2Fspecial%2Fopencourse%2Fthought.html">范例网页</a></p><h2 id="方法二-通过旧版课程链接进行下载"><a href="#方法二-通过旧版课程链接进行下载" class="headerlink" title="方法二.通过旧版课程链接进行下载"></a>方法二.通过旧版课程链接进行下载</h2><p><img src="https://s1.ax1x.com/2020/03/22/8IQHxO.png" alt=""><br><a href="http://open.163.com/special/sp/thought.html">范例网页</a></p><h2 id="方法三-通过视频链接进行下载"><a href="#方法三-通过视频链接进行下载" class="headerlink" title="方法三.通过视频链接进行下载"></a>方法三.通过视频链接进行下载</h2><p><img src="https://s1.ax1x.com/2020/03/22/8I1Qht.png" alt=""><br><a href="http://open.163.com/newview/movie/free?pid=M8KB8VE0G&amp;mid=M8KBDR4UL">范例网页</a></p><h2 id="下载选项"><a href="#下载选项" class="headerlink" title="下载选项"></a>下载选项</h2><ol><li>可选择多少个视频同时下载（线程个数）</li><li>可选择字幕和影片是否分开</li><li>可选择视频画质（如果原视频可以选择）</li><li>可分集下载，用逗号隔开<br>例如一共有11集，不需要下载第2集和第6集，填1,3-5,7-11<br>下载全部填all，下载当前视频填origin<br>若填写课程链接默认下载全部，视频链接默认下载当前视频  </li></ol><h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p><img src="https://attach.52pojie.cn/forum/202003/22/232941hdfspz41c4jtpx3x.png" alt=""><br><img src="https://attach.52pojie.cn/forum/202003/22/233037coyegoc67yopgog6.png" alt=""><br><img src="https://attach.52pojie.cn/forum/202003/23/112741tqwwwyybwwz3w7o8.png" alt=""><br>家里是100M宽带，经过测试基本能达到满速</p><h1 id="项目源码"><a href="#项目源码" class="headerlink" title="项目源码"></a>项目源码</h1><p><a href="https://github.com/JamesHoi/Open163-Downloader">Github项目</a></p><h1 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h1><p><a href="https://github.com/JamesHoi/Open163-Downloader/releases">Github发布页</a><br><a href="https://share.weiyun.com/5CZQoVH">微云下载</a><br><b>喜欢的话多给Github项目star和点评吧!!</b></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt; 网上一直都找不到网易公开课的下载工具。哎，那不如自己写一个。&lt;br&gt; 我这个工具只能提取易公开课的视频，不能提取网易云课堂&lt;/p&gt;
+&lt;ol</summary>
+      
+    
+    
+    
+    <category term="爬虫" scheme="https://jameshoi.github.io/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    
+    <category term="Python" scheme="https://jameshoi.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>黑白棋对战</title>
+    <link href="https://jameshoi.github.io/2020/03/22/reversi/"/>
+    <id>https://jameshoi.github.io/2020/03/22/reversi/</id>
+    <published>2020-03-21T16:00:00.000Z</published>
+    <updated>2020-10-06T14:05:43.599Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这个爬虫是19年写的，当时正在学习爬虫<br><img src="https://s1.ax1x.com/2020/03/22/8I7KyR.gif" alt=""></p><h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>定位棋盘html id后模拟鼠标点击，点击后等待电脑。<br><img src="https://s1.ax1x.com/2020/03/22/8IHmAf.png" alt=""><br>定位棋子数id，然后显示在软件中<br><img src="https://s1.ax1x.com/2020/03/22/8IHX8g.png" alt=""></p><h1 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h1><p><a href="https://github.com/JamesHoi/Reversi-crawler">Github源码</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;这个爬虫是19年写的，当时正在学习爬虫&lt;br&gt;&lt;img src=&quot;https://s1.ax1x.com/2020/03/22/8I7KyR</summary>
+      
+    
+    
+    
+    <category term="爬虫" scheme="https://jameshoi.github.io/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    
+    <category term="Python" scheme="https://jameshoi.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows系统下使用Github进行Hexo博客建站</title>
+    <link href="https://jameshoi.github.io/2020/02/13/windows-hexo/"/>
+    <id>https://jameshoi.github.io/2020/02/13/windows-hexo/</id>
+    <published>2020-02-12T16:00:00.000Z</published>
+    <updated>2020-10-06T14:12:31.798Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h1><p>其实网上一查一大把，这里就不详细介绍了<br>可以参考这个<a href="https://blog.csdn.net/qq_31880107/article/details/86688467">windows下Hexo博客搭建过程</a></p><h1 id="进阶操作"><a href="#进阶操作" class="headerlink" title="进阶操作"></a>进阶操作</h1><p>Markdown我个人建议用vscode编写，尝试过Markdownpad，感觉预览的效果不是特别好</p><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>首先推荐的是Markdown Preview Enhanced插件，安装完后可以浏览Markdown</p><p><img src="https://s1.ax1x.com/2020/03/22/8ICCBF.png" alt="Markdown Preview Enhanced"></p><center>Markdown Preview Enhanced</center><p><h>另外一个推荐的是Markdown Command Assist，安装后在编辑md的时候右键可以一键添加Markdown格式 </h><br><img src="https://s1.ax1x.com/2020/03/22/8ICtjf.png" alt="Markdown Command Assist"></p><center>Markdown Command Assist</center><h2 id="快速上传文章"><a href="#快速上传文章" class="headerlink" title="快速上传文章"></a>快速上传文章</h2><p>当你已经完全成功配置了hexo，可以通过添加vscode的任务脚本来进行快速上传<br>点击终端-&gt;配置任务-&gt;使用模板创建tasks.json-&gt;随便选一个</p><p><img src="https://s1.ax1x.com/2020/03/22/8IFObT.png" alt="创建tasks.json"></p><center>创建tasks.json</center><p>然后以下文本替换到tasks.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; See https:&#x2F;&#x2F;go.microsoft.com&#x2F;fwlink&#x2F;?LinkId&#x3D;733558</span><br><span class="line">    &#x2F;&#x2F; for the documentation about the tasks.json format</span><br><span class="line">    &quot;version&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;tasks&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;hexo server&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;hexo server -s -d&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;hexo build&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;hexo clean&amp;hexo g&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;hexo publish&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;hexo d&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;label&quot;: &quot;hexo all&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">            &quot;command&quot;: &quot;hexo clean&amp;hexo g&amp;hexo d&quot;,</span><br><span class="line">            &quot;group&quot;: &#123;</span><br><span class="line">                &quot;kind&quot;: &quot;build&quot;,</span><br><span class="line">                &quot;isDefault&quot;: true</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>修改完成后点 终端-&gt;运行任务<br><img src="https://s1.ax1x.com/2020/03/22/8IkfQ1.png" alt="运行任务"></p><p><center>运行任务</center><br><code>hexo all</code>: 一键上传（生成+上传）<br><code>hexo build</code>: 生成网页<br><code>hexo publish</code>: 通过git上传<br><code>hexo server</code>: 打开hexo本地服务器</p><p>已将hexo all设置为默认任务，所以可以使用快捷键Ctrl+Shift+B进行一键上传</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;安装教程&quot;&gt;&lt;a href=&quot;#安装教程&quot; class=&quot;headerlink&quot; title=&quot;安装教程&quot;&gt;&lt;/a&gt;安装教程&lt;/h1&gt;&lt;p&gt;其实网上一查一大把，这里就不详细介绍了&lt;br&gt;可以参考这个&lt;a href=&quot;https://blog.csdn.net/qq</summary>
+      
+    
+    
+    
+    <category term="杂项" scheme="https://jameshoi.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+    <category term="Hexo" scheme="https://jameshoi.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>将BaiduPCS-Web添加进系统服务，可开机自启</title>
+    <link href="https://jameshoi.github.io/2019/06/17/baidupcs/"/>
+    <id>https://jameshoi.github.io/2019/06/17/baidupcs/</id>
+    <published>2019-06-16T16:00:00.000Z</published>
+    <updated>2020-10-06T14:12:02.354Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>BaiduPCS-Web并非本人开发，软件只是将其添加进系统服务而已<br>BaiduPCS-Web Github项目</p><p><img src="https://camo.githubusercontent.com/968f615643a9e7ee0841dadb119d9191dd93e46d/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6a616d6573686f692f696d6167652f75706c6f61642f76313535373831323131352f42616964755043535f6b71387379702e6a7067" alt="软件预览"></p><h1 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h1><p>其实原理不难，用了instsrv.exe和srvany.exe实现<br><a href="https://share.weiyun.com/5SM9M79">下载链接</a></p><h2 id="注册服务"><a href="#注册服务" class="headerlink" title="注册服务"></a>注册服务</h2><p>方法一：在命令行输入sc create <b>[服务名称]</b> binpath=[srvany.exe路径]/srvany.exe<br>方法二：在命令行输入[instsrv.exe路径]/instsrv.exe <b>[服务名称]</b> binpath=[srvany.exe路径]/srvany.exe</p><p>若显示<br><b>[SC] CreateService 失败 1783:<br>占位程序接收到错误数据。</b><br>则一般的解决方法是关闭安全软件</p><h2 id="更改注册表"><a href="#更改注册表" class="headerlink" title="更改注册表"></a>更改注册表</h2><p>打开注册表 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\<b>[服务名称]</b><br>服务名称和刚刚输入的一致</p><p>右击新建项，名称为<b>Parameters</b>，然后定位到<b>Parameters</b>项，新建以下几个字符串值。<br>名称 <b>Application</b> 值为你要作为服务运行的<b>程序地址</b>。<br>名称 <b>AppDirectory</b> 值为你要作为服务运行的程序所在文件夹路径。<br>名称 <b>AppParameters</b> 值为你要作为服务运行的程序启动所需要的参数。</p><p><img src="https://s1.ax1x.com/2020/03/22/85jz6g.png" alt="注册表"></p><center>注册表</center><h2 id="设置为开机自启"><a href="#设置为开机自启" class="headerlink" title="设置为开机自启"></a>设置为开机自启</h2><p>命令行输入sc config [服务名称] start=[启用填auto，禁用填demand]</p><h2 id="主要功能源码"><a href="#主要功能源码" class="headerlink" title="主要功能源码"></a>主要功能源码</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">CreateService</span>(<span class="params"><span class="keyword">int</span> solution</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//新建文件流</span></span><br><span class="line">    FileStream fs = <span class="keyword">new</span> FileStream(startup_path + bat_directory, FileMode.Create);</span><br><span class="line">    StreamWriter sw = <span class="keyword">new</span> StreamWriter(fs);</span><br><span class="line">    <span class="keyword">string</span> createcommand = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="comment">//软件路径</span></span><br><span class="line">    <span class="keyword">string</span> path = <span class="string">&quot;\&quot;&quot;</span>.Insert(<span class="number">1</span>, startup_path);</span><br><span class="line">    <span class="keyword">switch</span> (solution)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//注册方法一</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            createcommand = <span class="string">&quot;sc create &quot;</span> + servicename + <span class="string">&quot; binpath=&quot;</span> + path + <span class="string">&quot;/script/srvany.exe\&quot;&quot;</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//注册方法二</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            createcommand = path + <span class="string">&quot;/script/instsrv.exe\&quot; &quot;</span> + servicename + <span class="string">&quot; &quot;</span> + path + <span class="string">&quot;/script/srvany.exe\&quot;&quot;</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//写入命令至bat文件里</span></span><br><span class="line">    sw.WriteLine(createcommand);</span><br><span class="line">    sw.Flush(); sw.Close(); fs.Close();</span><br><span class="line">    <span class="comment">//运行bat</span></span><br><span class="line">    <span class="keyword">string</span> output = RunBat(startup_path + bat_directory);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//检测服务是否添加成功</span></span><br><span class="line">    Thread.Sleep(refresh_delay_ms);</span><br><span class="line">    CheckService();</span><br><span class="line">    <span class="keyword">if</span> (isRecreate) output = recreate_log + output;</span><br><span class="line">    cmdLogTextArea.AppendText(output+<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (IsServiceInstalled(servicename) != <span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (solution == <span class="number">2</span>) DisplayError();</span><br><span class="line">        <span class="keyword">else</span> DisplayCreateError();</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//写入注册表</span></span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        RegistryKey key = Registry.LocalMachine;</span><br><span class="line">        <span class="keyword">string</span> directory = <span class="string">@&quot;System\CurrentControlSet\Services\&quot;</span> + servicename + <span class="string">@&quot;\Parameters&quot;</span>;</span><br><span class="line">        RegistryKey service = key.CreateSubKey(directory);</span><br><span class="line">        service.SetValue(<span class="string">&quot;Application&quot;</span>, startup_path + baidupcs_directory);</span><br><span class="line">        service.SetValue(<span class="string">&quot;AppDirectory&quot;</span>, startup_path + <span class="string">@&quot;\script&quot;</span>);</span><br><span class="line">        service.SetValue(<span class="string">&quot;AppParameters&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">        service.Close();</span><br><span class="line">        key.Close();</span><br><span class="line">    &#125;<span class="keyword">catch</span>(Exception e)</span><br><span class="line">    &#123;</span><br><span class="line">        MessageBox.Show(<span class="string">&quot;注册表修改失败！请确保已关闭所有安全软件&quot;</span>, <span class="string">&quot;提示&quot;</span>);</span><br><span class="line">        DeleteService(<span class="number">0</span>);</span><br><span class="line">        CheckService();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><a href="https://github.com/JamesHoi/BaiduPCS-service-win">Github源码</a></p><h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><p><b>1.如何更新BaiduPCS-Web?</b><br>将script文件夹里的BaiduPCS-Go.exe替换为新版本即可</p><p><b>2.为何显示注册失败？</b><br>添加服务或写入注册表时失败，尝试将安全软件例如360关闭后重试</p><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><a href="https://github.com/JamesHoi/BaiduPCS-service-win/releases">Github发布页</a><br><a href="https://share.weiyun.com/5SM9M79">微云下载</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;BaiduPCS-Web并非本人开发，软件只是将其添加进系统服务而已&lt;br&gt;BaiduPCS-Web Github项目&lt;/p&gt;
+&lt;p&gt;&lt;im</summary>
+      
+    
+    
+    
+    <category term="杂项" scheme="https://jameshoi.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>统计学公式</title>
+    <link href="https://jameshoi.github.io/2019/04/26/statistics/"/>
+    <id>https://jameshoi.github.io/2019/04/26/statistics/</id>
+    <published>2019-04-25T16:00:00.000Z</published>
+    <updated>2020-10-06T13:29:50.955Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="统计学"><a href="#统计学" class="headerlink" title="统计学"></a>统计学</h1><h2 id="均值"><a href="#均值" class="headerlink" title="均值"></a>均值</h2><script type="math/tex; mode=display">\bar{x}=\frac{\sum_{n=1}^Nx_n}{N}</script><h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><ol><li>离散型<script type="math/tex; mode=display">{E(X)=\sum_{k=1}^\infty {x_k}{p_k}}</script></li><li>连续型<script type="math/tex; mode=display">E(X)=\int_{-\infty}^\infty xf(x)dx</script></li></ol><h2 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h2><ol><li>离散型<script type="math/tex; mode=display">{D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}}</script><center>或</center><script type="math/tex; mode=display">s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1}</script></li><li>连续型<script type="math/tex; mode=display">{D(X)=\int_{-\infty}^\infty[x-E(X)]^2f(x)dx}</script><script type="math/tex">f(x)</script>为连续性随机变量X的概率密度函数</li></ol><h2 id="标准差"><a href="#标准差" class="headerlink" title="标准差"></a>标准差</h2><script type="math/tex; mode=display">s=\sqrt{\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1}}</script><h2 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h2><script type="math/tex; mode=display">{Cov(X,Y)=E\{[X-E(X)][Y-E(Y)]\}}\\=E[XY]-E[X]E[Y]</script><h2 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h2><script type="math/tex; mode=display">{\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}}</script><h1 id="资料来源"><a href="#资料来源" class="headerlink" title="资料来源"></a>资料来源</h1><p>百度百科<br><a href="https://baike.baidu.com/item/%E6%96%B9%E5%B7%AE/3108412?fr=aladdin">方差</a><br><a href="https://baike.baidu.com/item/%E6%A0%87%E5%87%86%E5%B7%AE/1415772?fr=aladdin">标准差</a><br><a href="https://baike.baidu.com/item/%E5%B9%B3%E5%9D%87%E6%95%B0/11031224?fromtitle=%E5%9D%87%E5%80%BC&amp;fromid=5922988">平均数</a><br><a href="https://baike.baidu.com/item/%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B/5362790?fromtitle=%E6%9C%9F%E6%9C%9B&amp;fromid=10318906&amp;fr=aladdin">数学期望</a></p><p>CSDN<br><a href="https://blog.csdn.net/qq_25051779/article/details/51914534">方差与协方差</a><br><a href="https://blog.csdn.net/sinat_25873421/article/details/80469530">统计学理论基础 方差 &amp; 协方差 &amp; 标准差</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;统计学&quot;&gt;&lt;a href=&quot;#统计学&quot; class=&quot;headerlink&quot; title=&quot;统计学&quot;&gt;&lt;/a&gt;统计学&lt;/h1&gt;&lt;h2 id=&quot;均值&quot;&gt;&lt;a href=&quot;#均值&quot; class=&quot;headerlink&quot; title=&quot;均值&quot;&gt;&lt;/a&gt;均值&lt;/h2&gt;&lt;s</summary>
+      
+    
+    
+    
+    <category term="数学" scheme="https://jameshoi.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>真正的完美解决centos7.5的图形界面中文乱码的方法</title>
+    <link href="https://jameshoi.github.io/2019/04/10/pane-fixer/"/>
+    <id>https://jameshoi.github.io/2019/04/10/pane-fixer/</id>
+    <published>2019-04-09T16:00:00.000Z</published>
+    <updated>2020-10-06T13:30:53.608Z</updated>
+    
+    <content type="html"><![CDATA[<p>网上看了很多很多的办法，就是搞不定乱码的情况。本文目的是希望后人能够迅速解决这个问题，此方法在Centos 7.5亲测有效。</p><p>一键解决：<a href="https://github.com/JamesHoi/pane-fixer-centos">https://github.com/JamesHoi/pane-fixer-centos</a> （下面的都可以忽略了）</p><p>参考  <a href="https://www.linuxidc.com/Linux/2013-01/77362.htm">https://www.linuxidc.com/Linux/2013-01/77362.htm</a> , 安装语言包<br><code>yum -y install fonts-chinese</code><br><code>yum -y install fonts-ISO8859-2</code><br>但是却显示错误<code>No package fonts-chinese available.</code>，找不到安装包</p><p>经过一番寻找，找到了相应需要的<code>fonts-chinese-3.02-12.el5.noarch.rpm</code>和<code>fonts-ISO8859-2-75dpi-1.0-17.1.noarch.rpm</code>（请<a href="https://github.com/JamesHoi/pane-fixer-centos">前往</a>下载），显示错误缺乏依赖包<code>chkfontpath</code><br>查询<a href="https://altlinux.pkgs.org/sisyphus/classic-x86_64/chkfontpath-2.0.3-alt1.x86_64.rpm.html">chkfontpath官网</a>，<a href="http://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/x86_64/RPMS.classic//chkfontpath-2.0.3-alt1.x86_64.rpm">下载</a><code>wget http://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/x86_64/RPMS.classic//chkfontpath-2.0.3-alt1.x86_64.rpm</code></p><p>最后安装<br><code>yum install chkfontpath-2.0.3-alt1.x86_64.rpm</code><br><code>yum install fonts-ISO8859-2-75dpi-1.0-17.1.noarch.rpm</code><br><code>yum install fonts-chinese-3.02-12.el5.noarch.rpm</code></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;网上看了很多很多的办法，就是搞不定乱码的情况。本文目的是希望后人能够迅速解决这个问题，此方法在Centos 7.5亲测有效。&lt;/p&gt;
+&lt;p&gt;一键解决：&lt;a href=&quot;https://github.com/JamesHoi/pane-fixer-centos&quot;&gt;https:</summary>
+      
+    
+    
+    
+    <category term="杂项" scheme="https://jameshoi.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+    <category term="Linux" scheme="https://jameshoi.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+</feed>
