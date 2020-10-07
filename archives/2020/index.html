@@ -357,13 +357,11 @@
     <article class="index-post">
         <a class="abstract-title" href = "/2020/10/06/js-reverse/" >
             
-                <span>Js逆向 - 某网课平台的逆向插件</span>
+                <span>Js逆向 - 某网课平台的破解插件</span>
         </a>
         <div class="abstract-content">
-            前言网课
-准备工作reres
-开始分析分析过程
-总结
+            前言由于网课平台的课程的视频，鼠标移出画面视频便暂停，再加上不能快进的原因，就有了写一个破解的浏览器插件的想法。
+准备工作之前做过网页的破解，原理是将网站的js重定向为插件的js，从而做到破解的效果。在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://xxxxxxxxx.com/ananas/videojs-ext/videojs-ext.min.js&quot;,     /...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -679,7 +677,7 @@ Markdown Command Assist
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/06</span><a class="archive-post-title" href= "/2020/10/06/js-reverse/" >Js逆向 - 某网课平台的逆向插件</a>
+            <span class="archive-post-date">10/06</span><a class="archive-post-title" href= "/2020/10/06/js-reverse/" >Js逆向 - 某网课平台的破解插件</a>
         </li>
     
     
@@ -829,7 +827,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 
