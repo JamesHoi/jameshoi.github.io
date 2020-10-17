@@ -6,7 +6,7 @@
   <link href="https://jameshoi.github.io/atom.xml" rel="self"/>
   
   <link href="https://jameshoi.github.io/"/>
-  <updated>2020-10-07T06:16:55.533Z</updated>
+  <updated>2020-10-17T12:36:30.457Z</updated>
   <id>https://jameshoi.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TSCTF-J 2020</title>
+    <link href="https://jameshoi.github.io/2020/10/17/tsctf-j-2020/"/>
+    <id>https://jameshoi.github.io/2020/10/17/tsctf-j-2020/</id>
+    <published>2020-10-16T16:00:00.000Z</published>
+    <updated>2020-10-17T12:36:30.457Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>第一次参加CTF比赛，感觉自己好菜。<br>（以后一定要记得每次做完就写wp… 不然最后一天很难受）<br><a href="https://tsctf-j.buptmerak.cn/">TSCTF-J比赛网址</a></p><h1 id="EasyXor"><a href="#EasyXor" class="headerlink" title="EasyXor"></a>EasyXor</h1><p>这题没啥说的，标准的异或出flag<br><img src="EasyXor" alt="https://imgchr.com/i/0OSJyV"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">enflag = [<span class="number">62</span>,<span class="number">58</span>,<span class="number">41</span>,<span class="number">57</span>,<span class="number">44</span>,<span class="number">84</span>,<span class="number">54</span>,<span class="number">28</span>,<span class="number">58</span>,<span class="number">99</span>,<span class="number">34</span>,<span class="number">60</span>,<span class="number">98</span>,<span class="number">9</span>,<span class="number">20</span>,<span class="number">56</span>,<span class="number">78</span>,<span class="number">31</span>,<span class="number">32</span>,<span class="number">52</span>,<span class="number">74</span>,<span class="number">13</span>,<span class="number">27</span>,<span class="number">48</span>,<span class="number">37</span>,<span class="number">36</span>,<span class="number">29</span>,<span class="number">97</span>,<span class="number">101</span>]</span><br><span class="line">decode = <span class="string">&quot;abcdefghijklmnopqrstuvwxyz!!!&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(enflag)):</span><br><span class="line">    print(chr((enflag[i]<span class="number">-9</span>)^ord(decode[i])),end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure></p><h1 id=""><a href="#" class="headerlink" title=" "></a> </h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;第一次参加CTF比赛，感觉自己好菜。&lt;br&gt;（以后一定要记得每次做完就写wp… 不然最后一天很难受）&lt;br&gt;&lt;a href=&quot;https:/</summary>
+      
+    
+    
+    
+    <category term="CTF" scheme="https://jameshoi.github.io/categories/CTF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Js逆向 - 某网课平台的破解插件</title>
