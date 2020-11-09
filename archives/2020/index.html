@@ -355,32 +355,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/11/02/school-hexo/" >
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            如何从零开始搭建属于你自己的博客前言博客和写笔记是同一个概念：将你自己的所思所想图文并茂地记录下来。这不仅能锻炼自身的写作水平，也能让将来的自己了解当初自己的想法，且对某些事情做一个总结。
-基本原理本文用的是Github建立博客，没注册Github的先注册一个  https://github.comGithubPage官网 https://pages.github.com/最后做出来的效果(我的博客) https://jameshoi.github.io/
-准备环境
-安装node.js从官网下载相应版本的安装文件，进行安装即可。下载地址： https://nodejs.org/在命令提示...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/02</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2020/10/17/tsctf-j-2020/" >
             
                 <span>TSCTF-J 2020</span>
@@ -429,15 +403,21 @@ EasyXor这题没啥说的，标准的异或出flag12345enflag = [62,58,41,57,44,
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/22/reversi/" >
+        <a class="abstract-title" href = "/2020/03/22/open163-downloader/" >
             
-                <span>黑白棋对战</span>
+                <span>网易公开课下载器，支持多线程，可分别下载视频及字幕</span>
         </a>
         <div class="abstract-content">
-            前言这个爬虫是19年写的，当时正在学习爬虫
-原理定位棋盘html id后模拟鼠标点击，点击后等待电脑。定位棋子数id，然后显示在软件中
-源码地址Github源码
+            前言 网上一直都找不到网易公开课的下载工具。哎，那不如自己写一个。 我这个工具只能提取易公开课的视频，不能提取网易云课堂
 
+实现了多线程功能
+实现了提取字幕功能
+实现了选择画质功能
+实现了下载已合成字幕视频功能
+添加了分集下载功能
+
+原理提取网站内容在浏览器内的开发者工具的Console内输入__NUXT__.state.movie.moiveList可获取影片列表
+index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state.movie.moiveList[index].title视频名称__NUXT__.state.movi...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -461,21 +441,15 @@ EasyXor这题没啥说的，标准的异或出flag12345enflag = [62,58,41,57,44,
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/22/open163-downloader/" >
+        <a class="abstract-title" href = "/2020/03/22/reversi/" >
             
-                <span>网易公开课下载器，支持多线程，可分别下载视频及字幕</span>
+                <span>黑白棋对战</span>
         </a>
         <div class="abstract-content">
-            前言 网上一直都找不到网易公开课的下载工具。哎，那不如自己写一个。 我这个工具只能提取易公开课的视频，不能提取网易云课堂
+            前言这个爬虫是19年写的，当时正在学习爬虫
+原理定位棋盘html id后模拟鼠标点击，点击后等待电脑。定位棋子数id，然后显示在软件中
+源码地址Github源码
 
-实现了多线程功能
-实现了提取字幕功能
-实现了选择画质功能
-实现了下载已合成字幕视频功能
-添加了分集下载功能
-
-原理提取网站内容在浏览器内的开发者工具的Console内输入__NUXT__.state.movie.moiveList可获取影片列表
-index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state.movie.moiveList[index].title视频名称__NUXT__.state.movi...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -718,18 +692,9 @@ Markdown Command Assist
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 9
+        Total : 8
         </div>
         <!-- search  -->
         
@@ -759,12 +724,12 @@ Markdown Command Assist
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >黑白棋对战</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >黑白棋对战</a>
         </li>
     
     
@@ -796,28 +761,14 @@ Markdown Command Assist
             <span class="archive-post-date">04/10</span><a class="archive-post-title" href= "/2019/04/10/pane-fixer/" >真正的完美解决centos7.5的图形界面中文乱码的方法</a>
         </li>
     
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/11/02/school-hexo/" >[Untitled Post]</a>
-        </li>
-    
     </div>
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
@@ -854,15 +805,15 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="爬虫"><span class="iconfont-archer">&#xe60a;</span>爬虫</span>
+    
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
     
-        <span class="sidebar-category-name" data-categories="爬虫"><span class="iconfont-archer">&#xe60a;</span>爬虫</span>
+        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
     
         <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
     
         <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
-    
-        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
