@@ -357,10 +357,10 @@
     <article class="index-post">
         <a class="abstract-title" href = "/2021/01/09/misc-ctf/" >
             
-                <span>各种CTF题目大杂烩</span>
+                <span>各种CTF逆向题目大杂烩</span>
         </a>
         <div class="abstract-content">
-            某乱七八糟选拔赛 main拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png原题文件
+            某乱七八糟选拔赛 main拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png题目文件
 解题脚本用linux g++编译后运行123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &lt;iostream&gt;#inclu...
         </div>
         <div class="abstract-post-meta">
@@ -385,7 +385,7 @@
         </a>
         <div class="abstract-content">
             前言第一次参加CTF比赛，感觉自己好菜（我就学了一个月而已…菜也正常）。（以后一定要记得每次做完就写wp… 不然最后一天很难受）TSCTF-J比赛网址
-EasyXor这题没啥说的，标准的异或出flag12345enflag = [62,58,41,57,44,84,54,28,58,99,34,60,98,9,20,56,78,31,32,52,74,13,27,48,37,36,29,97,101]decode = &quot;abcdefghijklmnopqrstuvwxyz!!!&quot;for i in range(len(enflag)):    print(chr((en...
+EasyXor题目文件这题没啥说的，标准的异或出flag12345enflag = [62,58,41,57,44,84,54,28,58,99,34,60,98,9,20,56,78,31,32,52,74,13,27,48,37,36,29,97,101]decode = &quot;abcdefghijklmnopqrstuvwxyz!!!&quot;for i in range(len(enflag)):    print(chr...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -405,7 +405,7 @@ EasyXor这题没啥说的，标准的异或出flag12345enflag = [62,58,41,57,44,
     <article class="index-post">
         <a class="abstract-title" href = "/2020/10/06/js-reverse/" >
             
-                <span>Js逆向 - 某网课平台的破解插件</span>
+                <span>Js逆向</span>
         </a>
         <div class="abstract-content">
             前言由于网课平台的课程的视频，鼠标移出画面视频便暂停，再加上不能快进的原因，就有了写一个破解的浏览器插件的想法。
@@ -838,7 +838,7 @@ Markdown Command Assist
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/09</span><a class="archive-post-title" href= "/2021/01/09/misc-ctf/" >各种CTF题目大杂烩</a>
+            <span class="archive-post-date">01/09</span><a class="archive-post-title" href= "/2021/01/09/misc-ctf/" >各种CTF逆向题目大杂烩</a>
         </li>
     
     
@@ -857,7 +857,7 @@ Markdown Command Assist
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/06</span><a class="archive-post-title" href= "/2020/10/06/js-reverse/" >Js逆向 - 某网课平台的破解插件</a>
+            <span class="archive-post-date">10/06</span><a class="archive-post-title" href= "/2020/10/06/js-reverse/" >Js逆向</a>
         </li>
     
     
@@ -904,9 +904,9 @@ Markdown Command Assist
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
@@ -943,11 +943,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
-    
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
     
         <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+    
+        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
     
         <span class="sidebar-category-name" data-categories="爬虫"><span class="iconfont-archer">&#xe60a;</span>爬虫</span>
     
@@ -1009,7 +1009,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 
