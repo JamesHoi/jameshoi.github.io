@@ -6,7 +6,7 @@
   <link href="https://jameshoi.github.io/atom.xml" rel="self"/>
   
   <link href="https://jameshoi.github.io/"/>
-  <updated>2021-01-09T11:20:24.976Z</updated>
+  <updated>2021-01-10T16:00:12.576Z</updated>
   <id>https://jameshoi.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Js逆向</title>
+    <link href="https://jameshoi.github.io/2021/01/10/js-reverse/"/>
+    <id>https://jameshoi.github.io/2021/01/10/js-reverse/</id>
+    <published>2021-01-09T16:00:00.000Z</published>
+    <updated>2021-01-10T16:00:12.576Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="前言-1"><a href="#前言-1" class="headerlink" title="前言"></a>前言</h1><p>由于网课平台的课程的视频，鼠标移出画面视频便暂停，再加上不能快进的原因，就有了写一个破解的浏览器插件的想法。</p><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>之前做过网页的破解，原理是将网站的js重定向为插件的js，从而做到破解的效果。<br>在网上找到了<a href="https://chrome.google.com/webstore/detail/reres/gieocpkbblidnocefjakldecahgeeica?hl=zh-CN">Reres</a>这个插件，将插件代码提取出来，新建一个重定向列表的文件<code>url_setting.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ReResMap = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 网站的js路径</span></span><br><span class="line">    <span class="string">&quot;req&quot;</span>: <span class="string">&quot;https://xxxxxxxxx.com/ananas/videojs-ext/videojs-ext.min.js&quot;</span>, </span><br><span class="line">    <span class="comment">// 修改后的js路径，存储在插件里面</span></span><br><span class="line">    <span class="string">&quot;res&quot;</span>: <span class="string">&quot;chrome-extension://&quot;</span>+chrome.runtime.id+<span class="string">&quot;/js/videojs-ext.min.js&quot;</span>,</span><br><span class="line">  &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure><br>更多关于浏览器插件的功能可以参考这个文章：<a href="https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html">【干货】Chrome插件(扩展)开发全攻略</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h1 id=&quot;前言-1&quot;&gt;&lt;a href=&quot;#前言-1&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p</summary>
+      
+    
+    
+    
+    <category term="逆向" scheme="https://jameshoi.github.io/categories/%E9%80%86%E5%90%91/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>各种CTF逆向题目大杂烩</title>
@@ -56,29 +78,6 @@
     
     
     <category term="CTF" scheme="https://jameshoi.github.io/categories/CTF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Js逆向</title>
-    <link href="https://jameshoi.github.io/2020/10/06/js-reverse/"/>
-    <id>https://jameshoi.github.io/2020/10/06/js-reverse/</id>
-    <published>2020-10-05T16:00:00.000Z</published>
-    <updated>2021-01-09T10:43:24.854Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于网课平台的课程的视频，鼠标移出画面视频便暂停，再加上不能快进的原因，就有了写一个破解的浏览器插件的想法。</p><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>之前做过网页的破解，原理是将网站的js重定向为插件的js，从而做到破解的效果。<br>在网上找到了<a href="https://chrome.google.com/webstore/detail/reres/gieocpkbblidnocefjakldecahgeeica?hl=zh-CN">Reres</a>这个插件，将插件代码提取出来，新建一个重定向列表的文件<code>url_setting.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ReResMap = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 网站的js路径</span></span><br><span class="line">    <span class="string">&quot;req&quot;</span>: <span class="string">&quot;https://xxxxxxxxx.com/ananas/videojs-ext/videojs-ext.min.js&quot;</span>, </span><br><span class="line">    <span class="comment">// 修改后的js路径，存储在插件里面</span></span><br><span class="line">    <span class="string">&quot;res&quot;</span>: <span class="string">&quot;chrome-extension://&quot;</span>+chrome.runtime.id+<span class="string">&quot;/js/videojs-ext.min.js&quot;</span>,</span><br><span class="line">  &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure><br>更多关于浏览器插件的功能可以参考这个文章：<a href="https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html">【干货】Chrome插件(扩展)开发全攻略</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;由于网课平台的课程的视频，鼠标移出画面视频便暂停，再加上不能快进的原因，就有了写一个破解的浏览器插件的想法。&lt;/p&gt;
-&lt;h1 id=&quot;准备工</summary>
-      
-    
-    
-    
-    <category term="逆向" scheme="https://jameshoi.github.io/categories/%E9%80%86%E5%90%91/"/>
     
     
   </entry>
