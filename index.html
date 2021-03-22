@@ -397,7 +397,8 @@ height:60vh;
         </a>
         <div class="abstract-content">
             前言之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用
-原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;r...
+原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js
+12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -421,7 +422,8 @@ height:60vh;
         </a>
         <div class="abstract-content">
             某乱七八糟选拔赛 main拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png题目文件
-解题脚本用linux g++编译后运行123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &lt;iostream&gt;#inclu...
+解题脚本用linux g++编译后运行
+123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &lt;iostream&gt;#incl...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -445,7 +447,8 @@ height:60vh;
         </a>
         <div class="abstract-content">
             前言第一次参加CTF比赛，感觉自己好菜（我就学了一个月而已…菜也正常）。（以后一定要记得每次做完就写wp… 不然最后一天很难受）TSCTF-J比赛网址
-EasyXor题目文件这题没啥说的，标准的异或出flag12345enflag = [62,58,41,57,44,84,54,28,58,99,34,60,98,9,20,56,78,31,32,52,74,13,27,48,37,36,29,97,101]decode = &quot;abcdefghijklmnopqrstuvwxyz!!!&quot;for i in range(len(enflag)):    print(chr...
+EasyXor[题目文件](https://jameshoi.github.io/files/TSCTF-J 2020/easyXor.exe)这题没啥说的，标准的异或出flag
+12345enflag = [62,58,41,57,44,84,54,28,58,99,34,60,98,9,20,56,78,31,32,52,74,13,27,48,37,36,29,97,101]decode = &quot;abcdefghijklmn...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -543,11 +546,9 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
 安装插件首先推荐的是Markdown Preview Enhanced插件，安装完后可以浏览Markdown
 
 Markdown Preview Enhanced
-
+ 
 另外一个推荐的是Markdown Command Assist，安装后在编辑md的时候右键可以一键添加Markdown格式 
-Markdown Command Assist
-
-快速上传文章当你已经完全成功配置了hexo，可...
+![Markdown Command Assist](https://s1.ax1x.com/...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -580,8 +581,7 @@ Markdown Command Assist
 
 实现原理其实原理不难，用了instsrv.exe和srvany.exe实现下载链接
 注册服务方法一：在命令行输入sc create [服务名称] binpath=[srvany.exe路径]/srvany.exe方法二：在命令行输入[instsrv.exe路径]/instsrv.exe [服务名称] binpath=[srvany.exe路径]/srvany.exe
-若显示[SC] CreateService 失败 1783:占位程序接收到错误数据。
-则一般的解决方法是关...
+若显示[SC] CreateService 失败 1783:占位程序接收到错误数据。则一般的解决方法是关闭...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -604,15 +604,15 @@ Markdown Command Assist
                 <span>统计学公式</span>
         </a>
         <div class="abstract-content">
-            统计学均值\bar{x}=\frac{\sum_{n=1}^Nx_n}{N}期望
-离散型{E(X)=\sum_{k=1}^\infty {x_k}{p_k}}
-连续型E(X)=\int_{-\infty}^\infty xf(x)dx
+            统计学均值$$ \bar{x}=\frac{\sum_{n=1}^Nx_n}{N} $$
+期望
+离散型$$ {E(X)=\sum_{k=1}^\infty {x_k}{p_k}} $$
+连续型$$ E(X)=\int_{-\infty}^\infty xf(x)dx $$
 
 方差
-离散型{D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}}或s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1}
-连续型{D(X)=\int_{-\infty}^\infty[x-E(X)]^2f(x)dx}f(x)为连续性随机变量X的概率密度函数
-
-标准差s=\sqrt{\fra...
+离散型$$ {D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}} $$或
+$$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
+连续型$$ {D(X)=\int_{-\infty}^\infty[x-E(X)]^2f(x)dx} $...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
