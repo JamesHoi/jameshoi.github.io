@@ -20,13 +20,22 @@
     <meta name="keywords" content="James Hoi's Blog,James Hoi">
     
     <meta name="description" content="">
-    <meta property="og:type" content="website">
+    <meta name="description" content="更新内容之前博客原本是用selenium爬虫爬取数据的，但效率实在不高，现在换成直接用requests解析json 原理例如视频页面链接为https:&#x2F;&#x2F;open.163.com&#x2F;newview&#x2F;movie&#x2F;free?pid&#x3D;MFHCKB983&amp;mid&#x3D;MFHCLTO23 ，则其对应的视频数据为https:&#x2F;&#x2F;c.open.163.com&#x2F;open&#x2F;mob&#x2F;movie&#x2F;list.do?pl">
+<meta property="og:type" content="article">
 <meta property="og:title" content="James Hoi&#39;s Blog">
-<meta property="og:url" content="https://jameshoi.github.io/archives/2019/06/index.html">
+<meta property="og:url" content="https://jameshoi.github.io/2021/03/22/open163-new/index.html">
 <meta property="og:site_name" content="James Hoi&#39;s Blog">
+<meta property="og:description" content="更新内容之前博客原本是用selenium爬虫爬取数据的，但效率实在不高，现在换成直接用requests解析json 原理例如视频页面链接为https:&#x2F;&#x2F;open.163.com&#x2F;newview&#x2F;movie&#x2F;free?pid&#x3D;MFHCKB983&amp;mid&#x3D;MFHCLTO23 ，则其对应的视频数据为https:&#x2F;&#x2F;c.open.163.com&#x2F;open&#x2F;mob&#x2F;movie&#x2F;list.do?pl">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jameshoi.github.io/">
+<meta property="og:image" content="https://jameshoi.github.io/">
+<meta property="og:image" content="https://jameshoi.github.io/">
+<meta property="og:image" content="https://jameshoi.github.io/">
+<meta property="article:published_time" content="2021-03-22T15:10:01.889Z">
+<meta property="article:modified_time" content="2021-03-22T15:10:20.970Z">
 <meta property="article:author" content="James Hoi">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jameshoi.github.io/">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
@@ -212,12 +221,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >James Hoi&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name"></a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>James Hoi's Blog.</a>
 </header>
@@ -229,24 +249,68 @@
 
 
 
+
+height:60vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            [Untitled Post]
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">269</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/03/22</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -347,37 +411,85 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/06/17/baidupcs/" >
-            
-                <span>将BaiduPCS-Web添加进系统服务，可开机自启</span>
-        </a>
-        <div class="abstract-content">
-            前言BaiduPCS-Web并非本人开发，软件只是将其添加进系统服务而已BaiduPCS-Web Github项目
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><p><a href="https://jameshoi.github.io/2020/03/22/open163-downloader/">之前博客</a><br>原本是用selenium爬虫爬取数据的，但效率实在不高，现在换成直接用requests解析json</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>例如视频页面链接为<a target="_blank" rel="noopener" href="https://open.163.com/newview/movie/free?pid=MFHCKB983&amp;mid=MFHCLTO23">https://open.163.com/newview/movie/free?pid=MFHCKB983&amp;mid=MFHCLTO23</a> ，则其对应的视频数据为<a target="_blank" rel="noopener" href="https://c.open.163.com/open/mob/movie/list.do?plid=MFHCKB983">https://c.open.163.com/open/mob/movie/list.do?plid=MFHCKB983</a> ，即 将视频链接的pid参数填入到list.do?plid=里<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/6ev1T1"><img src="/" alt="6ev1T1.png"></a></p>
+<h1 id="软件功能"><a href="#软件功能" class="headerlink" title="软件功能"></a>软件功能</h1><ol>
+<li>可选择多少个视频同时下载（线程个数）</li>
+<li>可选择字幕和影片是否分开</li>
+<li>可选择视频画质（如果原视频可以选择）</li>
+<li>可分集下载，用逗号隔开<br>例如一共有11集，不需要下载第2集和第6集，填1,3-5,7-11<br>下载全部填all，下载当前视频填current<br>若填写课程链接默认下载全部，视频链接默认下载当前视频  </li>
+</ol>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><a target="_blank" rel="noopener" href="https://github.com/JamesHoi/Open163-Downloader/releases">Github发布页</a><br><a target="_blank" rel="noopener" href="https://share.weiyun.com/oYfwIX8F">微云下载</a></p>
+<h1 id="软件使用教程"><a href="#软件使用教程" class="headerlink" title="软件使用教程"></a>软件使用教程</h1><p>输入视频页面链接，范例：<a target="_blank" rel="noopener" href="https://open.163.com/newview/movie/free?pid=MA32VG4SA&amp;mid=MA35IIC76">https://open.163.com/newview/movie/free?pid=MA32VG4SA&amp;mid=MA35IIC76</a><br><img src="/" alt="image"></p>
+<p>视频页面<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/6eOfmR"><img src="/" alt="6eOfmR.png"></a></p>
+<p>目前测试可达到满速<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/6eOJfS"><img src="/" alt="6eOJfS.png"></a></p>
 
-实现原理其实原理不难，用了instsrv.exe和srvany.exe实现下载链接
-注册服务方法一：在命令行输入sc create [服务名称] binpath=[srvany.exe路径]/srvany.exe方法二：在命令行输入[instsrv.exe路径]/instsrv.exe [服务名称] binpath=[srvany.exe路径]/srvany.exe
-若显示[SC] CreateService 失败 1783:占位程序接收到错误数据。则一般的解决方法是关闭...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://jameshoi.github.io">James Hoi</a>
+            <p>原文链接：<a href="https://jameshoi.github.io/2021/03/22/open163-new/">https://jameshoi.github.io/2021/03/22/open163-new/</a>
+            <p>发表日期：<a href="https://jameshoi.github.io/2021/03/22/open163-new/">March 22nd 2021, 11:10:01 pm</a>
+            <p>更新日期：<a href="https://jameshoi.github.io/2021/03/22/open163-new/">March 22nd 2021, 11:10:20 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/03/22/mcu/" title= "用单片机运行HelloWorld">
+                    <div class="prevTitle">用单片机运行HelloWorld</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "https://jameshoi.github.io/2021/03/22/open163-new/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = ""; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://jameshoi.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -470,6 +582,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:60vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">更新内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%8A%9F%E8%83%BD"><span class="toc-number">2.</span> <span class="toc-text">软件功能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">3.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">软件使用教程</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -909,6 +1039,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({

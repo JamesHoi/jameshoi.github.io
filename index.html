@@ -366,6 +366,34 @@ height:60vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/22/open163-new/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            更新内容之前博客原本是用selenium爬虫爬取数据的，但效率实在不高，现在换成直接用requests解析json
+原理例如视频页面链接为https://open.163.com/newview/movie/free?pid=MFHCKB983&amp;mid=MFHCLTO23 ，则其对应的视频数据为https://c.open.163.com/open/mob/movie/list.do?plid=MFHCKB983 ，即 将视频链接的pid参数填入到list.do?plid=里
+软件功能
+可选择多少个视频同时下载（线程个数）
+可选择字幕和影片是否分开
+可选择视频画质（如果原视频可以...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/22/mcu/" >
             
                 <span>用单片机运行HelloWorld</span>
@@ -446,7 +474,8 @@ pyre123456789101112131415161718code = [&#x27;\x1f&#x27;, &#x27;\x12&#x27;, &#x27
             
 前言有些题目之前就做完了，我不想再写WP了（手动滑稽保命）
 
-666ida放进去发现是普通的异或，直接秒123456789101112enflag = &quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;key = 0x12enflag = [ord(i) for i in enflag]flag = []for i in range(6):    flag.append(chr((enflag[3*i]^key)-6))    flag.append(chr((enflag[3*i+1]^key)+6))    flag.app...
+666ida放进去发现是普通的异或，直接秒
+123456789101112enflag = &quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;key = 0x12enflag = [ord(i) for i in enflag]flag = []for i in range(6):    flag.append(chr((enflag[3*i]^key)-6))    flag.append(chr((enflag[3*i+1]^key)+6))    flag.ap...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -523,7 +552,8 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
             
 某乱七八糟选拔赛 main2101075ff6b9adc84f9.zip拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png
 
-解题脚本用linux g++编译后运行123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &...
+解题脚本用linux g++编译后运行
+123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -547,9 +577,12 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
         </a>
         <div class="abstract-content">
             
-re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
+re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag
+1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
 
-re2re2.rar扔进Exeinfo PE，32...
+
+
+re2re2.rar扔进Exeinfo PE...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -573,7 +606,8 @@ re2re2.rar扔进Exeinfo PE，32...
         </a>
         <div class="abstract-content">
             前言之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用
-原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;r...
+原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js
+12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -581,44 +615,6 @@ re2re2.rar扔进Exeinfo PE，32...
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/10</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/22/open163-downloader/" >
-            
-                <span>网易公开课下载器，支持多线程，可分别下载视频及字幕</span>
-        </a>
-        <div class="abstract-content">
-            前言 网上一直都找不到网易公开课的下载工具。哎，那不如自己写一个。 我这个工具只能提取易公开课的视频，不能提取网易云课堂
-
-实现了多线程功能
-实现了提取字幕功能
-实现了选择画质功能
-实现了下载已合成字幕视频功能
-添加了分集下载功能
-
-原理提取网站内容在浏览器内的开发者工具的Console内输入__NUXT__.state.movie.moiveList可获取影片列表
-index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state.movie.moiveList[index].title视频名称__NUXT__.state.movi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
-    
-</div>
             
         </div>
     </article>
@@ -1022,9 +1018,22 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 15
+        Total : 16
         </div>
         <!-- search  -->
         
@@ -1107,11 +1116,6 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/windows-hexo/" >Windows系统下使用Github进行Hexo博客建站</a>
-        </li>
-    
-    
     
     
     
@@ -1124,6 +1128,43 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
         <li class="archive-post-item">
             <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
         </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/03/22/open163-new/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/windows-hexo/" >Windows系统下使用Github进行Hexo博客建站</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
