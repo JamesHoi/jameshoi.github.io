@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <link rel="apple-touch-icon" href="https://gw.alipayobjects.com/mdn/prod_resou/afts/img/A*CUIoT4xopNYAAAAAAAAAAABkARQnAQ" />
+    <meta http-equiv="X-UA-Compatible" content="edge">
+    
+    <meta name="pagetype" content="new_session">
+    <meta name="pagename" content="new_session">
+    <meta name="description" content="十万阿里人都在用的笔记与文档知识库，面向企业、组织或个人，提供全新的体系化知识管理，打造轻松流畅的工作协同。金融级数据安全、丰富的应用场景、强大的知识创作与管理，助力企业、个人轻松拥有云端知识库">
+    <meta property="og:type" content="webpage">
+    <meta property="og:url" content="https://www.yuque.com/login?goto=https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2021%2Frar%2F2738284%2F1612107494520-b36dddf6-9b61-4a7c-9163-4bcda2aadf3e.rar%3F_lake_card%3D%257B%2522status%2522%253A%2522done%2522%252C%2522source%2522%253A%2522transfer%2522%252C%2522src%2522%253A%2522https%253A%252F%252Fwww.yuque.com%252Fattachments%252Fyuque%252F0%252F2021%252Frar%252F2738284%252F1612107494520-b36dddf6-9b61-4a7c-9163-4bcda2aadf3e.rar%2522%252C%2522name%2522%253A%2522PaintUpx_crack.rar%2522%252C%2522ext%2522%253A%2522rar%2522%252C%2522size%2522%253A34381%252C%2522id%2522%253A%2522WM3lo%2522%252C%2522card%2522%253A%2522file%2522%257D">
+    <meta property="og:title" content="登录 · 语雀">
+    <meta property="og:description" content="十万阿里人都在用的笔记与文档知识库，面向企业、组织或个人，提供全新的体系化知识管理，打造轻松流畅的工作协同。金融级数据安全、丰富的应用场景、强大的知识创作与管理，助力企业、个人轻松拥有云端知识库">
+    <meta property="og:image" content="https://gw.alipayobjects.com/mdn/prod_resource/afts/img/A*KnODQ5KXlh4AAAAAAAAAAABjAQAAAQ/original">
+    <title>登录 · 语雀</title>
+    <link type="image/png" href="https://gw.alipayobjects.com/zos/rmsportal/UTjFYEzMSYVwzxIGVhMu.png" rel="shortcut icon" />
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="语雀" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme_color" content="#05192D" />
+    
+      <link rel="stylesheet" href="https://gw.alipayobjects.com/os/chair-script/skylark/common.b8088270.chunk.css" />
+    
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/chair-script/skylark/pc.c426c82b.css" />
+    <link href="https://gw.alipayobjects.com" rel="dns-prefetch" />
+<link href="https://mdap.alipay.com" rel="dns-prefetch" />
+<link href="https://cdn.nlark.com" rel="dns-prefetch" />
+<link href="https://cdn.yuque.com" rel="dns-prefetch" />
+<link href="https://kcart.alipay.com" rel="dns-prefetch" />
+<link href="https://cdn-pri.nlark.com" rel="dns-prefetch" />
+<link href="https://g.yuque.com" rel="dns-prefetch" />
+<link href="https://mdap.yuque.com" rel="dns-prefetch" />
+<meta name="baidu-site-verification" content="WGwq1qW6TC" />
+
+    
+    <meta name="renderer" content="webkit">
+    <script>
+  window._macaca_runtime_collector = [];
+  var MaxErrorReportLimit = 100;
+  // 简单的将错误采集上报到 /api/logs/error
+  window.onerror = function(message, source, lineno, colno, error) {
+    // 同一个页面最多上报100次错误，防止某个循环错误页面一直打开，不断的报错
+    if (MaxErrorReportLimit-- < 0) return;
+    try {
+      var data = {
+        message: message,
+        source: source,
+        lineno: lineno,
+        colno: colno,
+        stack: error && error.stack,
+        traceId: window.appData && window.appData.traceId,
+        href: window.location.href,
+      };
+      // Macaca 回归使用
+      window._macaca_runtime_collector.push({
+        type: 'onerror',
+        data: data,
+      });
+      data = JSON.stringify(data);
+      var req = new XMLHttpRequest();
+      req.open('post', '/api/logs/error', true);
+      req.setRequestHeader('Content-Type', 'application/json');
+      req.send(data);
+
+      // yuyanMonitor 记录错误堆栈
+      if (window.yuyanMonitor) {
+        yuyanMonitor.logError(error, {
+          code: 1,
+          msg: message,
+        });
+      }
+    } catch (err) {
+      console.log('report error', err);
+    }
+  };
+  window.addEventListener('unhandledrejection',function(e) {
+    var data = {
+      message: e.reason && e.reason.message,
+      stack: e.reason && e.reason.stack,
+      href: window.location.href,
+      traceId: window.appData && window.appData.traceId,
+    };
+    // Macaca 回归使用
+    window._macaca_runtime_collector.push({
+      type: 'unhandledrejection',
+      data: data,
+    });
+  });
+</script>
+    
+    
+    
+  </head>
+  <body>
+    
+<script>
+(function() {
+  window.appData = JSON.parse(decodeURIComponent("%7B%22me%22%3A%7B%22avatar_url%22%3A%22https%3A%2F%2Fgw.alipayobjects.com%2Fzos%2Frmsportal%2FApEnVmpRbThmwJJukDlb.jpeg%22%2C%22avatar%22%3A%22https%3A%2F%2Fgw.alipayobjects.com%2Fzos%2Frmsportal%2FApEnVmpRbThmwJJukDlb.jpeg%22%2C%22language%22%3A%22zh-cn%22%2C%22is_admin%22%3Afalse%7D%2C%22settings%22%3A%7B%22head_html%22%3A%22%3Clink%20href%3D%5C%22https%3A%2F%2Fgw.alipayobjects.com%5C%22%20rel%3D%5C%22dns-prefetch%5C%22%20%2F%3E%5Cn%3Clink%20href%3D%5C%22https%3A%2F%2Fmdap.alipay.com%5C%22%20rel%3D%5C%22dns-prefetch%5C%22%20%2F%3E%5Cn%3Clink%20href%3D%5C%22https%3A%2F%2Fcdn.nlark.com%5C%22%20rel%3D%5C%22dns-prefetch%5C%22%20%2F%3E%5Cn%3Clink%20href%3D%5C%22https%3A%2F%2Fcdn.yuque.com%5C%22%20rel%3D%5C%22dns-prefetch%5C%22%20%2F%3E%5Cn%3Clink%20href%3D%5C%22https%3A%2F%2Fkcart.alipay.com%5C%22%20rel%3D%5C%22dns-prefetch%5C%22%20%2F%3E%5Cn%3Clink%20href%3D%5C%22https%3A%2F%2Fcdn-pri.nlark.com%5C%22%20rel%3D%5C%22dns-prefetch%5C%22%20%2F%3E%5Cn%3Clink%20href%3D%5C%22https%3A%2F%2Fg.yuque.com%5C%22%20rel%3D%5C%22dns-prefetch%5C%22%20%2F%3E%5Cn%3Clink%20href%3D%5C%22https%3A%2F%2Fmdap.yuque.com%5C%22%20rel%3D%5C%22dns-prefetch%5C%22%20%2F%3E%5Cn%3Cmeta%20name%3D%5C%22baidu-site-verification%5C%22%20content%3D%5C%22WGwq1qW6TC%5C%22%20%2F%3E%5Cn%22%2C%22disable_quan%22%3Atrue%2C%22quan_nav_list_ids%22%3A%5B%5D%2C%22footer_html%22%3A%22%22%2C%22watermark_enable%22%3A%22%22%2C%22home_aside_html%22%3A%22%22%2C%22index_banner_html%22%3A%22%22%2C%22doc_banner_html%22%3A%22%22%2C%22doc_aside_html%22%3A%22%22%2C%22public_space_doc_search_enable%22%3Atrue%2C%22lark_official_labels%22%3A%5B%22dead_horse%22%2C%22fengmk2%22%2C%22yuchun%22%2C%22zenany%22%2C%22caicai%22%2C%22shengding%22%2C%22summ%22%2C%22okoala%22%2C%22bluemaple%22%2C%22rockdai%22%2C%22yubo%22%2C%22shanxian%22%2C%22kaho%22%2C%22bluejuice%22%2C%22dead__horse%22%2C%22jimmydaddy%22%2C%22skylark-fc-worker%22%2C%22u3679%22%2C%22liying%22%2C%22youtian%22%2C%22xudafeng%22%2C%22liumi%22%2C%22yunmen%22%2C%22daoyan%22%2C%22barretlee%22%2C%22pinggod%22%2C%22mingming-olfgp%22%2C%22dogli%22%2C%22shaozj%22%2C%22no18%22%2C%22alpa%22%2C%22nono%22%2C%22zhangzhe%22%2C%22itchina110%22%2C%22qingnan%22%2C%22yuyufei%22%2C%22moshui%22%2C%22yangguoguo%22%2C%22coffeedeveloper%22%2C%22xiaop-ott5j%22%2C%22fangqiangqiang%22%2C%22fangqiao%22%2C%22caizecong%22%2C%22elevenyang%22%2C%22yangxiyue2012%22%2C%22qingwords%22%2C%22sanjia%22%2C%22muxinyue%22%2C%22yuumili%22%2C%22u386132%22%2C%22momingqimiao-ktqid%22%2C%22suwenyuansuki%22%2C%22nihaoces%22%2C%22u505430%22%2C%22huashengjiang-wdmah%22%2C%22danchun-eekrs%22%2C%22u1185433%22%2C%22jiaobaba-wnb0s%22%2C%22u1306852%22%2C%22xuluanjie%22%2C%22wangmitao%22%2C%22changyue-vrpui%22%5D%2C%22lake_enabled_groups%22%3A%22*%22%2C%22image_proxy_root%22%3A%22%22%2C%22miniapp_code_enable%22%3Atrue%2C%22max_import_task_count%22%3A1%2C%22validation_code_need_captcha%22%3Afalse%2C%22vms_code_service_off%22%3Atrue%2C%22enable_member_popup_act%22%3Afalse%2C%22fu_que_entry_enabled_pages%22%3A%5B%5D%2C%22enable_search%22%3Atrue%2C%22enable_serviceworker%22%3Atrue%2C%22enable_lazyload_card%22%3A%22codeblock%22%7D%2C%22env%22%3A%22prod%22%2C%22space%22%3A%7B%22host%22%3A%22https%3A%2F%2Fwww.yuque.com%22%2C%22displayName%22%3A%22%E8%AF%AD%E9%9B%80%22%2C%22logo_url%22%3A%22https%3A%2F%2Fgw.alipayobjects.com%2Fzos%2Fbasement%2Fskylark%2F0abe7b2714792688448236679d347e%2Favatar%2F512.png%22%2C%22small_logo_url%22%3A%22https%3A%2F%2Fgw.alipayobjects.com%2Fzos%2Fbasement%2Fskylark%2F0abe7b2714792688448236679d347e%2Favatar%2F512.png%3Fx-oss-process%3Dimage%2Fresize%2Cm_fill%2Cw_80%2Ch_80%22%2C%22medium_logo_url%22%3A%22https%3A%2F%2Fgw.alipayobjects.com%2Fzos%2Fbasement%2Fskylark%2F0abe7b2714792688448236679d347e%2Favatar%2F512.png%3Fx-oss-process%3Dimage%2Fresize%2Cm_fill%2Cw_160%2Ch_160%22%2C%22large_logo_url%22%3A%22https%3A%2F%2Fgw.alipayobjects.com%2Fzos%2Fbasement%2Fskylark%2F0abe7b2714792688448236679d347e%2Favatar%2F512.png%3Fx-oss-process%3Dimage%2Fresize%2Cm_fill%2Cw_320%2Ch_320%22%2C%22login%22%3A%22%22%2C%22status%22%3A0%2C%22account_id%22%3A0%2C%22enable_password%22%3Atrue%2C%22enable_watermark%22%3Afalse%2C%22id%22%3A0%2C%22name%22%3A%22%E8%AF%AD%E9%9B%80%22%2C%22description%22%3A%22%22%7D%2C%22isYuque%22%3Atrue%2C%22isPublicCloud%22%3Atrue%2C%22isPrivateCloud%22%3Afalse%2C%22supportOnlineViewer%22%3Atrue%2C%22isEnterprise%22%3Afalse%2C%22defaultSpaceHost%22%3A%22https%3A%2F%2Fwww.yuque.com%22%2C%22timestamp%22%3A1616422636897%2C%22traceId%22%3A%22ac122c4016164226368878102116%22%2C%22siteTip%22%3Anull%2C%22siteName%22%3A%22%E8%AF%AD%E9%9B%80%22%2C%22readTip%22%3A%7B%7D%2C%22imageServiceDomains%22%3A%5B%22cdn.yuque.com%22%2C%22cdn.nlark.com%22%2C%22img.shields.io%22%2C%22travis-ci.org%22%2C%22api.travis-ci.org%22%2C%22npm.packagequality.com%22%2C%22snyk.io%22%2C%22coveralls.io%22%2C%22badgen.now.sh%22%2C%22badgen.net%22%2C%22packagephobia.now.sh%22%2C%22duing.alibaba-inc.com%22%2C%22npm.alibaba-inc.com%22%2C%22web.npm.alibaba-inc.com%22%2C%22npmjs.com%22%2C%22npmjs.org%22%2C%22npg.dockerlab.alipay.net%22%2C%22private-alipayobjects.alipay.com%22%2C%22googleusercontent.com%22%2C%22blogspot.com%22%2C%22note.youdao.com%22%2C%22cdn.hk01.com%22%2C%22camo.githubusercontent.com%22%2C%22gw.daily.taobaocdn.net%22%2C%22cdn-images-1.medium.com%22%2C%22medium.com%22%2C%22i.stack.imgur.com%22%2C%22imgur.com%22%2C%22doc.ucweb.local%22%2C%22lh6.googleusercontent.com%22%2C%224.bp.blogspot.com%22%2C%22bp.blogspot.com%22%2C%22blogspot.com%22%2C%221.bp.blogspot.com%22%2C%222.bp.blogspot.com%22%2C%223.bp.blogspot.com%22%2C%22aliwork-files.oss-accelerate.aliyuncs.com%22%2C%22oss-accelerate.aliyuncs.com%22%2C%22work.alibaba.net%22%2C%22work.alibaba-inc.com%22%2C%22work-file.alibaba.net%22%2C%22work-file.alibaba-inc.com%22%2C%22pre-work-file.alibaba-inc.com%22%2C%22yuque.antfin.com%22%2C%22yuque.antfin-inc.com%22%2C%22intranetproxy.alipay.com%22%2C%22lark-assets-prod-aliyun.oss-accelerate.aliyuncs.com%22%2C%22lh1.googleusercontent.com%22%2C%22lh2.googleusercontent.com%22%2C%22lh3.googleusercontent.com%22%2C%22lh4.googleusercontent.com%22%2C%22lh5.googleusercontent.com%22%2C%22lh6.googleusercontent.com%22%2C%22lh7.googleusercontent.com%22%2C%22lh8.googleusercontent.com%22%2C%22lh9.googleusercontent.com%22%2C%22raw.githubusercontent.com%22%2C%22github.com%22%2C%22en.wikipedia.org%22%2C%22rawcdn.githack.com%22%2C%22pre-work-file.alibaba-inc.com%22%2C%22alipay-rmsdeploy-image.cn-hangzhou.alipay.aliyun-inc.com%22%2C%22antsys-align-files-management.cn-hangzhou.alipay.aliyun-inc.com%22%2C%22baiyan-pre.antfin.com%22%2C%22baiyan.antfin.com%22%2C%22baiyan.dev.alipay.net%22%2C%22marketing.aliyun-inc.com%22%2C%22lark-temp.oss-cn-hangzhou.aliyuncs.com%22%2C%22www.yuque.com%22%2C%22yuque.com%22%2C%22cdn.nlark.com%22%5D%2C%22sharePlatforms%22%3A%5B%22wechat%22%2C%22dingtalk%22%5D%2C%22locale%22%3A%22zh-cn%22%2C%22login%22%3A%7B%22loginType%22%3A%22normal%22%2C%22enablePlatforms%22%3A%5B%22dingtalk%22%2C%22alipay%22%2C%22wechat%22%2C%22teambition%22%5D%2C%22isWechatMobileApp%22%3Afalse%2C%22platform%22%3Anull%2C%22oauthURL%22%3A%22https%3A%2F%2Foapi.dingtalk.com%2Fconnect%2Fqrconnect%3Fscope%3Dsnsapi_login%26response_type%3Dcode%26appid%3Ddingoakbgng92btxiwpydr%26redirect_uri%3Dhttps%253A%252F%252Fwww.yuque.com%252Flogin%252Foauth%252Fnull%252Fcallback%26state%3D5222f9fc-916b-4fe4-8526-caca50f7968e%22%2C%22oauthParams%22%3A%7B%22scope%22%3A%22snsapi_login%22%2C%22response_type%22%3A%22code%22%2C%22appid%22%3A%22dingoakbgng92btxiwpydr%22%2C%22redirect_uri%22%3A%22https%3A%2F%2Fwww.yuque.com%2Flogin%2Foauth%2Fnull%2Fcallback%22%2C%22state%22%3A%225222f9fc-916b-4fe4-8526-caca50f7968e%22%7D%7D%2C%22isDesktopInValidVersion%22%3Afalse%2C%22paymentInfo%22%3A%7B%7D%2C%22enable_payment%22%3Afalse%2C%22enable_datasheet%22%3Afalse%2C%22enable_baiyan_work_process%22%3Afalse%2C%22topTip%22%3Anull%2C%22isDesktopApp%22%3Afalse%2C%22isDingTalkMiniApp%22%3Afalse%7D"));
+})();
+</script>
+
+    <div id="ReactApp"></div>
+    <script>
+      performance && performance.mark && performance.mark("start-js-render");
+    </script>
+    <script>
+  // 监听 window.onload 是否执行，用于组件中执行 onload 后续事件
+  window.addEventListener('load', function() {
+    try {
+      // 移动端开启
+      var isMobile = navigator.userAgent.match(/iphone|ipad|android|micromessenger/i);
+      if (isMobile) {
+        var rootNode = document.querySelector('#ReactApp');
+        if (rootNode && !rootNode.innerHTML) {
+          // ready 3s 后节点内容为空，展示友好报错
+          setTimeout(function() {
+            // 插入节点前再次检查是否白屏
+            if (!rootNode.innerHTML) {
+              var topicUrl = window.appData.isYuque ? '/yuque/topics/new' : '/lark/topics/new';
+              var url = window.location.protocol + '//' + window.location.host + topicUrl;
+              var html = '<div>';
+              html += '<h3 style="margin-top: 45%;text-align: center;">页面打不开？快来找开发 GG 帮忙</h3>';
+              if (window.appData && window.appData.traceId) {
+                html += '<p style="padding: 10px 30px;">反馈信息: ' + window.appData.traceId + '</p>';
+              }
+              html += '<p style="padding: 10px 30px;">截图或复制反馈信息到: <a target="_blank" href="' + url + '">' + url + '</a></p>';
+              html += '</div>';
+              rootNode.innerHTML = html;
+            }
+          }, 3000);
+        }
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }, false);
+</script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    if (!/[?&]enable_sw=false/.test(location.search) && window.appData && window.appData.settings.enable_serviceworker) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/serviceworker.js').catch(err => {
+          console.error(err.message);
+        });
+      });
+    } else {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        registrations.forEach(sw => sw.unregister());
+      });
+    }
+  }
+</script>
+    <!-- 雨燕前置错误捕获逻辑 -->
+    <script>
+      !function(){var e=window;function n(n){if(e.g_monitor&&e.g_monitor.events){var t=e.g_monitor.events;t.length<20&&t.push(n)}}e.g_monitor=e.g_monitor||{listener:{},events:[]};
+      var r=e.g_monitor.listener;function t(t,n){try{e.addEventListener?e.addEventListener(t,n,!0):e.attachEvent?e.attachEvent("on"+t,n):e[t]=n,r[t]=n}catch(n){console.warn("Tracert 监控事件注册失败："+t,n)}}r.error||t("error",n),r.unhandledrejection||t("unhandledrejection",n)}();
+    </script>
+    <script crossorigin src="https://b.alicdn.com/s/polyfill.min.js?features=default,es2015,es2016,es2017,fetch,IntersectionObserver,NodeList.prototype.forEach,NodeList.prototype.@@iterator,EventSource,MutationObserver,ResizeObserver,HTMLCanvasElement.prototype.toBlob,Promise.prototype.finally,Object.values|always"></script>
+<script crossorigin src="https://gw.alipayobjects.com/os/lib/??react/16.13.1/umd/react.production.min.js,react-dom/16.13.1/umd/react-dom.production.min.js,react-dom/16.13.1/umd/react-dom-server.browser.production.min.js,moment/2.24.0/min/moment.min.js"></script>
+    
+    
+    
+    <script>
+      window.routerBase = '/';
+      window.resourceBaseUrl = 'https://gw.alipayobjects.com/os/chair-script/skylark/';
+    </script>
+    
+    
+      <script>window.__webpack_public_path__ = '/os/chair-script/skylark/';</script><script crossorigin src="https://gw.alipayobjects.com/os/chair-script/skylark/common.39196dfd.async.js"></script>
+    
+    <script crossorigin src="https://gw.alipayobjects.com/os/chair-script/skylark/pc.3708594f.js"></script>
+    
+      
+      <script>
+        // 加载九色鹿埋点脚本、cnzz 埋点脚本
+        window.addEventListener('load', function() {
+          !function(t,e,a,r,c){t.TracertCmdCache=t.TracertCmdCache||[],t[c]=window[c]||
+            {_isRenderInit:!0,call:function(){t.TracertCmdCache.push(arguments)},
+            start:function(t){this.call('start',t)}},t[c].l=new Date;
+            var n=e.createElement(a),s=e.getElementsByTagName(a)[0];
+            n.async=!0,n.src=r,s.parentNode.insertBefore(n,s)}
+          (window,document,'script','https://ur.alipay.com/tracert_a385.js','Tracert');
+          Tracert.start({
+            spmAPos: 'a385',
+            spmBPos: 'b4693',
+            
+            role_id: '',
+            mdata: {
+              
+              
+              
+              
+              
+            },
+          });
+
+          // 加载 cnzz 埋点脚本
+          var cnzzScript = document.createElement('script');
+          cnzzScript.src = 'https://s19.cnzz.com/z_stat.php?id=1272061571&web_id=1272061571';
+          cnzzScript.setAttribute('language', 'JavaScript');
+          document.head.appendChild(cnzzScript);
+        });
+      </script>
+      
+      
+      
+      <script crossorigin src="https://gw.alipayobjects.com/os/lib/alipay/yuyan-monitor-web/2.0.29/dist/index.umd.min.js"></script>
+      <script>
+        window.yuyanMonitor = new YuyanMonitor({
+          _appId: '589c123e2b89c03d127000da',
+          
+          env: '外网',
+          
+          
+          userId: '',
+          plugins: ['performance'],
+        });
+      </script>
+      
+    
+    
+    
+  </body>
+</html>

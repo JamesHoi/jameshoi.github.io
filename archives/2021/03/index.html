@@ -374,6 +374,29 @@
         </div>
     </article>
     
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/01/crackme/" >
+            
+                <span>记录一下自己出的crackme</span>
+        </a>
+        <div class="abstract-content">
+            这题主要考察选手动态调试。扔进exeinfope，32位exe，无壳main程序，点进sub_4017D0看sub_4017D0，可以看出是检测进程名称。找到for之前的汇编，尝试在动调的时候修改eip直接jmp到CloseHandle，又或者是自己patch一下，防止return 1，从而反反调试。patch教程参考链接（留意这里的dword_406120，之后会讲）sub_401930是个SEH异常反调试，可以参考源码直接查看汇编，参考刚刚上面的源码，反调试的E9刚好起到了花指令的作用，变成了jmp near ptr 8B762D3Ah。在jmp按一下U，在E9下面按c转为代码，然后...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/01</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
     <!-- paginator  -->
     
 </main>
@@ -583,9 +606,68 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 10
+        Total : 15
         </div>
         <!-- search  -->
         
@@ -610,12 +692,42 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2021/03/01/crackme/" >记录一下自己出的crackme</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/09</span><a class="archive-post-title" href= "/2021/01/09/misc-ctf/" >各种CTF逆向题目大杂烩</a>
+            <span class="archive-post-date">02/06</span><a class="archive-post-title" href= "/2021/02/06/buuctf/" >BUU平台逆向刷题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/06</span><a class="archive-post-title" href= "/2021/02/06/adworld/" >攻防世界逆向刷题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/all-writeups/" >各种CTF比赛的Writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/misc-ctf/" >各种CTF逆向题目大杂烩</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/tsctf-j-2020/" >TSCTF-J 2020</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/2021/01/28/cumtctf-2021/" >CUMTCTF 2021</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
         </li>
     
     
@@ -626,11 +738,6 @@
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/17</span><a class="archive-post-title" href= "/2020/10/17/tsctf-j-2020/" >TSCTF-J 2020</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -676,9 +783,9 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
@@ -715,11 +822,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
-    
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
     
-        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
     
         <span class="sidebar-category-name" data-categories="爬虫"><span class="iconfont-archer">&#xe60a;</span>爬虫</span>
     

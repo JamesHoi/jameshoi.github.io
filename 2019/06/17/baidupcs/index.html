@@ -282,7 +282,7 @@ height:60vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">625</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">622</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -415,8 +415,9 @@ height:60vh;
 <p><img src="https://camo.githubusercontent.com/968f615643a9e7ee0841dadb119d9191dd93e46d/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6a616d6573686f692f696d6167652f75706c6f61642f76313535373831323131352f42616964755043535f6b71387379702e6a7067" alt="软件预览"></p>
 <h1 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h1><p>其实原理不难，用了instsrv.exe和srvany.exe实现<br><a target="_blank" rel="noopener" href="https://share.weiyun.com/5SM9M79">下载链接</a></p>
 <h2 id="注册服务"><a href="#注册服务" class="headerlink" title="注册服务"></a>注册服务</h2><p>方法一：在命令行输入sc create <b>[服务名称]</b> binpath=[srvany.exe路径]/srvany.exe<br>方法二：在命令行输入[instsrv.exe路径]/instsrv.exe <b>[服务名称]</b> binpath=[srvany.exe路径]/srvany.exe</p>
-<p>若显示<br><b>[SC] CreateService 失败 1783:<br>占位程序接收到错误数据。<br></b><br>则一般的解决方法是关闭安全软件</p>
-<h2 id="更改注册表"><a href="#更改注册表" class="headerlink" title="更改注册表"></a>更改注册表</h2><p>打开注册表 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services&lt;b&gt;[服务名称]<br>服务名称和刚刚输入的一致</p>
+<p>若显示<br><b>[SC] CreateService 失败 1783:<br>占位程序接收到错误数据。
+</b><br>则一般的解决方法是关闭安全软件</p>
+<h2 id="更改注册表"><a href="#更改注册表" class="headerlink" title="更改注册表"></a>更改注册表</h2><p>打开注册表 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\<b>[服务名称]</b><br>服务名称和刚刚输入的一致</p>
 <p>右击新建项，名称为<b>Parameters</b>，然后定位到<b>Parameters</b>项，新建以下几个字符串值。<br>名称 <b>Application</b> 值为你要作为服务运行的<b>程序地址</b>。<br>名称 <b>AppDirectory</b> 值为你要作为服务运行的程序所在文件夹路径。<br>名称 <b>AppParameters</b> 值为你要作为服务运行的程序启动所需要的参数。</p>
 <p><img src="https://s1.ax1x.com/2020/03/22/85jz6g.png" alt="注册表"></p>
 <center>注册表</center>
@@ -722,9 +723,68 @@ top:60vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 10
+        Total : 15
         </div>
         <!-- search  -->
         
@@ -749,12 +809,42 @@ top:60vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2021/03/01/crackme/" >记录一下自己出的crackme</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/09</span><a class="archive-post-title" href= "/2021/01/09/misc-ctf/" >各种CTF逆向题目大杂烩</a>
+            <span class="archive-post-date">02/06</span><a class="archive-post-title" href= "/2021/02/06/buuctf/" >BUU平台逆向刷题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/06</span><a class="archive-post-title" href= "/2021/02/06/adworld/" >攻防世界逆向刷题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/all-writeups/" >各种CTF比赛的Writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/misc-ctf/" >各种CTF逆向题目大杂烩</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/tsctf-j-2020/" >TSCTF-J 2020</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/2021/01/28/cumtctf-2021/" >CUMTCTF 2021</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
         </li>
     
     
@@ -765,11 +855,6 @@ top:60vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/17</span><a class="archive-post-title" href= "/2020/10/17/tsctf-j-2020/" >TSCTF-J 2020</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -815,9 +900,9 @@ top:60vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
@@ -854,11 +939,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
-    
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
     
-        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
     
         <span class="sidebar-category-name" data-categories="爬虫"><span class="iconfont-archer">&#xe60a;</span>爬虫</span>
     
