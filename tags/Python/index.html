@@ -355,6 +355,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/22/open163-new/" >
+            
+                <span>网易公开课下载器 版本更新</span>
+        </a>
+        <div class="abstract-content">
+            更新内容之前博客原本是用selenium爬虫爬取数据的，但效率实在不高，现在换成直接用requests解析json
+原理例如视频页面链接为https://open.163.com/newview/movie/free?pid=MFHCKB983&amp;mid=MFHCLTO23 ，则其对应的视频数据为https://c.open.163.com/open/mob/movie/list.do?plid=MFHCKB983 ，即 将视频链接的pid参数填入到list.do?plid=里
+软件功能
+可选择多少个视频同时下载（线程个数）
+可选择字幕和影片是否分开
+可选择视频画质（如果原视频可以...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/03/22/open163-downloader/" >
             
                 <span>网易公开课下载器，支持多线程，可分别下载视频及字幕</span>
@@ -700,6 +734,8 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 16
@@ -723,6 +759,11 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/mcu/" >用单片机运行HelloWorld</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/open163-new/" >网易公开课下载器 版本更新</a>
         </li>
     
     
@@ -785,43 +826,6 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
         </li>
     
     
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/03/22/open163-new/" >[Untitled Post]</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2020 </div>
-    <ul class="year-list">
-    
-    
         <li class="archive-post-item">
             <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/windows-hexo/" >Windows系统下使用Github进行Hexo博客建站</a>
         </li>
@@ -834,6 +838,11 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
+        </li>
     
     
         <li class="archive-post-item">
