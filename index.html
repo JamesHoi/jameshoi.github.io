@@ -371,8 +371,9 @@ height:60vh;
                 <span>MRCTF 2021 我出的签到题</span>
         </a>
         <div class="abstract-content">
-            Real_CHECKIN题如其名，真的是签到题，出题的时候调试符号都没去。扔进PEID可以看出是upx壳，脱壳后用ida f5就能看到基本上和源码完全一致的伪代码。直接由函数名知道是base64编码，进入base64_encode函数并查看alphabet_map，可以发现base64换表了，用python写个脚本就得到flag了
-1234567import base64my_base64table = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/&quot;std_base64table =...
+            
+Real_CHECKIN题如其名，真的是签到题，出题的时候调试符号都没去。扔进PEID可以看出是upx壳，脱壳后用ida f5就能看到基本上和源码完全一致的伪代码。直接由函数名知道是base64编码，进入base64_encode函数并查看alphabet_map，可以发现base64换表了，用python写个脚本就得到flag了
+1234567import base64my_base64table = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/&quot;std_base64table ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -395,11 +396,10 @@ height:60vh;
                 <span>MRCTF-2021 writeup</span>
         </a>
         <div class="abstract-content">
-            Author: 许璟昊 Email: &#x6a;&#x61;&#109;&#x65;&#115;&#104;&#111;&#x69;&#x40;&#102;&#111;&#120;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;
+            
 前言师傅们别骂了，我抽空一定努力好好学
-
 Dynamic Debug动调进去发现是TEA加密，调试一下发现是DWORD类型，写脚本就出了
-12345678910111213141516171819202122232425262728293031#include &lt;iostream&gt;#include &lt;...
+12345678910111213141516171819202122232425262728293031#include &lt;iostream&gt;#include &lt;stdio.h&gt;#include &lt;Windows.h&gt;void decrypt(DWORD* v, DWORD* k) &#123;	DWORD v0 = v[0], v1 = v[1], sum = 0xC6EF3720, i;  /* set up ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
