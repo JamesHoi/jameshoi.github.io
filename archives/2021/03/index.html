@@ -355,6 +355,30 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/27/dasctf-2021-03/" >
+            
+                <span>DASCTF 三月 逆向</span>
+        </a>
+        <div class="abstract-content">
+            
+drinkSomeTea drinkSomeTea的附件.zip看到题目盲猜一波TEA加密，果不其然。之前没好好学，这次至少会做题了，之后有空要好好再看看详细的加密流程。附件给了个tea.png.out，即需要解密图片。32位exe，无壳在一开始的sub_401000函数里面，应该是判断是不是调试器（我没仔细看），用调试器的时候会退出程序，直接把call sub_401000 nop掉即可。应该是一个加密函数，点进去看发现加花了去花，Create Function，F5，发现是TEA加密，关于TEA加密脚本可以参考这个魔改一下TEA加密即可，要注意的是，加密的时候需要用int指针（保留...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/27</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/22/mcu/" >
             
                 <span>用单片机运行HelloWorld</span>
@@ -718,9 +742,48 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 16
+        Total : 19
         </div>
         <!-- search  -->
         
@@ -737,6 +800,21 @@
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2021/04/12/mrctf-2021-checkin/" >MRCTF 2021</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2021/04/11/mrctf-2021/" >MRCTF-2021 writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "/2021/03/27/dasctf-2021-03/" >DASCTF 三月 逆向</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -880,13 +958,13 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
-    
-        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
-    
         <span class="sidebar-category-name" data-categories="爬虫"><span class="iconfont-archer">&#xe60a;</span>爬虫</span>
     
+        <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
+    
         <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
+    
+        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
