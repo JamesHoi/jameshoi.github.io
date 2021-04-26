@@ -357,12 +357,11 @@
     <article class="index-post">
         <a class="abstract-title" href = "/2021/04/12/mrctf-2021-checkin/" >
             
-                <span>MRCTF 2021 我出的签到题</span>
+                <span>MRCTF 2021 Real_CHECKIN</span>
         </a>
         <div class="abstract-content">
-            
-Real_CHECKIN题如其名，真的是签到题，出题的时候调试符号都没去。扔进PEID可以看出是upx壳，脱壳后用ida f5就能看到基本上和源码完全一致的伪代码。直接由函数名知道是base64编码，进入base64_encode函数并查看alphabet_map，可以发现base64换表了，用python写个脚本就得到flag了
-1234567import base64my_base64table = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/&quot;std_base64table ...
+            【文章转载于安全客https://www.anquanke.com/post/id/237793】题如其名，真的是签到题，出题的时候调试符号都没去。扔进PEID可以看出是upx壳，脱壳后用ida f5就能看到基本上和源码完全一致的伪代码。直接由函数名知道是base64编码，进入base64_encode函数并查看alphabet_map，可以发现base64换表了，用python写个脚本就得到flag了
+1234567import base64my_base64table = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -719,8 +718,6 @@ Dynamic Debug动调进去发现是TEA加密，调试一下发现是DWORD类型�
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 19
@@ -743,7 +740,7 @@ Dynamic Debug动调进去发现是TEA加密，调试一下发现是DWORD类型�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2021/04/12/mrctf-2021-checkin/" >MRCTF 2021 我出的签到题</a>
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2021/04/12/mrctf-2021-checkin/" >MRCTF 2021 Real_CHECKIN</a>
         </li>
     
     
@@ -817,12 +814,12 @@ Dynamic Debug动调进去发现是TEA加密，调试一下发现是DWORD类型�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >基于爬虫的黑白棋对战</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >基于爬虫的黑白棋对战</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
         </li>
     
     
@@ -900,11 +897,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
     
-        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
-    
         <span class="sidebar-category-name" data-categories="爬虫"><span class="iconfont-archer">&#xe60a;</span>爬虫</span>
     
         <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
+    
+        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
