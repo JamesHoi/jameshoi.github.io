@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="James Hoi">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="James Hoi">
+    
+    <meta name="keywords" content="James Hoi's Blog,James Hoi">
+    
+    <meta name="description" content="">
+    <meta name="description" content="Android签到题可以看出是动态加载dex网上查到该dex加载路径，用虚拟机找到该文件关键加密函数爆破解出 123456789101112131415161718192021222324252627282930313233tmp1 &#x3D; [ 147, 219, 146, 143, 240, 200, &amp;#x27;f&amp;#x27;, 136, &amp;#x27;F&amp;#x27;, &amp;#x27;y&amp;#x27;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TSCTF 2021 Writeup by sakura">
+<meta property="og:url" content="https://jameshoi.github.io/2021/05/23/tsctf-2021/index.html">
+<meta property="og:site_name" content="James Hoi&#39;s Blog">
+<meta property="og:description" content="Android签到题可以看出是动态加载dex网上查到该dex加载路径，用虚拟机找到该文件关键加密函数爆破解出 123456789101112131415161718192021222324252627282930313233tmp1 &#x3D; [ 147, 219, 146, 143, 240, 200, &amp;#x27;f&amp;#x27;, 136, &amp;#x27;F&amp;#x27;, &amp;#x27;y&amp;#x27;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://md.byr.moe/uploads/upload_785c5365aed77c40eceb16f33d9a9534.png#id=LdPgO&amp;originHeight=215&amp;originWidth=643&amp;originalType=binary&amp;status=done&amp;style=none">
+<meta property="og:image" content="https://jameshoi.github.io/2021/05/23/tsctf-2021/upload_2e2dfe04bfe0ae6c09446d9203d7caee.png">
+<meta property="og:image" content="https://md.byr.moe/uploads/upload_40f049f4f3d38f8ecbcb5ba14aa94ab3.png#id=TQsFJ&amp;originHeight=806&amp;originWidth=631&amp;originalType=binary&amp;status=done&amp;style=none">
+<meta property="article:published_time" content="2021-05-23T08:33:38.000Z">
+<meta property="article:modified_time" content="2021-05-23T17:20:10.285Z">
+<meta property="article:author" content="James Hoi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://md.byr.moe/uploads/upload_785c5365aed77c40eceb16f33d9a9534.png#id=LdPgO&amp;originHeight=215&amp;originWidth=643&amp;originalType=binary&amp;status=done&amp;style=none">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    
+    <title>TSCTF 2021 Writeup by sakura · JamesHoi的博客</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="James Hoi's Blog" type="application/atom+xml">
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >James Hoi&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">TSCTF 2021 Writeup by sakura</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>James Hoi's Blog.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:60vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            TSCTF 2021 Writeup by sakura
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">519</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/05/23</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p><a name="aa2689e7"></a></p>
+<h2 id="Android签到题"><a href="#Android签到题" class="headerlink" title="Android签到题"></a>Android签到题</h2><p><br>可以看出是动态加载dex<br><img src="https://md.byr.moe/uploads/upload_785c5365aed77c40eceb16f33d9a9534.png#id=LdPgO&amp;originHeight=215&amp;originWidth=643&amp;originalType=binary&amp;status=done&amp;style=none" alt><br>网上查到该dex加载路径，用虚拟机找到该文件<br><img src="/2021/05/23/tsctf-2021/upload_2e2dfe04bfe0ae6c09446d9203d7caee.png" alt><br>关键加密函数<br><img src="https://md.byr.moe/uploads/upload_40f049f4f3d38f8ecbcb5ba14aa94ab3.png#id=TQsFJ&amp;originHeight=806&amp;originWidth=631&amp;originalType=binary&amp;status=done&amp;style=none" alt><br>爆破解出<br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">tmp1 = [ <span class="number">147</span>, <span class="number">219</span>, <span class="number">146</span>, <span class="number">143</span>, <span class="number">240</span>, <span class="number">200</span>, <span class="string">&#x27;f&#x27;</span>, <span class="number">136</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;y&#x27;</span>, <span class="string">&#x27;O&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="number">196</span>, <span class="string">&#x27;&gt;&#x27;</span>, <span class="number">254</span>, <span class="number">189</span>, <span class="string">&#x27;s&#x27;</span>, <span class="number">253</span>, <span class="string">&#x27;W&#x27;</span>, <span class="string">&#x27;~&#x27;</span>, <span class="number">252</span>, <span class="number">135</span>, <span class="string">&#x27; &#x27;</span>, <span class="number">128</span>, <span class="number">3</span>, <span class="number">226</span>, <span class="number">17</span>, <span class="number">142</span>, <span class="number">254</span>, <span class="string">&#x27;?&#x27;</span>, <span class="string">&#x27;&#123;&#x27;</span>, <span class="number">155</span>, <span class="string">&#x27;\r&#x27;</span>, <span class="string">&#x27;x&#x27;</span>, <span class="number">4</span>, <span class="string">&#x27;:&#x27;</span>, <span class="number">199</span>, <span class="number">223</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;z&#x27;</span>, <span class="number">184</span>, <span class="string">&#x27;~&#x27;</span>, <span class="string">&#x27;L&#x27;</span>]</span><br><span class="line">enflag = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(tmp1)):</span><br><span class="line">    <span class="keyword">if</span> type(tmp1[i])==str: enflag.append(ord(tmp1[i]))</span><br><span class="line">    <span class="keyword">else</span>: enflag.append(tmp1[i])</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">encode</span>(<span class="params">flag</span>):</span></span><br><span class="line">    cArr = [<span class="number">183</span>,<span class="number">232</span>,<span class="number">151</span>,<span class="number">64</span>,<span class="number">46</span>,<span class="number">200</span>,<span class="number">155</span>,<span class="number">10</span>,<span class="number">44</span>,<span class="number">138</span>,<span class="number">221</span>,<span class="number">76</span>,<span class="number">147</span>,<span class="number">99</span>,<span class="number">163</span>,<span class="number">226</span>,<span class="number">137</span>,<span class="number">102</span>,<span class="number">236</span>,<span class="number">39</span>,<span class="number">216</span>,<span class="number">35</span>,<span class="number">238</span>,<span class="number">55</span>,<span class="number">222</span>,<span class="number">78</span>,<span class="number">234</span>,<span class="number">164</span>,<span class="number">211</span>,<span class="number">179</span>,<span class="number">184</span>,<span class="number">122</span>,<span class="number">24</span>,<span class="number">241</span>,<span class="number">157</span>,<span class="number">48</span>,<span class="number">153</span>,<span class="number">49</span>,<span class="number">186</span>,<span class="number">15</span>,<span class="number">75</span>,<span class="number">62</span>,<span class="number">152</span>,<span class="number">37</span>,<span class="number">1</span>,<span class="number">243</span>,<span class="number">106</span>,<span class="number">38</span>,<span class="number">119</span>,<span class="number">86</span>,<span class="number">112</span>,<span class="number">140</span>,<span class="number">107</span>,<span class="number">167</span>,<span class="number">9</span>,<span class="number">4</span>,<span class="number">118</span>,<span class="number">150</span>,<span class="number">199</span>,<span class="number">182</span>,<span class="number">156</span>,<span class="number">117</span>,<span class="number">79</span>,<span class="number">2</span>,<span class="number">170</span>,<span class="number">228</span>,<span class="number">63</span>,<span class="number">214</span>,<span class="number">28</span>,<span class="number">133</span>,<span class="number">253</span>,<span class="number">123</span>,<span class="number">12</span>,<span class="number">237</span>,<span class="number">154</span>,<span class="number">89</span>,<span class="number">61</span>,<span class="number">127</span>,<span class="number">189</span>,<span class="number">5</span>,<span class="number">130</span>,<span class="number">105</span>,<span class="number">30</span>,<span class="number">190</span>,<span class="number">93</span>,<span class="number">7</span>,<span class="number">206</span>,<span class="number">145</span>,<span class="number">172</span>,<span class="number">176</span>,<span class="number">247</span>,<span class="number">3</span>,<span class="number">111</span>,<span class="number">134</span>,<span class="number">66</span>,<span class="number">169</span>,<span class="number">26</span>,<span class="number">204</span>,<span class="number">174</span>,<span class="number">173</span>,<span class="number">27</span>,<span class="number">36</span>,<span class="number">50</span>,<span class="number">72</span>,<span class="number">71</span>,<span class="number">103</span>,<span class="number">42</span>,<span class="number">65</span>,<span class="number">29</span>,<span class="number">168</span>,<span class="number">92</span>,<span class="number">131</span>,<span class="number">143</span>,<span class="number">53</span>,<span class="number">19</span>,<span class="number">18</span>,<span class="number">240</span>,<span class="number">171</span>,<span class="number">148</span>,<span class="number">175</span>,<span class="number">159</span>,<span class="number">0</span>,<span class="number">60</span>,<span class="number">11</span>,<span class="number">43</span>,<span class="number">165</span>,<span class="number">17</span>,<span class="number">51</span>,<span class="number">244</span>,<span class="number">248</span>,<span class="number">224</span>,<span class="number">121</span>,<span class="number">77</span>,<span class="number">13</span>,<span class="number">215</span>,<span class="number">210</span>,<span class="number">205</span>,<span class="number">166</span>,<span class="number">81</span>,<span class="number">85</span>,<span class="number">229</span>,<span class="number">162</span>,<span class="number">54</span>,<span class="number">197</span>,<span class="number">201</span>,<span class="number">45</span>,<span class="number">194</span>,<span class="number">144</span>,<span class="number">97</span>,<span class="number">80</span>,<span class="number">96</span>,<span class="number">231</span>,<span class="number">68</span>,<span class="number">239</span>,<span class="number">32</span>,<span class="number">52</span>,<span class="number">25</span>,<span class="number">83</span>,<span class="number">242</span>,<span class="number">67</span>,<span class="number">198</span>,<span class="number">124</span>,<span class="number">90</span>,<span class="number">230</span>,<span class="number">132</span>,<span class="number">225</span>,<span class="number">185</span>,<span class="number">110</span>,<span class="number">98</span>,<span class="number">135</span>,<span class="number">8</span>,<span class="number">47</span>,<span class="number">219</span>,<span class="number">203</span>,<span class="number">142</span>,<span class="number">59</span>,<span class="number">227</span>,<span class="number">195</span>,<span class="number">146</span>,<span class="number">233</span>,<span class="number">58</span>,<span class="number">115</span>,<span class="number">113</span>,<span class="number">116</span>,<span class="number">178</span>,<span class="number">217</span>,<span class="number">252</span>,<span class="number">213</span>,<span class="number">95</span>,<span class="number">202</span>,<span class="number">223</span>,<span class="number">188</span>,<span class="number">20</span>,<span class="number">22</span>,<span class="number">69</span>,<span class="number">250</span>,<span class="number">208</span>,<span class="number">23</span>,<span class="number">57</span>,<span class="number">218</span>,<span class="number">84</span>,<span class="number">245</span>,<span class="number">136</span>,<span class="number">91</span>,<span class="number">180</span>,<span class="number">181</span>,<span class="number">56</span>,<span class="number">187</span>,<span class="number">220</span>,<span class="number">41</span>,<span class="number">40</span>,<span class="number">120</span>,<span class="number">114</span>,<span class="number">160</span>,<span class="number">34</span>,<span class="number">101</span>,<span class="number">108</span>,<span class="number">141</span>,<span class="number">177</span>,<span class="number">149</span>,<span class="number">251</span>,<span class="number">212</span>,<span class="number">94</span>,<span class="number">87</span>,<span class="number">191</span>,<span class="number">14</span>,<span class="number">125</span>,<span class="number">192</span>,<span class="number">255</span>,<span class="number">88</span>,<span class="number">139</span>,<span class="number">249</span>,<span class="number">82</span>,<span class="number">193</span>,<span class="number">21</span>,<span class="number">74</span>,<span class="number">73</span>,<span class="number">126</span>,<span class="number">235</span>,<span class="number">207</span>,<span class="number">158</span>,<span class="number">109</span>,<span class="number">254</span>,<span class="number">31</span>,<span class="number">129</span>,<span class="number">104</span>,<span class="number">70</span>,<span class="number">246</span>,<span class="number">196</span>,<span class="number">100</span>,<span class="number">6</span>,<span class="number">128</span>,<span class="number">209</span>,<span class="number">161</span>,<span class="number">16</span>,<span class="number">33</span>]    </span><br><span class="line">    cArr3 = [<span class="number">0</span>]*<span class="number">43</span></span><br><span class="line">    i3 = <span class="number">0</span>;</span><br><span class="line">    i4 = <span class="number">0</span>;</span><br><span class="line">    str_len = <span class="number">43</span></span><br><span class="line">    <span class="keyword">for</span> i5 <span class="keyword">in</span> range(str_len):</span><br><span class="line">        i3 = (i3 + <span class="number">1</span>) &amp; <span class="number">255</span></span><br><span class="line">        i4 = (i4 + cArr[i3]) &amp; <span class="number">255</span></span><br><span class="line">        cArr[i3] = cArr[i3] ^ cArr[i4]</span><br><span class="line">        cArr[i4] = cArr[i4] ^ cArr[i3]</span><br><span class="line">        cArr[i3] = cArr[i3] ^ cArr[i4]</span><br><span class="line">        cArr3[i5] = cArr[(cArr[i3] + cArr[i4]) &amp; <span class="number">255</span>] ^ flag[i5]</span><br><span class="line">    <span class="keyword">return</span> cArr3</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">brute</span>(<span class="params">i</span>):</span></span><br><span class="line">    <span class="keyword">global</span> enflag</span><br><span class="line">    flag = [<span class="number">0</span>]*<span class="number">43</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        flag[i] = j+<span class="number">32</span></span><br><span class="line">        <span class="keyword">if</span> enflag[i] == encode(flag)[i]: </span><br><span class="line">            print(chr(flag[i]),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">43</span>):</span><br><span class="line">    brute(i)</span><br><span class="line"><span class="comment">#TSCTF&#123;44a526be-0f5c-4e99-88e6-3d7eac912391&#125;</span></span><br></pre></td></tr></table></figure>
+<p><a name="c9da9b59"></a></p>
+<h2 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h2><p><br>关注公众号回复即可<br></p>
+<p><a name="e009903f"></a></p>
+<h2 id="问卷"><a href="#问卷" class="headerlink" title="问卷"></a>问卷</h2><p><br>填写问卷即可</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://jameshoi.github.io">James Hoi</a>
+            <p>原文链接：<a href="https://jameshoi.github.io/2021/05/23/tsctf-2021/">https://jameshoi.github.io/2021/05/23/tsctf-2021/</a>
+            <p>发表日期：<a href="https://jameshoi.github.io/2021/05/23/tsctf-2021/">May 23rd 2021, 4:33:38 pm</a>
+            <p>更新日期：<a href="https://jameshoi.github.io/2021/05/23/tsctf-2021/">May 24th 2021, 1:20:10 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2021/05/23/tsctf-2021-re/" title= "TSCTF 2021 逆向题目">
+                    <div class="nextTitle">TSCTF 2021 逆向题目</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/05/10/bmp/" title= "C语言读取BMP格式图片并修改保存">
+                    <div class="prevTitle">C语言读取BMP格式图片并修改保存</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "https://jameshoi.github.io/2021/05/23/tsctf-2021/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "TSCTF 2021 Writeup by sakura"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://jameshoi.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:jameshoi@foxmail.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/JamesHoi" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//facebook.com/ames.james.71" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:60vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android%E7%AD%BE%E5%88%B0%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">Android签到题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0"><span class="toc-number">2.</span> <span class="toc-text">签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E5%8D%B7"><span class="toc-number">3.</span> <span class="toc-text">问卷</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 25
+        </div>
+        <!-- search  -->
+        
+            <div class="site-search popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href= "/2021/05/10/bmp/" >C语言读取BMP格式图片并修改保存</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href= "/2021/05/10/pic-console/" >C语言实现命令行显示图片</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/05</span><a class="archive-post-title" href= "/2021/05/05/cstc-2021/" >CSTC 2021逆向部分</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2021/04/12/mrctf-2021-checkin/" >MRCTF 2021 Real_CHECKIN</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2021/04/11/mrctf-2021/" >MRCTF-2021 writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/30</span><a class="archive-post-title" href= "/2021/03/30/note/" >逆向笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "/2021/03/27/dasctf-2021-03/" >DASCTF 三月 逆向</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/mcu/" >用单片机运行HelloWorld</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/open163-new/" >网易公开课下载器 版本更新</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2021/03/01/crackme/" >记录一下自己出的crackme</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/06</span><a class="archive-post-title" href= "/2021/02/06/buuctf/" >BUU平台逆向刷题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/06</span><a class="archive-post-title" href= "/2021/02/06/adworld/" >攻防世界逆向刷题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/all-writeups/" >各种CTF比赛的Writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/misc-ctf/" >各种CTF逆向题目大杂烩</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/tsctf-j-2020/" >TSCTF-J 2020</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/2021/01/28/cumtctf-2021/" >CUMTCTF 2021</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >基于爬虫的黑白棋对战</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/windows-hexo/" >Windows系统下使用Github进行Hexo博客建站</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href= "/2019/04/26/statistics/" >统计学公式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/10</span><a class="archive-post-title" href= "/2019/04/10/pane-fixer/" >真正的完美解决centos7.5的图形界面中文乱码的方法</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
+    
+        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
+    
+        <span class="sidebar-category-name" data-categories="爬虫"><span class="iconfont-archer">&#xe60a;</span>爬虫</span>
+    
+        <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "James Hoi"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+        <div class="site-search">
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="iconfont-archer">&#xe609;</i>
+    </span>
+  </div>
+</div>
+        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.js" defer></script>
+        <script src="/scripts/search.js" defer></script>
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+
+

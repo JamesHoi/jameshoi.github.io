@@ -366,6 +366,136 @@ height:60vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/22/open163-new/" >
+            
+                <span>网易公开课下载器 版本更新</span>
+        </a>
+        <div class="abstract-content">
+            更新内容之前博客原本是用selenium爬虫爬取数据的，但效率实在不高，现在换成直接用requests解析json
+原理例如视频页面链接为https://open.163.com/newview/movie/free?pid=MFHCKB983&amp;mid=MFHCLTO23 ，则其对应的视频数据为https://c.open.163.com/open/mob/movie/list.do?plid=MFHCKB983 ，即 将视频链接的pid参数填入到list.do?plid=里
+软件功能
+可选择多少个视频同时下载（线程个数）
+可选择字幕和影片是否分开
+可选择视频画质（如果原视频可以...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/01/crackme/" >
+            
+                <span>记录一下自己出的crackme</span>
+        </a>
+        <div class="abstract-content">
+            这题主要考察选手动态调试。扔进exeinfope，32位exe，无壳main程序，点进sub_4017D0看sub_4017D0，可以看出是检测进程名称。找到for之前的汇编，尝试在动调的时候修改eip直接jmp到CloseHandle，又或者是自己patch一下，防止return 1，从而反反调试。patch教程参考链接（留意这里的dword_406120，之后会讲）sub_401930是个SEH异常反调试，可以参考源码直接查看汇编，参考刚刚上面的源码，反调试的E9刚好起到了花指令的作用，变成了jmp near ptr 8B762D3Ah。在jmp按一下U，在E9下面按c转为代码，然后...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/01</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/02/06/buuctf/" >
+            
+                <span>BUU平台逆向刷题</span>
+        </a>
+        <div class="abstract-content">
+            
+pyre123456789101112131415161718code = [&#x27;\x1f&#x27;, &#x27;\x12&#x27;, &#x27;\x1d&#x27;, &#x27;(&#x27;, &#x27;0&#x27;, &#x27;4&#x27;, &#x27;\x01&#x27;, &#x27;\x06&#x27;, &#x27;\x14&#x27;, &#x27;4&#x27;, &#x27;,&#x27;, &#x27;\x1b&#x27;, &#x27;U&#x27;, &#x27;?&#x27;, &#x27;o&#x27;, &#x27;6&#x2...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/06</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/02/06/adworld/" >
+            
+                <span>攻防世界逆向刷题</span>
+        </a>
+        <div class="abstract-content">
+            
+前言有些题目之前就做完了，我不想再写WP了（手动滑稽保命）
+
+666ida放进去发现是普通的异或，直接秒123456789101112enflag = &quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;key = 0x12enflag = [ord(i) for i in enflag]flag = []for i in range(6):    flag.append(chr((enflag[3*i]^key)-6))    flag.append(chr((enflag[3*i+1]^key)+6))    flag.app...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/06</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/01/31/all-writeups/" >
+            
+                <span>各种CTF比赛的Writeup</span>
+        </a>
+        <div class="abstract-content">
+            安洵杯2020部分WPhttps://www.anquanke.com/post/id/223786RoarCTF2020 部分wp https://www.anquanke.com/post/id/224892SWPUCTF2020 官方WPSWPUCTF2020 官方WP - SWPU_08067sec.rarNCTF2020 By 天璇MerakNCTF2019 Official WriteupNEFUCTF2020 官方WP*CTF2021 By 天璇Merakhttps://www.anquanke.com/post/id/229322TSCTF2020 官方WPCUMTCTF...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/31</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/01/31/tsctf-j-2020/" >
             
                 <span>TSCTF-J 2020</span>
@@ -402,8 +532,7 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
             
 某乱七八糟选拔赛 main2101075ff6b9adc84f9.zip拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png
 
-解题脚本用linux g++编译后运行
-123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include ...
+解题脚本用linux g++编译后运行123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -427,12 +556,9 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
         </a>
         <div class="abstract-content">
             
-re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag
-1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
+re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
 
-
-
-re2re2.rar扔进Exeinfo PE...
+re2re2.rar扔进Exeinfo PE，32...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -456,8 +582,7 @@ re2re2.rar扔进Exeinfo PE...
         </a>
         <div class="abstract-content">
             前言之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用
-原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js
-12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;...
+原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;r...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -507,168 +632,10 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/22/reversi/" >
-            
-                <span>基于爬虫的黑白棋对战</span>
-        </a>
-        <div class="abstract-content">
-            前言这个爬虫是19年写的，当时正在学习爬虫
-原理定位棋盘html id后模拟鼠标点击，点击后等待电脑。定位棋子数id，然后显示在软件中
-源码地址Github源码
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/13/windows-hexo/" >
-            
-                <span>Windows系统下使用Github进行Hexo博客建站</span>
-        </a>
-        <div class="abstract-content">
-            安装教程其实网上一查一大把，这里就不详细介绍了可以参考这个windows下Hexo博客搭建过程
-进阶操作Markdown我个人建议用vscode编写，尝试过Markdownpad，感觉预览的效果不是特别好
-安装插件首先推荐的是Markdown Preview Enhanced插件，安装完后可以浏览Markdown
-
-Markdown Preview Enhanced
- 
-另外一个推荐的是Markdown Command Assist，安装后在编辑md的时候右键可以一键添加Markdown格式 
-![Markdown Command Assist](https://s1.ax1x.com/...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Hexo">Hexo</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/06/17/baidupcs/" >
-            
-                <span>将BaiduPCS-Web添加进系统服务，可开机自启</span>
-        </a>
-        <div class="abstract-content">
-            前言BaiduPCS-Web并非本人开发，软件只是将其添加进系统服务而已BaiduPCS-Web Github项目
-
-实现原理其实原理不难，用了instsrv.exe和srvany.exe实现下载链接
-注册服务方法一：在命令行输入sc create [服务名称] binpath=[srvany.exe路径]/srvany.exe方法二：在命令行输入[instsrv.exe路径]/instsrv.exe [服务名称] binpath=[srvany.exe路径]/srvany.exe
-若显示[SC] CreateService 失败 1783:占位程序接收到错误数据。则一般的解决方法是关闭...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/26/statistics/" >
-            
-                <span>统计学公式</span>
-        </a>
-        <div class="abstract-content">
-            统计学均值$$ \bar{x}=\frac{\sum_{n=1}^Nx_n}{N} $$
-期望
-离散型$$ {E(X)=\sum_{k=1}^\infty {x_k}{p_k}} $$
-连续型$$ E(X)=\int_{-\infty}^\infty xf(x)dx $$
-
-方差
-离散型$$ {D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}} $$或
-$$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
-连续型$$ {D(X)=\int_{-\infty}^\infty[x-E(X)]^2f(x)dx} $...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/26</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/10/pane-fixer/" >
-            
-                <span>真正的完美解决centos7.5的图形界面中文乱码的方法</span>
-        </a>
-        <div class="abstract-content">
-            网上看了很多很多的办法，就是搞不定乱码的情况。本文目的是希望后人能够迅速解决这个问题，此方法在Centos 7.5亲测有效。
-一键解决：https://github.com/JamesHoi/pane-fixer-centos （下面的都可以忽略了）
-参考  https://www.linuxidc.com/Linux/2013-01/77362.htm , 安装语言包yum -y install fonts-chineseyum -y install fonts-ISO8859-2但是却显示错误No package fonts-chinese available.，找不到安装包
-经过一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+        <a class="extend prev" rel="prev" href="/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -1123,9 +1090,78 @@ $$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 20
+        Total : 25
         </div>
         <!-- search  -->
         
@@ -1145,6 +1181,26 @@ $$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href= "/2021/05/10/bmp/" >C语言读取BMP格式图片并修改保存</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href= "/2021/05/10/pic-console/" >C语言实现命令行显示图片</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/05</span><a class="archive-post-title" href= "/2021/05/05/cstc-2021/" >CSTC 2021逆向部分</a>
         </li>
     
@@ -1156,6 +1212,11 @@ $$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
     
         <li class="archive-post-item">
             <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2021/04/11/mrctf-2021/" >MRCTF-2021 writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/30</span><a class="archive-post-title" href= "/2021/03/30/note/" >逆向笔记</a>
         </li>
     
     
