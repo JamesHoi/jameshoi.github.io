@@ -355,6 +355,81 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/30/note/" >
+            
+                <span>逆向笔记</span>
+        </a>
+        <div class="abstract-content">
+            这里记录一些我自己真实场景下的逆向内容
+
+拷贝漫画去广告首先这个软件太过分了…虽说我很同意帮你看点广告赞助你的服务器费用，但每次进去都加载十几秒的广告，有时候再进去之后还要考30秒以上的广告，属实是有点过分。（新版本好像广告变少了）​
+Android Killer大法好，因为软件是一进去就开始加载广告的，定位启动软件的位置，找到有Ads的关键字，直接删除smali重新打包即可删除前删除后进去发现确实是没广告了，但点击漫画之后发现有一大截空白部分，怀疑应该是广告内容。由于是用flutter框架写的，用反射大师没定位到这个空白位置的控件，那没办法了…先将就用着，等哪天真受不了了就学习一波fl...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/30</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/27/dasctf-2021-03/" >
+            
+                <span>DASCTF 三月 逆向</span>
+        </a>
+        <div class="abstract-content">
+            
+drinkSomeTea drinkSomeTea的附件.zip看到题目盲猜一波TEA加密，果不其然。之前没好好学，这次至少会做题了，之后有空要好好再看看详细的加密流程。附件给了个tea.png.out，即需要解密图片。32位exe，无壳在一开始的sub_401000函数里面，应该是判断是不是调试器（我没仔细看），用调试器的时候会退出程序，直接把call sub_401000 nop掉即可。应该是一个加密函数，点进去看发现加花了去花，Create Function，F5，发现是TEA加密，关于TEA加密脚本可以参考这个魔改一下TEA加密即可，要注意的是，加密的时候需要用int指针（保留...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/27</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/22/mcu/" >
+            
+                <span>用单片机运行HelloWorld</span>
+        </a>
+        <div class="abstract-content">
+            （本文图片较大，建议用电脑查看）（本文前言和介绍篇幅有点长，实际可从”开始”标题开始看）
+前言写完上次的“零基础搭建属于自己的博客”一文，我觉得我还是应该写一些科普或者教程，让同学们成功入门，我也顺便可以将我以往的经验总结一下。假如有朋友有想了解的东西，可以找我然后我写一篇文章入门（当然首先我也得会hhh），我擅长的方向大概是：机器人，单片机，网络安全，逆向，编程。
+介绍入门单片机首先总得了解单片机是什么。单片机普遍存在于我们的一些设备当中，例如台灯，通过编写程序让台灯每按一次按钮就减小亮度。又例如大家可能学过的Arduino，它是一款单片机。可以看出单片机一般和电路结合一起，控制电路量...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/22/open163-new/" >
             
                 <span>网易公开课下载器 版本更新</span>
@@ -531,98 +606,6 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/31</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/01/28/cumtctf-2021/" >
-            
-                <span>CUMTCTF 2021</span>
-        </a>
-        <div class="abstract-content">
-            
-re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag
-1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
-
-
-
-re2re2.rar扔进Exeinfo PE...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/28</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/01/10/js-reverse/" >
-            
-                <span>Js逆向</span>
-        </a>
-        <div class="abstract-content">
-            前言之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用
-原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js
-12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/22/open163-downloader/" >
-            
-                <span>网易公开课下载器，支持多线程，可分别下载视频及字幕</span>
-        </a>
-        <div class="abstract-content">
-            前言 网上一直都找不到网易公开课的下载工具。哎，那不如自己写一个。 我这个工具只能提取易公开课的视频，不能提取网易云课堂
-
-实现了多线程功能
-实现了提取字幕功能
-实现了选择画质功能
-实现了下载已合成字幕视频功能
-添加了分集下载功能
-
-原理提取网站内容在浏览器内的开发者工具的Console内输入__NUXT__.state.movie.moiveList可获取影片列表
-index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state.movie.moiveList[index].title视频名称__NUXT__.state.movi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
-    
-</div>
             
         </div>
     </article>
@@ -1036,9 +1019,50 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 25
+        Total : 28
         </div>
         <!-- search  -->
         
@@ -1055,6 +1079,21 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密逆向</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/android/" >安卓逆向学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1307,22 +1346,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 

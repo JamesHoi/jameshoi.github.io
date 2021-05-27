@@ -355,13 +355,90 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/27/crypto/" >
+            
+                <span>一些常见的加密逆向</span>
+        </a>
+        <div class="abstract-content">
+            
+AES
+DES
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/27</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/26/android/" >
+            
+                <span>安卓逆向学习</span>
+        </a>
+        <div class="abstract-content">
+            
+ADB的一些指令参考这个文章https://blog.csdn.net/ezconn/article/details/85682916，这里只写一些常用指令
+12345adb conncet ip:port            //例如mumu是127.0.0.1:7555adb shell                      //命令行adb push/ adb pull             //传输文件adb forward tcp:port tcp:port  //端口转发adb install xxx.apk            //安装apk
+​
+IDA 动态调...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/26</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/26/mrctf-2021-re/" >
+            
+                <span>MRCTF 2021 逆向题目</span>
+        </a>
+        <div class="abstract-content">
+            开个坑，有空复现一下，先复现安卓题目
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/26</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/05/23/tsctf-2021-re/" >
             
                 <span>TSCTF 2021 逆向题目</span>
         </a>
         <div class="abstract-content">
-            开个坑以后补，基本都有分析到东西但aes和des没学好，所以没解出
-
+            
+Android签到题看wp https://www.yuque.com/jameshoi/writeup/tsctf-2021​
+BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar吐了…这么简单的题目竟然比赛的时候没做出来，主要还是一开始没找到字符串进行定位，ida里面用shift+f12没找到，用火绒剑找到的。ps: 原来其实可以不用火绒剑，在string里面右键选择setup修改查找字符串编码查找效果根据这个地址+基址找到字符串，然后查看交叉引用，找到了关键函数，可见需让v22为0才成功这里判断flag是否相等sub那个函数动调发现应该是做了凯撒加密，...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -385,8 +462,8 @@
         </a>
         <div class="abstract-content">
             
-Android签到题可以看出是动态加载dex网上查到该dex加载路径，用虚拟机找到该文件关键加密函数爆破解出
-123456789101112131415161718192021222324252627282930313233tmp1 = [ 147, 219, 146, 143, 240, 200, &#x27;f&#x27;, 136, &#x27;F&#x27;, &#x27;y&#x27;, &#x27;O&#x27;, &#x27;M&#x27;, 196, &#x27;&gt;&#x27;, 254, 189, &#x27;s&#x27;, 253, &#x27;W&#x27...
+Android签到题re1.zip可以看出是动态加载dex网上查到该dex加载路径，用虚拟机找到该文件关键加密函数爆破解出
+123456789101112131415161718192021222324252627282930313233tmp1 = [ 147, 219, 146, 143, 240, 200, &#x27;f&#x27;, 136, &#x27;F&#x27;, &#x27;y&#x27;, &#x27;O&#x27;, &#x27;M&#x27;, 196, &#x27;&gt;&#x27;, 254, 189, &#x27;s&#x27;, 253, &#x27...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -434,7 +511,8 @@ Android签到题可以看出是动态加载dex网上查到该dex加载路径，�
         </a>
         <div class="abstract-content">
             
-加载本地图片123456789101112131415161718192021222324252627282930313233343536#include &lt;windows.h&gt;#include &lt;conio.h&gt;int main()&#123;	// 隐藏光标	CONSOLE_CURSOR_INFO curinfo = &#123; sizeof curinfo, FALSE &#125;;	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &amp;curinfo);	// 获取控制台窗口句柄	HWN...
+加载本地图片参考了https://kc.kexinshe.com/t/81443文章
+123456789101112131415161718192021222324252627282930313233343536#include &lt;windows.h&gt;#include &lt;conio.h&gt;int main()&#123;	// 隐藏光标	CONSOLE_CURSOR_INFO curinfo = &#123; sizeof curinfo, FALSE &#125;;	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HAN...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -876,9 +954,50 @@ free_flagfree_flag.zip签到题，异或一下得flag
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 25
+        Total : 28
         </div>
         <!-- search  -->
         
@@ -895,6 +1014,21 @@ free_flagfree_flag.zip签到题，异或一下得flag
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密逆向</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/android/" >安卓逆向学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1147,22 +1281,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 

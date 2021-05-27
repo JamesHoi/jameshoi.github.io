@@ -20,17 +20,25 @@
     <meta name="keywords" content="James Hoi's Blog,James Hoi">
     
     <meta name="description" content="">
-    <meta name="description" content="开个坑以后补，基本都有分析到东西但aes和des没学好，所以没解出">
+    <meta name="description" content="Android签到题看wp https:&#x2F;&#x2F;www.yuque.com&#x2F;jameshoi&#x2F;writeup&#x2F;tsctf-2021​ BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar吐了…这么简单的题目竟然比赛的时候没做出来，主要还是一开始没找到字符串进行定位，ida里面用shift+f12没找到，用火绒剑找到的。ps: 原来其实可以不用火绒剑，在string里面右键">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TSCTF 2021 逆向题目">
 <meta property="og:url" content="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/index.html">
 <meta property="og:site_name" content="James Hoi&#39;s Blog">
-<meta property="og:description" content="开个坑以后补，基本都有分析到东西但aes和des没学好，所以没解出">
+<meta property="og:description" content="Android签到题看wp https:&#x2F;&#x2F;www.yuque.com&#x2F;jameshoi&#x2F;writeup&#x2F;tsctf-2021​ BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar吐了…这么简单的题目竟然比赛的时候没做出来，主要还是一开始没找到字符串进行定位，ida里面用shift+f12没找到，用火绒剑找到的。ps: 原来其实可以不用火绒剑，在string里面右键">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/1622018958280-2547f687-d981-4ee4-bb87-0012e0602ed3.png">
+<meta property="og:image" content="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/1622019524226-429ce1a2-a874-4986-86b1-00f5a0149577.png">
+<meta property="og:image" content="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/1622019580341-3dbf74eb-47ef-48af-b060-e657206a9cd8.png">
+<meta property="og:image" content="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/1622019020633-a9f2af4c-b86b-482c-971b-2d0cb4e64cb8.png">
+<meta property="og:image" content="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/1622019061845-756abbf9-2e72-434b-a89d-ff39975aa67d.png">
+<meta property="og:image" content="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/1622019091321-9c4ef5c4-b988-4369-8695-27e8cb835491.png">
+<meta property="og:image" content="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/1622019317811-85716fd1-01a8-46fe-9b09-5f0d45b0a6c1.png">
 <meta property="article:published_time" content="2021-05-23T08:34:11.000Z">
-<meta property="article:modified_time" content="2021-05-23T17:20:10.903Z">
+<meta property="article:modified_time" content="2021-05-27T08:51:09.422Z">
 <meta property="article:author" content="James Hoi">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/1622018958280-2547f687-d981-4ee4-bb87-0012e0602ed3.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
@@ -279,7 +287,7 @@ height:60vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">26</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">337</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -408,7 +416,12 @@ height:60vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>开个坑以后补，基本都有分析到东西但aes和des没学好，所以没解出</p>
+        <p><a name="Icdoe"></a></p>
+<h1 id="Android签到题"><a href="#Android签到题" class="headerlink" title="Android签到题"></a>Android签到题</h1><p>看wp <a target="_blank" rel="noopener" href="https://www.yuque.com/jameshoi/writeup/tsctf-2021">https://www.yuque.com/jameshoi/writeup/tsctf-2021</a><br>​<br><br><a name="Ey8Oe"></a></p>
+<h1 id="BabyEasyUWP-BabyEasyUWP-1-0-0-0-Test-rar"><a href="#BabyEasyUWP-BabyEasyUWP-1-0-0-0-Test-rar" class="headerlink" title="BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar"></a>BabyEasyUWP <a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2021/rar/2738284/1622019965119-196b786c-5b09-451b-b27e-c419274a7bb5.rar?_lake_card=%7B%22src%22:%22https://www.yuque.com/attachments/yuque/0/2021/rar/2738284/1622019965119-196b786c-5b09-451b-b27e-c419274a7bb5.rar%22,%22name%22:%22BabyEasyUWP_1.0.0.0_Test.rar%22,%22size%22:31445013,%22type%22:%22%22,%22ext%22:%22rar%22,%22status%22:%22done%22,%22source%22:%22transfer%22,%22id%22:%22FS1Jr%22,%22card%22:%22file%22%7D">BabyEasyUWP_1.0.0.0_Test.rar</a></h1><p>吐了…这么简单的题目竟然比赛的时候没做出来，主要还是一开始没找到字符串进行定位，ida里面用shift+f12没找到，用火绒剑找到的。<br><img src="/2021/05/23/tsctf-2021-re/1622018958280-2547f687-d981-4ee4-bb87-0012e0602ed3.png" alt="image.png"><br>ps: 原来其实可以不用火绒剑，在string里面右键选择setup修改查找字符串编码<br><img src="/2021/05/23/tsctf-2021-re/1622019524226-429ce1a2-a874-4986-86b1-00f5a0149577.png" alt="image.png"><br>查找效果<br><img src="/2021/05/23/tsctf-2021-re/1622019580341-3dbf74eb-47ef-48af-b060-e657206a9cd8.png" alt="image.png"><br>根据这个地址+基址找到字符串，然后查看交叉引用，找到了关键函数，可见需让v22为0才成功<br><img src="/2021/05/23/tsctf-2021-re/1622019020633-a9f2af4c-b86b-482c-971b-2d0cb4e64cb8.png" alt="image.png"><br>这里判断flag是否相等<br><img src="/2021/05/23/tsctf-2021-re/1622019061845-756abbf9-2e72-434b-a89d-ff39975aa67d.png" alt="image.png"><br>sub那个函数动调发现应该是做了凯撒加密，v11动调发现就是输入的字符串<br><img src="/2021/05/23/tsctf-2021-re/1622019091321-9c4ef5c4-b988-4369-8695-27e8cb835491.png" alt="image.png"><br>因为uwp要依靠ApplicationFrameHost运行，所以只能附加进程进行调试。然而一开始想着是不是还得开个没进行反编译的ida进行附加到进程，然后再定位到关键代码再断点。其实完全不用，分析完后点断点，直接附加进程即可。<br><img src="/2021/05/23/tsctf-2021-re/1622019317811-85716fd1-01a8-46fe-9b09-5f0d45b0a6c1.png" alt="image.png"><br>题外话说多了，继续分析<br>（剩下的后补吧…赶作业先）<br>​<br><br><a name="wJM0V"></a></p>
+<h1 id="not-wasm-not-wasm-zip"><a href="#not-wasm-not-wasm-zip" class="headerlink" title="not-wasm not-wasm.zip"></a>not-wasm <a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2021/zip/2738284/1622019974578-628fbdfe-4e00-44c8-9a1e-b614dd920cd3.zip?_lake_card=%7B%22src%22:%22https://www.yuque.com/attachments/yuque/0/2021/zip/2738284/1622019974578-628fbdfe-4e00-44c8-9a1e-b614dd920cd3.zip%22,%22name%22:%22not-wasm.zip%22,%22size%22:9493,%22type%22:%22%22,%22ext%22:%22zip%22,%22status%22:%22done%22,%22source%22:%22transfer%22,%22id%22:%22vF6MH%22,%22card%22:%22file%22%7D">not-wasm.zip</a></h1><p>一开始看起来挺恶心的，但其实很好理解，主要这题还是对aes不熟悉…看了五小时硬是没看出是aes<br>​<br><br><a name="cDCsW"></a></p>
+<h1 id="ez-stlez-stl-zip"><a href="#ez-stlez-stl-zip" class="headerlink" title="ez_stlez_stl.zip"></a>ez_stl<a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2021/zip/2738284/1622019978496-42efe7e0-1525-467c-a354-b70cacd13a34.zip?_lake_card=%7B%22src%22:%22https://www.yuque.com/attachments/yuque/0/2021/zip/2738284/1622019978496-42efe7e0-1525-467c-a354-b70cacd13a34.zip%22,%22name%22:%22ez_stl.zip%22,%22size%22:2632413,%22type%22:%22%22,%22ext%22:%22zip%22,%22status%22:%22done%22,%22source%22:%22transfer%22,%22id%22:%22NzHpv%22,%22card%22:%22file%22%7D">ez_stl.zip</a></h1><p><a name="z5HQl"></a></p>
+<h1 id="yet-another-lua-ext-yet-another-lua-ext-zip"><a href="#yet-another-lua-ext-yet-another-lua-ext-zip" class="headerlink" title="yet-another-lua-ext yet-another-lua-ext.zip"></a>yet-another-lua-ext <a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2021/zip/2738284/1622019982508-962f0cde-9f08-4e71-a336-66f611cdf475.zip?_lake_card=%7B%22src%22:%22https://www.yuque.com/attachments/yuque/0/2021/zip/2738284/1622019982508-962f0cde-9f08-4e71-a336-66f611cdf475.zip%22,%22name%22:%22yet-another-lua-ext.zip%22,%22size%22:115470,%22type%22:%22%22,%22ext%22:%22zip%22,%22status%22:%22done%22,%22source%22:%22transfer%22,%22id%22:%22sOviX%22,%22card%22:%22file%22%7D">yet-another-lua-ext.zip</a></h1><p><br>​<br></p>
 
     </article>
     <!-- license  -->
@@ -417,13 +430,18 @@ height:60vh;
             <p>原文作者：<a href="https://jameshoi.github.io">James Hoi</a>
             <p>原文链接：<a href="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/">https://jameshoi.github.io/2021/05/23/tsctf-2021-re/</a>
             <p>发表日期：<a href="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/">May 23rd 2021, 4:34:11 pm</a>
-            <p>更新日期：<a href="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/">May 24th 2021, 1:20:10 am</a>
+            <p>更新日期：<a href="https://jameshoi.github.io/2021/05/23/tsctf-2021-re/">May 27th 2021, 4:51:09 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2021/05/26/mrctf-2021-re/" title= "MRCTF 2021 逆向题目">
+                    <div class="nextTitle">MRCTF 2021 逆向题目</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -575,7 +593,7 @@ top:60vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Android%E7%AD%BE%E5%88%B0%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">Android签到题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BabyEasyUWP-BabyEasyUWP-1-0-0-0-Test-rar"><span class="toc-number">2.</span> <span class="toc-text">BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#not-wasm-not-wasm-zip"><span class="toc-number">3.</span> <span class="toc-text">not-wasm not-wasm.zip</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ez-stlez-stl-zip"><span class="toc-number">4.</span> <span class="toc-text">ez_stlez_stl.zip</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#yet-another-lua-ext-yet-another-lua-ext-zip"><span class="toc-number">5.</span> <span class="toc-text">yet-another-lua-ext yet-another-lua-ext.zip</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -895,9 +913,50 @@ top:60vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 25
+        Total : 28
         </div>
         <!-- search  -->
         
@@ -914,6 +973,21 @@ top:60vh;
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密逆向</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/android/" >安卓逆向学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1168,22 +1242,7 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 

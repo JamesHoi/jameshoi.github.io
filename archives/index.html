@@ -355,13 +355,90 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/27/crypto/" >
+            
+                <span>一些常见的加密逆向</span>
+        </a>
+        <div class="abstract-content">
+            
+AES
+DES
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/27</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/26/android/" >
+            
+                <span>安卓逆向学习</span>
+        </a>
+        <div class="abstract-content">
+            
+ADB的一些指令参考这个文章https://blog.csdn.net/ezconn/article/details/85682916，这里只写一些常用指令
+12345adb conncet ip:port            //例如mumu是127.0.0.1:7555adb shell                      //命令行adb push/ adb pull             //传输文件adb forward tcp:port tcp:port  //端口转发adb install xxx.apk            //安装apk
+​
+IDA 动态调...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/26</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/26/mrctf-2021-re/" >
+            
+                <span>MRCTF 2021 逆向题目</span>
+        </a>
+        <div class="abstract-content">
+            开个坑，有空复现一下，先复现安卓题目
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/26</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/05/23/tsctf-2021-re/" >
             
                 <span>TSCTF 2021 逆向题目</span>
         </a>
         <div class="abstract-content">
-            开个坑以后补，基本都有分析到东西但aes和des没学好，所以没解出
-
+            
+Android签到题看wp https://www.yuque.com/jameshoi/writeup/tsctf-2021​
+BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar吐了…这么简单的题目竟然比赛的时候没做出来，主要还是一开始没找到字符串进行定位，ida里面用shift+f12没找到，用火绒剑找到的。ps: 原来其实可以不用火绒剑，在string里面右键选择setup修改查找字符串编码查找效果根据这个地址+基址找到字符串，然后查看交叉引用，找到了关键函数，可见需让v22为0才成功这里判断flag是否相等sub那个函数动调发现应该是做了凯撒加密，...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -385,8 +462,8 @@
         </a>
         <div class="abstract-content">
             
-Android签到题可以看出是动态加载dex网上查到该dex加载路径，用虚拟机找到该文件关键加密函数爆破解出
-123456789101112131415161718192021222324252627282930313233tmp1 = [ 147, 219, 146, 143, 240, 200, &#x27;f&#x27;, 136, &#x27;F&#x27;, &#x27;y&#x27;, &#x27;O&#x27;, &#x27;M&#x27;, 196, &#x27;&gt;&#x27;, 254, 189, &#x27;s&#x27;, 253, &#x27;W&#x27...
+Android签到题re1.zip可以看出是动态加载dex网上查到该dex加载路径，用虚拟机找到该文件关键加密函数爆破解出
+123456789101112131415161718192021222324252627282930313233tmp1 = [ 147, 219, 146, 143, 240, 200, &#x27;f&#x27;, 136, &#x27;F&#x27;, &#x27;y&#x27;, &#x27;O&#x27;, &#x27;M&#x27;, 196, &#x27;&gt;&#x27;, 254, 189, &#x27;s&#x27;, 253, &#x27...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -434,7 +511,8 @@ Android签到题可以看出是动态加载dex网上查到该dex加载路径，�
         </a>
         <div class="abstract-content">
             
-加载本地图片123456789101112131415161718192021222324252627282930313233343536#include &lt;windows.h&gt;#include &lt;conio.h&gt;int main()&#123;	// 隐藏光标	CONSOLE_CURSOR_INFO curinfo = &#123; sizeof curinfo, FALSE &#125;;	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &amp;curinfo);	// 获取控制台窗口句柄	HWN...
+加载本地图片参考了https://kc.kexinshe.com/t/81443文章
+123456789101112131415161718192021222324252627282930313233343536#include &lt;windows.h&gt;#include &lt;conio.h&gt;int main()&#123;	// 隐藏光标	CONSOLE_CURSOR_INFO curinfo = &#123; sizeof curinfo, FALSE &#125;;	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HAN...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -515,78 +593,6 @@ Dynamic Debug动调进去发现是TEA加密，调试一下发现是DWORD类型�
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/11</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/30/note/" >
-            
-                <span>逆向笔记</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/27/dasctf-2021-03/" >
-            
-                <span>DASCTF 三月 逆向</span>
-        </a>
-        <div class="abstract-content">
-            
-drinkSomeTea drinkSomeTea的附件.zip看到题目盲猜一波TEA加密，果不其然。之前没好好学，这次至少会做题了，之后有空要好好再看看详细的加密流程。附件给了个tea.png.out，即需要解密图片。32位exe，无壳在一开始的sub_401000函数里面，应该是判断是不是调试器（我没仔细看），用调试器的时候会退出程序，直接把call sub_401000 nop掉即可。应该是一个加密函数，点进去看发现加花了去花，Create Function，F5，发现是TEA加密，关于TEA加密脚本可以参考这个魔改一下TEA加密即可，要注意的是，加密的时候需要用int指针（保留...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/27</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/22/mcu/" >
-            
-                <span>用单片机运行HelloWorld</span>
-        </a>
-        <div class="abstract-content">
-            （本文图片较大，建议用电脑查看）（本文前言和介绍篇幅有点长，实际可从”开始”标题开始看）
-前言写完上次的“零基础搭建属于自己的博客”一文，我觉得我还是应该写一些科普或者教程，让同学们成功入门，我也顺便可以将我以往的经验总结一下。假如有朋友有想了解的东西，可以找我然后我写一篇文章入门（当然首先我也得会hhh），我擅长的方向大概是：机器人，单片机，网络安全，逆向，编程。
-介绍入门单片机首先总得了解单片机是什么。单片机普遍存在于我们的一些设备当中，例如台灯，通过编写程序让台灯每按一次按钮就减小亮度。又例如大家可能学过的Arduino，它是一款单片机。可以看出单片机一般和电路结合一起，控制电路量...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/22</span>
             </div>
             <!-- tags  -->
             
@@ -1002,9 +1008,50 @@ drinkSomeTea drinkSomeTea的附件.zip看到题目盲猜一波TEA加密，果不
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 25
+        Total : 28
         </div>
         <!-- search  -->
         
@@ -1021,6 +1068,21 @@ drinkSomeTea drinkSomeTea的附件.zip看到题目盲猜一波TEA加密，果不
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密逆向</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/android/" >安卓逆向学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1273,22 +1335,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 
