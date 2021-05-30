@@ -355,6 +355,33 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/01/31/misc-ctf/" >
+            
+                <span>各种CTF逆向题目大杂烩</span>
+        </a>
+        <div class="abstract-content">
+            
+某乱七八糟选拔赛 main2101075ff6b9adc84f9.zip拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png
+
+解题脚本用linux g++编译后运行
+123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/31</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/01/28/cumtctf-2021/" >
             
                 <span>CUMTCTF 2021</span>
@@ -1049,9 +1076,22 @@ $$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 28
+        Total : 29
         </div>
         <!-- search  -->
         
@@ -1068,6 +1108,11 @@ $$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href= "/2021/05/30/test/" >[Untitled Post]</a>
+        </li>
     
     
         <li class="archive-post-item">

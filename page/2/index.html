@@ -366,6 +366,32 @@ height:60vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/11/mrctf-2021/" >
+            
+                <span>MRCTF-2021 writeup</span>
+        </a>
+        <div class="abstract-content">
+            
+前言师傅们别骂了，我抽空一定努力好好学
+Dynamic Debug动调进去发现是TEA加密，调试一下发现是DWORD类型，写脚本就出了
+12345678910111213141516171819202122232425262728293031#include &lt;iostream&gt;#include &lt;stdio.h&gt;#include &lt;Windows.h&gt;void decrypt(DWORD* v, DWORD* k) &#123;	DWORD v0 = v[0], v1 = v[1], sum = 0xC6EF3720, i;  /* set up ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/30/note/" >
             
                 <span>逆向笔记</span>
@@ -583,33 +609,6 @@ pyre123456789101112131415161718code = [&#x27;\x1f&#x27;, &#x27;\x12&#x27;, &#x27
 
 EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
 12345enflag = [62,58,41,57,44,84,54,28,58,99,34,60,98,9,20,56,78,31,32,52,74,13,27,48,37,36,29,97,101]decode = &quot;abcdefghijklmnopqrstuvwxyz!!!&quot;for i in range(len(enflag)):  ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/31</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/01/31/misc-ctf/" >
-            
-                <span>各种CTF逆向题目大杂烩</span>
-        </a>
-        <div class="abstract-content">
-            
-某乱七八糟选拔赛 main2101075ff6b9adc84f9.zip拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png
-
-解题脚本用linux g++编译后运行
-123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1191,9 +1190,22 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 28
+        Total : 29
         </div>
         <!-- search  -->
         
@@ -1210,6 +1222,11 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href= "/2021/05/30/test/" >[Untitled Post]</a>
+        </li>
     
     
         <li class="archive-post-item">
