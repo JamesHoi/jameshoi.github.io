@@ -360,11 +360,9 @@
                 <span>各种CTF逆向题目大杂烩</span>
         </a>
         <div class="abstract-content">
-            
-某乱七八糟选拔赛 main2101075ff6b9adc84f9.zip拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png
-
+            某乱七八糟选拔赛 main2101075ff6b9adc84f9.zip拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png
 解题脚本用linux g++编译后运行
-123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include ...
+123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &l...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -387,13 +385,11 @@
                 <span>CUMTCTF 2021</span>
         </a>
         <div class="abstract-content">
-            
-re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag
+            re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag
 1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
 
 
-
-re2re2.rar扔进Exeinfo PE...
+re2re2.rar扔进Exeinfo PE，3...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -891,8 +887,6 @@ re2re2.rar扔进Exeinfo PE...
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 29
@@ -915,11 +909,6 @@ re2re2.rar扔进Exeinfo PE...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/30</span><a class="archive-post-title" href= "/2021/05/30/test/" >[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密逆向</a>
         </li>
     
@@ -931,6 +920,11 @@ re2re2.rar扔进Exeinfo PE...
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/script/" >一些需要用脚本的逆向题目</a>
         </li>
     
     
@@ -1010,12 +1004,12 @@ re2re2.rar扔进Exeinfo PE...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/misc-ctf/" >各种CTF逆向题目大杂烩</a>
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/tsctf-j-2020/" >TSCTF-J 2020</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/tsctf-j-2020/" >TSCTF-J 2020</a>
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/misc-ctf/" >各种CTF逆向题目大杂烩</a>
         </li>
     
     

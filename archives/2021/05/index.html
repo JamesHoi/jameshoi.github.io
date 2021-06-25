@@ -355,38 +355,12 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/30/test/" >
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            图片路径测试
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2021/05/27/crypto/" >
             
                 <span>一些常见的加密逆向</span>
         </a>
         <div class="abstract-content">
-            
-AES
-DES
+            AESDES
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -409,11 +383,34 @@ DES
                 <span>安卓逆向学习</span>
         </a>
         <div class="abstract-content">
-            
-ADB的一些指令参考这个文章https://blog.csdn.net/ezconn/article/details/85682916，这里只写一些常用指令
+            ADB的一些指令参考这个文章https://blog.csdn.net/ezconn/article/details/85682916，这里只写一些常用指令
 12345adb conncet ip:port            //例如mumu是127.0.0.1:7555adb shell                      //命令行adb push/ adb pull             //传输文件adb forward tcp:port tcp:port  //端口转发adb install xxx.apk            //安装apk
 ​
-IDA 动态调...
+IDA 动态调试...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/26</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/26/script/" >
+            
+                <span>一些需要用脚本的逆向题目</span>
+        </a>
+        <div class="abstract-content">
+            有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -460,9 +457,8 @@ IDA 动态调...
                 <span>TSCTF 2021 逆向题目</span>
         </a>
         <div class="abstract-content">
-            
-Android签到题看wp https://www.yuque.com/jameshoi/writeup/tsctf-2021​
-BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar吐了…这么简单的题目竟然比赛的时候没做出来，主要还是一开始没找到字符串进行定位，ida里面用shift+f12没找到，用火绒剑找到的。ps: 原来其实可以不用火绒剑，在string里面右键选择setup修改查找字符串编码查找效果根据这个地址+基址找到字符串，然后查看交叉引用，找到了关键函数，可见需让v22为0才成功这里判断flag是否相等sub那个函数动调发现应该是做了凯撒加密，...
+            Android签到题看wp https://www.yuque.com/jameshoi/writeup/tsctf-2021​
+BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar吐了…这么简单的题目竟然比赛的时候没做出来，主要还是一开始没找到字符串进行定位，ida里面用shift+f12没找到，用火绒剑找到的。ps: 原来其实可以不用火绒剑，在string里面右键选择setup修改查找字符串编码查找效果根据这个地址+基址找到字符串，然后查看交叉引用，找到了关键函数，可见需让v22为0才成功这里判断flag是否相等sub那个函数动调发现应该是做了凯撒加密，v...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -485,9 +481,8 @@ BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar吐了…这么简单的题目竟然比�
                 <span>TSCTF 2021 Writeup by sakura</span>
         </a>
         <div class="abstract-content">
-            
-Android签到题re1.zip可以看出是动态加载dex网上查到该dex加载路径，用虚拟机找到该文件关键加密函数爆破解出
-123456789101112131415161718192021222324252627282930313233tmp1 = [ 147, 219, 146, 143, 240, 200, &#x27;f&#x27;, 136, &#x27;F&#x27;, &#x27;y&#x27;, &#x27;O&#x27;, &#x27;M&#x27;, 196, &#x27;&gt;&#x27;, 254, 189, &#x27;s&#x27;, 253, &#x27...
+            Android签到题re1.zip可以看出是动态加载dex网上查到该dex加载路径，用虚拟机找到该文件关键加密函数爆破解出
+123456789101112131415161718192021222324252627282930313233tmp1 = [ 147, 219, 146, 143, 240, 200, &#x27;f&#x27;, 136, &#x27;F&#x27;, &#x27;y&#x27;, &#x27;O&#x27;, &#x27;M&#x27;, 196, &#x27;&gt;&#x27;, 254, 189, &#x27;s&#x27;, 253, &#x27;...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -534,9 +529,8 @@ Android签到题re1.zip可以看出是动态加载dex网上查到该dex加载路
                 <span>C语言实现命令行显示图片</span>
         </a>
         <div class="abstract-content">
-            
-加载本地图片参考了https://kc.kexinshe.com/t/81443文章
-123456789101112131415161718192021222324252627282930313233343536#include &lt;windows.h&gt;#include &lt;conio.h&gt;int main()&#123;	// 隐藏光标	CONSOLE_CURSOR_INFO curinfo = &#123; sizeof curinfo, FALSE &#125;;	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HAN...
+            加载本地图片参考了https://kc.kexinshe.com/t/81443文章
+123456789101112131415161718192021222324252627282930313233343536#include &lt;windows.h&gt;#include &lt;conio.h&gt;int main()&#123;	// 隐藏光标	CONSOLE_CURSOR_INFO curinfo = &#123; sizeof curinfo, FALSE &#125;;	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HAND...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -559,9 +553,8 @@ Android签到题re1.zip可以看出是动态加载dex网上查到该dex加载路
                 <span>CSTC 2021逆向部分</span>
         </a>
         <div class="abstract-content">
-            
-free_flagfree_flag.zip签到题，异或一下得flag
-1234567891011enflag = [  0x78, 0x64, 0x3F, 0x53, 0x6D, 0x79, 0x78, 0x64, 0x62, 0x3F,   0x78, 0x3D, 0x6F, 0x38, 0x3D, 0x78, 0x3C, 0x62, 0x53, 0x39,   0x75, 0x39, 0x78, 0x3F, 0x61, 0x53, 0x3D, 0x39, 0x53, 0x62,   0x3C, 0x78, 0x53, 0x3C, 0x39, 0x53, 0x39, 0x3F, 0...
+            free_flagfree_flag.zip签到题，异或一下得flag
+1234567891011enflag = [  0x78, 0x64, 0x3F, 0x53, 0x6D, 0x79, 0x78, 0x64, 0x62, 0x3F,   0x78, 0x3D, 0x6F, 0x38, 0x3D, 0x78, 0x3C, 0x62, 0x53, 0x39,   0x75, 0x39, 0x78, 0x3F, 0x61, 0x53, 0x3D, 0x39, 0x53, 0x62,   0x3C, 0x78, 0x53, 0x3C, 0x39, 0x53, 0x39, 0x3F, 0x...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1030,8 +1023,6 @@ free_flagfree_flag.zip签到题，异或一下得flag
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 29
@@ -1054,11 +1045,6 @@ free_flagfree_flag.zip签到题，异或一下得flag
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/30</span><a class="archive-post-title" href= "/2021/05/30/test/" >[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密逆向</a>
         </li>
     
@@ -1070,6 +1056,11 @@ free_flagfree_flag.zip签到题，异或一下得flag
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/script/" >一些需要用脚本的逆向题目</a>
         </li>
     
     
@@ -1149,12 +1140,12 @@ free_flagfree_flag.zip签到题，异或一下得flag
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/misc-ctf/" >各种CTF逆向题目大杂烩</a>
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/tsctf-j-2020/" >TSCTF-J 2020</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/tsctf-j-2020/" >TSCTF-J 2020</a>
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/misc-ctf/" >各种CTF逆向题目大杂烩</a>
         </li>
     
     
