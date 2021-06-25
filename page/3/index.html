@@ -372,7 +372,8 @@ height:60vh;
         </a>
         <div class="abstract-content">
             某乱七八糟选拔赛 main2101075ff6b9adc84f9.zip拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png
-解题脚本用linux g++编译后运行123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &lt...
+解题脚本用linux g++编译后运行
+123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &l...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -395,8 +396,11 @@ height:60vh;
                 <span>CUMTCTF 2021</span>
         </a>
         <div class="abstract-content">
-            re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
-re2re2.rar扔进Exeinfo PE，32位e...
+            re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag
+1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
+
+
+re2re2.rar扔进Exeinfo PE，3...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -420,7 +424,8 @@ re2re2.rar扔进Exeinfo PE，32位e...
         </a>
         <div class="abstract-content">
             前言之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用
-原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;r...
+原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js
+12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -518,11 +523,9 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
 安装插件首先推荐的是Markdown Preview Enhanced插件，安装完后可以浏览Markdown
 
 Markdown Preview Enhanced
-
+ 
 另外一个推荐的是Markdown Command Assist，安装后在编辑md的时候右键可以一键添加Markdown格式 
-Markdown Command Assist
-
-快速上传文章当你已经完全成功配置了hexo，可...
+![Markdown Command Assist](windows-hexo/8ICtjf....
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -555,8 +558,7 @@ Markdown Command Assist
 
 实现原理其实原理不难，用了instsrv.exe和srvany.exe实现下载链接
 注册服务方法一：在命令行输入sc create [服务名称] binpath=[srvany.exe路径]/srvany.exe方法二：在命令行输入[instsrv.exe路径]/instsrv.exe [服务名称] binpath=[srvany.exe路径]/srvany.exe
-若显示[SC] CreateService 失败 1783:占位程序接收到错误数据。
-则一般的解决方法是关...
+若显示[SC] CreateService 失败 1783:占位程序接收到错误数据。则一般的解决方法是关闭...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -579,15 +581,15 @@ Markdown Command Assist
                 <span>统计学公式</span>
         </a>
         <div class="abstract-content">
-            统计学均值\bar{x}=\frac{\sum_{n=1}^Nx_n}{N}期望
-离散型{E(X)=\sum_{k=1}^\infty {x_k}{p_k}}
-连续型E(X)=\int_{-\infty}^\infty xf(x)dx
+            统计学均值$$ \bar{x}=\frac{\sum_{n=1}^Nx_n}{N} $$
+期望
+离散型$$ {E(X)=\sum_{k=1}^\infty {x_k}{p_k}} $$
+连续型$$ E(X)=\int_{-\infty}^\infty xf(x)dx $$
 
 方差
-离散型{D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}}或s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1}
-连续型{D(X)=\int_{-\infty}^\infty[x-E(X)]^2f(x)dx}f(x)为连续性随机变量X的概率密度函数
-
-标准差s=\sqrt{\fra...
+离散型$$ {D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}} $$或
+$$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
+连续型$$ {D(X)=\int_{-\infty}^\infty[x-E(X)]^2f(x)dx} $...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -853,8 +855,6 @@ Markdown Command Assist
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
     
     
     
@@ -1505,22 +1505,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 

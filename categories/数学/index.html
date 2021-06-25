@@ -360,15 +360,15 @@
                 <span>统计学公式</span>
         </a>
         <div class="abstract-content">
-            统计学均值\bar{x}=\frac{\sum_{n=1}^Nx_n}{N}期望
-离散型{E(X)=\sum_{k=1}^\infty {x_k}{p_k}}
-连续型E(X)=\int_{-\infty}^\infty xf(x)dx
+            统计学均值$$ \bar{x}=\frac{\sum_{n=1}^Nx_n}{N} $$
+期望
+离散型$$ {E(X)=\sum_{k=1}^\infty {x_k}{p_k}} $$
+连续型$$ E(X)=\int_{-\infty}^\infty xf(x)dx $$
 
 方差
-离散型{D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}}或s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1}
-连续型{D(X)=\int_{-\infty}^\infty[x-E(X)]^2f(x)dx}f(x)为连续性随机变量X的概率密度函数
-
-标准差s=\sqrt{\fra...
+离散型$$ {D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}} $$或
+$$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
+连续型$$ {D(X)=\int_{-\infty}^\infty[x-E(X)]^2f(x)dx} $...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -478,8 +478,6 @@
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
     
     
     
@@ -1130,22 +1128,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 

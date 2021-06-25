@@ -360,7 +360,8 @@
                 <span>MRCTF 2021 Real_CHECKIN</span>
         </a>
         <div class="abstract-content">
-            【文章转载于安全客https://www.anquanke.com/post/id/237793】题如其名，真的是签到题，出题的时候调试符号都没去。扔进PEID可以看出是upx壳，脱壳后用ida f5就能看到基本上和源码完全一致的伪代码。直接由函数名知道是base64编码，进入base64_encode函数并查看alphabet_map，可以发现base64换表了，用python写个脚本就得到flag了1234567import base64my_base64table = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY...
+            【文章转载于安全客https://www.anquanke.com/post/id/237793】题如其名，真的是签到题，出题的时候调试符号都没去。扔进PEID可以看出是upx壳，脱壳后用ida f5就能看到基本上和源码完全一致的伪代码。直接由函数名知道是base64编码，进入base64_encode函数并查看alphabet_map，可以发现base64换表了，用python写个脚本就得到flag了
+1234567import base64my_base64table = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -384,7 +385,8 @@
         </a>
         <div class="abstract-content">
             前言师傅们别骂了，我抽空一定努力好好学
-Dynamic Debug动调进去发现是TEA加密，调试一下发现是DWORD类型，写脚本就出了12345678910111213141516171819202122232425262728293031#include &lt;iostream&gt;#include &lt;stdio.h&gt;#include &lt;Windows.h&gt;void decrypt(DWORD* v, DWORD* k) &#123;	DWORD v0 = v[0], v1 = v[1], sum = 0xC6EF3720, i;  /* set up */...
+Dynamic Debug动调进去发现是TEA加密，调试一下发现是DWORD类型，写脚本就出了
+12345678910111213141516171819202122232425262728293031#include &lt;iostream&gt;#include &lt;stdio.h&gt;#include &lt;Windows.h&gt;void decrypt(DWORD* v, DWORD* k) &#123;	DWORD v0 = v[0], v1 = v[1], sum = 0xC6EF3720, i;  /* set up *...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -494,8 +496,6 @@ Dynamic Debug动调进去发现是TEA加密，调试一下发现是DWORD类型�
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
     
     
     
@@ -1146,22 +1146,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 
