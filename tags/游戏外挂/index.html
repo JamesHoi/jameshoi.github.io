@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="James Hoi&#39;s Blog">
-<meta property="og:url" content="https://jameshoi.github.io/categories/%E9%80%86%E5%90%91/index.html">
+<meta property="og:url" content="https://jameshoi.github.io/tags/%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8C%82/index.html">
 <meta property="og:site_name" content="James Hoi&#39;s Blog">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="James Hoi">
@@ -385,21 +385,29 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2021/01/10/js-reverse/" >
+        <a class="abstract-title" href = "/2021/03/30/note/" >
             
-                <span>Js逆向</span>
+                <span>逆向笔记</span>
         </a>
         <div class="abstract-content">
-            前言之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用
-原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js
-12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;...
+            这里记录一些我自己真实场景下的逆向内容
+拷贝漫画去广告首先这个软件太过分了…虽说我很同意帮你看点广告赞助你的服务器费用，但每次进去都加载十几秒的广告，有时候再进去之后还要考30秒以上的广告，属实是有点过分。（新版本好像广告变少了）​
+Android Killer大法好，因为软件是一进去就开始加载广告的，定位启动软件的位置，找到有Ads的关键字，直接删除smali重新打包即可删除前删除后进去发现确实是没广告了，但点击漫画之后发现有一大截空白部分，怀疑应该是广告内容。由于是用flutter框架写的，用反射大师没定位到这个空白位置的控件，那没办法了…先将就用着，等哪天真受不了了就学习一波flu...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/10</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/30</span>
             </div>
             <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "安卓">安卓</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "游戏外挂">游戏外挂</a>
+    
+</div>
             
         </div>
     </article>
@@ -862,6 +870,10 @@
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 29
@@ -900,12 +912,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
         </li>
     
     
@@ -1046,9 +1058,23 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
+    
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
+    
+        <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
+    
+        <span class="sidebar-tag-name" data-tags="游戏外挂"><span class="iconfont-archer">&#xe606;</span>游戏外挂</span>
+    
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
+        <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
+    
+        <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
@@ -1085,11 +1111,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="CTF比赛"><span class="iconfont-archer">&#xe60a;</span>CTF比赛</span>
+    
+        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
+    
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
-    
-        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
-    
-        <span class="sidebar-category-name" data-categories="爬虫"><span class="iconfont-archer">&#xe60a;</span>爬虫</span>
     
         <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
     

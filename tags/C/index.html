@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="James Hoi&#39;s Blog">
-<meta property="og:url" content="https://jameshoi.github.io/categories/%E7%88%AC%E8%99%AB/index.html">
+<meta property="og:url" content="https://jameshoi.github.io/tags/C/index.html">
 <meta property="og:site_name" content="James Hoi&#39;s Blog">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="James Hoi">
@@ -385,64 +385,27 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/22/open163-downloader/" >
+        <a class="abstract-title" href = "/2019/06/17/baidupcs/" >
             
-                <span>网易公开课下载器，支持多线程，可分别下载视频及字幕</span>
+                <span>将BaiduPCS-Web添加进系统服务，可开机自启</span>
         </a>
         <div class="abstract-content">
-            前言 网上一直都找不到网易公开课的下载工具。哎，那不如自己写一个。 我这个工具只能提取易公开课的视频，不能提取网易云课堂
+            前言BaiduPCS-Web并非本人开发，软件只是将其添加进系统服务而已BaiduPCS-Web Github项目
 
-实现了多线程功能
-实现了提取字幕功能
-实现了选择画质功能
-实现了下载已合成字幕视频功能
-添加了分集下载功能
-
-原理提取网站内容在浏览器内的开发者工具的Console内输入__NUXT__.state.movie.moiveList可获取影片列表
-index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state.movie.moiveList[index].title视频名称__NUXT__.state.movi...
+实现原理其实原理不难，用了instsrv.exe和srvany.exe实现下载链接
+注册服务方法一：在命令行输入sc create [服务名称] binpath=[srvany.exe路径]/srvany.exe方法二：在命令行输入[instsrv.exe路径]/instsrv.exe [服务名称] binpath=[srvany.exe路径]/srvany.exe
+若显示[SC] CreateService 失败 1783:占位程序接收到错误数据。则一般的解决方法是关闭...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/22</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/17</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/22/reversi/" >
-            
-                <span>基于爬虫的黑白棋对战</span>
-        </a>
-        <div class="abstract-content">
-            前言这个爬虫是19年写的，当时正在学习爬虫
-原理定位棋盘html id后模拟鼠标点击，点击后等待电脑。定位棋子数id，然后显示在软件中
-源码地址Github源码
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "C#">C#</a>
     
 </div>
             
@@ -907,6 +870,10 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 29
@@ -945,12 +912,12 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
         </li>
     
     
@@ -1091,9 +1058,23 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
+    
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
+    
+        <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
+    
+        <span class="sidebar-tag-name" data-tags="游戏外挂"><span class="iconfont-archer">&#xe606;</span>游戏外挂</span>
+    
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
+        <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
+    
+        <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
@@ -1130,11 +1111,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="CTF比赛"><span class="iconfont-archer">&#xe60a;</span>CTF比赛</span>
+    
+        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
+    
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
-    
-        <span class="sidebar-category-name" data-categories="逆向"><span class="iconfont-archer">&#xe60a;</span>逆向</span>
-    
-        <span class="sidebar-category-name" data-categories="爬虫"><span class="iconfont-archer">&#xe60a;</span>爬虫</span>
     
         <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
     
