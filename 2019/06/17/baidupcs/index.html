@@ -314,7 +314,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">622</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">625</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -447,9 +447,8 @@ height:50vh;
 <p><img src="/2019/06/17/baidupcs/preview.png" alt="软件预览"></p>
 <h1 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h1><p>其实原理不难，用了instsrv.exe和srvany.exe实现<br><a target="_blank" rel="noopener" href="https://share.weiyun.com/5SM9M79">下载链接</a></p>
 <h2 id="注册服务"><a href="#注册服务" class="headerlink" title="注册服务"></a>注册服务</h2><p>方法一：在命令行输入sc create <b>[服务名称]</b> binpath=[srvany.exe路径]/srvany.exe<br>方法二：在命令行输入[instsrv.exe路径]/instsrv.exe <b>[服务名称]</b> binpath=[srvany.exe路径]/srvany.exe</p>
-<p>若显示<br><b>[SC] CreateService 失败 1783:<br>占位程序接收到错误数据。
-</b><br>则一般的解决方法是关闭安全软件</p>
-<h2 id="更改注册表"><a href="#更改注册表" class="headerlink" title="更改注册表"></a>更改注册表</h2><p>打开注册表 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\<b>[服务名称]</b><br>服务名称和刚刚输入的一致</p>
+<p>若显示<br><b>[SC] CreateService 失败 1783:<br>占位程序接收到错误数据。<br></b><br>则一般的解决方法是关闭安全软件</p>
+<h2 id="更改注册表"><a href="#更改注册表" class="headerlink" title="更改注册表"></a>更改注册表</h2><p>打开注册表 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services&lt;b&gt;[服务名称]<br>服务名称和刚刚输入的一致</p>
 <p>右击新建项，名称为<b>Parameters</b>，然后定位到<b>Parameters</b>项，新建以下几个字符串值。<br>名称 <b>Application</b> 值为你要作为服务运行的<b>程序地址</b>。<br>名称 <b>AppDirectory</b> 值为你要作为服务运行的程序所在文件夹路径。<br>名称 <b>AppParameters</b> 值为你要作为服务运行的程序启动所需要的参数。</p>
 <p><img src="/2019/06/17/baidupcs/85jz6g.png" alt="注册表"></p>
 <center>注册表</center>
@@ -1005,6 +1004,8 @@ top:50vh;
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 29
@@ -1043,12 +1044,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
         </li>
     
     
