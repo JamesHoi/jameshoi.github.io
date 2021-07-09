@@ -17,7 +17,7 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="James Hoi">
     
-    <meta name="keywords" content="James Hoi's Blog,James Hoi">
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
     <meta name="description" content="开个坑，有空复现一下，先复现安卓题目">
@@ -34,7 +34,7 @@
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
-    <title>MRCTF 2021 逆向题目 · JamesHoi的博客</title>
+    <title>MRCTF 2021 逆向题目 · fi3ework&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -87,8 +87,8 @@
 
 </style>
 
-    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    <link rel="preload" href= "/css/style.css?v=20210204" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20210204" media="(max-width: 980px)">
     
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
@@ -202,9 +202,10 @@
     <link rel="icon" href= "/assets/favicon.ico" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
-    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" href="/scripts/main.js?v=20210204" as="script" />
     <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
     <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    <script src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/js/all.min.js"  data-auto-replace-svg="nest" ></script>
     
     <!-- fancybox -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
@@ -221,21 +222,52 @@
     
 <header class="header">
 
-    <div class="read-progress"></div>
-    <div class="header-sidebar-menu">&#xe775;</div>
-    <!-- post页的toggle banner  -->
+    <!-- top read progress line -->
+    <div class="header-element">
+        
+        <div class="read-progress"></div>
+        
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        
+        <div class="header-sidebar-menu">
+        
+            
+            <div style="padding-left: 1px;">&#xe775;</div>
+            
+        </div>
+    </div>
+    <!-- back to home page text -->
+    <a class="home-link header-element" href=/>fi3ework's Studio.</a>
+    <!-- toggle banner for post layout -->
+    
     
     <div class="banner">
-            <div class="blog-title">
-                <a href="/" >James Hoi&#39;s Blog.</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">MRCTF 2021 逆向题目</a>
-            </div>
+    
+        <div class="blog-title header-element">
+            <a href="/" >fi3ework&#39;s Studio.</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">MRCTF 2021 逆向题目</a>
+        </div>
     </div>
     
-    <a class="home-link" href=/>James Hoi's Blog.</a>
 </header>
+    
+<footer class="footer-fixed">
+
+    <!-- back to top button -->
+    <div class="footer-fixed-element">
+        
+        <div class="back-top">
+        
+            
+            <div>&#xe639;</div>
+            
+        </div>
+    </div>
+</footer>
     <div class="wrapper">
         <div class="site-intro" style="
 
@@ -245,7 +277,7 @@
 
 
 
-height:60vh;
+height:50vh;
 ">
     
     <!-- 主页  -->
@@ -414,7 +446,7 @@ height:60vh;
     <!-- license  -->
     
         <div class="license-wrapper">
-            <p>原文作者：<a href="https://jameshoi.github.io">James Hoi</a>
+            <p>Author：<a href="https://jameshoi.github.io">James Hoi</a>
             <p>原文链接：<a href="https://jameshoi.github.io/2021/05/26/mrctf-2021-re/">https://jameshoi.github.io/2021/05/26/mrctf-2021-re/</a>
             <p>发表日期：<a href="https://jameshoi.github.io/2021/05/26/mrctf-2021-re/">May 26th 2021, 9:14:03 am</a>
             <p>更新日期：<a href="https://jameshoi.github.io/2021/05/26/mrctf-2021-re/">June 25th 2021, 2:16:39 pm</a>
@@ -445,30 +477,8 @@ height:60vh;
 
 <!-- City版安装代码已完成 -->
     
-    <div id="disqus_thread"></div>
-    <script>
-        /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        
-        var disqus_config = function () {
-        this.page.url = "https://jameshoi.github.io/2021/05/26/mrctf-2021-re/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "MRCTF 2021 逆向题目"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://jameshoi.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-
-    </script>
-    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
     
-    <!-- gitalk评论 -->
-
+     
     <!-- utteranc评论 -->
 
     <!-- partial('_partial/comment/changyan') -->
@@ -479,7 +489,11 @@ height:60vh;
     
 
     <!-- 评论 -->
+
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
 </main>
+
             <!-- profile -->
             
         </div>
@@ -491,31 +505,22 @@ height:60vh;
     
         
             
-                <a href="mailto:jameshoi@foxmail.com" class="iconfont-archer email" title=email ></a>
+                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
             
         
     
         
             
-                <a href="//github.com/JamesHoi" class="iconfont-archer github" target="_blank" title=github></a>
+                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
             
         
     
         
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
             
-                <a href="//facebook.com/ames.james.71" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+                <span class="iconfont-archer wechat" title=wechat>
+                    
+                    <img class="profile-qr" src="/assets/example_qr.png" />
+                </span>
             
         
     
@@ -540,9 +545,17 @@ height:60vh;
         
     
         
-            
-                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
-            
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
         
     
 
@@ -552,6 +565,8 @@ height:60vh;
     <div class="copyright">
         <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
     </div>
+    <!-- website approve for Chinese user -->
+    
     <!-- 不蒜子  -->
     
     <div class="busuanzi-container">
@@ -574,7 +589,7 @@ height:60vh;
 
 
 
-top:60vh;
+top:50vh;
 
     >
         <div class="toc-catalog">
@@ -583,7 +598,6 @@ top:60vh;
         
     </div>
     
-    <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
     <ul class="sidebar-tabs sidebar-tabs-active-0">
         <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
@@ -960,10 +974,6 @@ top:60vh;
         </div>
         <!-- search  -->
         
-            <div class="site-search popup-trigger">
-                <span class="iconfont-archer search-icon">&#xe627;</span>
-            </div>
-        
     </div>
     
     <div class="post-archive">
@@ -1212,29 +1222,6 @@ jsonContent:
     </script>
     <script src="/scripts/main.js"></script>
     <!-- algolia -->
-    
-        <div class="site-search">
-  <div class="algolia-popup popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="iconfont-archer">&#xe609;</i>
-    </span>
-  </div>
-</div>
-        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.js" defer></script>
-        <script src="/scripts/search.js" defer></script>
     
     <!-- busuanzi  -->
     
