@@ -391,7 +391,8 @@
         </a>
         <div class="abstract-content">
             前言有些题目之前就做完了，我不想再写WP了（手动滑稽保命）
-666ida放进去发现是普通的异或，直接秒123456789101112enflag = &quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;key = 0x12enflag = [ord(i) for i in enflag]flag = []for i in range(6):    flag.append(chr((enflag[3*i]^key)-6))    flag.append(chr((enflag[3*i+1]^key)+6))    flag.appen...
+666ida放进去发现是普通的异或，直接秒
+123456789101112enflag = &quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;key = 0x12enflag = [ord(i) for i in enflag]flag = []for i in range(6):    flag.append(chr((enflag[3*i]^key)-6))    flag.append(chr((enflag[3*i+1]^key)+6))    flag.appe...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -476,7 +477,8 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
         </a>
         <div class="abstract-content">
             某乱七八糟选拔赛 main2101075ff6b9adc84f9.zip拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png
-解题脚本用linux g++编译后运行123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &lt...
+解题脚本用linux g++编译后运行
+123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &l...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -499,8 +501,11 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
                 <span>CUMTCTF 2021</span>
         </a>
         <div class="abstract-content">
-            re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
-re2re2.rar扔进Exeinfo PE，32位e...
+            re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag
+1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
+
+
+re2re2.rar扔进Exeinfo PE，3...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -611,7 +616,8 @@ Login Success
         </a>
         <div class="abstract-content">
             前言之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用
-原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;r...
+原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js
+12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -764,6 +770,14 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1432,11 +1446,11 @@ index:视频列表索引__NUXT__.state.movie.moiveList视频列表__NUXT__.state
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
-    
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
         <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
+    
+        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
@@ -1528,22 +1542,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 

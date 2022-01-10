@@ -20,12 +20,12 @@
     <meta name="keywords" content="James Hoi's Blog,James Hoi">
     
     <meta name="description" content="">
-    <meta name="description" content="前言有些题目之前就做完了，我不想再写WP了（手动滑稽保命） 666ida放进去发现是普通的异或，直接秒123456789101112enflag &#x3D; &quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;key &#x3D; 0x12enflag &#x3D; [ord(i) for i in enflag]flag &#x3D; []for i in range(6):">
+    <meta name="description" content="前言有些题目之前就做完了，我不想再写WP了（手动滑稽保命） 666ida放进去发现是普通的异或，直接秒 123456789101112enflag &#x3D; &quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;key &#x3D; 0x12enflag &#x3D; [ord(i) for i in enflag]flag &#x3D; []for i in range(6):">
 <meta property="og:type" content="article">
 <meta property="og:title" content="攻防世界逆向刷题">
 <meta property="og:url" content="https://jameshoi.github.io/2021/02/06/adworld/index.html">
 <meta property="og:site_name" content="James Hoi&#39;s Blog">
-<meta property="og:description" content="前言有些题目之前就做完了，我不想再写WP了（手动滑稽保命） 666ida放进去发现是普通的异或，直接秒123456789101112enflag &#x3D; &quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;key &#x3D; 0x12enflag &#x3D; [ord(i) for i in enflag]flag &#x3D; []for i in range(6):">
+<meta property="og:description" content="前言有些题目之前就做完了，我不想再写WP了（手动滑稽保命） 666ida放进去发现是普通的异或，直接秒 123456789101112enflag &#x3D; &quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;key &#x3D; 0x12enflag &#x3D; [ord(i) for i in enflag]flag &#x3D; []for i in range(6):">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jameshoi.github.io/2021/02/06/adworld/1613504276249-8b41d2fe-0345-4a28-bc4e-a107232d8afb.png">
 <meta property="og:image" content="https://jameshoi.github.io/2021/02/06/adworld/1613505058590-da5ab2e0-6c6b-480c-8a44-4dc440962fec.png">
@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">407</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">409</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -451,11 +451,17 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>有些题目之前就做完了，我不想再写WP了（手动滑稽保命）</p>
-<h1 id="666"><a href="#666" class="headerlink" title="666"></a>666</h1><p>ida放进去发现是普通的异或，直接秒<br><img src="/2021/02/06/adworld/1613504276249-8b41d2fe-0345-4a28-bc4e-a107232d8afb.png" alt="image.png"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">enflag = <span class="string">&quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;</span></span><br><span class="line">key = <span class="number">0x12</span></span><br><span class="line">enflag = [ord(i) <span class="keyword">for</span> i <span class="keyword">in</span> enflag]</span><br><span class="line"></span><br><span class="line">flag = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">6</span>):</span><br><span class="line">    flag.append(chr((enflag[<span class="number">3</span>*i]^key)<span class="number">-6</span>))</span><br><span class="line">    flag.append(chr((enflag[<span class="number">3</span>*i+<span class="number">1</span>]^key)+<span class="number">6</span>))</span><br><span class="line">    flag.append(chr(enflag[<span class="number">3</span>*i+<span class="number">2</span>]^key^<span class="number">6</span>))</span><br><span class="line"></span><br><span class="line">print(<span class="string">&quot;&quot;</span>.join(flag))</span><br><span class="line"><span class="comment">#unctf&#123;b66_6b6_66b&#125;</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="IgniteMe"><a href="#IgniteMe" class="headerlink" title="IgniteMe"></a>IgniteMe</h1><p>找到验证以及加密位置，xor反解即得flag<br><img src="/2021/02/06/adworld/1613505058590-da5ab2e0-6c6b-480c-8a44-4dc440962fec.png" alt="image.png"><img src="/2021/02/06/adworld/1613505084159-eeedf998-c7ce-425e-b428-0583c5a8edc2.png" alt="image.png"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cipher = [</span><br><span class="line">  <span class="number">0x0D</span>, <span class="number">0x13</span>, <span class="number">0x17</span>, <span class="number">0x11</span>, <span class="number">0x02</span>, <span class="number">0x01</span>, <span class="number">0x20</span>, <span class="number">0x1D</span>, <span class="number">0x0C</span>, <span class="number">0x02</span>, </span><br><span class="line">  <span class="number">0x19</span>, <span class="number">0x2F</span>, <span class="number">0x17</span>, <span class="number">0x2B</span>, <span class="number">0x24</span>, <span class="number">0x1F</span>, <span class="number">0x1E</span>, <span class="number">0x16</span>, <span class="number">0x09</span>, <span class="number">0x0F</span>, </span><br><span class="line">  <span class="number">0x15</span>, <span class="number">0x27</span>, <span class="number">0x13</span>, <span class="number">0x26</span>, <span class="number">0x0A</span>, <span class="number">0x2F</span>, <span class="number">0x1E</span>, <span class="number">0x1A</span>, <span class="number">0x2D</span>, <span class="number">0x0C</span>, </span><br><span class="line">  <span class="number">0x22</span>, <span class="number">0x04</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">enflag = <span class="string">&quot;GONDPHyGjPEKruv&#123;&#123;pj]X@rF&quot;</span></span><br><span class="line">print(<span class="string">&quot;EIS&#123;&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(enflag)):</span><br><span class="line">    tmp = ((ord(enflag[i])^cipher[i])<span class="number">-72</span>)^<span class="number">0x55</span></span><br><span class="line">    <span class="keyword">if</span> tmp &lt;= <span class="number">90</span>: tmp += <span class="number">32</span></span><br><span class="line">    <span class="keyword">else</span>: tmp -= <span class="number">32</span></span><br><span class="line">    print(chr(tmp),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line">print(<span class="string">&quot;&#125;&quot;</span>)</span><br></pre></td></tr></table></figure></p>
+<h1 id="666"><a href="#666" class="headerlink" title="666"></a>666</h1><p>ida放进去发现是普通的异或，直接秒<br><img src="/2021/02/06/adworld/1613504276249-8b41d2fe-0345-4a28-bc4e-a107232d8afb.png" alt="image.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">enflag = <span class="string">&quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;</span></span><br><span class="line">key = <span class="number">0x12</span></span><br><span class="line">enflag = [ord(i) <span class="keyword">for</span> i <span class="keyword">in</span> enflag]</span><br><span class="line"></span><br><span class="line">flag = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">6</span>):</span><br><span class="line">    flag.append(chr((enflag[<span class="number">3</span>*i]^key)<span class="number">-6</span>))</span><br><span class="line">    flag.append(chr((enflag[<span class="number">3</span>*i+<span class="number">1</span>]^key)+<span class="number">6</span>))</span><br><span class="line">    flag.append(chr(enflag[<span class="number">3</span>*i+<span class="number">2</span>]^key^<span class="number">6</span>))</span><br><span class="line"></span><br><span class="line">print(<span class="string">&quot;&quot;</span>.join(flag))</span><br><span class="line"><span class="comment">#unctf&#123;b66_6b6_66b&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="IgniteMe"><a href="#IgniteMe" class="headerlink" title="IgniteMe"></a>IgniteMe</h1><p>找到验证以及加密位置，xor反解即得flag<br><img src="/2021/02/06/adworld/1613505058590-da5ab2e0-6c6b-480c-8a44-4dc440962fec.png" alt="image.png"><img src="/2021/02/06/adworld/1613505084159-eeedf998-c7ce-425e-b428-0583c5a8edc2.png" alt="image.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cipher = [</span><br><span class="line">  <span class="number">0x0D</span>, <span class="number">0x13</span>, <span class="number">0x17</span>, <span class="number">0x11</span>, <span class="number">0x02</span>, <span class="number">0x01</span>, <span class="number">0x20</span>, <span class="number">0x1D</span>, <span class="number">0x0C</span>, <span class="number">0x02</span>, </span><br><span class="line">  <span class="number">0x19</span>, <span class="number">0x2F</span>, <span class="number">0x17</span>, <span class="number">0x2B</span>, <span class="number">0x24</span>, <span class="number">0x1F</span>, <span class="number">0x1E</span>, <span class="number">0x16</span>, <span class="number">0x09</span>, <span class="number">0x0F</span>, </span><br><span class="line">  <span class="number">0x15</span>, <span class="number">0x27</span>, <span class="number">0x13</span>, <span class="number">0x26</span>, <span class="number">0x0A</span>, <span class="number">0x2F</span>, <span class="number">0x1E</span>, <span class="number">0x1A</span>, <span class="number">0x2D</span>, <span class="number">0x0C</span>, </span><br><span class="line">  <span class="number">0x22</span>, <span class="number">0x04</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">enflag = <span class="string">&quot;GONDPHyGjPEKruv&#123;&#123;pj]X@rF&quot;</span></span><br><span class="line">print(<span class="string">&quot;EIS&#123;&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(enflag)):</span><br><span class="line">    tmp = ((ord(enflag[i])^cipher[i])<span class="number">-72</span>)^<span class="number">0x55</span></span><br><span class="line">    <span class="keyword">if</span> tmp &lt;= <span class="number">90</span>: tmp += <span class="number">32</span></span><br><span class="line">    <span class="keyword">else</span>: tmp -= <span class="number">32</span></span><br><span class="line">    print(chr(tmp),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line">print(<span class="string">&quot;&#125;&quot;</span>)</span><br></pre></td></tr></table></figure>
 <h1 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h1><p>发现是.NET的exe，放进dnSpy定位到关键位置并且断点动态即得flag<br><img src="/2021/02/06/adworld/1613505509832-27b252b3-0d82-47c4-b685-229d273e1cce.png" alt="image.png"><img src="/2021/02/06/adworld/1613505522536-b8e8c2c0-78f3-4604-86d1-6cf6435ef76a.png" alt="image.png">flag{967DDDFBCD32C1F53527C221D9E40A0B}</p>
 <h1 id="BabyXor"><a href="#BabyXor" class="headerlink" title="BabyXor"></a>BabyXor</h1><p>一开始看到pushad我以为加了个壳，然而脱壳后的文件运行不了，放进IDA看了个寂寞<br><img src="/2021/02/06/adworld/1612627162575-933caa84-17b8-4430-8f5d-f0f59434ec2b.png" alt="image.png"><br>所以只好自己直接动态调试看，谁知道是个假的Xor….，动调一下flag就生成出来了<br><img src="/2021/02/06/adworld/1612627151486-635308f6-9a83-4335-8170-bc0ff205bd0b.png" alt="image.png"><br>flag{2378b077-7d6e-4564-bdca-7eec8eede9a2}</p>
-<h1 id="BABYRE"><a href="#BABYRE" class="headerlink" title="BABYRE"></a>BABYRE</h1><p>放进ida发现有个奇怪的变量异或后像函数一样调用，实际上是做了个异或加密防止静态分析，动调judge解密之后双击judge -&gt; 在最上面右键-&gt;Create Function -&gt; F5生成伪代码<br><img src="/2021/02/06/adworld/1613729485469-ceddbe42-ac34-423a-b8bb-4157ad3e80e3.png" alt="image.png"><img src="/2021/02/06/adworld/1613729639773-dd964bdb-aa58-42e3-9358-1a0f3d9d812b.png" alt="image.png"><br>发现就是普通异或题目，导出后再异或即得flag<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">enflag = [</span><br><span class="line">  <span class="number">0x66</span>, <span class="number">0x6D</span>, <span class="number">0x63</span>, <span class="number">0x64</span>, <span class="number">0x7F</span>, <span class="number">0x6B</span>, <span class="number">0x37</span>, <span class="number">0x64</span>, <span class="number">0x3B</span>, <span class="number">0x56</span>, </span><br><span class="line">  <span class="number">0x60</span>, <span class="number">0x3B</span>, <span class="number">0x6E</span>, <span class="number">0x70</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(enflag)):</span><br><span class="line">    print(chr(enflag[i]^i),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="comment"># flag&#123;n1c3_j0b&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="BABYRE"><a href="#BABYRE" class="headerlink" title="BABYRE"></a>BABYRE</h1><p>放进ida发现有个奇怪的变量异或后像函数一样调用，实际上是做了个异或加密防止静态分析，动调judge解密之后双击judge -&gt; 在最上面右键-&gt;Create Function -&gt; F5生成伪代码<br><img src="/2021/02/06/adworld/1613729485469-ceddbe42-ac34-423a-b8bb-4157ad3e80e3.png" alt="image.png"><img src="/2021/02/06/adworld/1613729639773-dd964bdb-aa58-42e3-9358-1a0f3d9d812b.png" alt="image.png"><br>发现就是普通异或题目，导出后再异或即得flag</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">enflag = [</span><br><span class="line">  <span class="number">0x66</span>, <span class="number">0x6D</span>, <span class="number">0x63</span>, <span class="number">0x64</span>, <span class="number">0x7F</span>, <span class="number">0x6B</span>, <span class="number">0x37</span>, <span class="number">0x64</span>, <span class="number">0x3B</span>, <span class="number">0x56</span>, </span><br><span class="line">  <span class="number">0x60</span>, <span class="number">0x3B</span>, <span class="number">0x6E</span>, <span class="number">0x70</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(enflag)):</span><br><span class="line">    print(chr(enflag[i]^i),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="comment"># flag&#123;n1c3_j0b&#125;</span></span><br></pre></td></tr></table></figure>
+
 
     </article>
     <!-- license  -->
@@ -644,6 +650,14 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1312,11 +1326,11 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
-    
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
         <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
+    
+        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
@@ -1410,22 +1424,7 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 </html>
 
 
