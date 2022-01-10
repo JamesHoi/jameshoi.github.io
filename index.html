@@ -396,6 +396,90 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2022/01/11/arm/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            ARM指令学习先开个坑，有空就填
+（坑已经填不完了…）
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/01/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2022/01/11/note2/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            近期做过的一些题目学业&amp;机器人挺忙的，逆向做一题就很耗时间，实在是不太有时间认真做题，准备直接找一堆wp复现一遍
+湖湘杯 Hideit Hideit进程序大致能找到这个函数
+
+能看出是向进程内存注入了一个函数，然后根据内存地址调用该函数，断点进入函数，一直跟进去，会发现TestEv1l.dll已注入，具体注入流程尚未分析。
+
+找到加密函数，开头有个修改注册表函数，隐藏了key
+
+
+进一步分析发现先做了一次xxtea，需要令v12这个输入值正确，成功进入if后再进行一次加密，然后最后再判断是否一致
+
+xxtea解密，解密得到第一个密匙为dotitsit
+12345678910111...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/01/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2022/01/11/tsctf-j-2021-re/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            TSCTF-J 2021 Reverse Official WPby James
+easyXor签到。题目就是题解，xor加密后验证，这里要提多一句，选手可以再仔细分析分析反编译出来的while流程。这里给出相对应的源码，希望选手理解为什么ida反编译后的结果等同于这句源码。解题脚本
+123456789data = [    0x59,0x5f,0x4c,0x5a,0x4f,0x25,0x41,0x71,0x52,0x61,    0x4b,0x65,0x31,0x4d,0x66,0x5d,0x2f,0x43,0x4b,0x4d,    0x5a,0x4c,0x5d,0x37,0x5f,...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/01/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/05/27/crypto/" >
             
                 <span>一些常见的加密逆向</span>
@@ -584,82 +668,10 @@ BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar吐了…这么简单的题目竟然比�
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/10/pic-console/" >
-            
-                <span>C语言实现命令行显示图片</span>
-        </a>
-        <div class="abstract-content">
-            加载本地图片参考了https://kc.kexinshe.com/t/81443文章
-123456789101112131415161718192021222324252627282930313233343536#include &lt;windows.h&gt;#include &lt;conio.h&gt;int main()&#123;	// 隐藏光标	CONSOLE_CURSOR_INFO curinfo = &#123; sizeof curinfo, FALSE &#125;;	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HAND...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/05/cstc-2021/" >
-            
-                <span>CSTC 2021逆向部分</span>
-        </a>
-        <div class="abstract-content">
-            free_flagfree_flag.zip签到题，异或一下得flag
-1234567891011enflag = [  0x78, 0x64, 0x3F, 0x53, 0x6D, 0x79, 0x78, 0x64, 0x62, 0x3F,   0x78, 0x3D, 0x6F, 0x38, 0x3D, 0x78, 0x3C, 0x62, 0x53, 0x39,   0x75, 0x39, 0x78, 0x3F, 0x61, 0x53, 0x3D, 0x39, 0x53, 0x62,   0x3C, 0x78, 0x53, 0x3C, 0x39, 0x53, 0x39, 0x3F, 0x...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/12/mrctf-2021-checkin/" >
-            
-                <span>MRCTF 2021 Real_CHECKIN</span>
-        </a>
-        <div class="abstract-content">
-            【文章转载于安全客https://www.anquanke.com/post/id/237793】题如其名，真的是签到题，出题的时候调试符号都没去。扔进PEID可以看出是upx壳，脱壳后用ida f5就能看到基本上和源码完全一致的伪代码。直接由函数名知道是base64编码，进入base64_encode函数并查看alphabet_map，可以发现base64换表了，用python写个脚本就得到flag了
-1234567import base64my_base64table = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/12</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">NEXT &gt;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -1242,9 +1254,36 @@ BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar吐了…这么简单的题目竟然比�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 29
+        Total : 32
         </div>
         <!-- search  -->
         
@@ -1254,6 +1293,25 @@ BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar吐了…这么简单的题目竟然比�
     
     
     
+    
+    <div class="archive-year"> 2022 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/arm/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-j-2021-re/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
@@ -1412,6 +1470,29 @@ BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar吐了…这么简单的题目竟然比�
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2022/01/11/note2/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
             <span class="archive-post-date">04/26</span><a class="archive-post-title" href= "/2019/04/26/statistics/" >统计学公式</a>
         </li>
@@ -1428,9 +1509,9 @@ BabyEasyUWP BabyEasyUWP_1.0.0.0_Test.rar吐了…这么简单的题目竟然比�
     
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
-        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
-    
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
     

@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="James Hoi">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="James Hoi">
+    
+    <meta name="keywords" content="James Hoi's Blog,James Hoi">
+    
+    <meta name="description" content="">
+    <meta name="description" content="TSCTF-J 2021 Reverse Official WPby James easyXor签到。题目就是题解，xor加密后验证，这里要提多一句，选手可以再仔细分析分析反编译出来的while流程。这里给出相对应的源码，希望选手理解为什么ida反编译后的结果等同于这句源码。解题脚本 123456789data &#x3D; [    0x59,0x5f,0x4c,0x5a,0x4f,0x25,0x41,0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="James Hoi&#39;s Blog">
+<meta property="og:url" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/index.html">
+<meta property="og:site_name" content="James Hoi&#39;s Blog">
+<meta property="og:description" content="TSCTF-J 2021 Reverse Official WPby James easyXor签到。题目就是题解，xor加密后验证，这里要提多一句，选手可以再仔细分析分析反编译出来的while流程。这里给出相对应的源码，希望选手理解为什么ida反编译后的结果等同于这句源码。解题脚本 123456789data &#x3D; [    0x59,0x5f,0x4c,0x5a,0x4f,0x25,0x41,0">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_f2ce5e7cad016d3b698cf77633aa6ecb.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_bcb68f9c88d737f77dd58757ca786ebf.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_7911d9c0c4329eca16c0e581fcdc8d0d.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_db4c0868e69ba83f09d5076b0c4a232d.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_d7849115717d1f1f1c4bbda1734c99f3.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_9856bb908cf70c92f31b4c8dcdad2e5a.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_46de028f01dfe157e27f693363a364e1.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_c84b3d8eb8668007c836abf3a373b344.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_a79d35ae42ec30b154f5b288022d22fc.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_e4eef4c8aed7399ea5c09692028bed37.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_7bd900433c8511e33a5e3c50bacdd2c6.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_cd14e805351050e0ae24789ea843b330.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_b9f4b19178b88716e59d41b90e3eb42d.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_686f348aa905e180c2aa55640f0fa035.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_7574d50c8b72a12601009e9ae275385e.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_95771b53b134afe5274de1a86504f417.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_48d61ca47183c4cb07c3a090bfd3d8d1.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_4e3e94a0f8cef923adec91903cab4f3f.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_bcdb112e720accfe942b1b871dcef165.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_ddbf2d8ca16d6329ede3a23dbfe74917.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_52068edc7ead49f4601d9c9db89f9ada.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_63f03c4c9de953160e080d4a21515ee4.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_628d17acf301d3324d751d7736c3771e.png">
+<meta property="article:published_time" content="2022-01-10T16:52:32.010Z">
+<meta property="article:modified_time" content="2022-01-10T16:57:30.674Z">
+<meta property="article:author" content="James Hoi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_f2ce5e7cad016d3b698cf77633aa6ecb.png">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    
+    <title>James Hoi的博客</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "/css/style.css?v=20210204" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20210204" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js?v=20210204" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    <script src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/js/all.min.js"  data-auto-replace-svg="nest" ></script>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="James Hoi's Blog" type="application/atom+xml">
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <!-- top read progress line -->
+    <div class="header-element">
+        
+        <div class="read-progress"></div>
+        
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        
+        <div class="header-sidebar-menu">
+        
+            
+            <div style="padding-left: 1px;">&#xe775;</div>
+            
+        </div>
+    </div>
+    <!-- back to home page text -->
+    <a class="home-link header-element" href=/>James Hoi's Blog</a>
+    <!-- toggle banner for post layout -->
+    
+    
+    <div class="banner">
+    
+        <div class="blog-title header-element">
+            <a href="/" >James Hoi&#39;s Blog</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name"></a>
+        </div>
+    </div>
+    
+</header>
+    
+<footer class="footer-fixed">
+
+    <!-- back to top button -->
+    <div class="footer-fixed-element">
+        
+        <div class="back-top">
+        
+            
+            <div>&#xe639;</div>
+            
+        </div>
+    </div>
+</footer>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            [Untitled Post]
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">1.7k</span>Reading time: <span class="post-count reading-time">8 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2022/01/11</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="TSCTF-J-2021-Reverse-Official-WP"><a href="#TSCTF-J-2021-Reverse-Official-WP" class="headerlink" title="TSCTF-J 2021 Reverse Official WP"></a>TSCTF-J 2021 Reverse Official WP</h1><p><strong>by James</strong></p>
+<h2 id="easyXor"><a href="#easyXor" class="headerlink" title="easyXor"></a>easyXor</h2><p>签到。题目就是题解，xor加密后验证，这里要提多一句，选手可以再仔细分析分析反编译出来的while流程。这里给出相对应的源码，希望选手理解为什么ida反编译后的结果等同于这句源码。<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_f2ce5e7cad016d3b698cf77633aa6ecb.png"><br>解题脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">data = [</span><br><span class="line">    <span class="number">0x59</span>,<span class="number">0x5f</span>,<span class="number">0x4c</span>,<span class="number">0x5a</span>,<span class="number">0x4f</span>,<span class="number">0x25</span>,<span class="number">0x41</span>,<span class="number">0x71</span>,<span class="number">0x52</span>,<span class="number">0x61</span>,</span><br><span class="line">    <span class="number">0x4b</span>,<span class="number">0x65</span>,<span class="number">0x31</span>,<span class="number">0x4d</span>,<span class="number">0x66</span>,<span class="number">0x5d</span>,<span class="number">0x2f</span>,<span class="number">0x43</span>,<span class="number">0x4b</span>,<span class="number">0x4d</span>,</span><br><span class="line">    <span class="number">0x5a</span>,<span class="number">0x4c</span>,<span class="number">0x5d</span>,<span class="number">0x37</span>,<span class="number">0x5f</span>,<span class="number">0x4b</span>,<span class="number">0x4f</span>,<span class="number">0x26</span>,<span class="number">0x63</span>,<span class="number">0x4f</span>,</span><br><span class="line">    <span class="number">0x7f</span>,<span class="number">0x61</span>,<span class="number">0x72</span>,<span class="number">0x7f</span>,<span class="number">0x1f</span>,<span class="number">0x71</span>,<span class="number">0x6c</span>,<span class="number">0x49</span>,<span class="number">0x78</span>,<span class="number">0x73</span>,</span><br><span class="line">    <span class="number">0x04</span>,<span class="number">0x05</span>,<span class="number">0x06</span>,<span class="number">0x5b</span></span><br><span class="line">]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">44</span>):</span><br><span class="line">    print(chr(data[i]^i^<span class="number">0xD</span>),end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="debugMe"><a href="#debugMe" class="headerlink" title="debugMe"></a>debugMe</h2><p>送分题。可以发现判断了字符串长度与flag头是否为<code>TSCTF-J</code>，然后输入的字符串直接进行比较了，所以动态调试查看buffer变量可以找到flag。这题没用动调的选手可以再做一遍<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_bcb68f9c88d737f77dd58757ca786ebf.png"><br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_7911d9c0c4329eca16c0e581fcdc8d0d.png"></p>
+<h2 id="maze"><a href="#maze" class="headerlink" title="maze"></a>maze</h2><p>送分题，这题做出来的人这么少属于是没想到，选手可以再分析下迷宫变量类型和程序流程。下图可以看出是个10x10的数组，v9，v10是数组索引<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_db4c0868e69ba83f09d5076b0c4a232d.png"><br>程序漏写了最后终点的判断导致有多解，标准解如下</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> <span class="built_in">map</span>[<span class="number">10</span>][<span class="number">10</span>] = &#123;</span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">2</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//SSDSSSDDWDDSSSAAAASSDDDDDWDWWWDWWAWAAAWWDDDDD</span></span><br><span class="line"><span class="comment">//TSCTF-J&#123;f62f3965313148ebccaec0bcdb132957&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="UpxRand"><a href="#UpxRand" class="headerlink" title="UpxRand"></a>UpxRand</h2><p>这题和去年的PaintUpx是一个意思。upx脱壳后ida分析发现有Sleep函数卡住了导致图片输出不全，patch掉即可，修改汇编方法如下图<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_d7849115717d1f1f1c4bbda1734c99f3.png"><br>把sleep改成nop，修改后再点击上图中的<code>Apply patches to input file</code><br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_9856bb908cf70c92f31b4c8dcdad2e5a.png"></p>
+<p>再打开软件扫二维码得flag<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_46de028f01dfe157e27f693363a364e1.png"></p>
+<h2 id="tic-tac-toe"><a href="#tic-tac-toe" class="headerlink" title="tic-tac-toe"></a>tic-tac-toe</h2><p>井字棋，用exeinfope可以发现是c#写的，用dnspy打开<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_c84b3d8eb8668007c836abf3a373b344.png"><br>可以发现经典c# Form入口，045X7ZYGMK是Form类型<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_a79d35ae42ec30b154f5b288022d22fc.png"><br>进入后多在几个地方下断点看看变量信息，可以发现有个判断赢了多少次的函数<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_e4eef4c8aed7399ea5c09692028bed37.png"><br>修改变量绕过判断或其他方法获取flag即可<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_7bd900433c8511e33a5e3c50bacdd2c6.png"></p>
+<h2 id="Minecraft"><a href="#Minecraft" class="headerlink" title="Minecraft"></a>Minecraft</h2><p>exeinfope可以看出是pyinstaller打包的，github找到pyinstxtractor.py脚本提取exe内容，找到main.pyc进行反编译，当中要注意解包脚本需要和打包时的py版本一致，否则会导致pyc无法反编译。<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_cd14e805351050e0ae24789ea843b330.png"><br>反编译结果中的关键信息</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">judge_flag</span>(<span class="params">label_text</span>):</span></span><br><span class="line">    flag = input(<span class="string">&#x27;请输入flag进行验证：&#x27;</span>)</span><br><span class="line">    enflag = [<span class="number">81</span>, <span class="number">77</span>, <span class="number">13</span>, <span class="number">81</span>, <span class="number">25</span>, <span class="number">180</span>, <span class="number">41</span>, <span class="number">237</span>, <span class="number">21</span>, <span class="number">233</span>, <span class="number">125</span>, <span class="number">65</span>, <span class="number">229</span>, <span class="number">209</span>, <span class="number">161</span>, <span class="number">192</span>, <span class="number">161</span>, <span class="number">125</span>, <span class="number">25</span>, <span class="number">85</span>, <span class="number">57</span>, <span class="number">185</span>, <span class="number">229</span>, <span class="number">125</span>, <span class="number">181</span>, <span class="number">141</span>, <span class="number">125</span>, <span class="number">196</span>, <span class="number">205</span>, <span class="number">185</span>, <span class="number">209</span>, <span class="number">125</span>, <span class="number">165</span>, <span class="number">81</span>, <span class="number">245</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">encrypt</span>(<span class="params">data</span>):</span></span><br><span class="line">        <span class="keyword">return</span> (data &amp; <span class="number">192</span>) &gt;&gt; <span class="number">6</span> | (data &amp; <span class="number">48</span>) &lt;&lt; <span class="number">2</span> | (data &amp; <span class="number">12</span>) &lt;&lt; <span class="number">2</span> | (data &amp; <span class="number">3</span>) &lt;&lt; <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> enflag == [encrypt(ord(s)) <span class="keyword">for</span> s <span class="keyword">in</span> flag]:</span><br><span class="line">        label_text += <span class="string">&#x27; flag是&#x27;</span> + flag</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        label_text += <span class="string">&#x27; 输入flag错误&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> label_text</span><br></pre></td></tr></table></figure>
+<p>可见是单字节加密，爆破即可（也可以根据加密推翻），脚本如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">enflag &#x3D; [81, 77, 13, 81, 25, 180, 41, 237, 21, 233, 125, 65, 229, 209, 161, 192, 161, 125, 25, 85, 57, 185, 229, 125, 181, 141, 125, 196, 205, 185, 209, 125, 165, 81, 245]</span><br><span class="line">def encrypt(data):</span><br><span class="line">    return (data &amp; 192) &gt;&gt; 6 | (data &amp; 48) &lt;&lt; 2 | (data &amp; 12) &lt;&lt; 2 | (data &amp; 3) &lt;&lt; 2</span><br><span class="line">for s in enflag:</span><br><span class="line">    for d in range(32,127):</span><br><span class="line">        if s &#x3D;&#x3D; encrypt(d): print(chr(d),end&#x3D;&quot;&quot;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="crackme"><a href="#crackme" class="headerlink" title="crackme"></a>crackme</h2><p>原题是有壳的，而且题目没有问题，有人说脱不出后就干脆不加壳。<br>main函数里的sub_401C50可以看出是检测进程名称，方法五花八门，总之绕过就行。<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_b9f4b19178b88716e59d41b90e3eb42d.png"><br>sub_401DB0是个SEH异常反调试，详情请百度<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_686f348aa905e180c2aa55640f0fa035.png"><br>直接查看汇编，参考刚刚上⾯的源码，反调试的E9刚好起到了花指令的作⽤，patch一下发现了dword_408160有运算<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_7574d50c8b72a12601009e9ae275385e.png"><br>再返回主函数汇编，发现藏了个函数sub_402870，基本所有常量字符串都加了异或加密，防止定位到这个函数，而且当中接收了输入字符串进行加密验证。<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_95771b53b134afe5274de1a86504f417.png"><br>先看_Initialize_parallel_init_info函数，发现了NtSetInformationThread，这整个函数是隐藏线程防⽌调试⽤的，绕过就⾏（留意下dword_408160）<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_48d61ca47183c4cb07c3a090bfd3d8d1.png"><br>这个是smc，动态运行函数，当中有用到dword_408160这个变量进行解密<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_4e3e94a0f8cef923adec91903cab4f3f.png"><br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_bcdb112e720accfe942b1b871dcef165.png"><br>当反调试函数都过了，让dword_408160+=21,21,14，即dword_408160为56时才解密成功，从⽽调⽤函数，每个加密函数都有固定的花指令。函数分别是异或的变形，加减乘除取余<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_ddbf2d8ca16d6329ede3a23dbfe74917.png"><br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_52068edc7ead49f4601d9c9db89f9ada.png"><br>过了一层验证后还有md5限制多解，md5字符串也用异或加密了一下校验md5前控制台会输出提示正在做md5<br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_63f03c4c9de953160e080d4a21515ee4.png"><br><img src="/2022/01/11/tsctf-j-2021-re/tsctf-j-2021-re%5Cupload_628d17acf301d3324d751d7736c3771e.png"><br>提取md5字符串得到d57d1bc45d6f044959e2e796930a301e，脚本如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">s = [</span><br><span class="line">  <span class="number">0x5C</span>, <span class="number">0x0D</span>, <span class="number">0x0F</span>, <span class="number">0x5C</span>, <span class="number">0x09</span>, <span class="number">0x5A</span>, <span class="number">0x5B</span>, <span class="number">0x0C</span>, <span class="number">0x0D</span>, <span class="number">0x5C</span>, </span><br><span class="line">  <span class="number">0x0E</span>, <span class="number">0x5E</span>, <span class="number">0x08</span>, <span class="number">0x0C</span>, <span class="number">0x0C</span>, <span class="number">0x01</span>, <span class="number">0x0D</span>, <span class="number">0x01</span>, <span class="number">0x5D</span>, <span class="number">0x0A</span>, </span><br><span class="line">  <span class="number">0x5D</span>, <span class="number">0x0F</span>, <span class="number">0x01</span>, <span class="number">0x0E</span>, <span class="number">0x01</span>, <span class="number">0x0B</span>, <span class="number">0x08</span>, <span class="number">0x59</span>, <span class="number">0x0B</span>, <span class="number">0x08</span>, </span><br><span class="line">  <span class="number">0x09</span>, <span class="number">0x5D</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">32</span>):</span><br><span class="line">    print(chr(s[i]^<span class="number">56</span>),end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>可以看出可以单字节爆破，写脚本即可，由于限制md5再写脚本遍历比较md5即可</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rand100 rand()%10+1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> enflag[] = &#123;</span><br><span class="line">  <span class="number">0x6B</span>, <span class="number">0x6F</span>, <span class="number">0x80</span>, <span class="number">0x3E</span>, <span class="number">0x81</span>, <span class="number">0x85</span>, <span class="number">0x68</span>, <span class="number">0x29</span>, <span class="number">0x28</span>, <span class="number">0xA1</span>,</span><br><span class="line">  <span class="number">0x3A</span>, <span class="number">0xE3</span>, <span class="number">0xE2</span>, <span class="number">0x1D</span>, <span class="number">0x28</span>, <span class="number">0x40</span>, <span class="number">0xD3</span>, <span class="number">0xD6</span>, <span class="number">0xD1</span>, <span class="number">0x06</span>,</span><br><span class="line">  <span class="number">0x5B</span>, <span class="number">0x69</span>, <span class="number">0x5A</span>, <span class="number">0x27</span>, <span class="number">0xF6</span>, <span class="number">0x03</span>, <span class="number">0x52</span>, <span class="number">0x3E</span>, <span class="number">0x7F</span>, <span class="number">0x26</span>,</span><br><span class="line">  <span class="number">0x66</span>, <span class="number">0x7E</span>, <span class="number">0x9F</span>, <span class="number">0xFD</span>, <span class="number">0x88</span>, <span class="number">0x18</span>, <span class="number">0x46</span>, <span class="number">0xCC</span>, <span class="number">0xBC</span>, <span class="number">0x82</span>,</span><br><span class="line">  <span class="number">0x43</span>, <span class="number">0x82</span>, <span class="number">0xA6</span>, <span class="number">0xA5</span>, <span class="number">0x94</span>, <span class="number">0x15</span>, <span class="number">0x1E</span>, <span class="number">0xED</span>, <span class="number">0x29</span>, <span class="number">0x93</span>,</span><br><span class="line">  <span class="number">0x87</span>, <span class="number">0x3F</span>, <span class="number">0x9A</span>, <span class="number">0x3C</span>, <span class="number">0x15</span>, <span class="number">0x61</span>, <span class="number">0xA4</span>, <span class="number">0x3D</span>, <span class="number">0x5C</span>, <span class="number">0x00</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> random_list[] = &#123;</span><br><span class="line">	<span class="number">0x27</span>,<span class="number">0x14</span>,<span class="number">0x27</span>,<span class="number">0x26</span>,<span class="number">0x38</span>,<span class="number">0x62</span>,<span class="number">0x42</span>,<span class="number">0x56</span>,<span class="number">0x33</span>,<span class="number">0x0D</span>,</span><br><span class="line">	<span class="number">0x36</span>,<span class="number">0x01</span>,<span class="number">0x2B</span>,<span class="number">0x52</span>,<span class="number">0x26</span>,<span class="number">0x16</span>,<span class="number">0x2E</span>,<span class="number">0x56</span>,<span class="number">0x62</span>,<span class="number">0x51</span>,</span><br><span class="line">	<span class="number">0x4D</span>,<span class="number">0x5C</span>,<span class="number">0x38</span>,<span class="number">0x07</span>,<span class="number">0x3A</span>,<span class="number">0x18</span>,<span class="number">0x52</span>,<span class="number">0x29</span>,<span class="number">0x1A</span>,<span class="number">0x4F</span>,</span><br><span class="line">	<span class="number">0x2F</span>,<span class="number">0x5B</span>,<span class="number">0x29</span>,<span class="number">0x58</span>,<span class="number">0x08</span>,<span class="number">0x26</span>,<span class="number">0x0C</span>,<span class="number">0x12</span>,<span class="number">0x39</span>,<span class="number">0x44</span>,</span><br><span class="line">	<span class="number">0x22</span>,<span class="number">0x4F</span>,<span class="number">0x18</span>,<span class="number">0x58</span>,<span class="number">0x62</span>,<span class="number">0x55</span>,<span class="number">0x0D</span>,<span class="number">0x0C</span>,<span class="number">0x4F</span>,<span class="number">0x43</span>,</span><br><span class="line">	<span class="number">0x1E</span>,<span class="number">0x05</span>,<span class="number">0x50</span>,<span class="number">0x06</span>,<span class="number">0x59</span>,<span class="number">0x32</span>,<span class="number">0x1E</span>,<span class="number">0x4D</span>,<span class="number">0x20</span>,<span class="number">0x41</span>,</span><br><span class="line">	<span class="number">0x0F</span>,<span class="number">0x25</span>,<span class="number">0x1D</span>,<span class="number">0x03</span>,<span class="number">0x35</span>,<span class="number">0x05</span>,<span class="number">0x26</span>,<span class="number">0x39</span>,<span class="number">0x63</span>,<span class="number">0x49</span>,</span><br><span class="line">	<span class="number">0x62</span>,<span class="number">0x0E</span>,<span class="number">0x54</span>,<span class="number">0x04</span>,<span class="number">0x3D</span>,<span class="number">0x2B</span>,<span class="number">0x30</span>,<span class="number">0x4C</span>,<span class="number">0x48</span>,<span class="number">0x05</span>,</span><br><span class="line">	<span class="number">0x4A</span>,<span class="number">0x35</span>,<span class="number">0x14</span>,<span class="number">0x05</span>,<span class="number">0x28</span>,<span class="number">0x57</span>,<span class="number">0x05</span>,<span class="number">0x26</span>,<span class="number">0x18</span>,<span class="number">0x24</span>,</span><br><span class="line">	<span class="number">0x22</span>,<span class="number">0x5E</span>,<span class="number">0x15</span>,<span class="number">0x4B</span>,<span class="number">0x54</span>,<span class="number">0x3E</span>,<span class="number">0x19</span>,<span class="number">0x42</span>,<span class="number">0x46</span>,<span class="number">0x1F</span>,</span><br><span class="line">	<span class="number">0x44</span>,<span class="number">0x25</span>,<span class="number">0x32</span>,<span class="number">0x25</span>,<span class="number">0x14</span>,<span class="number">0x1C</span>,<span class="number">0x01</span>,<span class="number">0x18</span>,<span class="number">0x17</span>,<span class="number">0x4B</span>,</span><br><span class="line">	<span class="number">0x0C</span>,<span class="number">0x3F</span>,<span class="number">0x42</span>,<span class="number">0x5C</span>,<span class="number">0x14</span>,<span class="number">0x30</span>,<span class="number">0x33</span>,<span class="number">0x15</span>,<span class="number">0x23</span>,<span class="number">0x45</span>,</span><br><span class="line">	<span class="number">0x19</span>,<span class="number">0x4E</span>,<span class="number">0x2F</span>,<span class="number">0x20</span>,<span class="number">0x3B</span>,<span class="number">0x49</span>,<span class="number">0x1F</span>,<span class="number">0x23</span>,<span class="number">0x52</span>,<span class="number">0x24</span>,</span><br><span class="line">	<span class="number">0x44</span>,<span class="number">0x3D</span>,<span class="number">0x0F</span>,<span class="number">0x2B</span>,<span class="number">0x4D</span>,<span class="number">0x1C</span>,<span class="number">0x18</span>,<span class="number">0x5F</span>,<span class="number">0x45</span>,<span class="number">0x2D</span>,</span><br><span class="line">	<span class="number">0x19</span>,<span class="number">0x16</span>,<span class="number">0x08</span>,<span class="number">0x61</span>,<span class="number">0x1B</span>,<span class="number">0x40</span>,<span class="number">0x29</span>,<span class="number">0x3F</span>,<span class="number">0x30</span>,<span class="number">0x51</span>,</span><br><span class="line">	<span class="number">0x30</span>,<span class="number">0x1D</span>,<span class="number">0x0E</span>,<span class="number">0x54</span>,<span class="number">0x3C</span>,<span class="number">0x2C</span>,<span class="number">0x5C</span>,<span class="number">0x5F</span>,<span class="number">0x3E</span>,<span class="number">0x22</span>,</span><br><span class="line">	<span class="number">0x49</span>,<span class="number">0x34</span>,<span class="number">0x37</span>,<span class="number">0x47</span>,<span class="number">0x14</span>,<span class="number">0x4B</span>,<span class="number">0x16</span>,<span class="number">0x17</span>,<span class="number">0x0B</span>,<span class="number">0x35</span>,</span><br><span class="line">	<span class="number">0x31</span>,<span class="number">0x39</span>,<span class="number">0x0C</span>,<span class="number">0x4C</span>,<span class="number">0x25</span>,<span class="number">0x14</span>,<span class="number">0x59</span>,<span class="number">0x38</span>,<span class="number">0x30</span>,<span class="number">0x29</span>,</span><br><span class="line">	<span class="number">0x37</span>,<span class="number">0x5E</span>,<span class="number">0x38</span>,<span class="number">0x2A</span>,<span class="number">0x05</span>,<span class="number">0x44</span>,<span class="number">0x11</span>,<span class="number">0x39</span>,<span class="number">0x02</span>,<span class="number">0x1C</span>,</span><br><span class="line">	<span class="number">0x0F</span>,<span class="number">0x34</span>,<span class="number">0x54</span>,<span class="number">0x50</span>,<span class="number">0x4B</span>,<span class="number">0x2F</span>,<span class="number">0x0F</span>,<span class="number">0x64</span>,<span class="number">0x42</span>,<span class="number">0x26</span>,</span><br><span class="line">	<span class="number">0x3D</span>,<span class="number">0x35</span>,<span class="number">0x4C</span>,<span class="number">0x3D</span>,<span class="number">0x57</span>,<span class="number">0x33</span>,<span class="number">0x17</span>,<span class="number">0x22</span>,<span class="number">0x38</span>,<span class="number">0x3A</span>,</span><br><span class="line">	<span class="number">0x45</span>,<span class="number">0x62</span>,<span class="number">0x4C</span>,<span class="number">0x2A</span>,<span class="number">0x29</span>,<span class="number">0x4E</span>,<span class="number">0x2C</span>,<span class="number">0x52</span>,<span class="number">0x11</span>,<span class="number">0x17</span>,</span><br><span class="line">	<span class="number">0x30</span>,<span class="number">0x0D</span>,<span class="number">0x5C</span>,<span class="number">0x18</span>,<span class="number">0x21</span>,<span class="number">0x60</span>,<span class="number">0x42</span>,<span class="number">0x07</span>,<span class="number">0x4C</span>,<span class="number">0x50</span>,</span><br><span class="line">	<span class="number">0x1C</span>,<span class="number">0x22</span>,<span class="number">0x36</span>,<span class="number">0x30</span>,<span class="number">0x53</span>,<span class="number">0x3F</span>,<span class="number">0x02</span>,<span class="number">0x2D</span>,<span class="number">0x39</span>,<span class="number">0x2E</span>,</span><br><span class="line">	<span class="number">0x5C</span>,<span class="number">0x3C</span>,<span class="number">0x0F</span>,<span class="number">0x0E</span>,<span class="number">0x5F</span>,<span class="number">0x37</span>,<span class="number">0x42</span>,<span class="number">0x13</span>,<span class="number">0x4E</span>,<span class="number">0x54</span>,</span><br><span class="line">	<span class="number">0x59</span>,<span class="number">0x5F</span>,<span class="number">0x09</span>,<span class="number">0x06</span>,<span class="number">0x4D</span>,<span class="number">0x62</span>,<span class="number">0x23</span>,<span class="number">0x4E</span>,<span class="number">0x15</span>,<span class="number">0x1A</span>,</span><br><span class="line">	<span class="number">0x1F</span>,<span class="number">0x35</span>,<span class="number">0x49</span>,<span class="number">0x2E</span>,<span class="number">0x43</span>,<span class="number">0x3E</span>,<span class="number">0x3A</span>,<span class="number">0x5A</span>,<span class="number">0x3C</span>,<span class="number">0x0B</span>,</span><br><span class="line">	<span class="number">0x4C</span>,<span class="number">0x29</span>,<span class="number">0x41</span>,<span class="number">0x1B</span>,<span class="number">0x5E</span>,<span class="number">0x62</span>,<span class="number">0x10</span>,<span class="number">0x5A</span>,<span class="number">0x5D</span>,<span class="number">0x3D</span>,</span><br><span class="line">	<span class="number">0x52</span>,<span class="number">0x61</span>,<span class="number">0x0C</span>,<span class="number">0x50</span>,<span class="number">0x4F</span>,<span class="number">0x37</span>,<span class="number">0x3B</span>,<span class="number">0x63</span>,<span class="number">0x25</span>,<span class="number">0x04</span>,</span><br><span class="line">	<span class="number">0x3B</span>,<span class="number">0x2C</span>,<span class="number">0x18</span>,<span class="number">0x54</span>,<span class="number">0x04</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">encode</span><span class="params">(<span class="keyword">int</span> input, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">	input ^= random_list[i * <span class="number">5</span>];</span><br><span class="line">	input += random_list[i * <span class="number">5</span> + <span class="number">1</span>];</span><br><span class="line">	input *= random_list[i * <span class="number">5</span> + <span class="number">2</span>];</span><br><span class="line">	input -= random_list[i * <span class="number">5</span> + <span class="number">3</span>];</span><br><span class="line">	input %= <span class="number">66666</span>;</span><br><span class="line">	<span class="keyword">return</span> input &amp; <span class="number">0xFF</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">brute</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">59</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">32</span>; j &lt; <span class="number">133</span>; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (encode(j, i) == enflag[i]) &#123;</span><br><span class="line">				<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; (<span class="keyword">char</span>)j ;</span><br><span class="line">				<span class="comment">//break;	</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	brute();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>flag是TSCTF-J{cRaCK_sMC_ls_S0_eA2Y_AnD_i_B3iLeVE_y0u_CAN_ALLKILL}</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>Author：<a href="https://jameshoi.github.io">James Hoi</a>
+            <p>原文链接：<a href="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/">https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/</a>
+            <p>发表日期：<a href="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/">January 11th 2022, 12:52:32 am</a>
+            <p>更新日期：<a href="https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/">January 11th 2022, 12:57:30 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2022/01/11/note2/" title= "">
+                    <div class="nextTitle">[Untitled Post]</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/05/27/crypto/" title= "一些常见的加密逆向">
+                    <div class="prevTitle">一些常见的加密逆向</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "https://jameshoi.github.io/2022/01/11/tsctf-j-2021-re/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = ""; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://jameshoi.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    
+     
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+</main>
+
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:jameshoi@foxmail.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/JamesHoi" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//zhihu.com/people/jameshoi" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
+            
+        
+    
+        
+    
+        
+            
+                <a href="//facebook.com/ames.james.71" class="iconfont-archer facebook" target="_blank" title=facebook></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TSCTF-J-2021-Reverse-Official-WP"><span class="toc-number">1.</span> <span class="toc-text">TSCTF-J 2021 Reverse Official WP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#easyXor"><span class="toc-number">1.1.</span> <span class="toc-text">easyXor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#debugMe"><span class="toc-number">1.2.</span> <span class="toc-text">debugMe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#maze"><span class="toc-number">1.3.</span> <span class="toc-text">maze</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UpxRand"><span class="toc-number">1.4.</span> <span class="toc-text">UpxRand</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tic-tac-toe"><span class="toc-number">1.5.</span> <span class="toc-text">tic-tac-toe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Minecraft"><span class="toc-number">1.6.</span> <span class="toc-text">Minecraft</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#crackme"><span class="toc-number">1.7.</span> <span class="toc-text">crackme</span></a></li></ol></li></ol>
+    </div>
+    
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 32
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2022 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/arm/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-j-2021-re/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密逆向</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/android/" >安卓逆向学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/script/" >一些需要用脚本的逆向题目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href= "/2021/05/10/bmp/" >C语言读取BMP格式图片并修改保存</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span><a class="archive-post-title" href= "/2021/05/10/pic-console/" >C语言实现命令行显示图片</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/05</span><a class="archive-post-title" href= "/2021/05/05/cstc-2021/" >CSTC 2021逆向部分</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2021/04/12/mrctf-2021-checkin/" >MRCTF 2021 Real_CHECKIN</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2021/04/11/mrctf-2021/" >MRCTF-2021 writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/30</span><a class="archive-post-title" href= "/2021/03/30/note/" >逆向笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span><a class="archive-post-title" href= "/2021/03/27/dasctf-2021-03/" >DASCTF 三月 逆向</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/mcu/" >用单片机运行HelloWorld</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2021/03/22/open163-new/" >网易公开课下载器 版本更新</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href= "/2021/03/01/crackme/" >记录一下自己出的crackme</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/06</span><a class="archive-post-title" href= "/2021/02/06/buuctf/" >BUU平台逆向刷题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/06</span><a class="archive-post-title" href= "/2021/02/06/adworld/" >攻防世界逆向刷题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/all-writeups/" >各种CTF比赛的Writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/misc-ctf/" >各种CTF逆向题目大杂烩</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2021/01/31/tsctf-j-2020/" >TSCTF-J 2020</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/2021/01/28/cumtctf-2021/" >CUMTCTF 2021</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >基于爬虫的黑白棋对战</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href= "/2020/02/13/windows-hexo/" >Windows系统下使用Github进行Hexo博客建站</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2022/01/11/note2/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/26</span><a class="archive-post-title" href= "/2019/04/26/statistics/" >统计学公式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/10</span><a class="archive-post-title" href= "/2019/04/10/pane-fixer/" >真正的完美解决centos7.5的图形界面中文乱码的方法</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
+    
+        <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
+    
+        <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
+    
+        <span class="sidebar-tag-name" data-tags="游戏外挂"><span class="iconfont-archer">&#xe606;</span>游戏外挂</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
+        <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
+    
+        <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="CTF比赛"><span class="iconfont-archer">&#xe60a;</span>CTF比赛</span>
+    
+        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
+    
+        <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
+    
+        <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "James Hoi"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+
+

@@ -396,6 +396,93 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/02/06/adworld/" >
+            
+                <span>攻防世界逆向刷题</span>
+        </a>
+        <div class="abstract-content">
+            前言有些题目之前就做完了，我不想再写WP了（手动滑稽保命）
+666ida放进去发现是普通的异或，直接秒
+123456789101112enflag = &quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;key = 0x12enflag = [ord(i) for i in enflag]flag = []for i in range(6):    flag.append(chr((enflag[3*i]^key)-6))    flag.append(chr((enflag[3*i+1]^key)+6))    flag.appe...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/06</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/01/31/all-writeups/" >
+            
+                <span>各种CTF比赛的Writeup</span>
+        </a>
+        <div class="abstract-content">
+            更新md太麻烦了，https://drive.byr.edu.cn/s/pixxowiZtSyCRwy自己找吧
+安洵杯2020部分WPhttps://www.anquanke.com/post/id/223786
+RoarCTF2020 部分wphttps://www.anquanke.com/post/id/224892
+SWPUCTF2020 官方WPSWPUCTF2020 官方WP - SWPU_08067sec.rar
+NCTF2020 By 天璇Merak
+NCTF2019 Official Writeup
+NEFUCTF2020 官方WP
+*CTF2021 By 天璇Mera...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/31</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/01/31/tsctf-j-2020/" >
+            
+                <span>TSCTF-J 2020</span>
+        </a>
+        <div class="abstract-content">
+            
+前言第一次参加CTF比赛，感觉自己好菜（我就学了一个月而已…菜也正常）。（以后一定要记得每次做完就写wp… 不然最后一天很难受）TSCTF-J比赛网址
+EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
+12345enflag = [62,58,41,57,44,84,54,28,58,99,34,60,98,9,20,56,78,31,32,52,74,13,27,48,37,36,29,97,101]decode = &quot;abcdefghijklmnopqrstuvwxyz!!!&quot;for i in range(len(enflag)):    ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/31</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "TSCTFJ">TSCTFJ</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/01/31/misc-ctf/" >
             
                 <span>各种CTF逆向题目大杂烩</span>
@@ -608,73 +695,10 @@ Markdown Preview Enhanced
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/26/statistics/" >
-            
-                <span>统计学公式</span>
-        </a>
-        <div class="abstract-content">
-            统计学均值$$ \bar{x}=\frac{\sum_{n=1}^Nx_n}{N} $$
-期望
-离散型$$ {E(X)=\sum_{k=1}^\infty {x_k}{p_k}} $$
-连续型$$ E(X)=\int_{-\infty}^\infty xf(x)dx $$
-
-方差
-离散型$$ {D(X)=\sum_{k=1}^\infty [x_k-E(X)]^2 {p_k}} $$或
-$$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
-连续型$$ {D(X)=\int_{-\infty}^\infty[x-E(X)]^2f(x)dx} $...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/26</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/10/pane-fixer/" >
-            
-                <span>真正的完美解决centos7.5的图形界面中文乱码的方法</span>
-        </a>
-        <div class="abstract-content">
-            网上看了很多很多的办法，就是搞不定乱码的情况。本文目的是希望后人能够迅速解决这个问题，此方法在Centos 7.5亲测有效。
-一键解决：https://github.com/JamesHoi/pane-fixer-centos （下面的都可以忽略了）
-参考  https://www.linuxidc.com/Linux/2013-01/77362.htm , 安装语言包yum -y install fonts-chineseyum -y install fonts-ISO8859-2但是却显示错误No package fonts-chinese available.，找不到安装包
-经过一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/2/">&lt; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+        <a class="extend prev" rel="prev" href="/page/2/">&lt; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -1257,9 +1281,36 @@ $$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 29
+        Total : 32
         </div>
         <!-- search  -->
         
@@ -1269,6 +1320,25 @@ $$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
     
     
     
+    
+    <div class="archive-year"> 2022 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/arm/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-j-2021-re/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
@@ -1427,6 +1497,29 @@ $$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2022/01/11/note2/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
             <span class="archive-post-date">04/26</span><a class="archive-post-title" href= "/2019/04/26/statistics/" >统计学公式</a>
         </li>
@@ -1443,9 +1536,9 @@ $$ s^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1} $$
     
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
-        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
-    
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
     
