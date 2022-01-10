@@ -387,10 +387,10 @@
     <article class="index-post">
         <a class="abstract-title" href = "/2021/05/27/crypto/" >
             
-                <span>一些常见的加密逆向</span>
+                <span>一些常见的加密算法</span>
         </a>
         <div class="abstract-content">
-            AESDES
+            RC4RC5RC6TEA/XTEA/XXTEAAESDESSM4Salsa20chacha20BlowfishTwoFishSerpentZUC
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -911,8 +911,6 @@
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 32
@@ -955,7 +953,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密逆向</a>
+            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密算法</a>
         </li>
     
     
@@ -975,12 +973,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
         </li>
     
     
@@ -1123,9 +1121,9 @@
     
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
-        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
-    
         <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
+    
+        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
@@ -1139,9 +1137,9 @@
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
-    
         <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1217,7 +1215,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 

@@ -27,20 +27,20 @@
 <meta property="og:site_name" content="James Hoi&#39;s Blog">
 <meta property="og:description" content="近期做过的一些题目学业&amp;机器人挺忙的，逆向做一题就很耗时间，实在是不太有时间认真做题，准备直接找一堆wp复现一遍 湖湘杯 Hideit Hideit进程序大致能找到这个函数  能看出是向进程内存注入了一个函数，然后根据内存地址调用该函数，断点进入函数，一直跟进去，会发现TestEv1l.dll已注入，具体注入流程尚未分析。  找到加密函数，开头有个修改注册表函数，隐藏了key   进一步分">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/note2%5Cimage-20220111010145631.png">
-<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/note2%5Cimage-20220111012146523.png">
-<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/note2%5Cimage-20220111012911648.png">
-<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/note2%5Cimage-20220111013550525.png">
-<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/note2%5Cimage-20220111013704574.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/image-20220111010145631.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/image-20220111012146523.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/image-20220111012911648.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/image-20220111013550525.png">
+<meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/image-20220111013704574.png">
 <meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/image-20220111015157822.png">
 <meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/image-20220111020726584.png">
 <meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/image-20220111020750665.png">
 <meta property="og:image" content="https://jameshoi.github.io/2022/01/11/note2/image-20220111021339163.png">
 <meta property="article:published_time" content="2022-01-10T18:34:17.000Z">
-<meta property="article:modified_time" content="2022-01-10T18:37:33.006Z">
+<meta property="article:modified_time" content="2022-01-10T18:48:45.576Z">
 <meta property="article:author" content="James Hoi">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jameshoi.github.io/2022/01/11/note2/note2%5Cimage-20220111010145631.png">
+<meta name="twitter:image" content="https://jameshoi.github.io/2022/01/11/note2/image-20220111010145631.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">925</span>Reading time: <span class="post-count reading-time">4 min</span></span>
+                        <span>Word count: <span class="post-count word-count">928</span>Reading time: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -451,16 +451,16 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <h1 id="近期做过的一些题目"><a href="#近期做过的一些题目" class="headerlink" title="近期做过的一些题目"></a>近期做过的一些题目</h1><p>学业&amp;机器人挺忙的，逆向做一题就很耗时间，实在是不太有时间认真做题，准备直接找一堆wp复现一遍</p>
-<h2 id="湖湘杯-Hideit-Hideit"><a href="#湖湘杯-Hideit-Hideit" class="headerlink" title="湖湘杯 Hideit Hideit"></a>湖湘杯 Hideit <a href="note2/Hideit.zip">Hideit</a></h2><p>进程序大致能找到这个函数</p>
-<p><img src="/2022/01/11/note2/note2%5Cimage-20220111010145631.png" alt="image-20220111010145631"></p>
+<h2 id="湖湘杯-Hideit-Hideit"><a href="#湖湘杯-Hideit-Hideit" class="headerlink" title="湖湘杯 Hideit Hideit"></a>湖湘杯 Hideit <a href="Hideit.zip">Hideit</a></h2><p>进程序大致能找到这个函数</p>
+<p><img src="/2022/01/11/note2/image-20220111010145631.png" alt="image-20220111010145631"></p>
 <p>能看出是向进程内存注入了一个函数，然后根据内存地址调用该函数，断点进入函数，一直跟进去，会发现TestEv1l.dll已注入，具体注入流程尚未分析。</p>
-<p><img src="/2022/01/11/note2/note2%5Cimage-20220111012146523.png" alt="image-20220111012146523"></p>
+<p><img src="/2022/01/11/note2/image-20220111012146523.png" alt="image-20220111012146523"></p>
 <p>找到加密函数，开头有个修改注册表函数，隐藏了key</p>
-<p><img src="/2022/01/11/note2/note2%5Cimage-20220111012911648.png" alt="image-20220111012911648"></p>
-<p><img src="/2022/01/11/note2/note2%5Cimage-20220111013550525.png" alt="image-20220111013550525"></p>
+<p><img src="/2022/01/11/note2/image-20220111012911648.png" alt="image-20220111012911648"></p>
+<p><img src="/2022/01/11/note2/image-20220111013550525.png" alt="image-20220111013550525"></p>
 <p>进一步分析发现先做了一次xxtea，需要令v12这个输入值正确，成功进入if后再进行一次加密，然后最后再判断是否一致</p>
-<p><img src="/2022/01/11/note2/note2%5Cimage-20220111013704574.png" alt="image-20220111013704574"></p>
-<p>xxtea解密，解密得到第一个密匙为dotitsit</p>
+<p><img src="/2022/01/11/note2/image-20220111013704574.png" alt="image-20220111013704574"></p>
+<p>xtea解密，解密得到第一个密匙为dotitsit</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">decrypt</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span>* v, <span class="keyword">int</span>* k)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> v0 = v[<span class="number">0</span>], v1 = v[<span class="number">1</span>], i;           <span class="comment">/* set up */</span></span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> sum = <span class="number">0xC6EF3720</span>;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> delta = <span class="number">0x61C88647</span>;                     <span class="comment">/* a key schedule constant */</span></span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++) &#123;                       <span class="comment">/* basic cycle start */</span></span><br><span class="line">		index = (sum &gt;&gt; <span class="number">2</span>) &amp; <span class="number">3</span>;</span><br><span class="line">		v1 -= ((sum ^ v0) + (v0 ^ k[index ^ <span class="number">1</span>])) ^ (((v0 &lt;&lt; <span class="number">4</span>) ^ (v0 &gt;&gt; <span class="number">3</span>)) + ((v0 &gt;&gt; <span class="number">5</span>) ^ (v0 &lt;&lt; <span class="number">2</span>)));</span><br><span class="line">		v0 -= ((sum ^ v1) + (v1 ^ k[index])) ^ (((v1 &lt;&lt; <span class="number">4</span>) ^ (v1 &gt;&gt; <span class="number">3</span>)) + ((v1 &gt;&gt; <span class="number">5</span>) ^ (v1 &lt;&lt; <span class="number">2</span>)));</span><br><span class="line">		sum += delta;</span><br><span class="line">	&#125;                                              <span class="comment">/* end cycle */</span></span><br><span class="line">	v[<span class="number">0</span>] = v0; v[<span class="number">1</span>] = v1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> key[<span class="number">4</span>] = &#123; <span class="number">114</span>, <span class="number">514</span>, <span class="number">19</span>, <span class="number">19</span> &#125;;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> v[<span class="number">2</span>] = &#123; <span class="number">288407067</span>,<span class="number">1668576323</span> &#125;;</span><br><span class="line">	decrypt((<span class="keyword">unsigned</span> <span class="keyword">int</span>*)v, key);</span><br><span class="line">	<span class="keyword">char</span>* ptr = (<span class="keyword">char</span>*)v; <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, *(ptr+i));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>用findcrypt插件提示为salsa20加密，一直尝试无果，最后发现了是chacha20，编写脚本即可</p>
@@ -469,10 +469,10 @@ height:50vh;
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> ChaCha20</span><br><span class="line">secret = <span class="string">&quot;0N3@aYI_M3l0dy_KurOm1_W_Suk1dqy0&quot;</span>.encode()</span><br><span class="line">ciphertext = bytes([<span class="number">0xEB</span>, <span class="number">0x8E</span>, <span class="number">0x5C</span>, <span class="number">0xA5</span>, <span class="number">0x62</span>, <span class="number">0xB4</span>, <span class="number">0x1C</span>, <span class="number">0x84</span>, <span class="number">0x5C</span>, <span class="number">0x59</span>,<span class="number">0xFC</span>, <span class="number">0x0D</span>, <span class="number">0x43</span>, <span class="number">0x3C</span>, <span class="number">0xAB</span>, <span class="number">0x20</span>, <span class="number">0xD8</span>, <span class="number">0x93</span>, <span class="number">0x33</span>, <span class="number">0x13</span>,<span class="number">0xA1</span>, <span class="number">0x9E</span>, <span class="number">0x39</span>, <span class="number">0x00</span>, <span class="number">0x76</span>, <span class="number">0x14</span>, <span class="number">0xB5</span>, <span class="number">0x04</span>, <span class="number">0x58</span>, <span class="number">0x9D</span>,<span class="number">0x06</span>, <span class="number">0xB8</span>])</span><br><span class="line">nonce = <span class="string">&quot;dotitsit&quot;</span>.encode()</span><br><span class="line">cipher = ChaCha20.new(key=secret, nonce=nonce)</span><br><span class="line">plaintext = cipher.decrypt(ciphertext)</span><br><span class="line"></span><br><span class="line">print(plaintext)</span><br></pre></td></tr></table></figure>
 
 <p>得到flag{F1NDM3_4f73r_7H3_5h3LLC0D3}</p>
-<h2 id="强网拟态-babyre"><a href="#强网拟态-babyre" class="headerlink" title="强网拟态 babyre"></a>强网拟态 babyre</h2><p>其实题目挺简单，我硬是没看出这只是个查表法的aes解密，其余啥都没做。</p>
+<h2 id="强网拟态-babyre-babyre"><a href="#强网拟态-babyre-babyre" class="headerlink" title="强网拟态 babyre babyre"></a>强网拟态 babyre <a href="RE1-babyre.zip">babyre</a></h2><p>其实题目挺简单，我硬是没看出这只是个查表法的aes解密，其余啥都没做。</p>
 <p>扔进ida能大致发现应该是个upx，脱壳后进行分析。</p>
-<h2 id="强网拟态-babytms"><a href="#强网拟态-babytms" class="headerlink" title="强网拟态 babytms"></a>强网拟态 babytms</h2><p>已经搭建好动调环境，有空学习一波arm指令然后复现一次。</p>
-<h2 id="MBCrackme"><a href="#MBCrackme" class="headerlink" title="MBCrackme"></a>MBCrackme</h2><p>crazyman大佬发的题目，一个exe里就有三题，废物我只做了第一题，主要是思路挺有意思的。.net题目</p>
+<h2 id="强网拟态-babytms-babytms"><a href="#强网拟态-babytms-babytms" class="headerlink" title="强网拟态 babytms babytms"></a>强网拟态 babytms <a href="RE2-babytms.zip">babytms</a></h2><p>已经搭建好动调环境，有空学习一波arm指令然后复现一次。</p>
+<h2 id="MBCrackme-MBCrackme"><a href="#MBCrackme-MBCrackme" class="headerlink" title="MBCrackme MBCrackme"></a>MBCrackme <a href="MBCrackme.rar">MBCrackme</a></h2><p>crazyman大佬发的题目，一个exe里就有三题，废物我只做了第一题，主要是思路挺有意思的。.net题目</p>
 <p><img src="/2022/01/11/note2/image-20220111020726584.png" alt="image-20220111020726584"></p>
 <p>按下第一个检查密码按钮进入button1_click函数，可见输入的密码作为密匙解密resources文件，然后将所得到的字节保存并执行。</p>
 <p><img src="/2022/01/11/note2/image-20220111020750665.png" alt="image-20220111020750665"></p>
@@ -490,7 +490,7 @@ height:50vh;
             <p>Author：<a href="https://jameshoi.github.io">James Hoi</a>
             <p>原文链接：<a href="https://jameshoi.github.io/2022/01/11/note2/">https://jameshoi.github.io/2022/01/11/note2/</a>
             <p>发表日期：<a href="https://jameshoi.github.io/2022/01/11/note2/">January 11th 2022, 2:34:17 am</a>
-            <p>更新日期：<a href="https://jameshoi.github.io/2022/01/11/note2/">January 11th 2022, 2:37:33 am</a>
+            <p>更新日期：<a href="https://jameshoi.github.io/2022/01/11/note2/">January 11th 2022, 2:48:45 am</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -658,7 +658,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%91%E6%9C%9F%E5%81%9A%E8%BF%87%E7%9A%84%E4%B8%80%E4%BA%9B%E9%A2%98%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">近期做过的一些题目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B9%96%E6%B9%98%E6%9D%AF-Hideit-Hideit"><span class="toc-number">1.1.</span> <span class="toc-text">湖湘杯 Hideit Hideit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%BA%E7%BD%91%E6%8B%9F%E6%80%81-babyre"><span class="toc-number">1.2.</span> <span class="toc-text">强网拟态 babyre</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%BA%E7%BD%91%E6%8B%9F%E6%80%81-babytms"><span class="toc-number">1.3.</span> <span class="toc-text">强网拟态 babytms</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MBCrackme"><span class="toc-number">1.4.</span> <span class="toc-text">MBCrackme</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%91%E6%9C%9F%E5%81%9A%E8%BF%87%E7%9A%84%E4%B8%80%E4%BA%9B%E9%A2%98%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">近期做过的一些题目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B9%96%E6%B9%98%E6%9D%AF-Hideit-Hideit"><span class="toc-number">1.1.</span> <span class="toc-text">湖湘杯 Hideit Hideit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%BA%E7%BD%91%E6%8B%9F%E6%80%81-babyre-babyre"><span class="toc-number">1.2.</span> <span class="toc-text">强网拟态 babyre babyre</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%BA%E7%BD%91%E6%8B%9F%E6%80%81-babytms-babytms"><span class="toc-number">1.3.</span> <span class="toc-text">强网拟态 babytms babytms</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MBCrackme-MBCrackme"><span class="toc-number">1.4.</span> <span class="toc-text">MBCrackme MBCrackme</span></a></li></ol></li></ol>
     </div>
     
     <div class="sidebar sidebar-hide">
@@ -670,8 +670,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
     
     
     
@@ -1118,7 +1116,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密逆向</a>
+            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密算法</a>
         </li>
     
     
@@ -1138,12 +1136,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
         </li>
     
     
@@ -1286,9 +1284,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
-        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
-    
         <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
+    
+        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
@@ -1302,9 +1300,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
-    
         <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1382,7 +1380,22 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 

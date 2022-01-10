@@ -431,8 +431,8 @@
 
 进一步分析发现先做了一次xxtea，需要令v12这个输入值正确，成功进入if后再进行一次加密，然后最后再判断是否一致
 
-xxtea解密，解密得到第一个密匙为dotitsit
-12345678910111...
+xtea解密，解密得到第一个密匙为dotitsit
+123456789101112...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -978,8 +978,6 @@ easyXor签到。题目就是题解，xor加密后验证，这里要提多一句�
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 32
@@ -1022,7 +1020,7 @@ easyXor签到。题目就是题解，xor加密后验证，这里要提多一句�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密逆向</a>
+            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密算法</a>
         </li>
     
     
@@ -1042,12 +1040,12 @@ easyXor签到。题目就是题解，xor加密后验证，这里要提多一句�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021/" >TSCTF 2021 Writeup by sakura</a>
         </li>
     
     
@@ -1190,9 +1188,9 @@ easyXor签到。题目就是题解，xor加密后验证，这里要提多一句�
     
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
-        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
-    
         <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
+    
+        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
@@ -1206,9 +1204,9 @@ easyXor签到。题目就是题解，xor加密后验证，这里要提多一句�
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
-    
         <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1284,7 +1282,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 
