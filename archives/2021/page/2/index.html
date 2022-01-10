@@ -385,118 +385,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/11/mrctf-2021/" >
-            
-                <span>MRCTF-2021 writeup</span>
-        </a>
-        <div class="abstract-content">
-            前言师傅们别骂了，我抽空一定努力好好学
-Dynamic Debug动调进去发现是TEA加密，调试一下发现是DWORD类型，写脚本就出了
-12345678910111213141516171819202122232425262728293031#include &lt;iostream&gt;#include &lt;stdio.h&gt;#include &lt;Windows.h&gt;void decrypt(DWORD* v, DWORD* k) &#123;	DWORD v0 = v[0], v1 = v[1], sum = 0xC6EF3720, i;  /* set up *...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/11</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/30/note/" >
-            
-                <span>逆向笔记</span>
-        </a>
-        <div class="abstract-content">
-            这里记录一些我自己真实场景下的逆向内容
-拷贝漫画去广告首先这个软件太过分了…虽说我很同意帮你看点广告赞助你的服务器费用，但每次进去都加载十几秒的广告，有时候再进去之后还要考30秒以上的广告，属实是有点过分。（新版本好像广告变少了）​
-Android Killer大法好，因为软件是一进去就开始加载广告的，定位启动软件的位置，找到有Ads的关键字，直接删除smali重新打包即可删除前删除后进去发现确实是没广告了，但点击漫画之后发现有一大截空白部分，怀疑应该是广告内容。由于是用flutter框架写的，用反射大师没定位到这个空白位置的控件，那没办法了…先将就用着，等哪天真受不了了就学习一波flu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "安卓">安卓</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "游戏外挂">游戏外挂</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/27/dasctf-2021-03/" >
-            
-                <span>DASCTF 三月 逆向</span>
-        </a>
-        <div class="abstract-content">
-            drinkSomeTea drinkSomeTea的附件.zip看到题目盲猜一波TEA加密，果不其然。之前没好好学，这次至少会做题了，之后有空要好好再看看详细的加密流程。附件给了个tea.png.out，即需要解密图片。32位exe，无壳在一开始的sub_401000函数里面，应该是判断是不是调试器（我没仔细看），用调试器的时候会退出程序，直接把call sub_401000 nop掉即可。应该是一个加密函数，点进去看发现加花了去花，Create Function，F5，发现是TEA加密，关于TEA加密脚本可以参考这个魔改一下TEA加密即可，要注意的是，加密的时候需要用int指针（保留符...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/27</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/22/mcu/" >
-            
-                <span>用单片机运行HelloWorld</span>
-        </a>
-        <div class="abstract-content">
-            （本文图片较大，建议用电脑查看）（本文前言和介绍篇幅有点长，实际可从”开始”标题开始看）
-前言写完上次的“零基础搭建属于自己的博客”一文，我觉得我还是应该写一些科普或者教程，让同学们成功入门，我也顺便可以将我以往的经验总结一下。假如有朋友有想了解的东西，可以找我然后我写一篇文章入门（当然首先我也得会hhh），我擅长的方向大概是：机器人，单片机，网络安全，逆向，编程。
-介绍入门单片机首先总得了解单片机是什么。单片机普遍存在于我们的一些设备当中，例如台灯，通过编写程序让台灯每按一次按钮就减小亮度。又例如大家可能学过的Arduino，它是一款单片机。可以看出单片机一般和电路结合一起，控制电路量...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "单片机">单片机</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/22/open163-new/" >
             
                 <span>网易公开课下载器 版本更新</span>
@@ -607,14 +495,15 @@ Android Killer大法好，因为软件是一进去就开始加载广告的，定
                 <span>各种CTF比赛的Writeup</span>
         </a>
         <div class="abstract-content">
-            更新md太麻烦了，https://drive.byr.edu.cn/s/pixxowiZtSyCRwy自己找吧
+            更新md太麻烦了，不更新了
 安洵杯2020部分WPhttps://www.anquanke.com/post/id/223786
 RoarCTF2020 部分wphttps://www.anquanke.com/post/id/224892
 SWPUCTF2020 官方WPSWPUCTF2020 官方WP - SWPU_08067sec.rar
 NCTF2020 By 天璇Merak
 NCTF2019 Official Writeup
 NEFUCTF2020 官方WP
-*CTF2021 By 天璇Mera...
+*CTF2021 By 天璇Merakhttps://www.anquanke.com/post/id/229322
+T...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -654,6 +543,111 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
         <a class="post-tag" href="javascript:void(0);" data-tags = "TSCTFJ">TSCTFJ</a>
     
 </div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/01/31/misc-ctf/" >
+            
+                <span>各种CTF逆向题目大杂烩</span>
+        </a>
+        <div class="abstract-content">
+            某乱七八糟选拔赛 main2101075ff6b9adc84f9.zip拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png
+解题脚本用linux g++编译后运行
+123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &l...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/31</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/01/28/cumtctf-2021/" >
+            
+                <span>CUMTCTF 2021</span>
+        </a>
+        <div class="abstract-content">
+            re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag
+1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
+
+
+re2re2.rar扔进Exeinfo PE，3...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/28</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/01/11/js-reverse/login/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            
+
+Login Success
+*********************
+   _                                                        _             _       
+  (_)___       _ __ _____   _____ _ __ ___  ___       _ __ | |_   _  __ _(_)_ __  
+  | / __|_____| '__/ _ \ \ / / _ \ '__/ __|/ _ \_____| '_ \| | | | |/ _` | | '_ \ 
+  | \__ \_...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/01/11/js-reverse/login/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            var Qfu1=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']('\x62\x74\x6e');Qfu1['\x6f\x6e\x63\x6c\x69\x63\x6b']=function(){var LkZPLz_2=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x73\x42\x79\x4e\x61\x6d...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/11</span>
+            </div>
+            <!-- tags  -->
             
         </div>
     </article>
@@ -1165,9 +1159,50 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 32
+        Total : 35
         </div>
         <!-- search  -->
         
@@ -1188,7 +1223,27 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/crypto/" >一些常见的加密算法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/note2/" >近期做过的一些题目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
         </li>
     
     
@@ -1207,27 +1262,7 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2021/05/27/crypto/" >一些常见的加密算法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/android/" >安卓逆向学习</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/26</span><a class="archive-post-title" href= "/2021/05/26/script/" >一些需要用脚本的逆向题目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2021/05/23/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
         </li>
     
     
@@ -1317,6 +1352,21 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2021/01/11/js-reverse/index/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2021/01/11/js-reverse/login/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2021/01/11/js-reverse/login/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
         </li>
     
@@ -1375,9 +1425,9 @@ EasyXoreasyXor.rar这题没啥说的，标准的异或出flag
     
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
-        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
-    
         <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
+    
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
