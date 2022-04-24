@@ -20,12 +20,12 @@
     <meta name="keywords" content="James Hoi's Blog,James Hoi">
     
     <meta name="description" content="">
-    <meta name="description" content="free_flagfree_flag.zip签到题，异或一下得flag1234567891011enflag &#x3D; [  0x78, 0x64, 0x3F, 0x53, 0x6D, 0x79, 0x78, 0x64, 0x62, 0x3F,   0x78, 0x3D, 0x6F, 0x38, 0x3D, 0x78, 0x3C, 0x62, 0x53, 0x39,   0x75, 0x39, 0x78">
+    <meta name="description" content="free_flagfree_flag.zip签到题，异或一下得flag 1234567891011enflag &#x3D; [  0x78, 0x64, 0x3F, 0x53, 0x6D, 0x79, 0x78, 0x64, 0x62, 0x3F,   0x78, 0x3D, 0x6F, 0x38, 0x3D, 0x78, 0x3C, 0x62, 0x53, 0x39,   0x75, 0x39, 0x7">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSTC 2021逆向部分">
 <meta property="og:url" content="https://jameshoi.github.io/2021/05/05/cstc-2021/index.html">
 <meta property="og:site_name" content="James Hoi&#39;s Blog">
-<meta property="og:description" content="free_flagfree_flag.zip签到题，异或一下得flag1234567891011enflag &#x3D; [  0x78, 0x64, 0x3F, 0x53, 0x6D, 0x79, 0x78, 0x64, 0x62, 0x3F,   0x78, 0x3D, 0x6F, 0x38, 0x3D, 0x78, 0x3C, 0x62, 0x53, 0x39,   0x75, 0x39, 0x78">
+<meta property="og:description" content="free_flagfree_flag.zip签到题，异或一下得flag 1234567891011enflag &#x3D; [  0x78, 0x64, 0x3F, 0x53, 0x6D, 0x79, 0x78, 0x64, 0x62, 0x3F,   0x78, 0x3D, 0x6F, 0x38, 0x3D, 0x78, 0x3C, 0x62, 0x53, 0x39,   0x75, 0x39, 0x7">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jameshoi.github.io/2021/05/05/cstc-2021/upload_a18365a64b9e25a6a39d1a5a7bf73720.png">
 <meta property="og:image" content="https://jameshoi.github.io/2021/05/05/cstc-2021/upload_4b3cf01ee63507d009737a3e6a4fe512.png">
@@ -321,7 +321,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">565</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">567</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -450,16 +450,23 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="free-flagfree-flag-zip"><a href="#free-flagfree-flag-zip" class="headerlink" title="free_flagfree_flag.zip"></a>free_flag<a href="free_flag.zip">free_flag.zip</a></h1><p>签到题，异或一下得flag<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">enflag = [</span><br><span class="line">  <span class="number">0x78</span>, <span class="number">0x64</span>, <span class="number">0x3F</span>, <span class="number">0x53</span>, <span class="number">0x6D</span>, <span class="number">0x79</span>, <span class="number">0x78</span>, <span class="number">0x64</span>, <span class="number">0x62</span>, <span class="number">0x3F</span>, </span><br><span class="line">  <span class="number">0x78</span>, <span class="number">0x3D</span>, <span class="number">0x6F</span>, <span class="number">0x38</span>, <span class="number">0x3D</span>, <span class="number">0x78</span>, <span class="number">0x3C</span>, <span class="number">0x62</span>, <span class="number">0x53</span>, <span class="number">0x39</span>, </span><br><span class="line">  <span class="number">0x75</span>, <span class="number">0x39</span>, <span class="number">0x78</span>, <span class="number">0x3F</span>, <span class="number">0x61</span>, <span class="number">0x53</span>, <span class="number">0x3D</span>, <span class="number">0x39</span>, <span class="number">0x53</span>, <span class="number">0x62</span>, </span><br><span class="line">  <span class="number">0x3C</span>, <span class="number">0x78</span>, <span class="number">0x53</span>, <span class="number">0x3C</span>, <span class="number">0x39</span>, <span class="number">0x53</span>, <span class="number">0x39</span>, <span class="number">0x3F</span>, <span class="number">0x6F</span>, <span class="number">0x79</span>, </span><br><span class="line">  <span class="number">0x7E</span>, <span class="number">0x3F</span>, <span class="number">0x0A</span></span><br><span class="line">]</span><br><span class="line">cipher = <span class="number">0xC</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> s <span class="keyword">in</span> enflag:</span><br><span class="line">    print(chr(s^cipher),end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
-<h1 id="crackme-crackme-zip"><a href="#crackme-crackme-zip" class="headerlink" title="crackme crackme.zip"></a>crackme <a href="crackme.zip">crackme.zip</a></h1><p>upx脱壳。用户名填入crackme，在判断位置断点，并让程序防止跳转，每次断点查看v17变量<br><img src="/2021/05/05/cstc-2021/upload_a18365a64b9e25a6a39d1a5a7bf73720.png" alt></p>
+        <h1 id="free-flagfree-flag-zip"><a href="#free-flagfree-flag-zip" class="headerlink" title="free_flagfree_flag.zip"></a>free_flag<a href="free_flag.zip">free_flag.zip</a></h1><p>签到题，异或一下得flag</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">enflag = [</span><br><span class="line">  <span class="number">0x78</span>, <span class="number">0x64</span>, <span class="number">0x3F</span>, <span class="number">0x53</span>, <span class="number">0x6D</span>, <span class="number">0x79</span>, <span class="number">0x78</span>, <span class="number">0x64</span>, <span class="number">0x62</span>, <span class="number">0x3F</span>, </span><br><span class="line">  <span class="number">0x78</span>, <span class="number">0x3D</span>, <span class="number">0x6F</span>, <span class="number">0x38</span>, <span class="number">0x3D</span>, <span class="number">0x78</span>, <span class="number">0x3C</span>, <span class="number">0x62</span>, <span class="number">0x53</span>, <span class="number">0x39</span>, </span><br><span class="line">  <span class="number">0x75</span>, <span class="number">0x39</span>, <span class="number">0x78</span>, <span class="number">0x3F</span>, <span class="number">0x61</span>, <span class="number">0x53</span>, <span class="number">0x3D</span>, <span class="number">0x39</span>, <span class="number">0x53</span>, <span class="number">0x62</span>, </span><br><span class="line">  <span class="number">0x3C</span>, <span class="number">0x78</span>, <span class="number">0x53</span>, <span class="number">0x3C</span>, <span class="number">0x39</span>, <span class="number">0x53</span>, <span class="number">0x39</span>, <span class="number">0x3F</span>, <span class="number">0x6F</span>, <span class="number">0x79</span>, </span><br><span class="line">  <span class="number">0x7E</span>, <span class="number">0x3F</span>, <span class="number">0x0A</span></span><br><span class="line">]</span><br><span class="line">cipher = <span class="number">0xC</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> s <span class="keyword">in</span> enflag:</span><br><span class="line">    print(chr(s^cipher),end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="crackme-crackme-zip"><a href="#crackme-crackme-zip" class="headerlink" title="crackme crackme.zip"></a>crackme <a href="crackme.zip">crackme.zip</a></h1><p>upx脱壳。用户名填入crackme，在判断位置断点，并让程序防止跳转，每次断点查看v17变量<br><img src="/2021/05/05/cstc-2021/upload_a18365a64b9e25a6a39d1a5a7bf73720.png"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flag = [<span class="number">0x58</span>,<span class="number">0x42</span>,<span class="number">0x49</span>,<span class="number">0x48</span>,<span class="number">0x44</span>,<span class="number">0x43</span>,<span class="number">0x45</span>,<span class="number">0x43</span>,<span class="number">0x53</span>,<span class="number">0x42</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> flag:</span><br><span class="line">    print(chr(i),end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p>md5 32位小写</p>
-<h1 id="ckck-zip"><a href="#ckck-zip" class="headerlink" title="ckck.zip"></a>ck<a href="ck.zip">ck.zip</a></h1><p>题目说猜猜是什么加密算法，F5后已经可以盲猜一波base64换表<br><img src="/2021/05/05/cstc-2021/upload_4b3cf01ee63507d009737a3e6a4fe512.png" alt></p>
+<h1 id="ckck-zip"><a href="#ckck-zip" class="headerlink" title="ckck.zip"></a>ck<a href="ck.zip">ck.zip</a></h1><p>题目说猜猜是什么加密算法，F5后已经可以盲猜一波base64换表<br><img src="/2021/05/05/cstc-2021/upload_4b3cf01ee63507d009737a3e6a4fe512.png"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">my_base64table = <span class="string">&quot;,.0fgWV#`/1Heox$~\&quot;2dity%_;j3csz^+@&#123;4bKrA&amp;=&#125;5laqB*-[69mpC()]78ndu&quot;</span></span><br><span class="line">std_base64table =<span class="string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot;</span></span><br><span class="line">s = <span class="string">&quot;ef\&quot;^sVK@3r@Ke4e6%6`)&quot;</span></span><br><span class="line">s = s.translate(str.maketrans(my_base64table,std_base64table))</span><br><span class="line">print(base64.b64decode(s))</span><br><span class="line"><span class="comment">#04_tianhe233_29</span></span><br></pre></td></tr></table></figure>
-<h1 id="mazemaze-zip"><a href="#mazemaze-zip" class="headerlink" title="mazemaze.zip"></a>maze<a href="maze.zip">maze.zip</a></h1><p>迷宫题，ssddwdwdddssaasasaaassddddwdds<br>即flag{545d406061561f34247732d50c56ef0d}<br><img src="/2021/05/05/cstc-2021/upload_373c1e4fb68633051d9ac8724f5df73a.png" alt></p>
-<h1 id="ALL-IN-ALLALL-IN-ALL-zip"><a href="#ALL-IN-ALLALL-IN-ALL-zip" class="headerlink" title="ALL_IN_ALLALL_IN_ALL.zip"></a>ALL_IN_ALL<a href="ALL_IN_ALL.zip">ALL_IN_ALL.zip</a></h1><p>用frida-dexdump把壳脱掉，再用jeb打开dex，发现校验函数是checkSN<br><img src="/2021/05/05/cstc-2021/upload_6eb608d3746ba7a7bb6e044d406ff709.png" alt><br>因为没jeb付费版本…无奈只能用jadx，发现就是判断输入就是userName和md5<br><img src="/2021/05/05/cstc-2021/upload_cb308ced04cabbade1bc18d1ed65fba1.png" alt><br>通过用反射大师找到userName为HuMen<br><img src="/2021/05/05/cstc-2021/upload_a74f468405dafcfb53de01b1ce713201.png" alt><br>得到flag为flag{749fef1ed34917cc23376494813053b2}</p>
+
+
+<h1 id="mazemaze-zip"><a href="#mazemaze-zip" class="headerlink" title="mazemaze.zip"></a>maze<a href="maze.zip">maze.zip</a></h1><p>迷宫题，ssddwdwdddssaasasaaassddddwdds<br>即flag{545d406061561f34247732d50c56ef0d}<br><img src="/2021/05/05/cstc-2021/upload_373c1e4fb68633051d9ac8724f5df73a.png"></p>
+<h1 id="ALL-IN-ALLALL-IN-ALL-zip"><a href="#ALL-IN-ALLALL-IN-ALL-zip" class="headerlink" title="ALL_IN_ALLALL_IN_ALL.zip"></a>ALL_IN_ALL<a href="ALL_IN_ALL.zip">ALL_IN_ALL.zip</a></h1><p>用frida-dexdump把壳脱掉，再用jeb打开dex，发现校验函数是checkSN<br><img src="/2021/05/05/cstc-2021/upload_6eb608d3746ba7a7bb6e044d406ff709.png"><br>因为没jeb付费版本…无奈只能用jadx，发现就是判断输入就是userName和md5<br><img src="/2021/05/05/cstc-2021/upload_cb308ced04cabbade1bc18d1ed65fba1.png"><br>通过用反射大师找到userName为HuMen<br><img src="/2021/05/05/cstc-2021/upload_a74f468405dafcfb53de01b1ce713201.png"><br>得到flag为flag{749fef1ed34917cc23376494813053b2}</p>
 <h1 id="randrand-zip"><a href="#randrand-zip" class="headerlink" title="randrand.zip"></a>rand<a href="rand.zip">rand.zip</a></h1><p>有空再补</p>
-<h1 id="DEXDEX-zip"><a href="#DEXDEX-zip" class="headerlink" title="DEXDEX.zip"></a>DEX<a href="DEX.zip">DEX.zip</a></h1><p>参考这篇文章学习dex格式<a target="_blank" rel="noopener" href="https://www.cnblogs.com/dengkaiting/p/11069351.html">https://www.cnblogs.com/dengkaiting/p/11069351.html</a>，用jeb等软件打不开这个dex文件。用010editor进行分析，打开后有模板可以直接用，注意到有四个零值，前两个零值是正常的，但后面两个需要输入method和class的offset(偏移)，题目将这里修改为0了所以软件打不开。<br><img src="/2021/05/05/cstc-2021/1622016540354-a791ca00-0a85-44ea-9c4d-cae5c33f41a6.png" alt="image.png"><br>010editor已经将method和class的存储位置帮你找到了，在模板那里点一下即可跳转，如下图的method偏移为1561C，然后修改dex header的偏移即可（注意这里是小端序，若不知道是小端序还是大端序的话建议转10进制后直接在010的模板里修改）<br><img src="/2021/05/05/cstc-2021/1622016731342-0626029a-deb8-460e-810e-9832ae230955.png" alt="image.png"><br>用jeb打开dex进行分析，可见直接运行一次出flag<br><img src="/2021/05/05/cstc-2021/1622016844528-b6a21eed-7d50-4ba9-a9ba-2bd8382f605b.png" alt="image.png"><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">char</span>[] x = <span class="string">&quot;dd2940c04462b4dd7c450528835cca15&quot;</span>.toCharArray();</span><br><span class="line">		x[<span class="number">2</span>] = (<span class="keyword">char</span>)(x[<span class="number">2</span>] + x[<span class="number">3</span>] - <span class="number">50</span>);</span><br><span class="line">		x[<span class="number">4</span>] = (<span class="keyword">char</span>)(x[<span class="number">2</span>] + x[<span class="number">5</span>] - <span class="number">0x30</span>);</span><br><span class="line">		x[<span class="number">30</span>] = (<span class="keyword">char</span>)(x[<span class="number">0x1F</span>] + x[<span class="number">9</span>] - <span class="number">0x30</span>);</span><br><span class="line">		x[<span class="number">14</span>] = (<span class="keyword">char</span>)(x[<span class="number">27</span>] + x[<span class="number">28</span>] - <span class="number">97</span>);</span><br><span class="line">		<span class="keyword">int</span> i;</span><br><span class="line">		<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">16</span>; ++i) &#123;</span><br><span class="line">			<span class="keyword">char</span> a = x[<span class="number">0x1F</span> - i];</span><br><span class="line">			x[<span class="number">0x1F</span> - i] = x[i];</span><br><span class="line">			x[i] = a;</span><br><span class="line">		&#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;flag&#123;&quot;</span> + String.valueOf(x) + <span class="string">&quot;&#125;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>flag{59acc538825054c7de4b26440c0999dd}</p>
+<h1 id="DEXDEX-zip"><a href="#DEXDEX-zip" class="headerlink" title="DEXDEX.zip"></a>DEX<a href="DEX.zip">DEX.zip</a></h1><p>参考这篇文章学习dex格式<a target="_blank" rel="noopener" href="https://www.cnblogs.com/dengkaiting/p/11069351.html">https://www.cnblogs.com/dengkaiting/p/11069351.html</a>，用jeb等软件打不开这个dex文件。用010editor进行分析，打开后有模板可以直接用，注意到有四个零值，前两个零值是正常的，但后面两个需要输入method和class的offset(偏移)，题目将这里修改为0了所以软件打不开。<br><img src="/2021/05/05/cstc-2021/1622016540354-a791ca00-0a85-44ea-9c4d-cae5c33f41a6.png" alt="image.png"><br>010editor已经将method和class的存储位置帮你找到了，在模板那里点一下即可跳转，如下图的method偏移为1561C，然后修改dex header的偏移即可（注意这里是小端序，若不知道是小端序还是大端序的话建议转10进制后直接在010的模板里修改）<br><img src="/2021/05/05/cstc-2021/1622016731342-0626029a-deb8-460e-810e-9832ae230955.png" alt="image.png"><br>用jeb打开dex进行分析，可见直接运行一次出flag<br><img src="/2021/05/05/cstc-2021/1622016844528-b6a21eed-7d50-4ba9-a9ba-2bd8382f605b.png" alt="image.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">char</span>[] x = <span class="string">&quot;dd2940c04462b4dd7c450528835cca15&quot;</span>.toCharArray();</span><br><span class="line">		x[<span class="number">2</span>] = (<span class="keyword">char</span>)(x[<span class="number">2</span>] + x[<span class="number">3</span>] - <span class="number">50</span>);</span><br><span class="line">		x[<span class="number">4</span>] = (<span class="keyword">char</span>)(x[<span class="number">2</span>] + x[<span class="number">5</span>] - <span class="number">0x30</span>);</span><br><span class="line">		x[<span class="number">30</span>] = (<span class="keyword">char</span>)(x[<span class="number">0x1F</span>] + x[<span class="number">9</span>] - <span class="number">0x30</span>);</span><br><span class="line">		x[<span class="number">14</span>] = (<span class="keyword">char</span>)(x[<span class="number">27</span>] + x[<span class="number">28</span>] - <span class="number">97</span>);</span><br><span class="line">		<span class="keyword">int</span> i;</span><br><span class="line">		<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">16</span>; ++i) &#123;</span><br><span class="line">			<span class="keyword">char</span> a = x[<span class="number">0x1F</span> - i];</span><br><span class="line">			x[<span class="number">0x1F</span> - i] = x[i];</span><br><span class="line">			x[i] = a;</span><br><span class="line">		&#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;flag&#123;&quot;</span> + String.valueOf(x) + <span class="string">&quot;&#125;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>flag{59acc538825054c7de4b26440c0999dd}</p>
 <h1 id="motionmotion-zip"><a href="#motionmotion-zip" class="headerlink" title="motionmotion.zip"></a>motion<a href="motion.zip">motion.zip</a></h1><p>同上</p>
 <h1 id="keygenkeygen-zip"><a href="#keygenkeygen-zip" class="headerlink" title="keygenkeygen.zip"></a>keygen<a href="keygen.zip">keygen.zip</a></h1><p>同上<br>​</p>
 
@@ -1084,8 +1091,6 @@ top:50vh;
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 34
@@ -1104,7 +1109,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/24</span><a class="archive-post-title" href= "/2022/04/24/tsctf-2022-re/" >[Untitled Post]</a>
+            <span class="archive-post-date">04/24</span><a class="archive-post-title" href= "/2022/04/24/tsctf-2022-re/" >TSCTF 2022 校内赛 逆向部分</a>
         </li>
     
     
@@ -1150,6 +1155,11 @@ top:50vh;
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2021/11/23/ctf-2021/" >2021年逆向题目复现</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1238,49 +1248,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2022/01/13/ctf-2021/" >[Untitled Post]</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2021 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/2021/01/28/cumtctf-2021/" >CUMTCTF 2021</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
         </li>
     
     
@@ -1318,6 +1291,11 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">04/26</span><a class="archive-post-title" href= "/2019/04/26/statistics/" >统计学公式</a>
         </li>
     
@@ -1333,9 +1311,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
-        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
-    
         <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
+    
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     

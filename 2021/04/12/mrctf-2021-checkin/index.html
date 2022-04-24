@@ -315,7 +315,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">135</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">136</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -444,7 +444,9 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>【文章转载于安全客<a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/237793">https://www.anquanke.com/post/id/237793</a>】<br>题如其名，真的是签到题，出题的时候调试符号都没去。扔进PEID可以看出是upx壳，脱壳后用ida f5就能看到基本上和源码完全一致的伪代码。<br><img src="/2021/04/12/mrctf-2021-checkin/1618194436322-519efc4b-3272-40f3-a9ff-6bff06987e8a.png" alt="image.png"><br>直接由函数名知道是base64编码，进入base64_encode函数并查看alphabet_map，可以发现base64换表了，用python写个脚本就得到flag了<br><img src="/2021/04/12/mrctf-2021-checkin/1618194527887-f09eda4a-6437-4094-94f4-b10f4a66a795.png" alt="image.png"><br><img src="/2021/04/12/mrctf-2021-checkin/1618194608323-1d6b4e39-422e-4679-84db-683e96b59f65.png" alt="image.png"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">my_base64table = <span class="string">&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/&quot;</span></span><br><span class="line">std_base64table =<span class="string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot;</span></span><br><span class="line">s = <span class="string">&quot;tvjdvez7D0vSyZbnzv90mf9nuKnurL8YBZiXiseHFq==&quot;</span></span><br><span class="line">s = s.translate(str.maketrans(my_base64table,std_base64table))</span><br><span class="line">print(base64.b64decode(s))</span><br><span class="line"><span class="comment"># MRCTF&#123;wElc0Me_t0_MRCTF_2o21!!!&#125;</span></span><br></pre></td></tr></table></figure></p>
+        <p>【文章转载于安全客<a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/237793">https://www.anquanke.com/post/id/237793</a>】<br>题如其名，真的是签到题，出题的时候调试符号都没去。扔进PEID可以看出是upx壳，脱壳后用ida f5就能看到基本上和源码完全一致的伪代码。<br><img src="/2021/04/12/mrctf-2021-checkin/1618194436322-519efc4b-3272-40f3-a9ff-6bff06987e8a.png" alt="image.png"><br>直接由函数名知道是base64编码，进入base64_encode函数并查看alphabet_map，可以发现base64换表了，用python写个脚本就得到flag了<br><img src="/2021/04/12/mrctf-2021-checkin/1618194527887-f09eda4a-6437-4094-94f4-b10f4a66a795.png" alt="image.png"><br><img src="/2021/04/12/mrctf-2021-checkin/1618194608323-1d6b4e39-422e-4679-84db-683e96b59f65.png" alt="image.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">my_base64table = <span class="string">&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/&quot;</span></span><br><span class="line">std_base64table =<span class="string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot;</span></span><br><span class="line">s = <span class="string">&quot;tvjdvez7D0vSyZbnzv90mf9nuKnurL8YBZiXiseHFq==&quot;</span></span><br><span class="line">s = s.translate(str.maketrans(my_base64table,std_base64table))</span><br><span class="line">print(base64.b64decode(s))</span><br><span class="line"><span class="comment"># MRCTF&#123;wElc0Me_t0_MRCTF_2o21!!!&#125;</span></span><br></pre></td></tr></table></figure>
+
 
     </article>
     <!-- license  -->
@@ -1067,8 +1069,6 @@ top:50vh;
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 34
@@ -1087,7 +1087,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/24</span><a class="archive-post-title" href= "/2022/04/24/tsctf-2022-re/" >[Untitled Post]</a>
+            <span class="archive-post-date">04/24</span><a class="archive-post-title" href= "/2022/04/24/tsctf-2022-re/" >TSCTF 2022 校内赛 逆向部分</a>
         </li>
     
     
@@ -1133,6 +1133,11 @@ top:50vh;
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2021/11/23/ctf-2021/" >2021年逆向题目复现</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1221,49 +1226,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2022/01/13/ctf-2021/" >[Untitled Post]</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2021 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/2021/01/28/cumtctf-2021/" >CUMTCTF 2021</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
         </li>
     
     
@@ -1301,6 +1269,11 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">04/26</span><a class="archive-post-title" href= "/2019/04/26/statistics/" >统计学公式</a>
         </li>
     
@@ -1316,9 +1289,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
-        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
-    
         <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
+    
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
