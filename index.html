@@ -396,6 +396,58 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2022/04/24/tsctf-2022-re/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            TSCTF 2022 校内赛 逆向部分感觉没人打比赛啊…都是自己人
+happy_motamain.exe可以得到一些信息，根据script文件夹下的解密运行一次得到三块flag
+
+根据提示看出11到19层的地图形状为字符，其中少了一层，根据后半flag猜测为Enjoy
+
+12345678910111213141516171819print(&quot;TSCTF&#123;Enj&quot;,end=&quot;&quot;)s = b&#x27;&#x27;f2 = b&#x27;\xf8\xb0\x95\xfc\x84\x88&#x27;for i in range(len(f2))...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/24</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2022/01/13/ctf-2021/" >
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            2021年逆向题目复现D3CTFjumpjump没什么好说的，两次异或简单运算就出了
+12345678enc = [0x09,0x0B,0x06,0x5A,0x5B,0x0A,0x54,0x05,0x4D,0x57,       0x56,0x54,0x0B,0x4D,0x54,0x09,0x55,0x40,0x4D,0x09,       0x06,0x59,0x0B,0x4D,0x55,0x54,0x58,0x57,0x5B,0x09,       0x0B,0x40,0x05,0x0A,0x05,0x09]for i in range(36):    print(chr(((enc...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/01/13</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2022/01/11/arm/" >
             
                 <span>ARM指令学习</span>
@@ -622,60 +674,6 @@ IDA 动态调试...
         <a class="post-tag" href="javascript:void(0);" data-tags = "安卓">安卓</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/23/tsctf-2021/" >
-            
-                <span>TSCTF 2021 Writeup by sakura</span>
-        </a>
-        <div class="abstract-content">
-            Android签到题re1.zip可以看出是动态加载dex网上查到该dex加载路径，用虚拟机找到该文件关键加密函数爆破解出
-123456789101112131415161718192021222324252627282930313233tmp1 = [ 147, 219, 146, 143, 240, 200, &#x27;f&#x27;, 136, &#x27;F&#x27;, &#x27;y&#x27;, &#x27;O&#x27;, &#x27;M&#x27;, 196, &#x27;&gt;&#x27;, 254, 189, &#x27;s&#x27;, 253, &#x27;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "安卓">安卓</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/10/bmp/" >
-            
-                <span>C语言读取BMP格式图片并修改保存</span>
-        </a>
-        <div class="abstract-content">
-            朋友之前请教我BMP图片格式的问题，网上查了查参考这个https://blog.csdn.net/u013066730/article/details/82625158刚好学习了一波，代码如下（其实准确来讲这个是c++代码，但除了用到了cout，其他都与c一致）
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/10</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -1305,9 +1303,39 @@ IDA 动态调试...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 32
+        Total : 34
         </div>
         <!-- search  -->
         
@@ -1320,6 +1348,11 @@ IDA 动态调试...
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/24</span><a class="archive-post-title" href= "/2022/04/24/tsctf-2022-re/" >[Untitled Post]</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1452,12 +1485,49 @@ IDA 动态调试...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/2021/01/28/cumtctf-2021/" >CUMTCTF 2021</a>
+            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2022/01/13/ctf-2021/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/2021/01/28/cumtctf-2021/" >CUMTCTF 2021</a>
         </li>
     
     
@@ -1495,11 +1565,6 @@ IDA 动态调试...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">04/26</span><a class="archive-post-title" href= "/2019/04/26/statistics/" >统计学公式</a>
         </li>
     
@@ -1513,21 +1578,21 @@ IDA 动态调试...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
+        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
     
         <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
-        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
-    
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
     
         <span class="sidebar-tag-name" data-tags="游戏外挂"><span class="iconfont-archer">&#xe606;</span>游戏外挂</span>
     
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     

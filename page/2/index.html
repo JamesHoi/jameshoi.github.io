@@ -396,6 +396,60 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/23/tsctf-2021/" >
+            
+                <span>TSCTF 2021 Writeup by sakura</span>
+        </a>
+        <div class="abstract-content">
+            Android签到题re1.zip可以看出是动态加载dex网上查到该dex加载路径，用虚拟机找到该文件关键加密函数爆破解出
+123456789101112131415161718192021222324252627282930313233tmp1 = [ 147, 219, 146, 143, 240, 200, &#x27;f&#x27;, 136, &#x27;F&#x27;, &#x27;y&#x27;, &#x27;O&#x27;, &#x27;M&#x27;, 196, &#x27;&gt;&#x27;, 254, 189, &#x27;s&#x27;, 253, &#x27;...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "安卓">安卓</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/05/10/bmp/" >
+            
+                <span>C语言读取BMP格式图片并修改保存</span>
+        </a>
+        <div class="abstract-content">
+            朋友之前请教我BMP图片格式的问题，网上查了查参考这个https://blog.csdn.net/u013066730/article/details/82625158刚好学习了一波，代码如下（其实准确来讲这个是c++代码，但除了用到了cout，其他都与c一致）
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/10</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/05/10/pic-console/" >
             
                 <span>C语言实现命令行显示图片</span>
@@ -604,52 +658,6 @@ Android Killer大法好，因为软件是一进去就开始加载广告的，定
         <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/01/crackme/" >
-            
-                <span>记录一下自己出的crackme</span>
-        </a>
-        <div class="abstract-content">
-            这题主要考察选手动态调试。扔进exeinfope，32位exe，无壳main程序，点进sub_4017D0看sub_4017D0，可以看出是检测进程名称。找到for之前的汇编，尝试在动调的时候修改eip直接jmp到CloseHandle，又或者是自己patch一下，防止return 1，从而反反调试。patch教程参考链接（留意这里的dword_406120，之后会讲）sub_401930是个SEH异常反调试，可以参考源码直接查看汇编，参考刚刚上面的源码，反调试的E9刚好起到了花指令的作用，变成了jmp near ptr 8B762D3Ah。在jmp按一下U，在E9下面按c转为代码，然后...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/02/06/buuctf/" >
-            
-                <span>BUU平台逆向刷题</span>
-        </a>
-        <div class="abstract-content">
-            pyre123456789101112131415161718code = [&#x27;\x1f&#x27;, &#x27;\x12&#x27;, &#x27;\x1d&#x27;, &#x27;(&#x27;, &#x27;0&#x27;, &#x27;4&#x27;, &#x27;\x01&#x27;, &#x27;\x06&#x27;, &#x27;\x14&#x27;, &#x27;4&#x27;, &#x27;,&#x27;, &#x27;\x1b&#x27;, &#x27;U&#x27;, &#x27;?&#x27;, &#x27;o&#x27;, &#x27;6&#x27...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/06</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -1279,9 +1287,39 @@ Android Killer大法好，因为软件是一进去就开始加载广告的，定
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 32
+        Total : 34
         </div>
         <!-- search  -->
         
@@ -1294,6 +1332,11 @@ Android Killer大法好，因为软件是一进去就开始加载广告的，定
     
     <div class="archive-year"> 2022 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/24</span><a class="archive-post-title" href= "/2022/04/24/tsctf-2022-re/" >[Untitled Post]</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1426,12 +1469,49 @@ Android Killer大法好，因为软件是一进去就开始加载广告的，定
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/2021/01/28/cumtctf-2021/" >CUMTCTF 2021</a>
+            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2021/01/10/js-reverse/" >Js逆向</a>
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2022/01/13/ctf-2021/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/2021/01/28/cumtctf-2021/" >CUMTCTF 2021</a>
         </li>
     
     
@@ -1469,11 +1549,6 @@ Android Killer大法好，因为软件是一进去就开始加载广告的，定
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/baidupcs/" >将BaiduPCS-Web添加进系统服务，可开机自启</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">04/26</span><a class="archive-post-title" href= "/2019/04/26/statistics/" >统计学公式</a>
         </li>
     
@@ -1487,21 +1562,21 @@ Android Killer大法好，因为软件是一进去就开始加载广告的，定
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
+        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
     
         <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
-        <span class="sidebar-tag-name" data-tags="ARM"><span class="iconfont-archer">&#xe606;</span>ARM</span>
-    
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
     
         <span class="sidebar-tag-name" data-tags="游戏外挂"><span class="iconfont-archer">&#xe606;</span>游戏外挂</span>
     
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     
