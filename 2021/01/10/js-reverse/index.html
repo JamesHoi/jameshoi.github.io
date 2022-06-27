@@ -20,12 +20,12 @@
     <meta name="keywords" content="James Hoi's Blog,James Hoi">
     
     <meta name="description" content="">
-    <meta name="description" content="前言之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用 原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js 12345678var ReResMap &#x3D; [  &amp;#123;    &#x2F;&#x2F; 网站的js路径    &quot;req&quot;: &amp;q">
+    <meta name="description" content="前言之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用 原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js12345678var ReResMap &#x3D; [  &amp;#123;    &#x2F;&#x2F; 网站的js路径    &quot;req&quot;: &amp;qu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Js逆向">
 <meta property="og:url" content="https://jameshoi.github.io/2021/01/10/js-reverse/index.html">
 <meta property="og:site_name" content="James Hoi&#39;s Blog">
-<meta property="og:description" content="前言之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用 原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js 12345678var ReResMap &#x3D; [  &amp;#123;    &#x2F;&#x2F; 网站的js路径    &quot;req&quot;: &amp;q">
+<meta property="og:description" content="前言之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用 原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js12345678var ReResMap &#x3D; [  &amp;#123;    &#x2F;&#x2F; 网站的js路径    &quot;req&quot;: &amp;qu">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jameshoi.github.io/2021/01/10/js-reverse/s17a9S.png">
 <meta property="og:image" content="https://jameshoi.github.io/2021/01/10/js-reverse/s17E01.png">
@@ -315,7 +315,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">480</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">478</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -445,12 +445,8 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用</p>
-<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果<br>在网上找到了<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/reres/gieocpkbblidnocefjakldecahgeeica?hl=zh-CN">Reres</a>这个插件，将插件代码提取出来，新建一个重定向列表的文件<code>url_setting.js</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ReResMap = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 网站的js路径</span></span><br><span class="line">    <span class="string">&quot;req&quot;</span>: <span class="string">&quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;</span>, </span><br><span class="line">    <span class="comment">// 修改后的js路径，存储在插件里面</span></span><br><span class="line">    <span class="string">&quot;res&quot;</span>: <span class="string">&quot;chrome-extension://&quot;</span>+chrome.runtime.id+<span class="string">&quot;/js/example.js&quot;</span>,</span><br><span class="line">  &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-<p>更多关于浏览器插件的功能可以参考这个文章：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html">【干货】Chrome插件(扩展)开发全攻略</a></p>
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><p><a href="http://jameshoi.github.io/files/js-reverse">测试网站</a><br><a target="_blank" rel="noopener" href="https://imgchr.com/i/s17a9S"><img src="/2021/01/10/js-reverse/s17a9S.png" alt="s17a9S.png"></a><br>提取login.js，格式化并修改保存到js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Qfu1 = <span class="built_in">window</span>[<span class="string">&quot;\x64\x6f\x63\x75\x6d\x65\x6e\x74&quot;</span>][<span class="string">&#x27;\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64&#x27;</span>](<span class="string">&#x27;\x62\x74\x6e&#x27;</span>);</span><br><span class="line">Qfu1[<span class="string">&#x27;\x6f\x6e\x63\x6c\x69\x63\x6b&#x27;</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> LkZPLz_2 = <span class="built_in">window</span>[<span class="string">&quot;\x64\x6f\x63\x75\x6d\x65\x6e\x74&quot;</span>][<span class="string">&#x27;\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x73\x42\x79\x4e\x61\x6d\x65&#x27;</span>](<span class="string">&quot;\x75\x73\x65\x72\x6e\x61\x6d\x65&quot;</span>)[<span class="number">0</span>][<span class="string">&#x27;\x76\x61\x6c\x75\x65&#x27;</span>] == <span class="string">&quot;\x61\x64\x6d\x69\x6e&quot;</span> &amp;&amp; <span class="built_in">window</span>[<span class="string">&quot;\x64\x6f\x63\x75\x6d\x65\x6e\x74&quot;</span>][<span class="string">&#x27;\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x73\x42\x79\x4e\x61\x6d\x65&#x27;</span>](<span class="string">&quot;\x70\x61\x73\x73\x77\x6f\x72\x64&quot;</span>)[<span class="number">0</span>][<span class="string">&#x27;\x76\x61\x6c\x75\x65&#x27;</span>] == <span class="string">&quot;\x61\x64\x6d\x69\x6e&quot;</span>;</span><br><span class="line">    <span class="comment">//账号密码均为admin</span></span><br><span class="line">    <span class="comment">//若变量LkZPLz_2为真，则登录成功</span></span><br><span class="line">    LkZPLz_2 = <span class="literal">true</span>; <span class="comment">//破解，令其永远登录成功</span></span><br><span class="line">    <span class="keyword">if</span> (LkZPLz_2) <span class="built_in">window</span>[<span class="string">&#x27;\x6c\x6f\x63\x61\x74\x69\x6f\x6e&#x27;</span>] = <span class="string">&quot;\x2e\x2f\x6c\x6f\x67\x69\x6e\x2e\x68\x74\x6d\x6c&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">window</span>[<span class="string">&quot;\x61\x6c\x65\x72\x74&quot;</span>](<span class="string">&quot;\x49\x6e\x63\x6f\x72\x72\x65\x63\x74 \x75\x73\x65\x72\x6e\x61\x6d\x65 \x6f\x72 \x70\x61\x73\x73\x77\x6f\x72\x64\x2e&quot;</span>)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>安装插件<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/s17E01"><img src="/2021/01/10/js-reverse/s17E01.png" alt="s17E01.png"></a>  </p>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果<br>在网上找到了<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/reres/gieocpkbblidnocefjakldecahgeeica?hl=zh-CN">Reres</a>这个插件，将插件代码提取出来，新建一个重定向列表的文件<code>url_setting.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ReResMap = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 网站的js路径</span></span><br><span class="line">    <span class="string">&quot;req&quot;</span>: <span class="string">&quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;</span>, </span><br><span class="line">    <span class="comment">// 修改后的js路径，存储在插件里面</span></span><br><span class="line">    <span class="string">&quot;res&quot;</span>: <span class="string">&quot;chrome-extension://&quot;</span>+chrome.runtime.id+<span class="string">&quot;/js/example.js&quot;</span>,</span><br><span class="line">  &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure><br>更多关于浏览器插件的功能可以参考这个文章：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html">【干货】Chrome插件(扩展)开发全攻略</a></p>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><p><a href="http://jameshoi.github.io/files/js-reverse">测试网站</a><br><a target="_blank" rel="noopener" href="https://imgchr.com/i/s17a9S"><img src="/2021/01/10/js-reverse/s17a9S.png" alt="s17a9S.png"></a><br>提取login.js，格式化并修改保存到js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Qfu1 = <span class="built_in">window</span>[<span class="string">&quot;\x64\x6f\x63\x75\x6d\x65\x6e\x74&quot;</span>][<span class="string">&#x27;\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64&#x27;</span>](<span class="string">&#x27;\x62\x74\x6e&#x27;</span>);</span><br><span class="line">Qfu1[<span class="string">&#x27;\x6f\x6e\x63\x6c\x69\x63\x6b&#x27;</span>] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> LkZPLz_2 = <span class="built_in">window</span>[<span class="string">&quot;\x64\x6f\x63\x75\x6d\x65\x6e\x74&quot;</span>][<span class="string">&#x27;\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x73\x42\x79\x4e\x61\x6d\x65&#x27;</span>](<span class="string">&quot;\x75\x73\x65\x72\x6e\x61\x6d\x65&quot;</span>)[<span class="number">0</span>][<span class="string">&#x27;\x76\x61\x6c\x75\x65&#x27;</span>] == <span class="string">&quot;\x61\x64\x6d\x69\x6e&quot;</span> &amp;&amp; <span class="built_in">window</span>[<span class="string">&quot;\x64\x6f\x63\x75\x6d\x65\x6e\x74&quot;</span>][<span class="string">&#x27;\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x73\x42\x79\x4e\x61\x6d\x65&#x27;</span>](<span class="string">&quot;\x70\x61\x73\x73\x77\x6f\x72\x64&quot;</span>)[<span class="number">0</span>][<span class="string">&#x27;\x76\x61\x6c\x75\x65&#x27;</span>] == <span class="string">&quot;\x61\x64\x6d\x69\x6e&quot;</span>;</span><br><span class="line">    <span class="comment">//账号密码均为admin</span></span><br><span class="line">    <span class="comment">//若变量LkZPLz_2为真，则登录成功</span></span><br><span class="line">    LkZPLz_2 = <span class="literal">true</span>; <span class="comment">//破解，令其永远登录成功</span></span><br><span class="line">    <span class="keyword">if</span> (LkZPLz_2) <span class="built_in">window</span>[<span class="string">&#x27;\x6c\x6f\x63\x61\x74\x69\x6f\x6e&#x27;</span>] = <span class="string">&quot;\x2e\x2f\x6c\x6f\x67\x69\x6e\x2e\x68\x74\x6d\x6c&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">window</span>[<span class="string">&quot;\x61\x6c\x65\x72\x74&quot;</span>](<span class="string">&quot;\x49\x6e\x63\x6f\x72\x72\x65\x63\x74 \x75\x73\x65\x72\x6e\x61\x6d\x65 \x6f\x72 \x70\x61\x73\x73\x77\x6f\x72\x64\x2e&quot;</span>)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><br>安装插件<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/s17E01"><img src="/2021/01/10/js-reverse/s17E01.png" alt="s17E01.png"></a>  </p>
 <p>登录成功<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/s17i6J"><img src="/2021/01/10/js-reverse/s17i6J.png" alt="s17i6J.png"></a></p>
 <h1 id="项目源码"><a href="#项目源码" class="headerlink" title="项目源码"></a>项目源码</h1><p><a target="_blank" rel="noopener" href="https://github.com/JamesHoi/js-reverse-plugin">Github源码</a></p>
 
@@ -641,6 +637,12 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1355,9 +1357,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     
-        <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
-    
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1392,9 +1394,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="CTF比赛"><span class="iconfont-archer">&#xe60a;</span>CTF比赛</span>
-    
         <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF比赛"><span class="iconfont-archer">&#xe60a;</span>CTF比赛</span>
     
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
     
