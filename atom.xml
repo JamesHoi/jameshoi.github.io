@@ -6,7 +6,7 @@
   <link href="https://jameshoi.github.io/atom.xml" rel="self"/>
   
   <link href="https://jameshoi.github.io/"/>
-  <updated>2022-04-24T14:18:53.572Z</updated>
+  <updated>2022-05-01T16:05:01.358Z</updated>
   <id>https://jameshoi.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://jameshoi.github.io/2022/05/01/crack/"/>
+    <id>https://jameshoi.github.io/2022/05/01/crack/</id>
+    <published>2022-05-01T15:55:40.254Z</published>
+    <updated>2022-05-01T16:05:01.358Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h1><h2 id="某声音降噪软件"><a href="#某声音降噪软件" class="headerlink" title="某声音降噪软件"></a>某声音降噪软件</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;破解&quot;&gt;&lt;a href=&quot;#破解&quot; class=&quot;headerlink&quot; title=&quot;破解&quot;&gt;&lt;/a&gt;破解&lt;/h1&gt;&lt;h2 id=&quot;某声音降噪软件&quot;&gt;&lt;a href=&quot;#某声音降噪软件&quot; class=&quot;headerlink&quot; title=&quot;某声音降噪软件&quot;&gt;&lt;/</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>TSCTF 2022 校内赛 逆向部分</title>
@@ -212,7 +232,7 @@
     <link href="https://jameshoi.github.io/2021/11/23/ctf-2021/"/>
     <id>https://jameshoi.github.io/2021/11/23/ctf-2021/</id>
     <published>2021-11-23T08:33:38.000Z</published>
-    <updated>2022-04-24T14:19:12.232Z</updated>
+    <updated>2022-05-01T15:56:52.907Z</updated>
     
     <content type="html"><![CDATA[<h2 id="D3CTF"><a href="#D3CTF" class="headerlink" title="D3CTF"></a>D3CTF</h2><h3 id="jumpjump"><a href="#jumpjump" class="headerlink" title="jumpjump"></a>jumpjump</h3><p>没什么好说的，两次异或简单运算就出了</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">enc = [<span class="number">0x09</span>,<span class="number">0x0B</span>,<span class="number">0x06</span>,<span class="number">0x5A</span>,<span class="number">0x5B</span>,<span class="number">0x0A</span>,<span class="number">0x54</span>,<span class="number">0x05</span>,<span class="number">0x4D</span>,<span class="number">0x57</span>,</span><br><span class="line">       <span class="number">0x56</span>,<span class="number">0x54</span>,<span class="number">0x0B</span>,<span class="number">0x4D</span>,<span class="number">0x54</span>,<span class="number">0x09</span>,<span class="number">0x55</span>,<span class="number">0x40</span>,<span class="number">0x4D</span>,<span class="number">0x09</span>,</span><br><span class="line">       <span class="number">0x06</span>,<span class="number">0x59</span>,<span class="number">0x0B</span>,<span class="number">0x4D</span>,<span class="number">0x55</span>,<span class="number">0x54</span>,<span class="number">0x58</span>,<span class="number">0x57</span>,<span class="number">0x5B</span>,<span class="number">0x09</span>,</span><br><span class="line">       <span class="number">0x0B</span>,<span class="number">0x40</span>,<span class="number">0x05</span>,<span class="number">0x0A</span>,<span class="number">0x05</span>,<span class="number">0x09</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">36</span>):</span><br><span class="line">    print(chr(((enc[i]^<span class="number">0x33</span>)<span class="number">-4</span>)^<span class="number">0x57</span>),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="comment">#acf23b4e-764c-4a58-af1c-54073ac8ebea</span></span><br></pre></td></tr></table></figure><h3 id="ancient"><a href="#ancient" class="headerlink" title="ancient"></a>ancient</h3>]]></content>
     
@@ -226,6 +246,34 @@
     
     <category term="CTF比赛" scheme="https://jameshoi.github.io/categories/CTF%E6%AF%94%E8%B5%9B/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>2021年逆向题目复现</title>
+    <link href="https://jameshoi.github.io/2021/11/23/il2cpp-crack/"/>
+    <id>https://jameshoi.github.io/2021/11/23/il2cpp-crack/</id>
+    <published>2021-11-23T08:33:38.000Z</published>
+    <updated>2022-05-23T12:31:32.826Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="il2cpp"><a href="#il2cpp" class="headerlink" title="il2cpp"></a>il2cpp</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;il2cpp&quot;&gt;&lt;a href=&quot;#il2cpp&quot; class=&quot;headerlink&quot; title=&quot;il2cpp&quot;&gt;&lt;/a&gt;il2cpp&lt;/h2&gt;</summary>
+      
+    
+    
+    
+    <category term="逆向学习" scheme="https://jameshoi.github.io/categories/%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="il2cpp" scheme="https://jameshoi.github.io/tags/il2cpp/"/>
+    
+    <category term="unity" scheme="https://jameshoi.github.io/tags/unity/"/>
+    
+    <category term="游戏破解" scheme="https://jameshoi.github.io/tags/%E6%B8%B8%E6%88%8F%E7%A0%B4%E8%A7%A3/"/>
     
   </entry>
   
@@ -393,7 +441,7 @@
     <link href="https://jameshoi.github.io/2021/03/30/note/"/>
     <id>https://jameshoi.github.io/2021/03/30/note/</id>
     <published>2021-03-30T04:54:17.000Z</published>
-    <updated>2022-01-10T19:10:51.093Z</updated>
+    <updated>2022-05-23T12:32:47.637Z</updated>
     
     <content type="html"><![CDATA[<p>这里记录一些我自己真实场景下的逆向内容</p><h1 id="拷贝漫画去广告"><a href="#拷贝漫画去广告" class="headerlink" title="拷贝漫画去广告"></a>拷贝漫画去广告</h1><p>首先这个软件太过分了…虽说我很同意帮你看点广告赞助你的服务器费用，但每次进去都加载十几秒的广告，有时候再进去之后还要考30秒以上的广告，属实是有点过分。<br>（新版本好像广告变少了）<br>​</p><p>Android Killer大法好，因为软件是一进去就开始加载广告的，定位启动软件的位置，找到有Ads的关键字，直接删除smali重新打包即可<br><img src="/2021/03/30/note/1622020875906-441d1ba0-7cda-4450-a46d-4121293449a5.png" alt="image.png"><br>删除前<br><img src="/2021/03/30/note/1622020912536-ac6877f7-c84f-4d8f-adcb-3140446f9b6a.png" alt="image.png"><br>删除后<br><img src="/2021/03/30/note/1622021001816-3782470e-86ca-4b94-b588-656e537aa8d9.png" alt="image.png"><br>进去发现确实是没广告了，但点击漫画之后发现有一大截空白部分，怀疑应该是广告内容。由于是用flutter框架写的，用反射大师没定位到这个空白位置的控件，那没办法了…先将就用着，等哪天真受不了了就学习一波flutter逆向<br><img src="/2021/03/30/note/1622021356408-ada6ca30-1bae-4744-9813-4e7c0227f838.png" alt="image.png"><br>​</p><h1 id="动漫之家去广告"><a href="#动漫之家去广告" class="headerlink" title="动漫之家去广告"></a>动漫之家去广告</h1><p>有360壳，由于不是做ctf题目，所以还得考虑打包apk怎么打包回去<br><img src="/2021/03/30/note/1622021197387-b0a0c749-6e1e-4f35-a6e2-6f50e9aa2c9a.png" alt="image.png"><br>参考<a href="https://zhuanlan.zhihu.com/p/28810334">https://zhuanlan.zhihu.com/p/28810334</a>这个文章<br>待续…<br>​</p><h1 id="伤心跳棋"><a href="#伤心跳棋" class="headerlink" title="伤心跳棋"></a>伤心跳棋</h1><p>这个东西卡了我好久，到现在还是有很多位置都没明白。首先这个软件非常老，我找不到那个年代的upx脱壳，自己手脱会导致软件功能用不了，不过脱壳后可以找到软件验证的位置</p><p><img src="/2021/03/30/note/image-20210722124327765.png" alt="image-20210722124327765"></p><p>软件在地址408727，40860B，402181有三次的验证，全部跳过即可。很玄学的地方是402181不能用修改字节码的方式打补丁，否则会导致另外两处的验证就算成功功能也还是用不了</p><p><img src="/2021/03/30/note/image-20210722125427440.png" alt="image-20210722125427440"></p><p>所以上图这个if最后打补丁是用异常中断补丁修改eip成功的，可能软件有校验字节码是否被修改？最后附上补丁数据</p><p><img src="/2021/03/30/note/image-20210722125854700.png" alt="image-20210722125854700"></p><p>下图是选择<code>修改EIP(NOP)</code></p><p><img src="/2021/03/30/note/image-20210722125924095.png" alt="image-20210722125924095"></p><p>破解后左上角没有显示未注册，而且可以修改电脑思考时间</p><img src="/2021/03/30/note/image-20210722130114886.png" alt="image-20210722130114886" style="zoom:75%;"><p><a href="sxtq.exe">伤心跳棋原软件</a> <a href="sxtq%E5%92%8C%E8%B0%90%E8%A1%A5%E4%B8%81.exe">伤心跳棋破解补丁</a></p><h1 id="蜜瓜阅读器提取图片"><a href="#蜜瓜阅读器提取图片" class="headerlink" title="蜜瓜阅读器提取图片"></a>蜜瓜阅读器提取图片</h1><p>通过这个顺便学了学dll注入怎么写，逆向了下找到了加载图片时载入的jpg数据，通过编写dll注入即可。<br><a href="https://github.com/JamesHoi/MelonBooksDumper">Github源码</a> <a href="https://github.com/JamesHoi/MelonBooksDumper/releases">下载地址</a><br><img src="https://github.com/JamesHoi/MelonBooksDumper/blob/main/test.gif?raw=true" alt="test gif"></p><h1 id="游戏外挂"><a href="#游戏外挂" class="headerlink" title="游戏外挂"></a>游戏外挂</h1>]]></content>
     
@@ -411,7 +459,7 @@
     
     <category term="安卓" scheme="https://jameshoi.github.io/tags/%E5%AE%89%E5%8D%93/"/>
     
-    <category term="游戏外挂" scheme="https://jameshoi.github.io/tags/%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8C%82/"/>
+    <category term="游戏破解" scheme="https://jameshoi.github.io/tags/%E6%B8%B8%E6%88%8F%E7%A0%B4%E8%A7%A3/"/>
     
   </entry>
   
@@ -434,55 +482,6 @@
     
     <category term="CTF比赛" scheme="https://jameshoi.github.io/categories/CTF%E6%AF%94%E8%B5%9B/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>用单片机运行HelloWorld</title>
-    <link href="https://jameshoi.github.io/2021/03/22/mcu/"/>
-    <id>https://jameshoi.github.io/2021/03/22/mcu/</id>
-    <published>2021-03-21T17:56:37.000Z</published>
-    <updated>2021-07-09T16:58:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>（本文图片较大，建议用电脑查看）<br>（本文前言和介绍篇幅有点长，实际可从”开始”标题开始看）</p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>写完上次的“零基础搭建属于自己的博客”一文，我觉得我还是应该写一些科普或者教程，让同学们成功入门，我也顺便可以将我以往的经验总结一下。假如有朋友有想了解的东西，可以找我然后我写一篇文章入门（当然首先我也得会hhh），我擅长的方向大概是：机器人，单片机，网络安全，逆向，编程。</p><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>入门单片机首先总得了解单片机是什么。单片机普遍存在于我们的一些设备当中，例如台灯，通过编写程序让台灯每按一次按钮就减小亮度。又例如大家可能学过的Arduino，它是一款单片机。可以看出单片机一般和电路结合一起，控制电路量从而控制设备。那么由于一开始的单片机没有设备，能够显示HelloWorld也是比较困难的。</p><h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>本文用STM32F407VET6开发板作为示例。需要用到的软件有STM32CubeMX，Keil uVision5，XCOM(串口调试软件)。如何下载软件我还是不写了，本文的重点并不是这个。<br>关于硬件的购买，自行淘宝吧，需要一块stm的单片机，单片机的烧录器，usb转ttl模块<br><img src="/2021/03/22/mcu/1616380047144-ba07c138-dce2-4ec3-859d-259aa9f7d0e6.png" alt="image.png"><br>我自己的烧录器<br><img src="/2021/03/22/mcu/1616396876586-e4f9945c-5d26-498d-878d-05ee16d686dc.png" alt="image.png"><br>由于显示HelloWorld需要用到串口，还需要买usb转ttl模块<br><img src="/2021/03/22/mcu/1616382481989-412d8fad-9c0c-4ef4-a53e-fba73961493b.png" alt="image.png"></p><h1 id="设置项目"><a href="#设置项目" class="headerlink" title="设置项目"></a>设置项目</h1><p>下载好软件后打开STM32CubeMX，点击New Project<br><img src="/2021/03/22/mcu/1616379767406-35f81ea1-b20f-4016-8246-08f379d4c91e.png" alt="image.png"><img src="/2021/03/22/mcu/1616379807099-5b27f864-2aaf-436b-89c1-50eff20723ef.png" alt="image.png"><br>（不同版本软件可能界面不一样，但操作相似）<br>MCU Selector，选择你的型号，详细的型号可以在单片机芯片上看到，又或者问淘宝卖家。例如你是STM32F407VET6型号，那么选择STM32F407VETx，点击Ok<br><img src="/2021/03/22/mcu/1616380160058-2a5935a1-2eff-48e1-ad2a-95ee1e5a4a69.png" alt="image.png"><img src="/2021/03/22/mcu/1616380242987-487fb114-9e5c-4f75-b22b-5c9a41d8c83e.png" alt="image.png"><img src="/2021/03/22/mcu/1616380279108-0aa7b49e-85e9-43a0-b6a1-eaf1b52bbc56.png" alt="image.png"><br>可以看到进入设置界面了，实际上到这一部分基本上你查百度已经有一大堆的教程了，说实话一开始入门不需要理解那么多的原理，先实际操作一遍能搞定再慢慢了解，先跟着教程做一遍吧。<br><img src="/2021/03/22/mcu/1616380542796-50797f52-d046-4d94-8253-209eb6727e9e.png" alt="image.png"><br>RCC设置，选择HSE(外部高速时钟)为Crystal/Ceramic Resonator(晶振/陶瓷谐振器)，串口选择随意一个UART，选择模式Asynchronous，然后可以找到其中的两个口，PA0是UART4_TX，PA1是UART4_RX。RX是接收口，TX是发送口。<br><img src="/2021/03/22/mcu/1616381091747-f436fa1f-e17e-44c3-a4de-699bdcb072ee.png" alt="image.png"></p><h1 id="生成代码"><a href="#生成代码" class="headerlink" title="生成代码"></a>生成代码</h1><p>点击Project –&gt;Generate Reports或者点击快捷图标生成报告。系统会提示先创建一个工程项目。点击Yes设置工程。<br><img src="/2021/03/22/mcu/1616382102349-18092404-e744-4b07-acf3-4bbd51d25cde.png" alt="image.png"><br>输入工程名，选择工程路径（注意不要出现中文，否则可能出错）。工具链/IDE选择MDK-ARM V5。最后面可以设置堆栈大小，此处默认不作修改。<br><img src="/2021/03/22/mcu/1616382047157-a58d000a-602a-4037-afb9-5bef32653bc5.png" alt="image.png"><br>提示下载固件，点击Yes<br><img src="/2021/03/22/mcu/1616382196987-4ff5dc9a-2b42-4a98-a70d-ab1ddd686f14.png" alt="image.png"><br>按照下图选择，再点击GENERATE CODE生成代码</p><h1 id><a href="#" class="headerlink" title></a><img src="/2021/03/22/mcu/1616385125271-e01b19bb-726b-4c44-923c-0619e355a7f8.png"></h1><p>用Keil打开生成的代码，点击Open Project<br><img src="/2021/03/22/mcu/1616386225359-312fc864-d952-456c-b602-ab46044d7c5c.png" alt="image.png"></p><h1 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h1><p>找到main.c的int main(void)函数里面的while (1)循环，把程序写在里面会不断循环运行</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> *ch = <span class="string">&quot;HelloWorld&quot;</span>;</span><br><span class="line">    <span class="comment">//因为在cubeMX设置的是UART4，所以是huart4，10为HelloWorld的长度</span></span><br><span class="line">    HAL_UART_Transmit(&amp;huart4, (<span class="keyword">uint8_t</span> *)ch, <span class="number">10</span>, <span class="number">0xffff</span>);</span><br><span class="line">    HAL_Delay(<span class="number">1000</span>);<span class="comment">//停止运行1秒</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>写完代码后点击Build，然后再点Download。但点Download之前当然要先接上烧录器<br><img src="/2021/03/22/mcu/1616386350555-9358f49c-c0bf-48b4-afbe-8fa2b47647be.png" alt="image.png">   <img src="/2021/03/22/mcu/1616386324569-95ff9a32-76da-4db9-9b05-bb138dc01a06.png" alt="image.png"><br>如图，烧录器另一端usb接入电脑<br><img src="/2021/03/22/mcu/1616397194795-3c9ec3df-4704-4c36-84c4-0adf15bb5488.png" alt="image.png"><br>注意：可能不单要接烧录器，需继续按照下面的接线教程接好后才能烧录（因为没有供电给单片机）</p><h1 id="接线"><a href="#接线" class="headerlink" title="接线"></a>接线</h1><p>找到原本cubemx设置好的uart4口，PA0和PA1<br><img src="/2021/03/22/mcu/1616381091747-f436fa1f-e17e-44c3-a4de-699bdcb072ee.png" alt="image.png"><br>红框是PA0和PA1，绿框是电源3.3v和接地<br><img src="/2021/03/22/mcu/1616409770328-013680d8-af97-4b90-b703-90d303b143ad.png" alt="image.png">、<br>将单片机的PA0和PA1按照下图接到usb转ttl小板上，因为单片机的接受(RXD)是另一块的发送(TXD)，所以是反过来接（注意！！尽量接3.3v，若将5v接入单片机很有可能会烧坏单片机）。接好后再将usb转ttl模块usb插到电脑上。<br><img src="/2021/03/22/mcu/1616409885532-c8d83841-7693-49b6-a16f-646c25ce5a5f.png" alt="image.png"><img src="/2021/03/22/mcu/1616411055147-8c59bec7-0fd4-4d26-a6c1-a50991238330.png" alt="image.png"><br>我的最终接线图<br><img src="/2021/03/22/mcu/1616410580589-3f7a09fc-9779-49c2-b95d-cc72fcbe2c96.png" alt="image.png"><br>打开XCOM并选择串口打开即可看到输出，可以看到每1秒会输出一次HelloWorld<br><img src="/2021/03/22/mcu/1616410448708-b2082148-6234-4650-bbb7-dfbdd61696a3.png" alt="image.png"></p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>总结就先声明一下，其实我也就会的东西不多，若有问题或者错误的地方，希望大家多多反馈，共同进步。<br>其实很多地方的细节都没写出来（真写出来就很长一篇文章了），文章的目的主要还是希望能让大家入门单片机开发。但写完之后我发现我后悔了，这不吃力不讨好吗…最后写完这文章我猜也没几个人跟着做完的，零基础教学的东西下次不写了。<br><img src="/2021/03/22/mcu/1616410863668-f2d60382-c1e9-47e0-9184-ec53b3964111.png" alt="image.png"><br>最后打个广告，欢迎各位来参加MRCTF，同时天璇MERAK战队也欢迎您的加入<br>扩展资料：<br>CTF(Capture The Flag)中文一般译作夺旗赛,在网络安全领域中指的是网络安全技术人员之间进行技术竞技的一种比赛形式。参加CTF能增长网络安全知识的同时，也能加深对计算机原理的深层次认识。在这里你不但能和学长交流探讨前沿技术发展，还能收获来自不同专业的小伙伴们。<br><img src="/2021/03/22/mcu/1616645749212-620fab7b-415a-4ba8-a8a1-8a9b912c1ff7.png" alt="image.png"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;（本文图片较大，建议用电脑查看）&lt;br&gt;（本文前言和介绍篇幅有点长，实际可从”开始”标题开始看）&lt;/p&gt;
-&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;写完上次的“零基础搭建属于自</summary>
-      
-    
-    
-    
-    <category term="杂项" scheme="https://jameshoi.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
-    <category term="单片机" scheme="https://jameshoi.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网易公开课下载器 版本更新</title>
-    <link href="https://jameshoi.github.io/2021/03/22/open163-new/"/>
-    <id>https://jameshoi.github.io/2021/03/22/open163-new/</id>
-    <published>2021-03-21T16:00:00.000Z</published>
-    <updated>2021-06-25T06:42:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h1><p><a href="https://jameshoi.github.io/2020/03/22/open163-downloader/">之前博客</a><br>原本是用selenium爬虫爬取数据的，但效率实在不高，现在换成直接用requests解析json</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>例如视频页面链接为<a href="https://open.163.com/newview/movie/free?pid=MFHCKB983&amp;mid=MFHCLTO23">https://open.163.com/newview/movie/free?pid=MFHCKB983&amp;mid=MFHCLTO23</a> ，则其对应的视频数据为<a href="https://c.open.163.com/open/mob/movie/list.do?plid=MFHCKB983">https://c.open.163.com/open/mob/movie/list.do?plid=MFHCKB983</a> ，即 将视频链接的pid参数填入到list.do?plid=里<br><a href="https://imgtu.com/i/6ev1T1"><img src="/2021/03/22/open163-new/6ev1T1.png" alt="6ev1T1.png"></a></p><h1 id="软件功能"><a href="#软件功能" class="headerlink" title="软件功能"></a>软件功能</h1><ol><li>可选择多少个视频同时下载（线程个数）</li><li>可选择字幕和影片是否分开</li><li>可选择视频画质（如果原视频可以选择）</li><li>可分集下载，用逗号隔开<br>例如一共有11集，不需要下载第2集和第6集，填1,3-5,7-11<br>下载全部填all，下载当前视频填current<br>若填写课程链接默认下载全部，视频链接默认下载当前视频  </li></ol><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><a href="https://github.com/JamesHoi/Open163-Downloader/releases">Github发布页</a><br><a href="https://share.weiyun.com/oYfwIX8F">微云下载</a></p><h1 id="软件使用教程"><a href="#软件使用教程" class="headerlink" title="软件使用教程"></a>软件使用教程</h1><p>输入视频页面链接，范例：<a href="https://open.163.com/newview/movie/free?pid=MA32VG4SA&amp;mid=MA35IIC76">https://open.163.com/newview/movie/free?pid=MA32VG4SA&amp;mid=MA35IIC76</a><br><img src="/2021/03/22/open163-new/110079073-9a8da180-7dc3-11eb-9a90-996a2b87d4e7.png" alt="image"></p><p>视频页面<br><a href="https://imgtu.com/i/6eOfmR"><img src="/2021/03/22/open163-new/6eOfmR.png" alt="6eOfmR.png"></a></p><p>目前测试可达到满速<br><a href="https://imgtu.com/i/6eOJfS"><img src="/2021/03/22/open163-new/6eOJfS.png" alt="6eOJfS.png"></a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;更新内容&quot;&gt;&lt;a href=&quot;#更新内容&quot; class=&quot;headerlink&quot; title=&quot;更新内容&quot;&gt;&lt;/a&gt;更新内容&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://jameshoi.github.io/2020/03/22/open163-downloa</summary>
-      
-    
-    
-    
-    <category term="杂项" scheme="https://jameshoi.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
-    <category term="Python" scheme="https://jameshoi.github.io/tags/Python/"/>
     
   </entry>
   
