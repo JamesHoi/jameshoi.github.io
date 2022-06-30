@@ -442,6 +442,9 @@ height:50vh;
     <article class="article-entry">
         <h2 id="D3CTF"><a href="#D3CTF" class="headerlink" title="D3CTF"></a>D3CTF</h2><h3 id="jumpjump"><a href="#jumpjump" class="headerlink" title="jumpjump"></a>jumpjump</h3><p>没什么好说的，两次异或简单运算就出了</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">enc = [<span class="number">0x09</span>,<span class="number">0x0B</span>,<span class="number">0x06</span>,<span class="number">0x5A</span>,<span class="number">0x5B</span>,<span class="number">0x0A</span>,<span class="number">0x54</span>,<span class="number">0x05</span>,<span class="number">0x4D</span>,<span class="number">0x57</span>,</span><br><span class="line">       <span class="number">0x56</span>,<span class="number">0x54</span>,<span class="number">0x0B</span>,<span class="number">0x4D</span>,<span class="number">0x54</span>,<span class="number">0x09</span>,<span class="number">0x55</span>,<span class="number">0x40</span>,<span class="number">0x4D</span>,<span class="number">0x09</span>,</span><br><span class="line">       <span class="number">0x06</span>,<span class="number">0x59</span>,<span class="number">0x0B</span>,<span class="number">0x4D</span>,<span class="number">0x55</span>,<span class="number">0x54</span>,<span class="number">0x58</span>,<span class="number">0x57</span>,<span class="number">0x5B</span>,<span class="number">0x09</span>,</span><br><span class="line">       <span class="number">0x0B</span>,<span class="number">0x40</span>,<span class="number">0x05</span>,<span class="number">0x0A</span>,<span class="number">0x05</span>,<span class="number">0x09</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">36</span>):</span><br><span class="line">    print(chr(((enc[i]^<span class="number">0x33</span>)<span class="number">-4</span>)^<span class="number">0x57</span>),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="comment">#acf23b4e-764c-4a58-af1c-54073ac8ebea</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h3 id="ancient"><a href="#ancient" class="headerlink" title="ancient"></a>ancient</h3>
     </article>
     <!-- license  -->
@@ -630,8 +633,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
     
     
     
