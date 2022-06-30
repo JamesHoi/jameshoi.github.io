@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2022/05/01/crack/"/>
-      <url>/2022/05/01/crack/</url>
-      
-        <content type="html"><![CDATA[<h1 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h1><h2 id="某声音降噪软件"><a href="#某声音降噪软件" class="headerlink" title="某声音降噪软件"></a>某声音降噪软件</h2>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>TSCTF 2022 校内赛 逆向部分</title>
       <link href="/2022/04/24/tsctf-2022-re/"/>
       <url>/2022/04/24/tsctf-2022-re/</url>
@@ -34,31 +21,6 @@
         <tags>
             
             <tag> 安卓 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ARM指令学习</title>
-      <link href="/2022/01/11/arm/"/>
-      <url>/2022/01/11/arm/</url>
-      
-        <content type="html"><![CDATA[<h1 id="ARM指令学习"><a href="#ARM指令学习" class="headerlink" title="ARM指令学习"></a>ARM指令学习</h1><p>先开个坑，有空就填</p><p>（坑已经填不完了…）</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 逆向学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ARM </tag>
             
         </tags>
       
@@ -396,7 +358,7 @@
       <link href="/2021/03/30/note/"/>
       <url>/2021/03/30/note/</url>
       
-        <content type="html"><![CDATA[<p>这里记录一些我自己真实场景下的逆向内容</p><h1 id="拷贝漫画去广告"><a href="#拷贝漫画去广告" class="headerlink" title="拷贝漫画去广告"></a>拷贝漫画去广告</h1><p>首先这个软件太过分了…虽说我很同意帮你看点广告赞助你的服务器费用，但每次进去都加载十几秒的广告，有时候再进去之后还要考30秒以上的广告，属实是有点过分。<br>（新版本好像广告变少了）<br>​</p><p>Android Killer大法好，因为软件是一进去就开始加载广告的，定位启动软件的位置，找到有Ads的关键字，直接删除smali重新打包即可<br><img src="/2021/03/30/note/1622020875906-441d1ba0-7cda-4450-a46d-4121293449a5.png" alt="image.png"><br>删除前<br><img src="/2021/03/30/note/1622020912536-ac6877f7-c84f-4d8f-adcb-3140446f9b6a.png" alt="image.png"><br>删除后<br><img src="/2021/03/30/note/1622021001816-3782470e-86ca-4b94-b588-656e537aa8d9.png" alt="image.png"><br>进去发现确实是没广告了，但点击漫画之后发现有一大截空白部分，怀疑应该是广告内容。由于是用flutter框架写的，用反射大师没定位到这个空白位置的控件，那没办法了…先将就用着，等哪天真受不了了就学习一波flutter逆向<br><img src="/2021/03/30/note/1622021356408-ada6ca30-1bae-4744-9813-4e7c0227f838.png" alt="image.png"><br>​</p><h1 id="动漫之家去广告"><a href="#动漫之家去广告" class="headerlink" title="动漫之家去广告"></a>动漫之家去广告</h1><p>有360壳，由于不是做ctf题目，所以还得考虑打包apk怎么打包回去<br><img src="/2021/03/30/note/1622021197387-b0a0c749-6e1e-4f35-a6e2-6f50e9aa2c9a.png" alt="image.png"><br>参考<a href="https://zhuanlan.zhihu.com/p/28810334">https://zhuanlan.zhihu.com/p/28810334</a>这个文章<br>待续…<br>​</p><h1 id="伤心跳棋"><a href="#伤心跳棋" class="headerlink" title="伤心跳棋"></a>伤心跳棋</h1><p>这个东西卡了我好久，到现在还是有很多位置都没明白。首先这个软件非常老，我找不到那个年代的upx脱壳，自己手脱会导致软件功能用不了，不过脱壳后可以找到软件验证的位置</p><p><img src="/2021/03/30/note/image-20210722124327765.png" alt="image-20210722124327765"></p><p>软件在地址408727，40860B，402181有三次的验证，全部跳过即可。很玄学的地方是402181不能用修改字节码的方式打补丁，否则会导致另外两处的验证就算成功功能也还是用不了</p><p><img src="/2021/03/30/note/image-20210722125427440.png" alt="image-20210722125427440"></p><p>所以上图这个if最后打补丁是用异常中断补丁修改eip成功的，可能软件有校验字节码是否被修改？最后附上补丁数据</p><p><img src="/2021/03/30/note/image-20210722125854700.png" alt="image-20210722125854700"></p><p>下图是选择<code>修改EIP(NOP)</code></p><p><img src="/2021/03/30/note/image-20210722125924095.png" alt="image-20210722125924095"></p><p>破解后左上角没有显示未注册，而且可以修改电脑思考时间</p><p><img src="/2021/03/30/note/image-20210722130114886.png" alt="image-20210722130114886" style="zoom:75%;"></p><p><a href="sxtq.exe">伤心跳棋原软件</a> <a href="sxtq和谐补丁.exe">伤心跳棋破解补丁</a></p><h1 id="蜜瓜阅读器提取图片"><a href="#蜜瓜阅读器提取图片" class="headerlink" title="蜜瓜阅读器提取图片"></a>蜜瓜阅读器提取图片</h1><p>通过这个顺便学了学dll注入怎么写，逆向了下找到了加载图片时载入的jpg数据，通过编写dll注入即可。<br><a href="https://github.com/JamesHoi/MelonBooksDumper">Github源码</a> <a href="https://github.com/JamesHoi/MelonBooksDumper/releases">下载地址</a><br><img src="https://github.com/JamesHoi/MelonBooksDumper/blob/main/test.gif?raw=true" alt="test gif"></p><h1 id="游戏外挂"><a href="#游戏外挂" class="headerlink" title="游戏外挂"></a>游戏外挂</h1>]]></content>
+        <content type="html"><![CDATA[<p>这里记录一些我自己真实场景下的逆向内容</p><h1 id="拷贝漫画去广告"><a href="#拷贝漫画去广告" class="headerlink" title="拷贝漫画去广告"></a>拷贝漫画去广告</h1><p>首先这个软件太过分了…虽说我很同意帮你看点广告赞助你的服务器费用，但每次进去都加载十几秒的广告，有时候再进去之后还要考30秒以上的广告，属实是有点过分。<br>（新版本好像广告变少了）<br>​</p><p>Android Killer大法好，因为软件是一进去就开始加载广告的，定位启动软件的位置，找到有Ads的关键字，直接删除smali重新打包即可<br><img src="/2021/03/30/note/1622020875906-441d1ba0-7cda-4450-a46d-4121293449a5.png" alt="image.png"><br>删除前<br><img src="/2021/03/30/note/1622020912536-ac6877f7-c84f-4d8f-adcb-3140446f9b6a.png" alt="image.png"><br>删除后<br><img src="/2021/03/30/note/1622021001816-3782470e-86ca-4b94-b588-656e537aa8d9.png" alt="image.png"><br>进去发现确实是没广告了，但点击漫画之后发现有一大截空白部分，怀疑应该是广告内容。由于是用flutter框架写的，用反射大师没定位到这个空白位置的控件，那没办法了…先将就用着，等哪天真受不了了就学习一波flutter逆向<br><img src="/2021/03/30/note/1622021356408-ada6ca30-1bae-4744-9813-4e7c0227f838.png" alt="image.png"><br>​</p><h1 id="动漫之家去广告"><a href="#动漫之家去广告" class="headerlink" title="动漫之家去广告"></a>动漫之家去广告</h1><p>有360壳，由于不是做ctf题目，所以还得考虑打包apk怎么打包回去<br><img src="/2021/03/30/note/1622021197387-b0a0c749-6e1e-4f35-a6e2-6f50e9aa2c9a.png" alt="image.png"><br>参考<a href="https://zhuanlan.zhihu.com/p/28810334">https://zhuanlan.zhihu.com/p/28810334</a>这个文章<br>待续…<br>​</p><h1 id="伤心跳棋"><a href="#伤心跳棋" class="headerlink" title="伤心跳棋"></a>伤心跳棋</h1><p>先来看看这个软件界面，显示未注册，并且就算修改电脑思考时间也只能是1秒。</p><p><img src="/2021/03/30/note/image-20220629235220091.png" alt="image-20220629235220091"></p><p>这个软件非常老，我找不到那个年代的upx脱壳，自己手脱会导致软件功能用不了（我修不好），不过脱壳后可以找到软件验证的位置。</p><p><img src="/2021/03/30/note/image-20210722124327765.png" alt="image-20210722124327765"></p><p>要绕过注册验证很简单，软件在地址408727，40860B，402181有三次的验证，全部跳过即可。很玄学的地方是402181不能用修改字节码的方式打补丁，否则会导致另外两处的验证就算成功功能也还是用不了</p><p><img src="/2021/03/30/note/image-20220629235426220.png" alt="image-20220629235426220"></p><p><img src="/2021/03/30/note/image-20220629235658365.png" alt="image-20220629235658365"></p><p><img src="/2021/03/30/note/image-20210722125427440.png" alt="image-20210722125427440"></p><p>所以上图这个if最后打补丁是用异常中断补丁修改eip成功的，可能软件有校验字节码是否被修改？最后附上补丁数据</p><p><img src="/2021/03/30/note/image-20210722125854700.png" alt="image-20210722125854700"></p><p>下图是选择<code>修改EIP(NOP)</code></p><p><img src="/2021/03/30/note/image-20210722125924095.png" alt="image-20210722125924095"></p><p>破解后左上角没有显示未注册，而且可以修改电脑思考时间</p><p><img src="/2021/03/30/note/image-20210722130114886.png" alt="image-20210722130114886" style="zoom:75%;"></p><p>软件注册算法有定位到，但我懒得看了，交给其他大家自己练手试试吧。</p><p><a href="sxtq.exe">伤心跳棋原软件</a> <a href="sxtq和谐补丁.exe">伤心跳棋破解补丁</a></p><h1 id="蜜瓜阅读器提取图片"><a href="#蜜瓜阅读器提取图片" class="headerlink" title="蜜瓜阅读器提取图片"></a>蜜瓜阅读器提取图片</h1><p>通过这个顺便学了学dll注入怎么写，逆向了下找到了加载图片时载入的jpg数据，通过编写dll注入即可。<br><a href="https://github.com/JamesHoi/MelonBooksDumper">Github源码</a> <a href="https://github.com/JamesHoi/MelonBooksDumper/releases">下载地址</a><br><img src="https://github.com/JamesHoi/MelonBooksDumper/blob/main/test.gif?raw=true" alt="test gif"></p><h1 id="NVLMaker"><a href="#NVLMaker" class="headerlink" title="NVLMaker"></a>NVLMaker</h1><h1 id="Krisp"><a href="#Krisp" class="headerlink" title="Krisp"></a>Krisp</h1><p>c#写的，无壳无混淆，dnspy找到定位关键验证部分即可。过于简单，这里不再阐述</p>]]></content>
       
       
       <categories>
@@ -410,7 +372,7 @@
             
             <tag> 安卓 </tag>
             
-            <tag> 游戏破解 </tag>
+            <tag> 破解 </tag>
             
         </tags>
       
