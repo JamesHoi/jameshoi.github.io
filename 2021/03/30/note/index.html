@@ -485,10 +485,9 @@ height:50vh;
 <p>下图是选择<code>修改EIP(NOP)</code></p>
 <p><img src="/2021/03/30/note/image-20210722125924095.png" alt="image-20210722125924095"></p>
 <p>破解后左上角没有显示未注册，而且可以修改电脑思考时间</p>
-<img src="/2021/03/30/note/image-20210722130114886.png" alt="image-20210722130114886" style="zoom:75%;">
-
+<p><img src="/2021/03/30/note/image-20210722130114886.png" alt="image-20210722130114886" style="zoom:75%;"></p>
 <p>软件注册算法有定位到，但我懒得看了，交给其他大家自己练手试试吧。</p>
-<p><a href="sxtq.exe">伤心跳棋原软件</a> <a href="sxtq%E5%92%8C%E8%B0%90%E8%A1%A5%E4%B8%81.exe">伤心跳棋破解补丁</a></p>
+<p><a href="sxtq.exe">伤心跳棋原软件</a> <a href="sxtq和谐补丁.exe">伤心跳棋破解补丁</a></p>
 <h1 id="蜜瓜阅读器提取图片"><a href="#蜜瓜阅读器提取图片" class="headerlink" title="蜜瓜阅读器提取图片"></a>蜜瓜阅读器提取图片</h1><p>这个阅读器的文件是自定义的，一个文件里有很多张图片，貌似还用到了RSA解密，需要账户密码登录正确才能解密。<br>但假如只是登录后把图片提取出来难度并不大，软件有随机基址，<strong>RVA 0x23FDF</strong>是实例化<strong>QPixmap</strong>，堆栈中有图片裸数据指针和长度。</p>
 <p><img src="/2021/03/30/note/1.png" alt="1"></p>
 <p>上图12DAC7为图片字节长度，1E511020是图片数据指针，下图可以看出明显的jpg格式文件头</p>
@@ -1135,8 +1134,6 @@ top:50vh;
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 35
@@ -1170,22 +1167,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/note2/" >近期做过的一些题目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/note2/" >近期做过的一些题目</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
         </li>
     
     
@@ -1360,13 +1357,11 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
-    
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
-        <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
-        <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
+        <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
         <span class="sidebar-tag-name" data-tags="il2cpp"><span class="iconfont-archer">&#xe606;</span>il2cpp</span>
     
@@ -1374,13 +1369,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="游戏破解"><span class="iconfont-archer">&#xe606;</span>游戏破解</span>
     
+        <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
+    
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
     
@@ -1419,11 +1416,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
+    
         <span class="sidebar-category-name" data-categories="CTF比赛"><span class="iconfont-archer">&#xe60a;</span>CTF比赛</span>
     
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
-    
-        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
     
         <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
     
@@ -1462,7 +1459,22 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 

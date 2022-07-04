@@ -390,8 +390,7 @@
                 <span>MRCTF 2021 Real_CHECKIN</span>
         </a>
         <div class="abstract-content">
-            【文章转载于安全客https://www.anquanke.com/post/id/237793】题如其名，真的是签到题，出题的时候调试符号都没去。扔进PEID可以看出是upx壳，脱壳后用ida f5就能看到基本上和源码完全一致的伪代码。直接由函数名知道是base64编码，进入base64_encode函数并查看alphabet_map，可以发现base64换表了，用python写个脚本就得到flag了
-1234567import base64my_base64table = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX...
+            【文章转载于安全客https://www.anquanke.com/post/id/237793】题如其名，真的是签到题，出题的时候调试符号都没去。扔进PEID可以看出是upx壳，脱壳后用ida f5就能看到基本上和源码完全一致的伪代码。直接由函数名知道是base64编码，进入base64_encode函数并查看alphabet_map，可以发现base64换表了，用python写个脚本就得到flag了1234567import base64my_base64table = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -415,8 +414,7 @@
         </a>
         <div class="abstract-content">
             前言师傅们别骂了，我抽空一定努力好好学
-Dynamic Debug dynamic_debug动调进去发现是TEA加密，调试一下发现是DWORD类型，写脚本就出了
-12345678910111213141516171819202122232425262728293031#include &lt;iostream&gt;#include &lt;stdio.h&gt;#include &lt;Windows.h&gt;void decrypt(DWORD* v, DWORD* k) &#123;	DWORD v0 = v[0], v1 = v[1], sum = 0xC6EF3720, i...
+Dynamic Debug dynamic_debug动调进去发现是TEA加密，调试一下发现是DWORD类型，写脚本就出了12345678910111213141516171819202122232425262728293031#include &lt;iostream&gt;#include &lt;stdio.h&gt;#include &lt;Windows.h&gt;void decrypt(DWORD* v, DWORD* k) &#123;	DWORD v0 = v[0], v1 = v[1], sum = 0xC6EF3720, i;...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -976,8 +974,6 @@ Dynamic Debug dynamic_debug动调进去发现是TEA加密，调试一下发现�
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 35
@@ -1011,22 +1007,22 @@ Dynamic Debug dynamic_debug动调进去发现是TEA加密，调试一下发现�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/note2/" >近期做过的一些题目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/note2/" >近期做过的一些题目</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
         </li>
     
     
@@ -1201,13 +1197,11 @@ Dynamic Debug dynamic_debug动调进去发现是TEA加密，调试一下发现�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
-    
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
-        <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
-        <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
+        <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
         <span class="sidebar-tag-name" data-tags="il2cpp"><span class="iconfont-archer">&#xe606;</span>il2cpp</span>
     
@@ -1215,13 +1209,15 @@ Dynamic Debug dynamic_debug动调进去发现是TEA加密，调试一下发现�
     
         <span class="sidebar-tag-name" data-tags="游戏破解"><span class="iconfont-archer">&#xe606;</span>游戏破解</span>
     
+        <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
+    
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
     
@@ -1260,11 +1256,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
+    
         <span class="sidebar-category-name" data-categories="CTF比赛"><span class="iconfont-archer">&#xe60a;</span>CTF比赛</span>
     
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
-    
-        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
     
         <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
     
@@ -1301,7 +1297,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 
