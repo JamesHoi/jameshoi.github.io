@@ -397,12 +397,9 @@
 
 跟下去之后很容易找到校验位置，应该是一个任务组，运行其中一个任务
 
-一直跟下去，能找到这个线程组的线程函数，可以看到有校验的函数
+一直跟下去，能找到这个线程组的线程函数，可以看到有校验的函数。补充一句，软件是若校验本地exe和dll与校验码不一致则重新下载
 
-这里不再阐述如何修改，直接修改c# IL为Nop即可，上图最后有个needRestart，意思是更新软件重启，可见需要直接return，满足那个if条件。
-
-修改后变这样，用dnspy保存即可
-...
+这里不再阐述如何修改，直接修改c# IL为Nop即可，上图最后有个needRestart，意思是更新软件重启，可见需要直接ret...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1231,8 +1228,6 @@ easyXor签到。题目就是题解，xor加密后验证，这里要提多一句�
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 35
@@ -1456,9 +1451,9 @@ easyXor签到。题目就是题解，xor加密后验证，这里要提多一句�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
-    
         <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
+    
+        <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
@@ -1517,9 +1512,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="CTF比赛"><span class="iconfont-archer">&#xe60a;</span>CTF比赛</span>
     
-        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
-    
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
+    
+        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
     
         <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
     
