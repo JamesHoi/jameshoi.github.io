@@ -460,7 +460,8 @@
         </a>
         <div class="abstract-content">
             前言有些题目之前就做完了，我不想再写WP了（手动滑稽保命）
-666ida放进去发现是普通的异或，直接秒123456789101112enflag = &quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;key = 0x12enflag = [ord(i) for i in enflag]flag = []for i in range(6):    flag.append(chr((enflag[3*i]^key)-6))    flag.append(chr((enflag[3*i+1]^key)+6))    flag.appen...
+666ida放进去发现是普通的异或，直接秒
+123456789101112enflag = &quot;izwhroz\&quot;\&quot;w\&quot;v.K\&quot;.Ni&quot;key = 0x12enflag = [ord(i) for i in enflag]flag = []for i in range(6):    flag.append(chr((enflag[3*i]^key)-6))    flag.append(chr((enflag[3*i+1]^key)+6))    flag.appe...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -545,7 +546,8 @@ easyXor.exe这题没啥说的，标准的异或出flag
         </a>
         <div class="abstract-content">
             某乱七八糟选拔赛 main2101075ff6b9adc84f9.zip拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png
-解题脚本用linux g++编译后运行123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &lt...
+解题脚本用linux g++编译后运行
+123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &l...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -568,8 +570,11 @@ easyXor.exe这题没啥说的，标准的异或出flag
                 <span>CUMTCTF 2021</span>
         </a>
         <div class="abstract-content">
-            re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
-re2re2.rar扔进Exeinfo PE，32位e...
+            re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag
+1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
+
+
+re2re2.rar扔进Exeinfo PE，3...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1131,8 +1136,6 @@ re2re2.rar扔进Exeinfo PE，32位e...
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 35
@@ -1176,12 +1179,12 @@ re2re2.rar扔进Exeinfo PE，32位e...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
         </li>
     
     
@@ -1374,9 +1377,9 @@ re2re2.rar扔进Exeinfo PE，32位e...
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
-    
         <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
+        <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     
         <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
     
@@ -1415,9 +1418,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
-    
         <span class="sidebar-category-name" data-categories="CTF比赛"><span class="iconfont-archer">&#xe60a;</span>CTF比赛</span>
+    
+        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
     
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
     
