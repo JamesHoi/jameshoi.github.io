@@ -144,25 +144,6 @@
     
     
     <entry>
-      <title>一些需要用脚本的逆向题目</title>
-      <link href="/2022/01/11/script/"/>
-      <url>/2022/01/11/script/</url>
-      
-        <content type="html"><![CDATA[<p>有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 逆向学习 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>TSCTF 2021 逆向题目</title>
       <link href="/2022/01/11/tsctf-2021-re/"/>
       <url>/2022/01/11/tsctf-2021-re/</url>
@@ -182,6 +163,25 @@
             <tag> 安卓 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一些需要用脚本的逆向题目</title>
+      <link href="/2022/01/11/script/"/>
+      <url>/2022/01/11/script/</url>
+      
+        <content type="html"><![CDATA[<p>有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 逆向学习 </category>
+          
+      </categories>
+      
       
     </entry>
     
