@@ -402,9 +402,9 @@ height:50vh;
         </a>
         <div class="abstract-content">
             家里的小米盒子是二代的，想解决看剧麻烦和广告的问题，关键是安卓系统还是4.4，好多软件不能装，网上的办法也不全，这里记录一下我自己的解决办法。
-ROOT对小米盒子进行一些操作时，难免会有权限问题，网上下个kingoroot，一键root，很快。成功后 adb shell并输入su命令即可进入root用户。kingroot
+ROOT对小米盒子进行一些操作时，难免会有权限问题，网上下个kingoroot，一键root，很快。成功后 adb shell并输入su命令即可进入root用户。kingroot.apkz
 禁用小米自带软件网上一堆带有—user 0的办法，但貌似安卓4.4不支持，好在网上找到了办法，用 pm block &lt;package&gt;的办法，软件稍微有点多，所以随手写了个py脚本
-123456789101112131415import osa = [&qu...
+123456789101112131415import osa =...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1607,9 +1607,9 @@ easyXor签到。题目就是题解，xor加密后验证，这里要提多一句�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
-    
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
+    
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
@@ -1621,9 +1621,9 @@ easyXor签到。题目就是题解，xor加密后验证，这里要提多一句�
     
         <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
     
-        <span class="sidebar-tag-name" data-tags="小米盒子"><span class="iconfont-archer">&#xe606;</span>小米盒子</span>
-    
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
+    
+        <span class="sidebar-tag-name" data-tags="小米盒子"><span class="iconfont-archer">&#xe606;</span>小米盒子</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
@@ -1668,11 +1668,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
+    
         <span class="sidebar-category-name" data-categories="CTF比赛"><span class="iconfont-archer">&#xe60a;</span>CTF比赛</span>
     
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
-    
-        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
     
         <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
     
@@ -1709,7 +1709,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 

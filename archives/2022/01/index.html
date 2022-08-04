@@ -1342,9 +1342,9 @@ easyXor签到。题目就是题解，xor加密后验证，这里要提多一句�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
-    
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
+    
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
@@ -1356,9 +1356,9 @@ easyXor签到。题目就是题解，xor加密后验证，这里要提多一句�
     
         <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
     
-        <span class="sidebar-tag-name" data-tags="小米盒子"><span class="iconfont-archer">&#xe606;</span>小米盒子</span>
-    
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
+    
+        <span class="sidebar-tag-name" data-tags="小米盒子"><span class="iconfont-archer">&#xe606;</span>小米盒子</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
@@ -1403,11 +1403,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
+    
         <span class="sidebar-category-name" data-categories="CTF比赛"><span class="iconfont-archer">&#xe60a;</span>CTF比赛</span>
     
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
-    
-        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
     
         <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
     
@@ -1444,7 +1444,22 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 
 
