@@ -442,9 +442,6 @@ height:50vh;
     <article class="article-entry">
         <h2 id="D3CTF"><a href="#D3CTF" class="headerlink" title="D3CTF"></a>D3CTF</h2><h3 id="jumpjump"><a href="#jumpjump" class="headerlink" title="jumpjump"></a>jumpjump</h3><p>没什么好说的，两次异或简单运算就出了</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">enc = [<span class="number">0x09</span>,<span class="number">0x0B</span>,<span class="number">0x06</span>,<span class="number">0x5A</span>,<span class="number">0x5B</span>,<span class="number">0x0A</span>,<span class="number">0x54</span>,<span class="number">0x05</span>,<span class="number">0x4D</span>,<span class="number">0x57</span>,</span><br><span class="line">       <span class="number">0x56</span>,<span class="number">0x54</span>,<span class="number">0x0B</span>,<span class="number">0x4D</span>,<span class="number">0x54</span>,<span class="number">0x09</span>,<span class="number">0x55</span>,<span class="number">0x40</span>,<span class="number">0x4D</span>,<span class="number">0x09</span>,</span><br><span class="line">       <span class="number">0x06</span>,<span class="number">0x59</span>,<span class="number">0x0B</span>,<span class="number">0x4D</span>,<span class="number">0x55</span>,<span class="number">0x54</span>,<span class="number">0x58</span>,<span class="number">0x57</span>,<span class="number">0x5B</span>,<span class="number">0x09</span>,</span><br><span class="line">       <span class="number">0x0B</span>,<span class="number">0x40</span>,<span class="number">0x05</span>,<span class="number">0x0A</span>,<span class="number">0x05</span>,<span class="number">0x09</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">36</span>):</span><br><span class="line">    print(chr(((enc[i]^<span class="number">0x33</span>)<span class="number">-4</span>)^<span class="number">0x57</span>),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="comment">#acf23b4e-764c-4a58-af1c-54073ac8ebea</span></span><br></pre></td></tr></table></figure>
-
-
-
 <h3 id="ancient"><a href="#ancient" class="headerlink" title="ancient"></a>ancient</h3>
     </article>
     <!-- license  -->
@@ -462,8 +459,8 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2022/01/11/tsctf-j-2021-re/" title= "TSCTF-J 2021 Reverse Official WP">
-                    <div class="nextTitle">TSCTF-J 2021 Reverse Official WP</div>
+                <a href= "/2022/01/11/tsctf-2021-re/" title= "TSCTF 2021 逆向题目">
+                    <div class="nextTitle">TSCTF 2021 逆向题目</div>
                 </a>
             
         </li>
@@ -1091,12 +1088,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 36
@@ -1150,12 +1141,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-j-2021-re/" >TSCTF-J 2021 Reverse Official WP</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-j-2021-re/" >TSCTF-J 2021 Reverse Official WP</a>
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
         </li>
     
     
@@ -1325,9 +1316,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
-    
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
+    
+        <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
@@ -1337,15 +1328,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="游戏破解"><span class="iconfont-archer">&#xe606;</span>游戏破解</span>
     
+        <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
+    
         <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
     
         <span class="sidebar-tag-name" data-tags="小米盒子"><span class="iconfont-archer">&#xe606;</span>小米盒子</span>
     
-        <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     
@@ -1386,11 +1377,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
+    
         <span class="sidebar-category-name" data-categories="CTF比赛"><span class="iconfont-archer">&#xe60a;</span>CTF比赛</span>
     
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
-    
-        <span class="sidebar-category-name" data-categories="逆向学习"><span class="iconfont-archer">&#xe60a;</span>逆向学习</span>
     
         <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
     
