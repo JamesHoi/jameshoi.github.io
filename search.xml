@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>记录一下折腾小米盒子</title>
+      <link href="/2022/08/04/mibox2/"/>
+      <url>/2022/08/04/mibox2/</url>
+      
+        <content type="html"><![CDATA[<p>家里的小米盒子是二代的，想解决看剧麻烦和广告的问题，关键是安卓系统还是4.4，好多软件不能装，网上的办法也不全，这里记录一下我自己的解决办法。</p><h1 id="ROOT"><a href="#ROOT" class="headerlink" title="ROOT"></a>ROOT</h1><p>对小米盒子进行一些操作时，难免会有权限问题，网上下个kingoroot，一键root，很快。成功后<code>adb shell</code>并输入su命令即可进入root用户</p><p><a href="mibox2/KingoRoot.apk">kingroot</a></p><h1 id="禁用小米自带软件"><a href="#禁用小米自带软件" class="headerlink" title="禁用小米自带软件"></a>禁用小米自带软件</h1><p>网上一堆带有–user 0的办法，但貌似安卓4.4不支持，好在网上找到了办法，用<code>pm block &lt;package&gt;</code>的办法，软件稍微有点多，所以随手写了个py脚本</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">a = [<span class="string">&quot;com.xiaomi.mitv.appstore&quot;</span>,<span class="string">&quot;com.xiaomi.mitv.shop&quot;</span>,<span class="string">&quot;com.xiaomi.miplay&quot;</span>,<span class="string">&quot;com.duokan.airkan.tvbox&quot;</span>,<span class="string">&quot;com.xiaomi.tweather&quot;</span>,</span><br><span class="line">    <span class="string">&quot;com.xiaomi.tv.gallery&quot;</span>,<span class="string">&quot;com.mitv.shoplugin&quot;</span>,<span class="string">&quot;com.xiaomi.smarthome.tv&quot;</span>,<span class="string">&quot;com.xiaomi.mitv.payment&quot;</span>,<span class="string">&quot;com.xiaomi.mitv.advertise&quot;</span>,</span><br><span class="line">    <span class="string">&quot;com.mitv.tvhome&quot;</span>,<span class="string">&quot;com.mitv.gallery&quot;</span>]</span><br><span class="line">ip = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">os.system(<span class="string">&quot;taskkill /f /t /im adb.exe&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;adb connect &quot;</span>+ip)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    os.system(<span class="string">&quot;adb shell pm uninstall &quot;</span>+i+<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">    os.system(<span class="string">&quot;adb shell pm block &quot;</span>+i+<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure><h1 id="Kodi"><a href="#Kodi" class="headerlink" title="Kodi"></a>Kodi</h1><p>kodi就不介绍了，但是在安卓4.4得安装特别版本的kodi <a href="mibox2/kodi.apk">kodi.apk</a></p><h1 id="SmartTube"><a href="#SmartTube" class="headerlink" title="SmartTube"></a>SmartTube</h1><p>无广告YouTube，特别好用，不多介绍，自行去官网下载，开源项目<a href="https://github.com/yuliskov/SmartTubeNext">SmartTubeNext</a></p><h1 id="无广告桌面"><a href="#无广告桌面" class="headerlink" title="无广告桌面"></a>无广告桌面</h1><p>这支持安卓4.4的桌面可真不好找，最后用的<a href="mibox2/HALauncher_2.0.2.1.apk">HALauncher_2.0.2.1</a>，效果如图，可以自定义固定什么应用。</p><p><img src="/2022/08/04/mibox2/image-20220804144434969.png" alt="image-20220804144434969"></p><h1 id="自定义开机自启动"><a href="#自定义开机自启动" class="headerlink" title="自定义开机自启动"></a>自定义开机自启动</h1><p>这一步属于是搞了半天，小米盒子系统下没有vim，传文件和复制代码弄起来很费劲。最终解决的方法如下：</p><p>由于要修改<code>/system</code>目录下的文件，先在root用户下执行<code>mount -o rw,remount /system</code>指令。</p><p>在<code>/system/etc</code>目录下新建install-recovery-2.sh，根据网上查的资料，install-recovery是在boot阶段的代码，可见此时很多应用或者服务还没启动，所以我写了个当小米桌面启动后启动我的应用的脚本。install-recovery-2.sh文件代码如下，其中monkey命令是真好用，不需要去查软件的activity是什么，<code>settings put global adb_enabled 1</code>为开启adb。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/system/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;</span></span><br><span class="line"><span class="string">#!/system/bin/sh</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">my_p=com.mitv.tvhome</span></span><br><span class="line"><span class="string">while [ $( pgrep -f $my_p | wc -l ) -eq 0 ]</span></span><br><span class="line"><span class="string">do</span></span><br><span class="line"><span class="string">    sleep 1</span></span><br><span class="line"><span class="string">done</span></span><br><span class="line"><span class="string">sleep 4</span></span><br><span class="line"><span class="string">settings put global adb_enabled 1</span></span><br><span class="line"><span class="string">monkey -p net.i.akihiro.halauncher -c android.intent.category.LAUNCHER 1</span></span><br><span class="line"><span class="string">&#x27;</span> &gt; /data/init.sh</span><br><span class="line"></span><br><span class="line">/data/init.sh &amp;</span><br></pre></td></tr></table></figure><p>不会用echo方法写入文件的，就先用adb复制进去，再操作</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb push install-recovery-2.sh /data/<span class="built_in">local</span>/tmp</span><br><span class="line">adb shell</span><br><span class="line">su</span><br><span class="line">mount -o rw,remount /system</span><br><span class="line">cp /data/<span class="built_in">local</span>/tmp/install-recovery-2.sh /system/etc/</span><br></pre></td></tr></table></figure><p>最终效果特别好，小米盒子启动的icntv图标消失后，立刻就进入了HALauncher，如有需要开机自启动kodi之类的，可行修改代码。</p><h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><p>有试过在盒子上装软件，但clash不支持安卓4.4，ssr不稳定。最终解决方法是用家里的电脑的clash，再局域网挂代理。PS：我其实不知道settings有没有https_proxy这个，反正最后是没什么问题。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global http_proxy 192.168.1.106:7890</span><br><span class="line">adb shell settings put global https_proxy 192.168.1.106:7890</span><br></pre></td></tr></table></figure><p>若要取消代理</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global http_proxy :0 </span><br><span class="line">adb shell settings put global https_proxy :0 </span><br></pre></td></tr></table></figure><p>注意记得路由器上设置一下mac绑ip，避免代理ip被更改</p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ol><li><p>想用adb进行操作，参考<a href="https://stackoverflow.com/questions/7789826/adb-shell-input-events">这个</a>。若要输入中文，用<a href="https://github.com/senzhk/ADBKeyBoard">ADBKeyBoard</a></p></li><li><p>想要把文件从小米盒子系统里复制出来，参考下图，实测有效。<a href="https://android.stackexchange.com/questions/85564/need-one-line-adb-shell-su-push-pull-to-access-data-from-windows-batch-file">原文链接</a></p></li></ol><p><img src="/2022/08/04/mibox2/image-20220804151403110.png" alt="image-20220804151403110"></p><ol start="3"><li>建议还是不要操作<code>/system/app</code>路径，删除或添加都有可能令盒子变砖，或卡死在icntv图标上</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂项 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 安卓 </tag>
+            
+            <tag> 小米盒子 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>绕过某监考客户端检测</title>
       <link href="/2022/06/30/invigilate/"/>
       <url>/2022/06/30/invigilate/</url>
@@ -117,25 +144,6 @@
     
     
     <entry>
-      <title>一些需要用脚本的逆向题目</title>
-      <link href="/2022/01/11/script/"/>
-      <url>/2022/01/11/script/</url>
-      
-        <content type="html"><![CDATA[<p>有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 逆向学习 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>TSCTF 2021 逆向题目</title>
       <link href="/2022/01/11/tsctf-2021-re/"/>
       <url>/2022/01/11/tsctf-2021-re/</url>
@@ -155,6 +163,25 @@
             <tag> 安卓 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一些需要用脚本的逆向题目</title>
+      <link href="/2022/01/11/script/"/>
+      <url>/2022/01/11/script/</url>
+      
+        <content type="html"><![CDATA[<p>有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 逆向学习 </category>
+          
+      </categories>
+      
       
     </entry>
     

@@ -6,7 +6,7 @@
   <link href="https://jameshoi.github.io/atom.xml" rel="self"/>
   
   <link href="https://jameshoi.github.io/"/>
-  <updated>2022-07-04T09:51:52.427Z</updated>
+  <updated>2022-08-04T07:18:28.055Z</updated>
   <id>https://jameshoi.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记录一下折腾小米盒子</title>
+    <link href="https://jameshoi.github.io/2022/08/04/mibox2/"/>
+    <id>https://jameshoi.github.io/2022/08/04/mibox2/</id>
+    <published>2022-08-04T07:04:17.000Z</published>
+    <updated>2022-08-04T07:18:28.055Z</updated>
+    
+    <content type="html"><![CDATA[<p>家里的小米盒子是二代的，想解决看剧麻烦和广告的问题，关键是安卓系统还是4.4，好多软件不能装，网上的办法也不全，这里记录一下我自己的解决办法。</p><h1 id="ROOT"><a href="#ROOT" class="headerlink" title="ROOT"></a>ROOT</h1><p>对小米盒子进行一些操作时，难免会有权限问题，网上下个kingoroot，一键root，很快。成功后<code>adb shell</code>并输入su命令即可进入root用户</p><p><a href="mibox2/KingoRoot.apk">kingroot</a></p><h1 id="禁用小米自带软件"><a href="#禁用小米自带软件" class="headerlink" title="禁用小米自带软件"></a>禁用小米自带软件</h1><p>网上一堆带有–user 0的办法，但貌似安卓4.4不支持，好在网上找到了办法，用<code>pm block &lt;package&gt;</code>的办法，软件稍微有点多，所以随手写了个py脚本</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">a = [<span class="string">&quot;com.xiaomi.mitv.appstore&quot;</span>,<span class="string">&quot;com.xiaomi.mitv.shop&quot;</span>,<span class="string">&quot;com.xiaomi.miplay&quot;</span>,<span class="string">&quot;com.duokan.airkan.tvbox&quot;</span>,<span class="string">&quot;com.xiaomi.tweather&quot;</span>,</span><br><span class="line">    <span class="string">&quot;com.xiaomi.tv.gallery&quot;</span>,<span class="string">&quot;com.mitv.shoplugin&quot;</span>,<span class="string">&quot;com.xiaomi.smarthome.tv&quot;</span>,<span class="string">&quot;com.xiaomi.mitv.payment&quot;</span>,<span class="string">&quot;com.xiaomi.mitv.advertise&quot;</span>,</span><br><span class="line">    <span class="string">&quot;com.mitv.tvhome&quot;</span>,<span class="string">&quot;com.mitv.gallery&quot;</span>]</span><br><span class="line">ip = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">os.system(<span class="string">&quot;taskkill /f /t /im adb.exe&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;adb connect &quot;</span>+ip)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    os.system(<span class="string">&quot;adb shell pm uninstall &quot;</span>+i+<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">    os.system(<span class="string">&quot;adb shell pm block &quot;</span>+i+<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure><h1 id="Kodi"><a href="#Kodi" class="headerlink" title="Kodi"></a>Kodi</h1><p>kodi就不介绍了，但是在安卓4.4得安装特别版本的kodi <a href="mibox2/kodi.apk">kodi.apk</a></p><h1 id="SmartTube"><a href="#SmartTube" class="headerlink" title="SmartTube"></a>SmartTube</h1><p>无广告YouTube，特别好用，不多介绍，自行去官网下载，开源项目<a href="https://github.com/yuliskov/SmartTubeNext">SmartTubeNext</a></p><h1 id="无广告桌面"><a href="#无广告桌面" class="headerlink" title="无广告桌面"></a>无广告桌面</h1><p>这支持安卓4.4的桌面可真不好找，最后用的<a href="mibox2/HALauncher_2.0.2.1.apk">HALauncher_2.0.2.1</a>，效果如图，可以自定义固定什么应用。</p><p><img src="/2022/08/04/mibox2/image-20220804144434969.png" alt="image-20220804144434969"></p><h1 id="自定义开机自启动"><a href="#自定义开机自启动" class="headerlink" title="自定义开机自启动"></a>自定义开机自启动</h1><p>这一步属于是搞了半天，小米盒子系统下没有vim，传文件和复制代码弄起来很费劲。最终解决的方法如下：</p><p>由于要修改<code>/system</code>目录下的文件，先在root用户下执行<code>mount -o rw,remount /system</code>指令。</p><p>在<code>/system/etc</code>目录下新建install-recovery-2.sh，根据网上查的资料，install-recovery是在boot阶段的代码，可见此时很多应用或者服务还没启动，所以我写了个当小米桌面启动后启动我的应用的脚本。install-recovery-2.sh文件代码如下，其中monkey命令是真好用，不需要去查软件的activity是什么，<code>settings put global adb_enabled 1</code>为开启adb。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/system/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;</span></span><br><span class="line"><span class="string">#!/system/bin/sh</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">my_p=com.mitv.tvhome</span></span><br><span class="line"><span class="string">while [ $( pgrep -f $my_p | wc -l ) -eq 0 ]</span></span><br><span class="line"><span class="string">do</span></span><br><span class="line"><span class="string">    sleep 1</span></span><br><span class="line"><span class="string">done</span></span><br><span class="line"><span class="string">sleep 4</span></span><br><span class="line"><span class="string">settings put global adb_enabled 1</span></span><br><span class="line"><span class="string">monkey -p net.i.akihiro.halauncher -c android.intent.category.LAUNCHER 1</span></span><br><span class="line"><span class="string">&#x27;</span> &gt; /data/init.sh</span><br><span class="line"></span><br><span class="line">/data/init.sh &amp;</span><br></pre></td></tr></table></figure><p>不会用echo方法写入文件的，就先用adb复制进去，再操作</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb push install-recovery-2.sh /data/<span class="built_in">local</span>/tmp</span><br><span class="line">adb shell</span><br><span class="line">su</span><br><span class="line">mount -o rw,remount /system</span><br><span class="line">cp /data/<span class="built_in">local</span>/tmp/install-recovery-2.sh /system/etc/</span><br></pre></td></tr></table></figure><p>最终效果特别好，小米盒子启动的icntv图标消失后，立刻就进入了HALauncher，如有需要开机自启动kodi之类的，可行修改代码。</p><h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><p>有试过在盒子上装软件，但clash不支持安卓4.4，ssr不稳定。最终解决方法是用家里的电脑的clash，再局域网挂代理。PS：我其实不知道settings有没有https_proxy这个，反正最后是没什么问题。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global http_proxy 192.168.1.106:7890</span><br><span class="line">adb shell settings put global https_proxy 192.168.1.106:7890</span><br></pre></td></tr></table></figure><p>若要取消代理</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global http_proxy :0 </span><br><span class="line">adb shell settings put global https_proxy :0 </span><br></pre></td></tr></table></figure><p>注意记得路由器上设置一下mac绑ip，避免代理ip被更改</p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ol><li><p>想用adb进行操作，参考<a href="https://stackoverflow.com/questions/7789826/adb-shell-input-events">这个</a>。若要输入中文，用<a href="https://github.com/senzhk/ADBKeyBoard">ADBKeyBoard</a></p></li><li><p>想要把文件从小米盒子系统里复制出来，参考下图，实测有效。<a href="https://android.stackexchange.com/questions/85564/need-one-line-adb-shell-su-push-pull-to-access-data-from-windows-batch-file">原文链接</a></p></li></ol><p><img src="/2022/08/04/mibox2/image-20220804151403110.png" alt="image-20220804151403110"></p><ol start="3"><li>建议还是不要操作<code>/system/app</code>路径，删除或添加都有可能令盒子变砖，或卡死在icntv图标上</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;家里的小米盒子是二代的，想解决看剧麻烦和广告的问题，关键是安卓系统还是4.4，好多软件不能装，网上的办法也不全，这里记录一下我自己的解决办法。&lt;/p&gt;
+&lt;h1 id=&quot;ROOT&quot;&gt;&lt;a href=&quot;#ROOT&quot; class=&quot;headerlink&quot; title=&quot;ROOT&quot;</summary>
+      
+    
+    
+    
+    <category term="杂项" scheme="https://jameshoi.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+    <category term="安卓" scheme="https://jameshoi.github.io/tags/%E5%AE%89%E5%8D%93/"/>
+    
+    <category term="小米盒子" scheme="https://jameshoi.github.io/tags/%E5%B0%8F%E7%B1%B3%E7%9B%92%E5%AD%90/"/>
+    
+  </entry>
   
   <entry>
     <title>绕过某监考客户端检测</title>
@@ -136,29 +163,6 @@
   </entry>
   
   <entry>
-    <title>一些需要用脚本的逆向题目</title>
-    <link href="https://jameshoi.github.io/2022/01/11/script/"/>
-    <id>https://jameshoi.github.io/2022/01/11/script/</id>
-    <published>2022-01-10T18:34:17.000Z</published>
-    <updated>2022-01-10T18:59:36.190Z</updated>
-    
-    <content type="html"><![CDATA[<p>有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="逆向学习" scheme="https://jameshoi.github.io/categories/%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>TSCTF 2021 逆向题目</title>
     <link href="https://jameshoi.github.io/2022/01/11/tsctf-2021-re/"/>
     <id>https://jameshoi.github.io/2022/01/11/tsctf-2021-re/</id>
@@ -179,6 +183,29 @@
     
     
     <category term="安卓" scheme="https://jameshoi.github.io/tags/%E5%AE%89%E5%8D%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些需要用脚本的逆向题目</title>
+    <link href="https://jameshoi.github.io/2022/01/11/script/"/>
+    <id>https://jameshoi.github.io/2022/01/11/script/</id>
+    <published>2022-01-10T18:34:17.000Z</published>
+    <updated>2022-01-10T18:59:36.190Z</updated>
+    
+    <content type="html"><![CDATA[<p>有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="逆向学习" scheme="https://jameshoi.github.io/categories/%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0/"/>
+    
     
   </entry>
   
@@ -461,31 +488,6 @@
     
     <category term="CTF比赛" scheme="https://jameshoi.github.io/categories/CTF%E6%AF%94%E8%B5%9B/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>用单片机运行HelloWorld</title>
-    <link href="https://jameshoi.github.io/2021/03/22/mcu/"/>
-    <id>https://jameshoi.github.io/2021/03/22/mcu/</id>
-    <published>2021-03-21T17:56:37.000Z</published>
-    <updated>2021-07-09T16:58:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>（本文图片较大，建议用电脑查看）<br>（本文前言和介绍篇幅有点长，实际可从”开始”标题开始看）</p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>写完上次的“零基础搭建属于自己的博客”一文，我觉得我还是应该写一些科普或者教程，让同学们成功入门，我也顺便可以将我以往的经验总结一下。假如有朋友有想了解的东西，可以找我然后我写一篇文章入门（当然首先我也得会hhh），我擅长的方向大概是：机器人，单片机，网络安全，逆向，编程。</p><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>入门单片机首先总得了解单片机是什么。单片机普遍存在于我们的一些设备当中，例如台灯，通过编写程序让台灯每按一次按钮就减小亮度。又例如大家可能学过的Arduino，它是一款单片机。可以看出单片机一般和电路结合一起，控制电路量从而控制设备。那么由于一开始的单片机没有设备，能够显示HelloWorld也是比较困难的。</p><h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>本文用STM32F407VET6开发板作为示例。需要用到的软件有STM32CubeMX，Keil uVision5，XCOM(串口调试软件)。如何下载软件我还是不写了，本文的重点并不是这个。<br>关于硬件的购买，自行淘宝吧，需要一块stm的单片机，单片机的烧录器，usb转ttl模块<br><img src="/2021/03/22/mcu/1616380047144-ba07c138-dce2-4ec3-859d-259aa9f7d0e6.png" alt="image.png"><br>我自己的烧录器<br><img src="/2021/03/22/mcu/1616396876586-e4f9945c-5d26-498d-878d-05ee16d686dc.png" alt="image.png"><br>由于显示HelloWorld需要用到串口，还需要买usb转ttl模块<br><img src="/2021/03/22/mcu/1616382481989-412d8fad-9c0c-4ef4-a53e-fba73961493b.png" alt="image.png"></p><h1 id="设置项目"><a href="#设置项目" class="headerlink" title="设置项目"></a>设置项目</h1><p>下载好软件后打开STM32CubeMX，点击New Project<br><img src="/2021/03/22/mcu/1616379767406-35f81ea1-b20f-4016-8246-08f379d4c91e.png" alt="image.png"><img src="/2021/03/22/mcu/1616379807099-5b27f864-2aaf-436b-89c1-50eff20723ef.png" alt="image.png"><br>（不同版本软件可能界面不一样，但操作相似）<br>MCU Selector，选择你的型号，详细的型号可以在单片机芯片上看到，又或者问淘宝卖家。例如你是STM32F407VET6型号，那么选择STM32F407VETx，点击Ok<br><img src="/2021/03/22/mcu/1616380160058-2a5935a1-2eff-48e1-ad2a-95ee1e5a4a69.png" alt="image.png"><img src="/2021/03/22/mcu/1616380242987-487fb114-9e5c-4f75-b22b-5c9a41d8c83e.png" alt="image.png"><img src="/2021/03/22/mcu/1616380279108-0aa7b49e-85e9-43a0-b6a1-eaf1b52bbc56.png" alt="image.png"><br>可以看到进入设置界面了，实际上到这一部分基本上你查百度已经有一大堆的教程了，说实话一开始入门不需要理解那么多的原理，先实际操作一遍能搞定再慢慢了解，先跟着教程做一遍吧。<br><img src="/2021/03/22/mcu/1616380542796-50797f52-d046-4d94-8253-209eb6727e9e.png" alt="image.png"><br>RCC设置，选择HSE(外部高速时钟)为Crystal/Ceramic Resonator(晶振/陶瓷谐振器)，串口选择随意一个UART，选择模式Asynchronous，然后可以找到其中的两个口，PA0是UART4_TX，PA1是UART4_RX。RX是接收口，TX是发送口。<br><img src="/2021/03/22/mcu/1616381091747-f436fa1f-e17e-44c3-a4de-699bdcb072ee.png" alt="image.png"></p><h1 id="生成代码"><a href="#生成代码" class="headerlink" title="生成代码"></a>生成代码</h1><p>点击Project –&gt;Generate Reports或者点击快捷图标生成报告。系统会提示先创建一个工程项目。点击Yes设置工程。<br><img src="/2021/03/22/mcu/1616382102349-18092404-e744-4b07-acf3-4bbd51d25cde.png" alt="image.png"><br>输入工程名，选择工程路径（注意不要出现中文，否则可能出错）。工具链/IDE选择MDK-ARM V5。最后面可以设置堆栈大小，此处默认不作修改。<br><img src="/2021/03/22/mcu/1616382047157-a58d000a-602a-4037-afb9-5bef32653bc5.png" alt="image.png"><br>提示下载固件，点击Yes<br><img src="/2021/03/22/mcu/1616382196987-4ff5dc9a-2b42-4a98-a70d-ab1ddd686f14.png" alt="image.png"><br>按照下图选择，再点击GENERATE CODE生成代码</p><h1 id><a href="#" class="headerlink" title></a><img src="/2021/03/22/mcu/1616385125271-e01b19bb-726b-4c44-923c-0619e355a7f8.png"></h1><p>用Keil打开生成的代码，点击Open Project<br><img src="/2021/03/22/mcu/1616386225359-312fc864-d952-456c-b602-ab46044d7c5c.png" alt="image.png"></p><h1 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h1><p>找到main.c的int main(void)函数里面的while (1)循环，把程序写在里面会不断循环运行</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> *ch = <span class="string">&quot;HelloWorld&quot;</span>;</span><br><span class="line">    <span class="comment">//因为在cubeMX设置的是UART4，所以是huart4，10为HelloWorld的长度</span></span><br><span class="line">    HAL_UART_Transmit(&amp;huart4, (<span class="keyword">uint8_t</span> *)ch, <span class="number">10</span>, <span class="number">0xffff</span>);</span><br><span class="line">    HAL_Delay(<span class="number">1000</span>);<span class="comment">//停止运行1秒</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>写完代码后点击Build，然后再点Download。但点Download之前当然要先接上烧录器<br><img src="/2021/03/22/mcu/1616386350555-9358f49c-c0bf-48b4-afbe-8fa2b47647be.png" alt="image.png">   <img src="/2021/03/22/mcu/1616386324569-95ff9a32-76da-4db9-9b05-bb138dc01a06.png" alt="image.png"><br>如图，烧录器另一端usb接入电脑<br><img src="/2021/03/22/mcu/1616397194795-3c9ec3df-4704-4c36-84c4-0adf15bb5488.png" alt="image.png"><br>注意：可能不单要接烧录器，需继续按照下面的接线教程接好后才能烧录（因为没有供电给单片机）</p><h1 id="接线"><a href="#接线" class="headerlink" title="接线"></a>接线</h1><p>找到原本cubemx设置好的uart4口，PA0和PA1<br><img src="/2021/03/22/mcu/1616381091747-f436fa1f-e17e-44c3-a4de-699bdcb072ee.png" alt="image.png"><br>红框是PA0和PA1，绿框是电源3.3v和接地<br><img src="/2021/03/22/mcu/1616409770328-013680d8-af97-4b90-b703-90d303b143ad.png" alt="image.png">、<br>将单片机的PA0和PA1按照下图接到usb转ttl小板上，因为单片机的接受(RXD)是另一块的发送(TXD)，所以是反过来接（注意！！尽量接3.3v，若将5v接入单片机很有可能会烧坏单片机）。接好后再将usb转ttl模块usb插到电脑上。<br><img src="/2021/03/22/mcu/1616409885532-c8d83841-7693-49b6-a16f-646c25ce5a5f.png" alt="image.png"><img src="/2021/03/22/mcu/1616411055147-8c59bec7-0fd4-4d26-a6c1-a50991238330.png" alt="image.png"><br>我的最终接线图<br><img src="/2021/03/22/mcu/1616410580589-3f7a09fc-9779-49c2-b95d-cc72fcbe2c96.png" alt="image.png"><br>打开XCOM并选择串口打开即可看到输出，可以看到每1秒会输出一次HelloWorld<br><img src="/2021/03/22/mcu/1616410448708-b2082148-6234-4650-bbb7-dfbdd61696a3.png" alt="image.png"></p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>总结就先声明一下，其实我也就会的东西不多，若有问题或者错误的地方，希望大家多多反馈，共同进步。<br>其实很多地方的细节都没写出来（真写出来就很长一篇文章了），文章的目的主要还是希望能让大家入门单片机开发。但写完之后我发现我后悔了，这不吃力不讨好吗…最后写完这文章我猜也没几个人跟着做完的，零基础教学的东西下次不写了。<br><img src="/2021/03/22/mcu/1616410863668-f2d60382-c1e9-47e0-9184-ec53b3964111.png" alt="image.png"><br>最后打个广告，欢迎各位来参加MRCTF，同时天璇MERAK战队也欢迎您的加入<br>扩展资料：<br>CTF(Capture The Flag)中文一般译作夺旗赛,在网络安全领域中指的是网络安全技术人员之间进行技术竞技的一种比赛形式。参加CTF能增长网络安全知识的同时，也能加深对计算机原理的深层次认识。在这里你不但能和学长交流探讨前沿技术发展，还能收获来自不同专业的小伙伴们。<br><img src="/2021/03/22/mcu/1616645749212-620fab7b-415a-4ba8-a8a1-8a9b912c1ff7.png" alt="image.png"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;（本文图片较大，建议用电脑查看）&lt;br&gt;（本文前言和介绍篇幅有点长，实际可从”开始”标题开始看）&lt;/p&gt;
-&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;写完上次的“零基础搭建属于自</summary>
-      
-    
-    
-    
-    <category term="杂项" scheme="https://jameshoi.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
-    <category term="单片机" scheme="https://jameshoi.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
   </entry>
   
