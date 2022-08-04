@@ -163,6 +163,29 @@
   </entry>
   
   <entry>
+    <title>一些需要用脚本的逆向题目</title>
+    <link href="https://jameshoi.github.io/2022/01/11/script/"/>
+    <id>https://jameshoi.github.io/2022/01/11/script/</id>
+    <published>2022-01-10T18:34:17.000Z</published>
+    <updated>2022-01-10T18:59:36.190Z</updated>
+    
+    <content type="html"><![CDATA[<p>有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="逆向学习" scheme="https://jameshoi.github.io/categories/%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>TSCTF 2021 逆向题目</title>
     <link href="https://jameshoi.github.io/2022/01/11/tsctf-2021-re/"/>
     <id>https://jameshoi.github.io/2022/01/11/tsctf-2021-re/</id>
@@ -183,29 +206,6 @@
     
     
     <category term="安卓" scheme="https://jameshoi.github.io/tags/%E5%AE%89%E5%8D%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一些需要用脚本的逆向题目</title>
-    <link href="https://jameshoi.github.io/2022/01/11/script/"/>
-    <id>https://jameshoi.github.io/2022/01/11/script/</id>
-    <published>2022-01-10T18:34:17.000Z</published>
-    <updated>2022-01-10T18:59:36.190Z</updated>
-    
-    <content type="html"><![CDATA[<p>有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;有空把需要idapython脚本解的题目找出来，每个都复现一次，但首先把安卓和不同加密都搞明白先&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="逆向学习" scheme="https://jameshoi.github.io/categories/%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0/"/>
-    
     
   </entry>
   
