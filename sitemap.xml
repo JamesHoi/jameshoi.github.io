@@ -374,6 +374,13 @@
   </url>
   
   <url>
+    <loc>https://jameshoi.github.io/tags/%E7%A0%B4%E8%A7%A3/</loc>
+    <lastmod>2022-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jameshoi.github.io/tags/il2cpp/</loc>
     <lastmod>2022-08-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -395,7 +402,7 @@
   </url>
   
   <url>
-    <loc>https://jameshoi.github.io/tags/%E7%A0%B4%E8%A7%A3/</loc>
+    <loc>https://jameshoi.github.io/tags/%E5%B0%8F%E7%B1%B3%E7%9B%92%E5%AD%90/</loc>
     <lastmod>2022-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -403,13 +410,6 @@
   
   <url>
     <loc>https://jameshoi.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/</loc>
-    <lastmod>2022-08-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jameshoi.github.io/tags/%E5%B0%8F%E7%B1%B3%E7%9B%92%E5%AD%90/</loc>
     <lastmod>2022-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -453,14 +453,14 @@
 
   
   <url>
-    <loc>https://jameshoi.github.io/categories/%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://jameshoi.github.io/categories/CTF%E6%AF%94%E8%B5%9B/</loc>
     <lastmod>2022-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jameshoi.github.io/categories/CTF%E6%AF%94%E8%B5%9B/</loc>
+    <loc>https://jameshoi.github.io/categories/%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
