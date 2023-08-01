@@ -6,7 +6,7 @@
   <link href="https://jameshoi.github.io/atom.xml" rel="self"/>
   
   <link href="https://jameshoi.github.io/"/>
-  <updated>2023-08-01T15:56:41.493Z</updated>
+  <updated>2023-08-01T16:58:28.981Z</updated>
   <id>https://jameshoi.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试</title>
+    <link href="https://jameshoi.github.io/2023/08/02/test/"/>
+    <id>https://jameshoi.github.io/2023/08/02/test/</id>
+    <published>2023-08-01T16:00:00.000Z</published>
+    <updated>2023-08-01T16:58:28.981Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h1><p><img src="/2023/08/02/test/2023-08-02-00-57-39-image.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;测试图片&quot;&gt;&lt;a href=&quot;#测试图片&quot; class=&quot;headerlink&quot; title=&quot;测试图片&quot;&gt;&lt;/a&gt;测试图片&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/2023/08/02/test/2023-08-02-00-57-39-image.png&quot;&gt;&lt;/p&gt;</summary>
+      
+    
+    
+    
+    <category term="数学" scheme="https://jameshoi.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>深度学习以及强化学习笔记</title>
@@ -472,28 +494,6 @@
     
     
     <category term="杂项" scheme="https://jameshoi.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>CSTC 2021逆向部分</title>
-    <link href="https://jameshoi.github.io/2021/05/05/cstc-2021/"/>
-    <id>https://jameshoi.github.io/2021/05/05/cstc-2021/</id>
-    <published>2021-05-05T07:06:11.000Z</published>
-    <updated>2022-01-10T19:13:14.669Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="free-flagfree-flag-zip"><a href="#free-flagfree-flag-zip" class="headerlink" title="free_flagfree_flag.zip"></a>free_flag<a href="free_flag.zip">free_flag.zip</a></h1><p>签到题，异或一下得flag</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">enflag = [</span><br><span class="line">  <span class="number">0x78</span>, <span class="number">0x64</span>, <span class="number">0x3F</span>, <span class="number">0x53</span>, <span class="number">0x6D</span>, <span class="number">0x79</span>, <span class="number">0x78</span>, <span class="number">0x64</span>, <span class="number">0x62</span>, <span class="number">0x3F</span>, </span><br><span class="line">  <span class="number">0x78</span>, <span class="number">0x3D</span>, <span class="number">0x6F</span>, <span class="number">0x38</span>, <span class="number">0x3D</span>, <span class="number">0x78</span>, <span class="number">0x3C</span>, <span class="number">0x62</span>, <span class="number">0x53</span>, <span class="number">0x39</span>, </span><br><span class="line">  <span class="number">0x75</span>, <span class="number">0x39</span>, <span class="number">0x78</span>, <span class="number">0x3F</span>, <span class="number">0x61</span>, <span class="number">0x53</span>, <span class="number">0x3D</span>, <span class="number">0x39</span>, <span class="number">0x53</span>, <span class="number">0x62</span>, </span><br><span class="line">  <span class="number">0x3C</span>, <span class="number">0x78</span>, <span class="number">0x53</span>, <span class="number">0x3C</span>, <span class="number">0x39</span>, <span class="number">0x53</span>, <span class="number">0x39</span>, <span class="number">0x3F</span>, <span class="number">0x6F</span>, <span class="number">0x79</span>, </span><br><span class="line">  <span class="number">0x7E</span>, <span class="number">0x3F</span>, <span class="number">0x0A</span></span><br><span class="line">]</span><br><span class="line">cipher = <span class="number">0xC</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> s <span class="keyword">in</span> enflag:</span><br><span class="line">    print(chr(s^cipher),end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure><h1 id="crackme-crackme-zip"><a href="#crackme-crackme-zip" class="headerlink" title="crackme crackme.zip"></a>crackme <a href="crackme.zip">crackme.zip</a></h1><p>upx脱壳。用户名填入crackme，在判断位置断点，并让程序防止跳转，每次断点查看v17变量<br><img src="/2021/05/05/cstc-2021/upload_a18365a64b9e25a6a39d1a5a7bf73720.png"></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flag = [<span class="number">0x58</span>,<span class="number">0x42</span>,<span class="number">0x49</span>,<span class="number">0x48</span>,<span class="number">0x44</span>,<span class="number">0x43</span>,<span class="number">0x45</span>,<span class="number">0x43</span>,<span class="number">0x53</span>,<span class="number">0x42</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> flag:</span><br><span class="line">    print(chr(i),end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure><p>md5 32位小写</p><h1 id="ckck-zip"><a href="#ckck-zip" class="headerlink" title="ckck.zip"></a>ck<a href="ck.zip">ck.zip</a></h1><p>题目说猜猜是什么加密算法，F5后已经可以盲猜一波base64换表<br><img src="/2021/05/05/cstc-2021/upload_4b3cf01ee63507d009737a3e6a4fe512.png"></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">my_base64table = <span class="string">&quot;,.0fgWV#`/1Heox$~\&quot;2dity%_;j3csz^+@&#123;4bKrA&amp;=&#125;5laqB*-[69mpC()]78ndu&quot;</span></span><br><span class="line">std_base64table =<span class="string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot;</span></span><br><span class="line">s = <span class="string">&quot;ef\&quot;^sVK@3r@Ke4e6%6`)&quot;</span></span><br><span class="line">s = s.translate(str.maketrans(my_base64table,std_base64table))</span><br><span class="line">print(base64.b64decode(s))</span><br><span class="line"><span class="comment">#04_tianhe233_29</span></span><br></pre></td></tr></table></figure><h1 id="mazemaze-zip"><a href="#mazemaze-zip" class="headerlink" title="mazemaze.zip"></a>maze<a href="maze.zip">maze.zip</a></h1><p>迷宫题，ssddwdwdddssaasasaaassddddwdds<br>即flag{545d406061561f34247732d50c56ef0d}<br><img src="/2021/05/05/cstc-2021/upload_373c1e4fb68633051d9ac8724f5df73a.png"></p><h1 id="ALL-IN-ALLALL-IN-ALL-zip"><a href="#ALL-IN-ALLALL-IN-ALL-zip" class="headerlink" title="ALL_IN_ALLALL_IN_ALL.zip"></a>ALL_IN_ALL<a href="ALL_IN_ALL.zip">ALL_IN_ALL.zip</a></h1><p>用frida-dexdump把壳脱掉，再用jeb打开dex，发现校验函数是checkSN<br><img src="/2021/05/05/cstc-2021/upload_6eb608d3746ba7a7bb6e044d406ff709.png"><br>因为没jeb付费版本…无奈只能用jadx，发现就是判断输入就是userName和md5<br><img src="/2021/05/05/cstc-2021/upload_cb308ced04cabbade1bc18d1ed65fba1.png"><br>通过用反射大师找到userName为HuMen<br><img src="/2021/05/05/cstc-2021/upload_a74f468405dafcfb53de01b1ce713201.png"><br>得到flag为flag{749fef1ed34917cc23376494813053b2}</p><h1 id="randrand-zip"><a href="#randrand-zip" class="headerlink" title="randrand.zip"></a>rand<a href="rand.zip">rand.zip</a></h1><p>有空再补</p><h1 id="DEXDEX-zip"><a href="#DEXDEX-zip" class="headerlink" title="DEXDEX.zip"></a>DEX<a href="DEX.zip">DEX.zip</a></h1><p>参考这篇文章学习dex格式<a href="https://www.cnblogs.com/dengkaiting/p/11069351.html">https://www.cnblogs.com/dengkaiting/p/11069351.html</a>，用jeb等软件打不开这个dex文件。用010editor进行分析，打开后有模板可以直接用，注意到有四个零值，前两个零值是正常的，但后面两个需要输入method和class的offset(偏移)，题目将这里修改为0了所以软件打不开。<br><img src="/2021/05/05/cstc-2021/1622016540354-a791ca00-0a85-44ea-9c4d-cae5c33f41a6.png" alt="image.png"><br>010editor已经将method和class的存储位置帮你找到了，在模板那里点一下即可跳转，如下图的method偏移为1561C，然后修改dex header的偏移即可（注意这里是小端序，若不知道是小端序还是大端序的话建议转10进制后直接在010的模板里修改）<br><img src="/2021/05/05/cstc-2021/1622016731342-0626029a-deb8-460e-810e-9832ae230955.png" alt="image.png"><br>用jeb打开dex进行分析，可见直接运行一次出flag<br><img src="/2021/05/05/cstc-2021/1622016844528-b6a21eed-7d50-4ba9-a9ba-2bd8382f605b.png" alt="image.png"></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span> </span>&#123;</span><br><span class="line"><span class="keyword">char</span>[] x = <span class="string">&quot;dd2940c04462b4dd7c450528835cca15&quot;</span>.toCharArray();</span><br><span class="line">x[<span class="number">2</span>] = (<span class="keyword">char</span>)(x[<span class="number">2</span>] + x[<span class="number">3</span>] - <span class="number">50</span>);</span><br><span class="line">x[<span class="number">4</span>] = (<span class="keyword">char</span>)(x[<span class="number">2</span>] + x[<span class="number">5</span>] - <span class="number">0x30</span>);</span><br><span class="line">x[<span class="number">30</span>] = (<span class="keyword">char</span>)(x[<span class="number">0x1F</span>] + x[<span class="number">9</span>] - <span class="number">0x30</span>);</span><br><span class="line">x[<span class="number">14</span>] = (<span class="keyword">char</span>)(x[<span class="number">27</span>] + x[<span class="number">28</span>] - <span class="number">97</span>);</span><br><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">16</span>; ++i) &#123;</span><br><span class="line"><span class="keyword">char</span> a = x[<span class="number">0x1F</span> - i];</span><br><span class="line">x[<span class="number">0x1F</span> - i] = x[i];</span><br><span class="line">x[i] = a;</span><br><span class="line">&#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;flag&#123;&quot;</span> + String.valueOf(x) + <span class="string">&quot;&#125;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>flag{59acc538825054c7de4b26440c0999dd}</p><h1 id="motionmotion-zip"><a href="#motionmotion-zip" class="headerlink" title="motionmotion.zip"></a>motion<a href="motion.zip">motion.zip</a></h1><p>同上</p><h1 id="keygenkeygen-zip"><a href="#keygenkeygen-zip" class="headerlink" title="keygenkeygen.zip"></a>keygen<a href="keygen.zip">keygen.zip</a></h1><p>同上<br>​</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;free-flagfree-flag-zip&quot;&gt;&lt;a href=&quot;#free-flagfree-flag-zip&quot; class=&quot;headerlink&quot; title=&quot;free_flagfree_flag.zip&quot;&gt;&lt;/a&gt;free_flag&lt;a href=&quot;fr</summary>
-      
-    
-    
-    
-    <category term="CTF比赛" scheme="https://jameshoi.github.io/categories/CTF%E6%AF%94%E8%B5%9B/"/>
     
     
   </entry>
