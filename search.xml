@@ -4,6 +4,106 @@
   
     
     <entry>
+      <title>深度学习以及强化学习笔记</title>
+      <link href="/2023/08/01/ai/"/>
+      <url>/2023/08/01/ai/</url>
+      
+        <content type="html"><![CDATA[<h2 id="识别拼图网络"><a href="#识别拼图网络" class="headerlink" title="识别拼图网络"></a>识别拼图网络</h2><h2 id="mask-rcnn识别"><a href="#mask-rcnn识别" class="headerlink" title="mask rcnn识别"></a>mask rcnn识别</h2><h2 id="SAM使用"><a href="#SAM使用" class="headerlink" title="SAM使用"></a>SAM使用</h2><h2 id="RL学习笔记"><a href="#RL学习笔记" class="headerlink" title="RL学习笔记"></a>RL学习笔记</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> 强化学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>之前画的一些硬件PCB</title>
+      <link href="/2023/08/01/hardware/"/>
+      <url>/2023/08/01/hardware/</url>
+      
+        <content type="html"><![CDATA[<h1 id="之前画的一些PCB"><a href="#之前画的一些PCB" class="headerlink" title="之前画的一些PCB"></a>之前画的一些PCB</h1><h2 id="无线功率计"><a href="#无线功率计" class="headerlink" title="无线功率计"></a>无线功率计</h2><h2 id><a href="#" class="headerlink" title></a></h2><h2 id="全场定位"><a href="#全场定位" class="headerlink" title="全场定位"></a>全场定位</h2><h2 id="232转TTL"><a href="#232转TTL" class="headerlink" title="232转TTL"></a>232转TTL</h2><h2 id="Badusb"><a href="#Badusb" class="headerlink" title="Badusb"></a>Badusb</h2><h2 id="usb转can"><a href="#usb转can" class="headerlink" title="usb转can"></a>usb转can</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 硬件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 硬件 </tag>
+            
+            <tag> Robomaster </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Robomaster能量机关复现</title>
+      <link href="/2023/08/01/rmuc/"/>
+      <url>/2023/08/01/rmuc/</url>
+      
+        <content type="html"><![CDATA[<h2 id="装甲板复现"><a href="#装甲板复现" class="headerlink" title="装甲板复现"></a>装甲板复现</h2><h2 id="定位射击子弹"><a href="#定位射击子弹" class="headerlink" title="定位射击子弹"></a>定位射击子弹</h2><h3 id="tof定位"><a href="#tof定位" class="headerlink" title="tof定位"></a>tof定位</h3><h3 id="红外屏"><a href="#红外屏" class="headerlink" title="红外屏"></a>红外屏</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 硬件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 硬件 </tag>
+            
+            <tag> Robomaster </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一些软件推荐&amp;随记</title>
+      <link href="/2023/08/01/software/"/>
+      <url>/2023/08/01/software/</url>
+      
+        <content type="html"><![CDATA[<h1 id="软件推荐"><a href="#软件推荐" class="headerlink" title="软件推荐"></a>软件推荐</h1><h2 id="wox"><a href="#wox" class="headerlink" title="wox"></a>wox</h2><p>快捷键+everything搜索+拼音+缩写功能，很方便</p><p><img src="/2023/08/01/software/2023-08-01-21-37-33-image.png"></p><h2 id="cmder"><a href="#cmder" class="headerlink" title="cmder"></a>cmder</h2><p>一个不错的终端软件，唯一的缺点就是启动速度有点慢，其次不知道为什么windowsTerminal没有识别cmder，网上说加入到path就行，下图是我手动配置的cmder</p><p><img src="/2023/08/01/software/2023-08-01-15-56-31-image.png"></p><p>设置后用快捷键可以方便打开终端，但是这个快捷键速度太慢了，参考<a href="https://superuser.com/questions/426947/slow-windows-desktop-keyboard-shortcuts">slow windows desktop keyboard shortcuts - Super User</a>，杀掉这个进程确实可以令这个快捷键更快，但是所有的uwp软件将会被杀死</p><p><img src="/2023/08/01/software/2023-08-01-15-54-57-image.png"></p><p><img src="/2023/08/01/software/2023-08-01-16-08-52-image.png"></p><p>最后还是用autohotkey解决了，自己写个小脚本自启动就行</p><h2 id="Vimium-C"><a href="#Vimium-C" class="headerlink" title="Vimium C"></a>Vimium C</h2><p><img src="/2023/08/01/software/2023-08-01-21-38-52-image.png"></p><p>国人用vimium改的，操作好很多，原本vimium不能用的搜索功能<code>/</code>能用了，但是相比surfingkeys的选择模式还是差点，但surfingkeys的jk上下移动有延迟，这点无法接受。</p><h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>有空想设计款方便操作windows文件夹的，例如说浏览器弹出窗口选择保存位置，希望能够完全脱离鼠标进行操作。</p><h2 id="VSCode-Vim"><a href="#VSCode-Vim" class="headerlink" title="VSCode Vim"></a>VSCode Vim</h2><p>最近在练vim，操作算是都熟悉了，但是就算用wbhjklf还是有点折磨人，发现了easymotion这个东西，vscode的vim选项直接打开就能用</p><p><img src="/2023/08/01/software/2023-08-01-22-52-40-image.png"></p><p>这个和vimium c的f键功能类似</p><p><img src="/2023/08/01/software/2023-08-01-23-34-21-image.png"></p><p>选择前</p><p><img src="/2023/08/01/software/2023-08-01-23-34-45-image.png"></p><p>选择后</p><p><img src="/2023/08/01/software/2023-08-01-23-34-55-image.png"></p><p>这段json加入到vscode的settings.json里可以令空格改为跳转到任意位置</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&quot;vim.normalModeKeyBindingsNonRecursive&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;before&quot;</span>: [<span class="string">&quot; &quot;</span>],</span><br><span class="line">        <span class="attr">&quot;after&quot;</span>: [<span class="string">&quot;leader&quot;</span>, <span class="string">&quot;leader&quot;</span>, <span class="string">&quot;leader&quot;</span>, <span class="string">&quot;j&quot;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line">&quot;vim.visualModeKeyBindingsNonRecursive&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;before&quot;</span>: [<span class="string">&quot; &quot;</span>],</span><br><span class="line">        <span class="attr">&quot;after&quot;</span>: [<span class="string">&quot;leader&quot;</span>, <span class="string">&quot;leader&quot;</span>, <span class="string">&quot;leader&quot;</span>, <span class="string">&quot;j&quot;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br></pre></td></tr></table></figure><h2 id="geoip"><a href="#geoip" class="headerlink" title="geoip"></a>geoip</h2><p>写了个玩具，主要用来查找域名指向的ip的地理位置，有时候下载速度慢的时候需要查一下，从而调整节点。</p><p><a href="https://github.com/JamesHoi/geoip">GitHub - JamesHoi/geoip: A toy for check domain location</a></p><h2 id="KeePassXC"><a href="#KeePassXC" class="headerlink" title="KeePassXC"></a>KeePassXC</h2><p>一款保存密码的软件，开源，我发现我也没什么东西需要保存密码，所以约等于是个本地的密码生成器。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂项 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>记录一下折腾小米盒子</title>
       <link href="/2022/08/04/mibox2/"/>
       <url>/2022/08/04/mibox2/</url>
@@ -85,7 +185,7 @@
       <link href="/2022/01/11/crypto/"/>
       <url>/2022/01/11/crypto/</url>
       
-        <content type="html"><![CDATA[<h2 id="RC4"><a href="#RC4" class="headerlink" title="RC4"></a>RC4</h2><h2 id="RC5"><a href="#RC5" class="headerlink" title="RC5"></a>RC5</h2><h2 id="RC6"><a href="#RC6" class="headerlink" title="RC6"></a>RC6</h2><h2 id="TEA-XTEA-XXTEA"><a href="#TEA-XTEA-XXTEA" class="headerlink" title="TEA/XTEA/XXTEA"></a>TEA/XTEA/XXTEA</h2><h2 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h2><h2 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h2><h2 id="SM4"><a href="#SM4" class="headerlink" title="SM4"></a>SM4</h2><h2 id="Salsa20"><a href="#Salsa20" class="headerlink" title="Salsa20"></a>Salsa20</h2><h2 id="chacha20"><a href="#chacha20" class="headerlink" title="chacha20"></a>chacha20</h2><h2 id="Blowfish"><a href="#Blowfish" class="headerlink" title="Blowfish"></a>Blowfish</h2><h2 id="TwoFish"><a href="#TwoFish" class="headerlink" title="TwoFish"></a>TwoFish</h2><h2 id="Serpent"><a href="#Serpent" class="headerlink" title="Serpent"></a>Serpent</h2><h2 id="ZUC"><a href="#ZUC" class="headerlink" title="ZUC"></a>ZUC</h2>]]></content>
+        <content type="html"><![CDATA[<p>2023记：之前想着每种加密算法都复现一次，并总结每种的特征，这坑有空再填吧</p><h2 id="RC4"><a href="#RC4" class="headerlink" title="RC4"></a>RC4</h2><h2 id="RC5"><a href="#RC5" class="headerlink" title="RC5"></a>RC5</h2><h2 id="RC6"><a href="#RC6" class="headerlink" title="RC6"></a>RC6</h2><h2 id="TEA-XTEA-XXTEA"><a href="#TEA-XTEA-XXTEA" class="headerlink" title="TEA/XTEA/XXTEA"></a>TEA/XTEA/XXTEA</h2><h2 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h2><h2 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h2><h2 id="SM4"><a href="#SM4" class="headerlink" title="SM4"></a>SM4</h2><h2 id="Salsa20"><a href="#Salsa20" class="headerlink" title="Salsa20"></a>Salsa20</h2><h2 id="chacha20"><a href="#chacha20" class="headerlink" title="chacha20"></a>chacha20</h2><h2 id="Blowfish"><a href="#Blowfish" class="headerlink" title="Blowfish"></a>Blowfish</h2><h2 id="TwoFish"><a href="#TwoFish" class="headerlink" title="TwoFish"></a>TwoFish</h2><h2 id="Serpent"><a href="#Serpent" class="headerlink" title="Serpent"></a>Serpent</h2><h2 id="ZUC"><a href="#ZUC" class="headerlink" title="ZUC"></a>ZUC</h2>]]></content>
       
       
       <categories>
