@@ -385,30 +385,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2023/08/02/test/" >
-            
-                <span>测试</span>
-        </a>
-        <div class="abstract-content">
-            测试图片
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/02</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2023/08/01/ai/" >
             
                 <span>深度学习以及强化学习笔记</span>
@@ -694,10 +670,44 @@ RC4RC5RC6TEA/XTEA/XXTEAAESDESSM4Salsa20chacha20BlowfishTwoFishSerpentZUC
         </div>
     </article>
     
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2022/01/11/note2/" >
+            
+                <span>近期做过的一些题目</span>
+        </a>
+        <div class="abstract-content">
+            近期做过的一些题目学业&amp;机器人挺忙的，逆向做一题就很耗时间，实在是不太有时间认真做题，准备直接找一堆wp复现一遍
+湖湘杯 Hideit Hideit进程序大致能找到这个函数
+
+能看出是向进程内存注入了一个函数，然后根据内存地址调用该函数，断点进入函数，一直跟进去，会发现TestEv1l.dll已注入，具体注入流程尚未分析。
+
+找到加密函数，开头有个修改注册表函数，隐藏了key
+
+
+进一步分析发现先做了一次xxtea，需要令v12这个输入值正确，成功进入if后再进行一次加密，然后最后再判断是否一致
+
+xtea解密，解密得到第一个密匙为dotitsit
+123456789101112...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/01/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &gt;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -1327,26 +1337,9 @@ RC4RC5RC6TEA/XTEA/XXTEAAESDESSM4Salsa20chacha20BlowfishTwoFishSerpentZUC
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 41
+        Total : 40
         </div>
         <!-- search  -->
         
@@ -1359,11 +1352,6 @@ RC4RC5RC6TEA/XTEA/XXTEAAESDESSM4Salsa20chacha20BlowfishTwoFishSerpentZUC
     
     <div class="archive-year"> 2023 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/02</span><a class="archive-post-title" href= "/2023/08/02/test/" >测试</a>
-        </li>
     
     
         <li class="archive-post-item">
