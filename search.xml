@@ -8,7 +8,7 @@
       <link href="/2023/08/01/ai/"/>
       <url>/2023/08/01/ai/</url>
       
-        <content type="html"><![CDATA[<h2 id="识别拼图网络"><a href="#识别拼图网络" class="headerlink" title="识别拼图网络"></a>识别拼图网络</h2><h2 id="mask-rcnn识别"><a href="#mask-rcnn识别" class="headerlink" title="mask rcnn识别"></a>mask rcnn识别</h2><h2 id="RL学习"><a href="#RL学习" class="headerlink" title="RL学习"></a>RL学习</h2><p>占坑</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="识别拼图网络"><a href="#识别拼图网络" class="headerlink" title="识别拼图网络"></a>识别拼图网络</h2><p>识别类似以下图片，有性能要求</p><p><img src="/2023/08/01/ai/abc8381dbf9869a5461f47e9a290fefe8ac4ceac.jpg"></p><p>魔改的mnist，添加了保存模型的功能</p><p><img src="/2023/08/01/ai/2023-08-30-18-04-40-image.png"></p><p>准确率能上94%，但项目要求准确率比较高，至少99，在考虑其他传统方案</p><h2 id="mask-rcnn识别"><a href="#mask-rcnn识别" class="headerlink" title="mask rcnn识别"></a>mask rcnn识别</h2><p>打算用mask-rcnn做一个MRI的眼眶识别，识别肌肉等组织。做完了前期工作，转换为了coco标准的json，参考<a href="https://github.com/brunobelloni/binary-to-coco-json-converter">GitHub - brunobelloni/binary-to-coco-json-converter: Convert segmentation binary mask images to COCO JSON format.</a></p><p>同样的想法被做了，效果还很好，按道理ct应该比mri难做</p><p>Deep Learning-Based Diagnosis of Disease Activity in Patients with Graves’ Orbitopathy Using Orbital SPECT/CT</p><p><img src="/2023/08/01/ai/2023-08-30-18-30-58-image.png"></p><p>有空先复现一下unet</p><p><a href="https://github.com/MIC-DKFZ/nnUNet">GitHub - MIC-DKFZ/nnUNet</a></p><h2 id="RL学习"><a href="#RL学习" class="headerlink" title="RL学习"></a>RL学习</h2><p>占坑</p>]]></content>
       
       
       
