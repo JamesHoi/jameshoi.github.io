@@ -20,12 +20,12 @@
     <meta name="keywords" content="James Hoi's Blog,James Hoi">
     
     <meta name="description" content="">
-    <meta name="description" content="家里的小米盒子是二代的，想解决看剧麻烦和广告的问题，关键是安卓系统还是4.4，好多软件不能装，网上的办法也不全，这里记录一下我自己的解决办法。 ROOT对小米盒子进行一些操作时，难免会有权限问题，网上下个kingoroot，一键root，很快。成功后 adb shell并输入su命令即可进入root用户。kingroot.apk 禁用小米自带软件网上一堆带有–user 0的办法，但貌似安卓4.4不">
+    <meta name="description" content="家里的小米盒子是二代的，想解决看剧麻烦和广告的问题，关键是安卓系统还是4.4，好多软件不能装，网上的办法也不全，这里记录一下我自己的解决办法。 ROOT对小米盒子进行一些操作时，难免会有权限问题，网上下个kingoroot，一键root，很快。成功后 adb shell并输入su命令即可进入root用户。kingroot.apk 禁用小米自带软件网上一堆带有—user 0的办法，但貌似安卓4.4不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记录一下折腾小米盒子">
 <meta property="og:url" content="https://jameshoi.github.io/2022/08/04/mibox2/index.html">
 <meta property="og:site_name" content="James Hoi&#39;s Blog">
-<meta property="og:description" content="家里的小米盒子是二代的，想解决看剧麻烦和广告的问题，关键是安卓系统还是4.4，好多软件不能装，网上的办法也不全，这里记录一下我自己的解决办法。 ROOT对小米盒子进行一些操作时，难免会有权限问题，网上下个kingoroot，一键root，很快。成功后 adb shell并输入su命令即可进入root用户。kingroot.apk 禁用小米自带软件网上一堆带有–user 0的办法，但貌似安卓4.4不">
+<meta property="og:description" content="家里的小米盒子是二代的，想解决看剧麻烦和广告的问题，关键是安卓系统还是4.4，好多软件不能装，网上的办法也不全，这里记录一下我自己的解决办法。 ROOT对小米盒子进行一些操作时，难免会有权限问题，网上下个kingoroot，一键root，很快。成功后 adb shell并输入su命令即可进入root用户。kingroot.apk 禁用小米自带软件网上一堆带有—user 0的办法，但貌似安卓4.4不">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jameshoi.github.io/2022/08/04/mibox2/image-20220804144434969.png">
 <meta property="og:image" content="https://jameshoi.github.io/2022/08/04/mibox2/image-20220804151403110.png">
@@ -455,9 +455,8 @@ height:50vh;
     <article class="article-entry">
         <p>家里的小米盒子是二代的，想解决看剧麻烦和广告的问题，关键是安卓系统还是4.4，好多软件不能装，网上的办法也不全，这里记录一下我自己的解决办法。</p>
 <h1 id="ROOT"><a href="#ROOT" class="headerlink" title="ROOT"></a>ROOT</h1><p>对小米盒子进行一些操作时，难免会有权限问题，网上下个kingoroot，一键root，很快。成功后 <code>adb shell</code>并输入su命令即可进入root用户。<a href="KingoRoot.apk">kingroot.apk</a></p>
-<h1 id="禁用小米自带软件"><a href="#禁用小米自带软件" class="headerlink" title="禁用小米自带软件"></a>禁用小米自带软件</h1><p>网上一堆带有–user 0的办法，但貌似安卓4.4不支持，好在网上找到了办法，用 <code>pm block &lt;package&gt;</code>的办法，软件稍微有点多，所以随手写了个py脚本</p>
+<h1 id="禁用小米自带软件"><a href="#禁用小米自带软件" class="headerlink" title="禁用小米自带软件"></a>禁用小米自带软件</h1><p>网上一堆带有—user 0的办法，但貌似安卓4.4不支持，好在网上找到了办法，用 <code>pm block &lt;package&gt;</code>的办法，软件稍微有点多，所以随手写了个py脚本</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">a = [<span class="string">&quot;com.xiaomi.mitv.appstore&quot;</span>,<span class="string">&quot;com.xiaomi.mitv.shop&quot;</span>,<span class="string">&quot;com.xiaomi.miplay&quot;</span>,<span class="string">&quot;com.duokan.airkan.tvbox&quot;</span>,<span class="string">&quot;com.xiaomi.tweather&quot;</span>,</span><br><span class="line">    <span class="string">&quot;com.xiaomi.tv.gallery&quot;</span>,<span class="string">&quot;com.mitv.shoplugin&quot;</span>,<span class="string">&quot;com.xiaomi.smarthome.tv&quot;</span>,<span class="string">&quot;com.xiaomi.mitv.payment&quot;</span>,<span class="string">&quot;com.xiaomi.mitv.advertise&quot;</span>,</span><br><span class="line">    <span class="string">&quot;com.mitv.tvhome&quot;</span>,<span class="string">&quot;com.mitv.gallery&quot;</span>]</span><br><span class="line">ip = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">os.system(<span class="string">&quot;taskkill /f /t /im adb.exe&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;adb connect &quot;</span>+ip)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    os.system(<span class="string">&quot;adb shell pm uninstall &quot;</span>+i+<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">    os.system(<span class="string">&quot;adb shell pm block &quot;</span>+i+<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h1 id="Kodi"><a href="#Kodi" class="headerlink" title="Kodi"></a>Kodi</h1><p>kodi就不介绍了，但是在安卓4.4得安装特别版本的kodi <a href="kodi.apk">kodi.apk</a></p>
 <h1 id="SmartTube"><a href="#SmartTube" class="headerlink" title="SmartTube"></a>SmartTube</h1><p>无广告YouTube，特别好用，不多介绍，自行去官网下载，开源项目<a target="_blank" rel="noopener" href="https://github.com/yuliskov/SmartTubeNext">SmartTubeNext</a></p>
 <h1 id="无广告桌面"><a href="#无广告桌面" class="headerlink" title="无广告桌面"></a>无广告桌面</h1><p>这支持安卓4.4的桌面可真不好找，最后用的<a href="HALauncher_2.0.2.1.apk">HALauncher_2.0.2.1</a>，效果如图，可以自定义固定什么应用。</p>
@@ -468,24 +467,20 @@ height:50vh;
 <li>在 <code>/system/etc</code>目录下新建install-recovery-2.sh，根据网上查的资料，install-recovery是在boot阶段的代码，可见此时很多应用或者服务还没启动，所以我写了个当小米桌面启动后启动我的应用的脚本。install-recovery-2.sh文件代码如下，其中monkey命令是真好用，不需要去查软件的activity是什么，<code>settings put global adb_enabled 1</code>为开启adb。</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/system/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;</span></span><br><span class="line"><span class="string">#!/system/bin/sh</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">my_p=com.mitv.tvhome</span></span><br><span class="line"><span class="string">while [ $( pgrep -f $my_p | wc -l ) -eq 0 ]</span></span><br><span class="line"><span class="string">do</span></span><br><span class="line"><span class="string">    sleep 1</span></span><br><span class="line"><span class="string">done</span></span><br><span class="line"><span class="string">sleep 4</span></span><br><span class="line"><span class="string">settings put global adb_enabled 1</span></span><br><span class="line"><span class="string">monkey -p net.i.akihiro.halauncher -c android.intent.category.LAUNCHER 1</span></span><br><span class="line"><span class="string">&#x27;</span> &gt; /data/init.sh</span><br><span class="line"></span><br><span class="line">/data/init.sh &amp;</span><br></pre></td></tr></table></figure>
-
 <p>不会用echo方法写入文件的，就先用adb复制进去，再操作</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb push install-recovery-2.sh /data/<span class="built_in">local</span>/tmp</span><br><span class="line">adb shell</span><br><span class="line">su</span><br><span class="line">mount -o rw,remount /system</span><br><span class="line">cp /data/<span class="built_in">local</span>/tmp/install-recovery-2.sh /system/etc/</span><br></pre></td></tr></table></figure>
-
 <p>最终效果特别好，小米盒子启动的icntv图标消失后，立刻就进入了HALauncher，如有需要开机自启动kodi之类的，可行修改代码。</p>
 <h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><p>有试过在盒子上装软件，但clash不支持安卓4.4，ssr不稳定。最终解决方法是用家里的电脑的clash，再局域网挂代理。PS：我其实不知道settings有没有https_proxy这个，反正最后是没什么问题。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global http_proxy 192.168.1.106:7890</span><br><span class="line">adb shell settings put global https_proxy 192.168.1.106:7890</span><br></pre></td></tr></table></figure>
-
 <p>若要取消代理</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global http_proxy :0 </span><br><span class="line">adb shell settings put global https_proxy :0 </span><br></pre></td></tr></table></figure>
-
 <p>注意记得路由器上设置一下mac绑ip，避免代理ip被更改</p>
 <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ol>
 <li>想用adb进行操作，参考<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/7789826/adb-shell-input-events">这个</a>。若要输入中文，用<a target="_blank" rel="noopener" href="https://github.com/senzhk/ADBKeyBoard">ADBKeyBoard</a></li>
 <li>想要把文件从小米盒子系统里复制出来，参考下图，实测有效。<a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/85564/need-one-line-adb-shell-su-push-pull-to-access-data-from-windows-batch-file">原文链接</a></li>
 </ol>
 <p><img src="/2022/08/04/mibox2/image-20220804151403110.png" alt="image-20220804151403110"></p>
-<ol start="3">
+<ol>
 <li>建议还是不要操作 <code>/system/app</code>路径，删除或添加都有可能令盒子变砖，或卡死在icntv图标上</li>
 </ol>
 
@@ -1206,6 +1201,10 @@ top:50vh;
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 40
@@ -1283,12 +1282,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
         </li>
     
     
@@ -1421,12 +1420,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >基于爬虫的黑白棋对战</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >基于爬虫的黑白棋对战</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
         </li>
     
     
@@ -1463,11 +1462,19 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="深度学习"><span class="iconfont-archer">&#xe606;</span>深度学习</span>
+    
+        <span class="sidebar-tag-name" data-tags="强化学习"><span class="iconfont-archer">&#xe606;</span>强化学习</span>
+    
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
         <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="硬件"><span class="iconfont-archer">&#xe606;</span>硬件</span>
+    
+        <span class="sidebar-tag-name" data-tags="Robomaster"><span class="iconfont-archer">&#xe606;</span>Robomaster</span>
     
         <span class="sidebar-tag-name" data-tags="il2cpp"><span class="iconfont-archer">&#xe606;</span>il2cpp</span>
     
@@ -1479,27 +1486,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
     
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
         <span class="sidebar-tag-name" data-tags="小米盒子"><span class="iconfont-archer">&#xe606;</span>小米盒子</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
+    
+        <span class="sidebar-tag-name" data-tags="软件"><span class="iconfont-archer">&#xe606;</span>软件</span>
     
         <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="深度学习"><span class="iconfont-archer">&#xe606;</span>深度学习</span>
-    
-        <span class="sidebar-tag-name" data-tags="强化学习"><span class="iconfont-archer">&#xe606;</span>强化学习</span>
-    
-        <span class="sidebar-tag-name" data-tags="硬件"><span class="iconfont-archer">&#xe606;</span>硬件</span>
-    
-        <span class="sidebar-tag-name" data-tags="Robomaster"><span class="iconfont-archer">&#xe606;</span>Robomaster</span>
-    
-        <span class="sidebar-tag-name" data-tags="软件"><span class="iconfont-archer">&#xe606;</span>软件</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1540,9 +1539,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
     
-        <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
-    
         <span class="sidebar-category-name" data-categories="硬件"><span class="iconfont-archer">&#xe60a;</span>硬件</span>
+    
+        <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

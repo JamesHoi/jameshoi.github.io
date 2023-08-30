@@ -401,7 +401,8 @@ height:50vh;
                 <span>深度学习以及强化学习笔记</span>
         </a>
         <div class="abstract-content">
-            识别拼图网络mask rcnn识别SAM使用RL学习笔记
+            识别拼图网络mask rcnn识别RL学习占坑
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -432,7 +433,13 @@ height:50vh;
                 <span>之前画的一些硬件PCB</span>
         </a>
         <div class="abstract-content">
-            之前画的一些PCB无线功率计全场定位232转TTLBadusbusb转can
+            之前画的一些PCBGitHub - JamesHoi/DIY-Hardware
+无线功率计由于需要测量移动机器人的功率，在全速运行时不方便追着用万用表测量，因此设计一款可近距离无线的功率计+监控器
+装甲板复现Robomaster官方装甲板，回收旧品改造，省去机械部分，很多功能都实现完了GitHub - CygnoidesV/armor-plate: Robomaster手持装甲板
+全场定位里程计，九轴+磁编码器
+232转TTL简单的用max3232芯片并加了接口
+Badusb挑了挑usb外壳，毕业前再做吧
+usb转can打算是stm32f103c8t6+gh1.25 can接口，和bad...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -463,7 +470,11 @@ height:50vh;
                 <span>Robomaster能量机关复现</span>
         </a>
         <div class="abstract-content">
-            装甲板复现定位射击子弹tof定位红外屏
+            装甲板复现由于规则的修改，现在击打能量机关的装甲板改为圆形，对击打的环数进行判断，越准越高分，所以我们打算对其进行复现
+
+每个环都是宽15mm，整体再外最外圈有多5mm，厚度14.3，弹丸直径17mm
+定位射击子弹当然关键的问题就是定位，要定位弹丸的击打位置，最先想的方案是通过应变片的形变大小定位，但安装上必定误差特别大，不好实现，因为面板前面还需要有一圈一圈的灯。
+方案一前面预想的应变片不好实现，转换一下思路，在淘宝找到了阵列式的柔性压力传感器，但若买商家现成产品大小会不符合，定制的话，开模设计打样费2万起，20个样品。其次还是上一个提到的问题，这个传感器不透光，放在PCB和灯条后面大...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -534,7 +545,7 @@ Vimium C
         <div class="abstract-content">
             家里的小米盒子是二代的，想解决看剧麻烦和广告的问题，关键是安卓系统还是4.4，好多软件不能装，网上的办法也不全，这里记录一下我自己的解决办法。
 ROOT对小米盒子进行一些操作时，难免会有权限问题，网上下个kingoroot，一键root，很快。成功后 adb shell并输入su命令即可进入root用户。kingroot.apk
-禁用小米自带软件网上一堆带有–user 0的办法，但貌似安卓4.4不支持，好在网上找到了办法，用 pm block &lt;package&gt;的办法，软件稍微有点多，所以随手写了个py脚本
+禁用小米自带软件网上一堆带有—user 0的办法，但貌似安卓4.4不支持，好在网上找到了办法，用 pm block &lt;package&gt;的办法，软件稍微有点多，所以随手写了个py脚本
 123456789101112131415import osa = ...
         </div>
         <div class="abstract-post-meta">
@@ -1468,6 +1479,10 @@ xtea解密，解密得到第一个密匙为dotitsit
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 40
@@ -1545,12 +1560,12 @@ xtea解密，解密得到第一个密匙为dotitsit
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/tsctf-2021-re/" >TSCTF 2021 逆向题目</a>
         </li>
     
     
@@ -1683,12 +1698,12 @@ xtea解密，解密得到第一个密匙为dotitsit
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >基于爬虫的黑白棋对战</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >基于爬虫的黑白棋对战</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
         </li>
     
     
@@ -1725,11 +1740,19 @@ xtea解密，解密得到第一个密匙为dotitsit
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="深度学习"><span class="iconfont-archer">&#xe606;</span>深度学习</span>
+    
+        <span class="sidebar-tag-name" data-tags="强化学习"><span class="iconfont-archer">&#xe606;</span>强化学习</span>
+    
         <span class="sidebar-tag-name" data-tags="安卓"><span class="iconfont-archer">&#xe606;</span>安卓</span>
     
         <span class="sidebar-tag-name" data-tags="C#"><span class="iconfont-archer">&#xe606;</span>C#</span>
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="硬件"><span class="iconfont-archer">&#xe606;</span>硬件</span>
+    
+        <span class="sidebar-tag-name" data-tags="Robomaster"><span class="iconfont-archer">&#xe606;</span>Robomaster</span>
     
         <span class="sidebar-tag-name" data-tags="il2cpp"><span class="iconfont-archer">&#xe606;</span>il2cpp</span>
     
@@ -1741,27 +1764,19 @@ xtea解密，解密得到第一个密匙为dotitsit
     
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
     
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
+    
         <span class="sidebar-tag-name" data-tags="小米盒子"><span class="iconfont-archer">&#xe606;</span>小米盒子</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
+    
+        <span class="sidebar-tag-name" data-tags="软件"><span class="iconfont-archer">&#xe606;</span>软件</span>
     
         <span class="sidebar-tag-name" data-tags="TSCTFJ"><span class="iconfont-archer">&#xe606;</span>TSCTFJ</span>
     
         <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="深度学习"><span class="iconfont-archer">&#xe606;</span>深度学习</span>
-    
-        <span class="sidebar-tag-name" data-tags="强化学习"><span class="iconfont-archer">&#xe606;</span>强化学习</span>
-    
-        <span class="sidebar-tag-name" data-tags="硬件"><span class="iconfont-archer">&#xe606;</span>硬件</span>
-    
-        <span class="sidebar-tag-name" data-tags="Robomaster"><span class="iconfont-archer">&#xe606;</span>Robomaster</span>
-    
-        <span class="sidebar-tag-name" data-tags="软件"><span class="iconfont-archer">&#xe606;</span>软件</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1802,9 +1817,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="杂项"><span class="iconfont-archer">&#xe60a;</span>杂项</span>
     
-        <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
-    
         <span class="sidebar-category-name" data-categories="硬件"><span class="iconfont-archer">&#xe60a;</span>硬件</span>
+    
+        <span class="sidebar-category-name" data-categories="数学"><span class="iconfont-archer">&#xe60a;</span>数学</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
