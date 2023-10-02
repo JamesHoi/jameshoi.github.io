@@ -385,52 +385,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/27/dasctf-2021-03/" >
-            
-                <span>DASCTF 三月 逆向</span>
-        </a>
-        <div class="abstract-content">
-            drinkSomeTea drinkSomeTea的附件.zip看到题目盲猜一波TEA加密，果不其然。之前没好好学，这次至少会做题了，之后有空要好好再看看详细的加密流程。附件给了个tea.png.out，即需要解密图片。32位exe，无壳在一开始的sub_401000函数里面，应该是判断是不是调试器（我没仔细看），用调试器的时候会退出程序，直接把call sub_401000 nop掉即可。应该是一个加密函数，点进去看发现加花了去花，Create Function，F5，发现是TEA加密，关于TEA加密脚本可以参考这个魔改一下TEA加密即可，要注意的是，加密的时候需要用int指针（保留符...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/27</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/01/crackme/" >
-            
-                <span>记录一下自己出的crackme</span>
-        </a>
-        <div class="abstract-content">
-            这题主要考察选手动态调试。扔进exeinfope，32位exe，无壳main程序，点进sub_4017D0看sub_4017D0，可以看出是检测进程名称。找到for之前的汇编，尝试在动调的时候修改eip直接jmp到CloseHandle，又或者是自己patch一下，防止return 1，从而反反调试。patch教程参考链接（留意这里的dword_406120，之后会讲）sub_401930是个SEH异常反调试，可以参考源码直接查看汇编，参考刚刚上面的源码，反调试的E9刚好起到了花指令的作用，变成了jmp near ptr 8B762D3Ah。在jmp按一下U，在E9下面按c转为代码，然后...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2021/02/06/buuctf/" >
             
                 <span>BUU平台逆向刷题</span>
@@ -1150,77 +1104,9 @@ re2re2.rar扔进Exeinfo PE，32位e...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 36
         </div>
         <!-- search  -->
         
@@ -1285,17 +1171,7 @@ re2re2.rar扔进Exeinfo PE，32位e...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/note2/" >近期做过的一些题目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
         </li>
     
     
@@ -1316,16 +1192,6 @@ re2re2.rar扔进Exeinfo PE，32位e...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2021/11/23/ctf-2021/" >2021年逆向题目复现</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2021/11/23/il2cpp-crack/" >2021年逆向题目复现</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -1488,12 +1354,6 @@ re2re2.rar扔进Exeinfo PE，32位e...
         <span class="sidebar-tag-name" data-tags="硬件"><span class="iconfont-archer">&#xe606;</span>硬件</span>
     
         <span class="sidebar-tag-name" data-tags="Robomaster"><span class="iconfont-archer">&#xe606;</span>Robomaster</span>
-    
-        <span class="sidebar-tag-name" data-tags="il2cpp"><span class="iconfont-archer">&#xe606;</span>il2cpp</span>
-    
-        <span class="sidebar-tag-name" data-tags="unity"><span class="iconfont-archer">&#xe606;</span>unity</span>
-    
-        <span class="sidebar-tag-name" data-tags="游戏破解"><span class="iconfont-archer">&#xe606;</span>游戏破解</span>
     
         <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
     

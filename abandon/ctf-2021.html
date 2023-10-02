@@ -20,21 +20,21 @@
     <meta name="keywords" content="James Hoi's Blog,James Hoi">
     
     <meta name="description" content="">
-    <meta name="description" content="开个坑，有空复现一下，先复现安卓题目">
-<meta property="og:type" content="article">
-<meta property="og:title" content="MRCTF 2021 逆向题目">
-<meta property="og:url" content="https://jameshoi.github.io/2022/01/11/mrctf-2021-re/index.html">
+    <meta name="description" content="D3CTFjumpjump没什么好说的，两次异或简单运算就出了 12345678enc &#x3D; [0x09,0x0B,0x06,0x5A,0x5B,0x0A,0x54,0x05,0x4D,0x57,       0x56,0x54,0x0B,0x4D,0x54,0x09,0x55,0x40,0x4D,0x09,       0x06,0x59,0x0B,0x4D,0x55,0x54,0x58,0x57">
+<meta property="og:type" content="website">
+<meta property="og:title" content="2021年逆向题目复现">
+<meta property="og:url" content="https://jameshoi.github.io/abandon/ctf-2021.html">
 <meta property="og:site_name" content="James Hoi&#39;s Blog">
-<meta property="og:description" content="开个坑，有空复现一下，先复现安卓题目">
+<meta property="og:description" content="D3CTFjumpjump没什么好说的，两次异或简单运算就出了 12345678enc &#x3D; [0x09,0x0B,0x06,0x5A,0x5B,0x0A,0x54,0x05,0x4D,0x57,       0x56,0x54,0x0B,0x4D,0x54,0x09,0x55,0x40,0x4D,0x09,       0x06,0x59,0x0B,0x4D,0x55,0x54,0x58,0x57">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-01-10T18:34:17.000Z">
-<meta property="article:modified_time" content="2022-01-10T19:07:07.792Z">
+<meta property="article:published_time" content="2021-11-23T08:33:38.000Z">
+<meta property="article:modified_time" content="2022-05-01T15:56:52.907Z">
 <meta property="article:author" content="James Hoi">
 <meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
-    <title>MRCTF 2021 逆向题目 · James Hoi的博客</title>
+    <title>2021年逆向题目复现 · James Hoi的博客</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,8 +217,6 @@
 </head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
@@ -241,17 +239,6 @@
     <!-- back to home page text -->
     <a class="home-link header-element" href=/>James Hoi's Blog</a>
     <!-- toggle banner for post layout -->
-    
-    
-    <div class="banner">
-    
-        <div class="blog-title header-element">
-            <a href="/" >James Hoi&#39;s Blog</a>
-        </div>
-        <div class="post-title header-element">
-            <a href="#" class="post-name">MRCTF 2021 逆向题目</a>
-        </div>
-    </div>
     
 </header>
     
@@ -276,68 +263,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            MRCTF 2021 逆向题目
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                
-                    <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">16</span>Reading time: <span class="post-count reading-time">1 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2022/01/11</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -440,16 +383,20 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>开个坑，有空复现一下，先复现安卓题目</p>
+        <h2 id="D3CTF"><a href="#D3CTF" class="headerlink" title="D3CTF"></a>D3CTF</h2><h3 id="jumpjump"><a href="#jumpjump" class="headerlink" title="jumpjump"></a>jumpjump</h3><p>没什么好说的，两次异或简单运算就出了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">enc = [<span class="number">0x09</span>,<span class="number">0x0B</span>,<span class="number">0x06</span>,<span class="number">0x5A</span>,<span class="number">0x5B</span>,<span class="number">0x0A</span>,<span class="number">0x54</span>,<span class="number">0x05</span>,<span class="number">0x4D</span>,<span class="number">0x57</span>,</span><br><span class="line">       <span class="number">0x56</span>,<span class="number">0x54</span>,<span class="number">0x0B</span>,<span class="number">0x4D</span>,<span class="number">0x54</span>,<span class="number">0x09</span>,<span class="number">0x55</span>,<span class="number">0x40</span>,<span class="number">0x4D</span>,<span class="number">0x09</span>,</span><br><span class="line">       <span class="number">0x06</span>,<span class="number">0x59</span>,<span class="number">0x0B</span>,<span class="number">0x4D</span>,<span class="number">0x55</span>,<span class="number">0x54</span>,<span class="number">0x58</span>,<span class="number">0x57</span>,<span class="number">0x5B</span>,<span class="number">0x09</span>,</span><br><span class="line">       <span class="number">0x0B</span>,<span class="number">0x40</span>,<span class="number">0x05</span>,<span class="number">0x0A</span>,<span class="number">0x05</span>,<span class="number">0x09</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">36</span>):</span><br><span class="line">    print(chr(((enc[i]^<span class="number">0x33</span>)<span class="number">-4</span>)^<span class="number">0x57</span>),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="comment">#acf23b4e-764c-4a58-af1c-54073ac8ebea</span></span><br></pre></td></tr></table></figure>
 
+
+
+<h3 id="ancient"><a href="#ancient" class="headerlink" title="ancient"></a>ancient</h3>
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>Author：<a href="https://jameshoi.github.io">James Hoi</a>
-            <p>原文链接：<a href="https://jameshoi.github.io/2022/01/11/mrctf-2021-re/">https://jameshoi.github.io/2022/01/11/mrctf-2021-re/</a>
-            <p>发表日期：<a href="https://jameshoi.github.io/2022/01/11/mrctf-2021-re/">January 11th 2022, 2:34:17 am</a>
-            <p>更新日期：<a href="https://jameshoi.github.io/2022/01/11/mrctf-2021-re/">January 11th 2022, 3:07:07 am</a>
+            <p>原文链接：<a href="https://jameshoi.github.io/abandon/ctf-2021.html">https://jameshoi.github.io/abandon/ctf-2021.html</a>
+            <p>发表日期：<a href="https://jameshoi.github.io/abandon/ctf-2021.html">November 23rd 2021, 4:33:38 pm</a>
+            <p>更新日期：<a href="https://jameshoi.github.io/abandon/ctf-2021.html">May 1st 2022, 11:56:52 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -457,18 +404,8 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2022/01/11/crypto/" title= "一些常见的加密算法">
-                    <div class="nextTitle">一些常见的加密算法</div>
-                </a>
-            
         </li>
         <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href= "/2022/01/11/note2/" title= "近期做过的一些题目">
-                    <div class="prevTitle">近期做过的一些题目</div>
-                </a>
             
         </li>
     </ul>
@@ -484,8 +421,8 @@ height:50vh;
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         
         var disqus_config = function () {
-        this.page.url = "https://jameshoi.github.io/2022/01/11/mrctf-2021-re/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "MRCTF 2021 逆向题目"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "https://jameshoi.github.io/abandon/ctf-2021.html";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "2021年逆向题目复现"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
         
         (function () { // DON'T EDIT BELOW THIS LINE
@@ -601,24 +538,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        
-    </div>
     
     <div class="sidebar sidebar-hide">
     <ul class="sidebar-tabs sidebar-tabs-active-0">
@@ -1095,77 +1014,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 36
         </div>
         <!-- search  -->
         
@@ -1230,17 +1081,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/note2/" >近期做过的一些题目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
         </li>
     
     
@@ -1261,16 +1102,6 @@ top:50vh;
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2021/11/23/ctf-2021/" >2021年逆向题目复现</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2021/11/23/il2cpp-crack/" >2021年逆向题目复现</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -1434,12 +1265,6 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Robomaster"><span class="iconfont-archer">&#xe606;</span>Robomaster</span>
     
-        <span class="sidebar-tag-name" data-tags="il2cpp"><span class="iconfont-archer">&#xe606;</span>il2cpp</span>
-    
-        <span class="sidebar-tag-name" data-tags="unity"><span class="iconfont-archer">&#xe606;</span>unity</span>
-    
-        <span class="sidebar-tag-name" data-tags="游戏破解"><span class="iconfont-archer">&#xe606;</span>游戏破解</span>
-    
         <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
     
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
@@ -1533,8 +1358,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({

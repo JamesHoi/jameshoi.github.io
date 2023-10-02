@@ -396,110 +396,6 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2021/01/31/tsctf-j-2020/" >
-            
-                <span>TSCTF-J 2020</span>
-        </a>
-        <div class="abstract-content">
-            
-前言第一次参加CTF比赛，感觉自己好菜（我就学了一个月而已…菜也正常）。（以后一定要记得每次做完就写wp… 不然最后一天很难受）TSCTF-J比赛网址
-easyXor.exe这题没啥说的，标准的异或出flag
-12345enflag = [62,58,41,57,44,84,54,28,58,99,34,60,98,9,20,56,78,31,32,52,74,13,27,48,37,36,29,97,101]decode = &quot;abcdefghijklmnopqrstuvwxyz!!!&quot;for i in range(len(enflag)):    print(c...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/31</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "TSCTFJ">TSCTFJ</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/01/31/misc-ctf/" >
-            
-                <span>各种CTF逆向题目大杂烩</span>
-        </a>
-        <div class="abstract-content">
-            某乱七八糟选拔赛 main2101075ff6b9adc84f9.zip拿到文件发现有upx壳，脱壳。静态分析发现用随机数与flag.png每一字节异或得到flag.png.enc，而随机数种子用的是生成文件的时间戳查看flag.png.enc生成时间2020-12-18 21:14:01（北京时间）得到时间戳1608297241，然后异或得到文件flag.png
-解题脚本用linux g++编译后运行123456789101112131415161718192021222324252627282930313233#include &lt;stdlib.h&gt;#include &lt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/31</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/01/28/cumtctf-2021/" >
-            
-                <span>CUMTCTF 2021</span>
-        </a>
-        <div class="abstract-content">
-            re1re1.rar扔进Exeinfo PE，64位ELF文件，无壳ida分析找到主函数，sub_950函数应该是进行了某种加密，然后再和v9比较进入sub_950函数，网上查了一轮发现是进行了base58编码python base58解码即出flag1234import base58enflag = &quot;34avux4BwXYJzh1nHK1oG5xTKeBSCERZs4xC&quot;print(base58.b58decode(enflag))# CUMTCTF&#123;8Ase5B_1s_Ea5y~~~&#125;
-re2re2.rar扔进Exeinfo PE，32位e...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/28</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/01/10/js-reverse/" >
-            
-                <span>Js逆向</span>
-        </a>
-        <div class="abstract-content">
-            前言之前因为某些原因需要逆向js，而且逆向之后需要打包成一个浏览器插件方便使用
-原理js逆向本质上是将网站的js重定向为插件内含有的js，从而做到破解的效果在网上找到了Reres这个插件，将插件代码提取出来，新建一个重定向列表的文件url_setting.js12345678var ReResMap = [  &#123;    // 网站的js路径    &quot;req&quot;: &quot;https://jameshoi.github.io/files/js-reverse/login.js&quot;,     // 修改后的js路径，存储在插件里面    &quot;r...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/10</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2020/03/22/reversi/" >
             
                 <span>基于爬虫的黑白棋对战</span>
@@ -1390,77 +1286,9 @@ Markdown Command Assist
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 36
         </div>
         <!-- search  -->
         
@@ -1525,17 +1353,7 @@ Markdown Command Assist
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/note2/" >近期做过的一些题目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
         </li>
     
     
@@ -1556,16 +1374,6 @@ Markdown Command Assist
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2021/11/23/ctf-2021/" >2021年逆向题目复现</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2021/11/23/il2cpp-crack/" >2021年逆向题目复现</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -1728,12 +1536,6 @@ Markdown Command Assist
         <span class="sidebar-tag-name" data-tags="硬件"><span class="iconfont-archer">&#xe606;</span>硬件</span>
     
         <span class="sidebar-tag-name" data-tags="Robomaster"><span class="iconfont-archer">&#xe606;</span>Robomaster</span>
-    
-        <span class="sidebar-tag-name" data-tags="il2cpp"><span class="iconfont-archer">&#xe606;</span>il2cpp</span>
-    
-        <span class="sidebar-tag-name" data-tags="unity"><span class="iconfont-archer">&#xe606;</span>unity</span>
-    
-        <span class="sidebar-tag-name" data-tags="游戏破解"><span class="iconfont-archer">&#xe606;</span>游戏破解</span>
     
         <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
     

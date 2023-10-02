@@ -20,12 +20,12 @@
     <meta name="keywords" content="James Hoi's Blog,James Hoi">
     
     <meta name="description" content="">
-    <meta name="description" content="装甲板复现由于规则的修改，现在击打能量机关的装甲板改为圆形，对击打的环数进行判断，越准越高分，所以我们打算对其进行复现  每个环都是宽15mm，整体再外最外圈有多5mm，厚度14.3，弹丸直径17mm 定位射击子弹当然关键的问题就是定位，要定位弹丸的击打位置，最先想的方案是通过应变片的形变大小定位，但安装上必定误差特别大，不好实现，因为面板前面还需要有一圈一圈的灯。 方案一前面预想的应变片不好实现">
+    <meta name="description" content="装甲板复现由于规则的修改，现在击打能量机关的装甲板改为圆形，对击打的环数进行判断，越准越高分，所以我们打算对其进行复现   每个环都是宽15mm，整体再外最外圈有多5mm，厚度14.3，弹丸直径17mm 定位射击子弹当然关键的问题就是定位，要定位弹丸的击打位置，最先想的方案是通过应变片的形变大小定位，但安装上必定误差特别大，不好实现，因为面板前面还需要有一圈一圈的灯。 方案一前面预想的应变片不好实">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Robomaster能量机关复现">
 <meta property="og:url" content="https://jameshoi.github.io/2023/08/01/rmuc/index.html">
 <meta property="og:site_name" content="James Hoi&#39;s Blog">
-<meta property="og:description" content="装甲板复现由于规则的修改，现在击打能量机关的装甲板改为圆形，对击打的环数进行判断，越准越高分，所以我们打算对其进行复现  每个环都是宽15mm，整体再外最外圈有多5mm，厚度14.3，弹丸直径17mm 定位射击子弹当然关键的问题就是定位，要定位弹丸的击打位置，最先想的方案是通过应变片的形变大小定位，但安装上必定误差特别大，不好实现，因为面板前面还需要有一圈一圈的灯。 方案一前面预想的应变片不好实现">
+<meta property="og:description" content="装甲板复现由于规则的修改，现在击打能量机关的装甲板改为圆形，对击打的环数进行判断，越准越高分，所以我们打算对其进行复现   每个环都是宽15mm，整体再外最外圈有多5mm，厚度14.3，弹丸直径17mm 定位射击子弹当然关键的问题就是定位，要定位弹丸的击打位置，最先想的方案是通过应变片的形变大小定位，但安装上必定误差特别大，不好实现，因为面板前面还需要有一圈一圈的灯。 方案一前面预想的应变片不好实">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jameshoi.github.io/2023/08/01/rmuc/3c4bbe5ffe4f311b35ce64dace61bb85b039db9d.png">
 <meta property="og:image" content="https://jameshoi.github.io/2023/08/01/rmuc/2.png">
@@ -43,7 +43,7 @@
 <meta property="og:image" content="https://jameshoi.github.io/2023/08/01/rmuc/963efc11b6b25588cb33e4742afb66594408431d.png">
 <meta property="og:image" content="https://jameshoi.github.io/2023/08/01/rmuc/2023-08-30-17-14-10-image.png">
 <meta property="article:published_time" content="2023-08-01T07:51:17.000Z">
-<meta property="article:modified_time" content="2023-08-30T09:21:17.588Z">
+<meta property="article:modified_time" content="2023-10-02T06:52:33.718Z">
 <meta property="article:author" content="James Hoi">
 <meta property="article:tag" content="硬件">
 <meta property="article:tag" content="Robomaster">
@@ -337,7 +337,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">2k</span>Reading time: <span class="post-count reading-time">8 min</span></span>
+                        <span>Word count: <span class="post-count word-count">2.1k</span>Reading time: <span class="post-count reading-time">8 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -467,26 +467,31 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <h2 id="装甲板复现"><a href="#装甲板复现" class="headerlink" title="装甲板复现"></a>装甲板复现</h2><p>由于规则的修改，现在击打能量机关的装甲板改为圆形，对击打的环数进行判断，越准越高分，所以我们打算对其进行复现</p>
-<p><img title src="/2023/08/01/rmuc/3c4bbe5ffe4f311b35ce64dace61bb85b039db9d.png" alt width="429"></p>
+<img title src="/2023/08/01/rmuc/3c4bbe5ffe4f311b35ce64dace61bb85b039db9d.png" alt width="429">
+
 <p>每个环都是宽15mm，整体再外最外圈有多5mm，厚度14.3，弹丸直径17mm</p>
 <h2 id="定位射击子弹"><a href="#定位射击子弹" class="headerlink" title="定位射击子弹"></a>定位射击子弹</h2><p>当然关键的问题就是定位，要定位弹丸的击打位置，最先想的方案是通过应变片的形变大小定位，但安装上必定误差特别大，不好实现，因为面板前面还需要有一圈一圈的灯。</p>
 <h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><p>前面预想的应变片不好实现，转换一下思路，在淘宝找到了阵列式的柔性压力传感器，但若买商家现成产品大小会不符合，定制的话，开模设计打样费2万起，20个样品。其次还是上一个提到的问题，这个传感器不透光，放在PCB和灯条后面大几率击打效果不好</p>
-<p><img src="/2023/08/01/rmuc/2.png" alt></p>
+<p><img src="/2023/08/01/rmuc/2.png"></p>
 <h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><p>方案二为通过多个tof激光雷达测距定位弹丸，了解过GNSS定位的都应该听过三点定位方法，通过已知和多个卫星的距离解方程得到设备的位置。</p>
 <p>tof激光雷达原理</p>
-<p><img src="/2023/08/01/rmuc/7c983d72039fa1071c080ee8d7304b3198855e66.png" title alt width="311"></p>
+<img src="/2023/08/01/rmuc/7c983d72039fa1071c080ee8d7304b3198855e66.png" title alt width="311">
+
 <p>主要可选的传感器为VL6180X，VL53L0X，VL53L1X，主要区别如下图</p>
-<p><img src="/2023/08/01/rmuc/7a888ded85ec64a102f6197398b8a7b4906b9776.png" title alt width="530"></p>
+<img src="/2023/08/01/rmuc/7a888ded85ec64a102f6197398b8a7b4906b9776.png" title alt width="530">
+
 <p><img src="https://www.st.com/content/ccc/fragment/product_related/subclass_information/subclass_level_diagram/group0/b6/01/b3/f4/0e/f8/4a/21/ST21305_BN_FlightSense_2B/files/ST21305_BN_FlightSense_2B.jpg/_jcr_content/translations/en.ST21305_BN_FlightSense_2B.jpg" alt="tof sensor portfolio"></p>
 <p>综上所述，量程需要在30cm以上，最后选择VL53L0X</p>
-<h4 id="VL53L0X"><a href="#VL53L0X" class="headerlink" title="VL53L0X"></a>VL53L0X</h4><p><img src="/2023/08/01/rmuc/1a343ad324d7df3383206618b15b083ff23b90ae.png" title alt width="405"></p>
+<h4 id="VL53L0X"><a href="#VL53L0X" class="headerlink" title="VL53L0X"></a>VL53L0X</h4><img src="/2023/08/01/rmuc/1a343ad324d7df3383206618b15b083ff23b90ae.png" title alt width="405">
+
 <p>发射fov为35°，接收为25°，根据资料<a target="_blank" rel="noopener" href="http://47.111.11.73/thread-312799-1-1.html">关于VL53L0X测距的一点分享-OpenEdv-开源电子网</a>盲区大致为30至40mm</p>
 <p>当传感器个数n=4时，可检测范围大致就是下图彩色范围（注：当时没画好，将就吧）</p>
-<p><img src="/2023/08/01/rmuc/3f67a2f90c64c36df0b4f96477b5226e2e1adba8.jpg" title alt width="449"></p>
+<img src="/2023/08/01/rmuc/3f67a2f90c64c36df0b4f96477b5226e2e1adba8.jpg" title alt width="449">
+
 <p>算法基本参考TDOA，参考文章</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jjmjim/article/details/108405292">使用RANSAC的鲁棒TDOA Chan定位算法_姜小明同学的博客-CSDN博客_最小残差加权算法chan tdoa</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/chenxy_bwave/article/details/120225611">TDOA算法综述(An overview of TDOA algorithm)—(1)_笨牛慢耕的博客-CSDN博客_tdoa算法</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/summer_dew/article/details/79901654">[最小二乘法] 多边定位—求解未知点坐标_geodoer的博客-CSDN博客_最小二乘法定位</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/chenxy_bwave/article/details/120225611">TDOA算法综述(An overview of TDOA algorithm)–(1)_笨牛慢耕的博客-CSDN博客_tdoa算法</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/summer_dew/article/details/79901654">[最小二乘法] 多边定位–求解未知点坐标_geodoer的博客-CSDN博客_最小二乘法定位</a></p>
 <p><a target="_blank" rel="noopener" href="https://wap.cnki.net/touch/web/Dissertation/Article/10183-1012371752.nh.html">基于K-means聚类和数据一致性的WSN多边定位算法-手机知网</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_21291397/article/details/103983016">TDOA定位方法的Fang算法的程序实现（二维）_qq_21291397的博客-CSDN博客_fang算法</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_23947237/article/details/82715784">Chan 定位算法_本帅哥屏蔽了凡人的博客-CSDN博客_chan定位算法,wls 和wl的区别</a></p>
@@ -503,36 +508,41 @@ height:50vh;
 <p>其中第二点可见上图，由于该传感器接收的fov为25°，当传感器数量n=4时甚至不能覆盖到某些地方的六环。</p>
 <h4 id="传感器个数和失误率的关系"><a href="#传感器个数和失误率的关系" class="headerlink" title="传感器个数和失误率的关系"></a>传感器个数和失误率的关系</h4><p>按道理来讲可以进行数学推导计算出最佳的传感器个数，但过程可能稍微复杂，且工程实际应用时能接受一定的误差。最后采用统计的方式得到，下图是40000次测试的结果</p>
 <p>失误率：无法计算出打击位置的几率</p>
-<p><img src="/2023/08/01/rmuc/5e0112b7a7fa293439d5421ffddd9b0aac26511f.png" alt></p>
+<p><img src="/2023/08/01/rmuc/5e0112b7a7fa293439d5421ffddd9b0aac26511f.png"></p>
 <p>这图z轴是检测不到打击位置的几率（失误率），0到25是传感器个数，1到10是环数</p>
 <p>Matlab代码如下，orientation返回的point是：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">clear;</span><br><span class="line">test_time = <span class="number">40000</span>;</span><br><span class="line">c = <span class="built_in">zeros</span>(<span class="number">25</span>,<span class="number">10</span>);</span><br><span class="line">count = <span class="built_in">zeros</span>(<span class="number">25</span>,<span class="number">10</span>);</span><br><span class="line"><span class="keyword">for</span> n=<span class="number">4</span>:<span class="number">25</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:test_time</span><br><span class="line">        [point,point1,point2,num] = orientation(n);</span><br><span class="line">        c(n,point) = c(n,point)+(num&lt;<span class="number">3</span>);</span><br><span class="line">        count(n,point) = count(n,point)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">c = c./count*<span class="number">100</span>;</span><br><span class="line">bar3(c);</span><br></pre></td></tr></table></figure>
+
 <p>orientation.m代码：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[point,num]</span> = <span class="title">orientation</span><span class="params">(n)</span></span></span><br><span class="line">r = <span class="number">150</span>; <span class="comment">%装甲板半径，单位mm</span></span><br><span class="line">err = <span class="number">2</span>; <span class="comment">%传感器精度为2mm，盲区为30~40mm</span></span><br><span class="line">err_install = <span class="number">20</span>; <span class="comment">%安装误差2cm内</span></span><br><span class="line"><span class="comment">% 画圆</span></span><br><span class="line">th = <span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">50</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">xunit = r.*<span class="built_in">cos</span>(th);</span><br><span class="line">yunit = r.*<span class="built_in">sin</span>(th);</span><br><span class="line"><span class="built_in">plot</span>(xunit, yunit,<span class="string">&quot;r&quot;</span>);</span><br><span class="line">axis equal</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"></span><br><span class="line"><span class="comment">% 画传感器所在的位置</span></span><br><span class="line">angles = (<span class="number">1</span>/n:<span class="number">1</span>/n:<span class="number">1</span>)*<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">xdata = r.*<span class="built_in">cos</span>(angles);</span><br><span class="line">ydata = r.*<span class="built_in">sin</span>(angles);</span><br><span class="line"><span class="built_in">plot</span>(xdata,ydata,<span class="string">&quot;b*&quot;</span>);</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"></span><br><span class="line"><span class="comment">% 生成随机一点</span></span><br><span class="line">theta = <span class="built_in">rand</span>*(<span class="number">2</span>*<span class="built_in">pi</span>);</span><br><span class="line">r0 = <span class="built_in">rand</span>*r;</span><br><span class="line">x = r0.*<span class="built_in">cos</span>(theta);</span><br><span class="line">y = r0.*<span class="built_in">sin</span>(theta);</span><br><span class="line"><span class="built_in">plot</span>(x,y,<span class="string">&quot;bo&quot;</span>);</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"></span><br><span class="line"><span class="comment">% 计算测量到的距离</span></span><br><span class="line">d = <span class="built_in">zeros</span>(n,<span class="number">1</span>);</span><br><span class="line">d1 = <span class="built_in">zeros</span>(n,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:n</span><br><span class="line">    err_x = -err_install + <span class="number">2</span>*err_install*<span class="built_in">rand</span>(<span class="number">1</span>); <span class="comment">% +-安装误差</span></span><br><span class="line">    err_y = -err_install + <span class="number">2</span>*err_install*<span class="built_in">rand</span>(<span class="number">1</span>);</span><br><span class="line">    a = [xdata(<span class="built_in">i</span>)+err_x ydata(<span class="built_in">i</span>)+err_y];</span><br><span class="line">    b = [x y];</span><br><span class="line">    d(<span class="built_in">i</span>) = <span class="built_in">fix</span>(norm(a-b)+err*<span class="built_in">rand</span>);</span><br><span class="line">    d1(<span class="built_in">i</span>) = d(<span class="built_in">i</span>)-d(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 方法一泰勒展开取一次项，降维转线性，计算参数l和m</span></span><br><span class="line">d0 = <span class="built_in">zeros</span>(n,<span class="number">1</span>);</span><br><span class="line">l = <span class="built_in">zeros</span>(n,<span class="number">1</span>);</span><br><span class="line">m = <span class="built_in">zeros</span>(n,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:n</span><br><span class="line">    a = [xdata(<span class="built_in">i</span>) ydata(<span class="built_in">i</span>)];</span><br><span class="line">    d0(<span class="built_in">i</span>) = r;</span><br><span class="line">    l(<span class="built_in">i</span>) = xdata(<span class="built_in">i</span>)/d0(<span class="built_in">i</span>);</span><br><span class="line">    m(<span class="built_in">i</span>) = ydata(<span class="built_in">i</span>)/d0(<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">A = [l m];</span><br><span class="line">L = d0-d;</span><br><span class="line">X = (A&#x27;*A)\(A&#x27;*L);</span><br><span class="line"><span class="built_in">plot</span>(X(<span class="number">1</span>),X(<span class="number">2</span>),<span class="string">&quot;g*&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">% 方法二</span></span><br><span class="line"><span class="comment">% 计算到基站一的距离</span></span><br><span class="line">x1 = <span class="built_in">zeros</span>(n,<span class="number">1</span>);</span><br><span class="line">y1 = <span class="built_in">zeros</span>(n,<span class="number">1</span>);</span><br><span class="line">c = <span class="built_in">zeros</span>(n,<span class="number">1</span>);</span><br><span class="line">K = <span class="built_in">zeros</span>(n,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:n</span><br><span class="line">    K(<span class="built_in">i</span>) = xdata(<span class="built_in">i</span>)^<span class="number">2</span>+ydata(<span class="built_in">i</span>)^<span class="number">2</span>;</span><br><span class="line">    x1(<span class="built_in">i</span>) = xdata(<span class="built_in">i</span>)-xdata(<span class="number">1</span>);</span><br><span class="line">    y1(<span class="built_in">i</span>) = ydata(<span class="built_in">i</span>)-ydata(<span class="number">1</span>);</span><br><span class="line">    c(<span class="built_in">i</span>) = (K(<span class="built_in">i</span>)-K(<span class="number">1</span>))-(d1(<span class="built_in">i</span>)^<span class="number">2</span>+<span class="number">2</span>*d1(<span class="built_in">i</span>)*d(<span class="number">1</span>));</span><br><span class="line">    c(<span class="built_in">i</span>) = c(<span class="built_in">i</span>)/<span class="number">2</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">A = [x1 y1];</span><br><span class="line">A = A(<span class="number">2</span>:<span class="keyword">end</span>,:);</span><br><span class="line">L = c(<span class="number">2</span>:<span class="keyword">end</span>);</span><br><span class="line">X = (A&#x27;*A)\(A&#x27;*L);</span><br><span class="line"><span class="built_in">plot</span>(X(<span class="number">1</span>),X(<span class="number">2</span>),<span class="string">&quot;r*&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">% 检测fov25°传感器个数</span></span><br><span class="line">c = <span class="built_in">zeros</span>(<span class="number">1</span>,n);</span><br><span class="line">e = <span class="built_in">zeros</span>(<span class="number">1</span>,n);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:n</span><br><span class="line">    a = [xdata(<span class="built_in">i</span>) ydata(<span class="built_in">i</span>)];</span><br><span class="line">    b = [xdata(<span class="built_in">i</span>)-x ydata(<span class="built_in">i</span>)-y];</span><br><span class="line">    c(<span class="built_in">i</span>) = <span class="built_in">acos</span>(<span class="built_in">dot</span>(a,b)/norm(a)/norm(b));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">point = <span class="number">10</span>-<span class="built_in">floor</span>(norm([x y])/<span class="number">15</span>);</span><br><span class="line">num = sum((c&lt;(<span class="number">12.5</span>/<span class="number">180</span>*<span class="built_in">pi</span>))&amp;(d&#x27;&gt;<span class="number">40</span>)); <span class="comment">% 加上盲区判断，最大盲区值为40mm</span></span><br><span class="line">s = sprintf(<span class="string">&quot;识别到的传感器个数：%d，环数：%d&quot;</span>,num,point);</span><br><span class="line"><span class="built_in">disp</span>(s);</span><br></pre></td></tr></table></figure>
+
 <h4 id="如何仿真计算出传感器是否在fov范围内？"><a href="#如何仿真计算出传感器是否在fov范围内？" class="headerlink" title="如何仿真计算出传感器是否在fov范围内？"></a>如何仿真计算出传感器是否在fov范围内？</h4><p>orientation.m的最后一段代码其实已经给出，已知目标位置和传感器位置，通过点乘除以向量模长就可以得到两点间夹角，再加上c&lt;25/2的判断，结合盲区，得到该传感器是否能检测到物体。</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 检测fov25°传感器个数</span></span><br><span class="line">c = <span class="built_in">zeros</span>(<span class="number">1</span>,n);</span><br><span class="line">e = <span class="built_in">zeros</span>(<span class="number">1</span>,n);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:n</span><br><span class="line">    a = [xdata(<span class="built_in">i</span>) ydata(<span class="built_in">i</span>)];</span><br><span class="line">    b = [xdata(<span class="built_in">i</span>)-x ydata(<span class="built_in">i</span>)-y];</span><br><span class="line">    c(<span class="built_in">i</span>) = <span class="built_in">acos</span>(<span class="built_in">dot</span>(a,b)/norm(a)/norm(b));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">point = <span class="number">10</span>-<span class="built_in">floor</span>(norm([x y])/<span class="number">15</span>);</span><br><span class="line">num = sum((c&lt;(<span class="number">12.5</span>/<span class="number">180</span>*<span class="built_in">pi</span>))&amp;(d&#x27;&gt;<span class="number">40</span>)); <span class="comment">% 加上盲区判断，最大盲区值为40mm</span></span><br><span class="line">s = sprintf(<span class="string">&quot;识别到的传感器个数：%d，环数：%d&quot;</span>,num,point);</span><br><span class="line"><span class="built_in">disp</span>(s);</span><br></pre></td></tr></table></figure>
+
 <h4 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h4><p>蓝色圆圈为目标实际位置</p>
-<p>方法一（绿色星号）参考文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/summer_dew/article/details/79901654">[最小二乘法] 多边定位—求解未知点坐标_最小二乘法求坐标_geodoer的博客-CSDN博客</a></p>
+<p>方法一（绿色星号）参考文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/summer_dew/article/details/79901654">[最小二乘法] 多边定位–求解未知点坐标_最小二乘法求坐标_geodoer的博客-CSDN博客</a></p>
 <p>方法二（红色星号）参考文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_23947237/article/details/82715784">Chan 定位算法_chan uwb_本帅哥屏蔽了凡人的博客-CSDN博客</a></p>
 <p>实际两种方法都是转换为线性方程组再用最小二乘法求坐标点</p>
 <p>实际上仿真代码有问题，需确定能识别到再进行定位，但由于此方法最后废弃，代码不再改进。</p>
 <h4 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h4><p>n=20，err_install = 0，可见当无安装误差时，环数越小方法一越不准</p>
-<p><img src="/2023/08/01/rmuc/2023-08-30-16-26-39-image.png" alt></p>
+<p><img src="/2023/08/01/rmuc/2023-08-30-16-26-39-image.png"></p>
 <p>测试环数准确率</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">clear;</span><br><span class="line">test_time = <span class="number">40000</span>;</span><br><span class="line">n = <span class="number">20</span>;</span><br><span class="line">c = <span class="built_in">zeros</span>(<span class="number">10</span>,<span class="number">2</span>);</span><br><span class="line">count = <span class="built_in">zeros</span>(<span class="number">10</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:test_time</span><br><span class="line">    [point,point1,point2,num] = orientation(n);</span><br><span class="line">    count(point) = count(point) + <span class="number">1</span>;</span><br><span class="line">    c(point,<span class="number">1</span>) = c(point,<span class="number">1</span>) + (point~=point1);</span><br><span class="line">    c(point,<span class="number">2</span>) = c(point,<span class="number">2</span>) + (point~=point2);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">tmp = c./count.*<span class="number">100</span>;</span><br><span class="line">bar3(tmp);</span><br><span class="line">_time.*<span class="number">100</span></span><br></pre></td></tr></table></figure>
+
 <p>当error_install = 0时，环数准确度的统计，1为方法一，2为方法2</p>
-<p><img src="/2023/08/01/rmuc/2023-08-30-17-03-17-image.png" alt></p>
+<p><img src="/2023/08/01/rmuc/2023-08-30-17-03-17-image.png"></p>
 <p>当error_install = 10，即安装误差为正负1cm时，环数准确度如下</p>
-<p><img src="/2023/08/01/rmuc/2023-08-30-17-05-03-image.png" alt></p>
+<p><img src="/2023/08/01/rmuc/2023-08-30-17-05-03-image.png"></p>
 <p>当error_install = 20时</p>
-<p><img src="/2023/08/01/rmuc/2023-08-30-17-06-39-image.png" alt></p>
-<p><img src="/2023/08/01/rmuc/2023-08-30-17-06-49-image.png" alt></p>
+<p><img src="/2023/08/01/rmuc/2023-08-30-17-06-39-image.png"></p>
+<p><img src="/2023/08/01/rmuc/2023-08-30-17-06-49-image.png"></p>
 <h4 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h4><p>由于传感器离柔光板很近，且发射的激光为圆锥形，有几率发射到柔光板上反射到传感器上，实际机械尺寸设计时得留一定的空间。</p>
 <h4 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h4><p>实际测试时该激光测距传感器采样率很低，弹丸速度很快，传感器完全无法检测到弹丸，该方案废弃。</p>
 <h3 id="红外屏"><a href="#红外屏" class="headerlink" title="红外屏"></a>红外屏</h3><p>当前的方法是红外屏，但红外屏采样率也有限，基本检测到的击打都为反弹，若反弹速度太快则会检测不到。实际安装位置需要测试，淘宝有现成产品</p>
-<p><img src="/2023/08/01/rmuc/963efc11b6b25588cb33e4742afb66594408431d.png" alt></p>
+<p><img src="/2023/08/01/rmuc/963efc11b6b25588cb33e4742afb66594408431d.png"></p>
 <p>或365元定制尺寸，正方形。有串口，可二次开发</p>
-<p><img src="/2023/08/01/rmuc/2023-08-30-17-14-10-image.png" alt></p>
+<p><img src="/2023/08/01/rmuc/2023-08-30-17-14-10-image.png"></p>
+<h3 id="电阻屏"><a href="#电阻屏" class="headerlink" title="电阻屏"></a>电阻屏</h3><p>貌似官方用的电阻屏，但是定制成本太高，数量还需要五个</p>
 
     </article>
     <!-- license  -->
@@ -541,7 +551,7 @@ height:50vh;
             <p>Author：<a href="https://jameshoi.github.io">James Hoi</a>
             <p>原文链接：<a href="https://jameshoi.github.io/2023/08/01/rmuc/">https://jameshoi.github.io/2023/08/01/rmuc/</a>
             <p>发表日期：<a href="https://jameshoi.github.io/2023/08/01/rmuc/">August 1st 2023, 3:51:17 pm</a>
-            <p>更新日期：<a href="https://jameshoi.github.io/2023/08/01/rmuc/">August 30th 2023, 5:21:17 pm</a>
+            <p>更新日期：<a href="https://jameshoi.github.io/2023/08/01/rmuc/">October 2nd 2023, 2:52:33 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -709,7 +719,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%85%E7%94%B2%E6%9D%BF%E5%A4%8D%E7%8E%B0"><span class="toc-number">1.</span> <span class="toc-text">装甲板复现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D%E5%B0%84%E5%87%BB%E5%AD%90%E5%BC%B9"><span class="toc-number">2.</span> <span class="toc-text">定位射击子弹</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%B8%80"><span class="toc-number">2.1.</span> <span class="toc-text">方案一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%BA%8C"><span class="toc-number">2.2.</span> <span class="toc-text">方案二</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#VL53L0X"><span class="toc-number">2.2.1.</span> <span class="toc-text">VL53L0X</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Matlab%E4%BB%BF%E7%9C%9F"><span class="toc-number">2.2.2.</span> <span class="toc-text">Matlab仿真</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E4%B8%AA%E6%95%B0%E5%92%8C%E5%A4%B1%E8%AF%AF%E7%8E%87%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.2.3.</span> <span class="toc-text">传感器个数和失误率的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BB%BF%E7%9C%9F%E8%AE%A1%E7%AE%97%E5%87%BA%E4%BC%A0%E6%84%9F%E5%99%A8%E6%98%AF%E5%90%A6%E5%9C%A8fov%E8%8C%83%E5%9B%B4%E5%86%85%EF%BC%9F"><span class="toc-number">2.2.4.</span> <span class="toc-text">如何仿真计算出传感器是否在fov范围内？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D"><span class="toc-number">2.2.5.</span> <span class="toc-text">定位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-number">2.2.6.</span> <span class="toc-text">最终效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80"><span class="toc-number">2.2.7.</span> <span class="toc-text">问题一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C"><span class="toc-number">2.2.8.</span> <span class="toc-text">问题二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A2%E5%A4%96%E5%B1%8F"><span class="toc-number">2.3.</span> <span class="toc-text">红外屏</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%85%E7%94%B2%E6%9D%BF%E5%A4%8D%E7%8E%B0"><span class="toc-number">1.</span> <span class="toc-text">装甲板复现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D%E5%B0%84%E5%87%BB%E5%AD%90%E5%BC%B9"><span class="toc-number">2.</span> <span class="toc-text">定位射击子弹</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%B8%80"><span class="toc-number">2.1.</span> <span class="toc-text">方案一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%BA%8C"><span class="toc-number">2.2.</span> <span class="toc-text">方案二</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#VL53L0X"><span class="toc-number">2.2.1.</span> <span class="toc-text">VL53L0X</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Matlab%E4%BB%BF%E7%9C%9F"><span class="toc-number">2.2.2.</span> <span class="toc-text">Matlab仿真</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E4%B8%AA%E6%95%B0%E5%92%8C%E5%A4%B1%E8%AF%AF%E7%8E%87%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.2.3.</span> <span class="toc-text">传感器个数和失误率的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BB%BF%E7%9C%9F%E8%AE%A1%E7%AE%97%E5%87%BA%E4%BC%A0%E6%84%9F%E5%99%A8%E6%98%AF%E5%90%A6%E5%9C%A8fov%E8%8C%83%E5%9B%B4%E5%86%85%EF%BC%9F"><span class="toc-number">2.2.4.</span> <span class="toc-text">如何仿真计算出传感器是否在fov范围内？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D"><span class="toc-number">2.2.5.</span> <span class="toc-text">定位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-number">2.2.6.</span> <span class="toc-text">最终效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80"><span class="toc-number">2.2.7.</span> <span class="toc-text">问题一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C"><span class="toc-number">2.2.8.</span> <span class="toc-text">问题二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A2%E5%A4%96%E5%B1%8F"><span class="toc-number">2.3.</span> <span class="toc-text">红外屏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E9%98%BB%E5%B1%8F"><span class="toc-number">2.4.</span> <span class="toc-text">电阻屏</span></a></li></ol></li></ol>
     </div>
     
     <div class="sidebar sidebar-hide">
@@ -1187,77 +1197,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 36
         </div>
         <!-- search  -->
         
@@ -1322,17 +1264,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/mrctf-2021-re/" >MRCTF 2021 逆向题目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/note2/" >近期做过的一些题目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2022/01/11/script/" >一些需要用脚本的逆向题目</a>
         </li>
     
     
@@ -1353,16 +1285,6 @@ top:50vh;
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2021/11/23/ctf-2021/" >2021年逆向题目复现</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2021/11/23/il2cpp-crack/" >2021年逆向题目复现</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -1525,12 +1447,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="硬件"><span class="iconfont-archer">&#xe606;</span>硬件</span>
     
         <span class="sidebar-tag-name" data-tags="Robomaster"><span class="iconfont-archer">&#xe606;</span>Robomaster</span>
-    
-        <span class="sidebar-tag-name" data-tags="il2cpp"><span class="iconfont-archer">&#xe606;</span>il2cpp</span>
-    
-        <span class="sidebar-tag-name" data-tags="unity"><span class="iconfont-archer">&#xe606;</span>unity</span>
-    
-        <span class="sidebar-tag-name" data-tags="游戏破解"><span class="iconfont-archer">&#xe606;</span>游戏破解</span>
     
         <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
     
