@@ -390,13 +390,13 @@
                 <span>深度学习以及强化学习笔记</span>
         </a>
         <div class="abstract-content">
-            识别拼图网络识别类似以下图片，有性能要求
+            识别拼图网络识别是否为类似以下图片，有性能要求
 
 魔改的经典cnn识别mnist模型
 
 准确率能上94%，但项目要求准确率比较高，至少99，在考虑其他传统方案
 尝试了[2201.03545] A ConvNet for the 2020s，准确度确实能提升一点，但项目也要求性能。
-mask rcnn识别打算用mask-rcnn做一个MRI的眼眶识别，识别肌肉等组织。做完了前期工作，转换为了coco标准的json，参考GitHub - brunobelloni/binary-to-coco-json-converter: Convert segmentation binary mask imag...
+mask rcnn识别打算用mask-rcnn做一个MRI的眼眶识别，识别肌肉等组织。做完了前期工作，转换为了coco标准的json，参考GitHub - brunobelloni/binary-to-coco-json-converter: Convert segmentation binary mask i...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -459,42 +459,6 @@ usb转can打算是stm32f103c8t6+gh1.25 can接口，和bad...
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2023/08/01/rmuc/" >
-            
-                <span>Robomaster能量机关复现</span>
-        </a>
-        <div class="abstract-content">
-            装甲板复现由于规则的修改，现在击打能量机关的装甲板改为圆形，对击打的环数进行判断，越准越高分，所以我们打算对其进行复现
-
-
-每个环都是宽15mm，整体再外最外圈有多5mm，厚度14.3，弹丸直径17mm
-定位射击子弹当然关键的问题就是定位，要定位弹丸的击打位置，最先想的方案是通过应变片的形变大小定位，但安装上必定误差特别大，不好实现，因为面板前面还需要有一圈一圈的灯。
-方案一前面预想的应变片不好实现，转换一下思路，在淘宝找到了阵列式的柔性压力传感器，但若买商家现成产品大小会不符合，定制的话，开模设计打样费2万起，20个样品。其次还是上一个提到的问题，这个传感器不透光，放在PCB和灯条后面...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "硬件">硬件</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Robomaster">Robomaster</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2023/08/01/software/" >
             
                 <span>一些软件推荐&amp;随记</span>
@@ -521,6 +485,42 @@ Vimium C
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "软件">软件</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2023/08/01/rmuc/" >
+            
+                <span>Robomaster能量机关复现</span>
+        </a>
+        <div class="abstract-content">
+            装甲板复现由于规则的修改，现在击打能量机关的装甲板改为圆形，对击打的环数进行判断，越准越高分，所以我们打算对其进行复现
+
+
+每个环都是宽15mm，整体再外最外圈有多5mm，厚度14.3，弹丸直径17mm
+定位射击子弹当然关键的问题就是定位，要定位弹丸的击打位置，最先想的方案是通过应变片的形变大小定位，但安装上必定误差特别大，不好实现，因为面板前面还需要有一圈一圈的灯。
+方案一前面预想的应变片不好实现，转换一下思路，在淘宝找到了阵列式的柔性压力传感器，但若买商家现成产品大小会不符合，定制的话，开模设计打样费2万起，20个样品。其次还是上一个提到的问题，这个传感器不透光，放在PCB和灯条后面...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "硬件">硬件</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Robomaster">Robomaster</a>
     
 </div>
             
@@ -1088,10 +1088,6 @@ Vimium C
     
     
     
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 36
@@ -1120,12 +1116,12 @@ Vimium C
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2023/08/01/rmuc/" >Robomaster能量机关复现</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2023/08/01/software/" >一些软件推荐&随记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2023/08/01/software/" >一些软件推荐&随记</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2023/08/01/rmuc/" >Robomaster能量机关复现</a>
         </li>
     
     
@@ -1287,12 +1283,12 @@ Vimium C
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >基于爬虫的黑白棋对战</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >基于爬虫的黑白棋对战</a>
         </li>
     
     
@@ -1339,19 +1335,19 @@ Vimium C
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
+        <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
+    
         <span class="sidebar-tag-name" data-tags="硬件"><span class="iconfont-archer">&#xe606;</span>硬件</span>
     
         <span class="sidebar-tag-name" data-tags="Robomaster"><span class="iconfont-archer">&#xe606;</span>Robomaster</span>
     
-        <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
+        <span class="sidebar-tag-name" data-tags="小米盒子"><span class="iconfont-archer">&#xe606;</span>小米盒子</span>
     
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
-        <span class="sidebar-tag-name" data-tags="小米盒子"><span class="iconfont-archer">&#xe606;</span>小米盒子</span>
-    
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     

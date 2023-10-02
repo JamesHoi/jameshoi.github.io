@@ -458,27 +458,29 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <h1 id="软件推荐"><a href="#软件推荐" class="headerlink" title="软件推荐"></a>软件推荐</h1><h2 id="wox"><a href="#wox" class="headerlink" title="wox"></a>wox</h2><p>快捷键+everything搜索+拼音+缩写功能，很方便</p>
-<p><img src="/2023/08/01/software/2023-08-01-21-37-33-image.png" alt></p>
+<p><img src="/2023/08/01/software/2023-08-01-21-37-33-image.png"></p>
 <h2 id="cmder"><a href="#cmder" class="headerlink" title="cmder"></a>cmder</h2><p>一个不错的终端软件，唯一的缺点就是启动速度有点慢，其次不知道为什么windowsTerminal没有识别cmder，网上说加入到path就行，下图是我手动配置的cmder</p>
-<p><img src="/2023/08/01/software/2023-08-01-15-56-31-image.png" alt></p>
+<p><img src="/2023/08/01/software/2023-08-01-15-56-31-image.png"></p>
 <p>设置后用快捷键可以方便打开终端，但是这个快捷键速度太慢了，参考<a target="_blank" rel="noopener" href="https://superuser.com/questions/426947/slow-windows-desktop-keyboard-shortcuts">slow windows desktop keyboard shortcuts - Super User</a>，杀掉这个进程确实可以令这个快捷键更快，但是所有的uwp软件将会被杀死</p>
-<p><img src="/2023/08/01/software/2023-08-01-15-54-57-image.png" alt></p>
-<p><img src="/2023/08/01/software/2023-08-01-16-08-52-image.png" alt></p>
+<p><img src="/2023/08/01/software/2023-08-01-15-54-57-image.png"></p>
+<p><img src="/2023/08/01/software/2023-08-01-16-08-52-image.png"></p>
 <p>最后还是用autohotkey解决了，自己写个小脚本自启动就行</p>
-<h2 id="Vimium-C"><a href="#Vimium-C" class="headerlink" title="Vimium C"></a>Vimium C</h2><p><img src="/2023/08/01/software/2023-08-01-21-38-52-image.png" alt></p>
+<h2 id="Vimium-C"><a href="#Vimium-C" class="headerlink" title="Vimium C"></a>Vimium C</h2><p><img src="/2023/08/01/software/2023-08-01-21-38-52-image.png"></p>
 <p>国人用vimium改的，操作好很多，原本vimium不能用的搜索功能<code>/</code>能用了，但是相比surfingkeys的选择模式还是差点，但surfingkeys的jk上下移动有延迟，这点无法接受。</p>
 <h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>有空想设计款方便操作windows文件夹的，例如说浏览器弹出窗口选择保存位置，希望能够完全脱离鼠标进行操作。</p>
 <h2 id="VSCode-Vim"><a href="#VSCode-Vim" class="headerlink" title="VSCode Vim"></a>VSCode Vim</h2><p>最近在练vim，操作算是都熟悉了，但是就算用wbhjklf还是有点折磨人，发现了easymotion这个东西，vscode的vim选项直接打开就能用</p>
-<p><img src="/2023/08/01/software/2023-08-01-22-52-40-image.png" alt></p>
+<p><img src="/2023/08/01/software/2023-08-01-22-52-40-image.png"></p>
 <p>这个和vimium c的f键功能类似</p>
-<p><img src="/2023/08/01/software/2023-08-01-23-34-21-image.png" alt></p>
+<p><img src="/2023/08/01/software/2023-08-01-23-34-21-image.png"></p>
 <p>选择前</p>
-<p><img src="/2023/08/01/software/2023-08-01-23-34-45-image.png" alt></p>
+<p><img src="/2023/08/01/software/2023-08-01-23-34-45-image.png"></p>
 <p>选择后</p>
-<p><img src="/2023/08/01/software/2023-08-01-23-34-55-image.png" alt></p>
+<p><img src="/2023/08/01/software/2023-08-01-23-34-55-image.png"></p>
 <p>这段json加入到vscode的settings.json里可以令空格改为跳转到任意位置</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&quot;vim.normalModeKeyBindingsNonRecursive&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;before&quot;</span>: [<span class="string">&quot; &quot;</span>],</span><br><span class="line">        <span class="attr">&quot;after&quot;</span>: [<span class="string">&quot;leader&quot;</span>, <span class="string">&quot;leader&quot;</span>, <span class="string">&quot;leader&quot;</span>, <span class="string">&quot;j&quot;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line">&quot;vim.visualModeKeyBindingsNonRecursive&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;before&quot;</span>: [<span class="string">&quot; &quot;</span>],</span><br><span class="line">        <span class="attr">&quot;after&quot;</span>: [<span class="string">&quot;leader&quot;</span>, <span class="string">&quot;leader&quot;</span>, <span class="string">&quot;leader&quot;</span>, <span class="string">&quot;j&quot;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+
 <h3 id="Vim一些高效的命令"><a href="#Vim一些高效的命令" class="headerlink" title="Vim一些高效的命令"></a>Vim一些高效的命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">R 连续替换多个字符</span><br><span class="line">ci&quot; 将&quot;内的文字替换掉</span><br><span class="line">di&quot;</span><br><span class="line">yi&quot; 同理</span><br><span class="line">cs&quot;&#39; 将&quot;替换成&#39;（需要vim-surround插件）</span><br><span class="line">ca&quot;&#39; 将包括&quot;在内的替换</span><br><span class="line">viw 将这个词选中  </span><br><span class="line">S visual mode下将选中的框起（需要插件）</span><br><span class="line"></span><br><span class="line">d$ 删除光标之后当前行的内容</span><br><span class="line">d0 同理</span><br><span class="line">vii 选取当前缩进下的内容</span><br><span class="line">vai 选取当前缩进下包括上一级的上半部分</span><br><span class="line">vaI 选取当前缩进下包括上一级</span><br><span class="line"></span><br><span class="line">af 扩大block选取</span><br><span class="line">ap 选中</span><br><span class="line">gd 查看定义</span><br><span class="line">gh 等同鼠标放在单词上</span><br><span class="line">gcc 注释这行代码</span><br><span class="line">gc2j 注释两行代码</span><br><span class="line">dap 删除这个函数</span><br><span class="line">40gg 跳转到40行</span><br><span class="line">insert 模式下通过 ctrl+h ctrl+w ctrl+u 来删除前一个字符，前一个单词，前面一行所有字符</span><br></pre></td></tr></table></figure>
+
 <h3 id="Normal-mode下拼音输入法需要频繁切换"><a href="#Normal-mode下拼音输入法需要频繁切换" class="headerlink" title="Normal mode下拼音输入法需要频繁切换"></a>Normal mode下拼音输入法需要频繁切换</h3><p><a target="_blank" rel="noopener" href="https://github.com/daipeihust/im-select/blob/master/README_CN.md">https://github.com/daipeihust/im-select/blob/master/README_CN.md</a><br>在vscode里设置一下可以令normal mode输入法默认为英文</p>
 <h2 id="geoip"><a href="#geoip" class="headerlink" title="geoip"></a>geoip</h2><p>写了个玩具，主要用来查找域名指向的ip的地理位置，有时候下载速度慢的时候需要查一下，从而调整节点。</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/JamesHoi/geoip">GitHub - JamesHoi/geoip: A toy for check domain location</a></p>
@@ -500,16 +502,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2023/08/01/rmuc/" title= "Robomaster能量机关复现">
-                    <div class="nextTitle">Robomaster能量机关复现</div>
+                <a href= "/2023/08/01/hardware/" title= "之前画的一些硬件PCB">
+                    <div class="nextTitle">之前画的一些硬件PCB</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2022/08/04/mibox2/" title= "记录一下折腾小米盒子">
-                    <div class="prevTitle">记录一下折腾小米盒子</div>
+                <a href= "/2023/08/01/rmuc/" title= "Robomaster能量机关复现">
+                    <div class="prevTitle">Robomaster能量机关复现</div>
                 </a>
             
         </li>
@@ -1133,10 +1135,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 36
@@ -1165,12 +1163,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2023/08/01/rmuc/" >Robomaster能量机关复现</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2023/08/01/software/" >一些软件推荐&随记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2023/08/01/software/" >一些软件推荐&随记</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2023/08/01/rmuc/" >Robomaster能量机关复现</a>
         </li>
     
     
@@ -1332,12 +1330,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >基于爬虫的黑白棋对战</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/open163-downloader/" >网易公开课下载器，支持多线程，可分别下载视频及字幕</a>
+            <span class="archive-post-date">03/22</span><a class="archive-post-title" href= "/2020/03/22/reversi/" >基于爬虫的黑白棋对战</a>
         </li>
     
     
@@ -1384,19 +1382,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="加密算法"><span class="iconfont-archer">&#xe606;</span>加密算法</span>
     
+        <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
+    
         <span class="sidebar-tag-name" data-tags="硬件"><span class="iconfont-archer">&#xe606;</span>硬件</span>
     
         <span class="sidebar-tag-name" data-tags="Robomaster"><span class="iconfont-archer">&#xe606;</span>Robomaster</span>
     
-        <span class="sidebar-tag-name" data-tags="破解"><span class="iconfont-archer">&#xe606;</span>破解</span>
+        <span class="sidebar-tag-name" data-tags="小米盒子"><span class="iconfont-archer">&#xe606;</span>小米盒子</span>
     
         <span class="sidebar-tag-name" data-tags="单片机"><span class="iconfont-archer">&#xe606;</span>单片机</span>
     
-        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
-    
-        <span class="sidebar-tag-name" data-tags="小米盒子"><span class="iconfont-archer">&#xe606;</span>小米盒子</span>
-    
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="Linux"><span class="iconfont-archer">&#xe606;</span>Linux</span>
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     
