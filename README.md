@@ -12,7 +12,7 @@ Then open `http://localhost:8000`.
 
 ## Publication videos
 
-Videos 1–5 and 7 are already included in `assets/videos/`. Publication 6 (DPNet) intentionally remains a “Video coming soon” placeholder.
+Six publication videos are already included in `assets/videos/`. DPNet intentionally remains a “Video coming soon” placeholder. FlyHand-WAM, fixed-camera aerial filming, Acting in Meters, and CrossFly currently use text-only entries.
 
 When the DPNet video is ready, put the optimized MP4 in `assets/videos/dpnet.mp4`, then replace its `.video-placeholder` block in `index.html` with:
 
@@ -24,7 +24,7 @@ When the DPNet video is ready, put the optimized MP4 in `assets/videos/dpnet.mp4
 </div>
 ```
 
-Current filenames, in publication order:
+Current video filenames:
 
 1. `monocular-aerial-grasping.mp4`
 2. `force-aware-grasping.mp4`
@@ -38,4 +38,4 @@ The matching video styles are already included in `style.css`.
 
 ## Deploy
 
-Push the directory to the `main` branch of a repository named `JamesHoi.github.io`. GitHub Pages will serve `index.html` directly.
+Push updates to the `academic-page` branch of `JamesHoi/jameshoi.github.io`. GitHub Pages is configured to publish the root of this branch and serves `index.html` directly. The downloadable CV is `assets/cv/Kenghou_Hoi_CV.pdf`.
