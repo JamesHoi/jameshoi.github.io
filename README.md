@@ -12,7 +12,7 @@ Then open `http://localhost:8000`.
 
 ## Publication videos
 
-Six publication videos are already included in `assets/videos/`. DPNet intentionally remains a “Video coming soon” placeholder. FlyHand-WAM, fixed-camera aerial filming, Acting in Meters, and CrossFly currently use text-only entries.
+Ten publication videos are included in `assets/videos/`, including FlyHand-WAM, fixed-camera aerial filming, Acting in Meters, and CrossFly. DPNet intentionally remains a “Video coming soon” placeholder.
 
 When the DPNet video is ready, put the optimized MP4 in `assets/videos/dpnet.mp4`, then replace its `.video-placeholder` block in `index.html` with:
 
@@ -29,10 +29,14 @@ Current video filenames:
 1. `monocular-aerial-grasping.mp4`
 2. `force-aware-grasping.mp4`
 3. `onboard-moving-target-grasping.mp4`
-4. `agile-fall-recovery.mp4`
-5. `dynamic-obstacle-avoidance.mp4`
-6. `dpnet.mp4` — coming soon
-7. `safety-shielded-flight.mp4`
+4. `flyhand-wam.mp4`
+5. `agile-fall-recovery.mp4`
+6. `dynamic-obstacle-avoidance.mp4`
+7. `dpnet.mp4` — coming soon
+8. `safety-shielded-flight.mp4`
+9. `fixed-camera-aerial-filming.mp4`
+10. `acting-in-meters.mp4`
+11. `crossfly.mp4`
 
 The matching video styles are already included in `style.css`.
 
